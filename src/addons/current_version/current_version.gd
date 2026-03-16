@@ -1,3 +1,4 @@
+@tool
 class_name CurrentVersion
 
 const PATH_TO_DATA: String = "res://addons/current_version/version.json"
