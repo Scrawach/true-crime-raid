@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cx7rsciexusnm"]
+
+[ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
+[ext_resource type="Script" uid="uid://bh8qx82tccq08" path="res://player/player_input.gd" id="2_ryni8"]
+[ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
+[ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
+
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head")]
+script = ExtResource("1_ied1u")
+head = NodePath("Head")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532195772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_f64p4")
+
+[node name="Head" type="Node3D" parent="." unique_id=866222162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
+
+[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body")]
+script = ExtResource("2_ryni8")
+body = NodePath("..")
+metadata/_custom_type_script = "uid://bh8qx82tccq08"
+
+[node name="MouseCapture" type="Node" parent="PlayerInput" unique_id=1129688267 node_paths=PackedStringArray("player_input")]
+script = ExtResource("3_rjoga")
+player_input = NodePath("..")
+metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
+
+[node name="Player HUD" parent="." unique_id=1872789362 instance=ExtResource("4_cnqhg")]

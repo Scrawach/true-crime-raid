@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://yer5qkd6lp65"]
+
+[ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="1_qo0ji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0ji"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 1
+
+[node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
+
+[node name="Version Container" type="PanelContainer" parent="." unique_id=974151896]
+modulate = Color(1, 1, 1, 0.39215687)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Version Container" unique_id=956075531]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CurrentVersionLabel" type="Label" parent="Version Container/MarginContainer" unique_id=104954214]
+layout_mode = 2
+text = "vMAJOR.MINOR.PATCH YYYY-MM-DD HH-MM-SS"
+horizontal_alignment = 2
+script = ExtResource("1_qo0ji")
+show_datetime = true
+metadata/_custom_type_script = "uid://bxgh4maetkofo"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1513692102]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Pointer" type="PanelContainer" parent="CenterContainer" unique_id=345369735]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qo0ji")

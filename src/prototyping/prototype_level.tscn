@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://d25j0f0jg6nc6"]
+
+[ext_resource type="Material" uid="uid://k6o3p3mevgv3" path="res://prototyping/materials/M_prototype_gray.tres" id="1_f64p4"]
+[ext_resource type="PackedScene" uid="uid://cx7rsciexusnm" path="res://player/player_body_3d.tscn" id="2_dsgtm"]
+[ext_resource type="Material" uid="uid://csh6llfya7wv4" path="res://prototyping/materials/M_prototype_blue.tres" id="2_nphs0"]
+[ext_resource type="Material" uid="uid://c8bhu2ml1mm8f" path="res://prototyping/materials/M_prototype_interactive.tres" id="3_uojjs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f64p4"]
+sky_material = SubResource("ProceduralSkyMaterial_1jnja")
+
+[sub_resource type="Environment" id="Environment_dsgtm"]
+background_mode = 1
+sky = SubResource("Sky_f64p4")
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dsgtm"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dsgtm"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uojjs"]
+size = Vector3(2, 1, 1.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nphs0"]
+data = PackedVector3Array(-1, 0.5, 0.59999996, 1, 0.5, 0.59999996, -1, -0.5, 0.59999996, 1, 0.5, 0.59999996, 1, -0.5, 0.59999996, -1, -0.5, 0.59999996, 1, 0.5, -0.59999996, -1, 0.5, -0.59999996, 1, -0.5, -0.59999996, -1, 0.5, -0.59999996, -1, -0.5, -0.59999996, 1, -0.5, -0.59999996, 1, 0.5, 0.59999996, 1, 0.5, -0.59999996, 1, -0.5, 0.59999996, 1, 0.5, -0.59999996, 1, -0.5, -0.59999996, 1, -0.5, 0.59999996, -1, 0.5, -0.59999996, -1, 0.5, 0.59999996, -1, -0.5, -0.59999996, -1, 0.5, 0.59999996, -1, -0.5, 0.59999996, -1, -0.5, -0.59999996, 1, 0.5, 0.59999996, -1, 0.5, 0.59999996, 1, 0.5, -0.59999996, -1, 0.5, 0.59999996, -1, 0.5, -0.59999996, 1, 0.5, -0.59999996, -1, -0.5, 0.59999996, 1, -0.5, 0.59999996, -1, -0.5, -0.59999996, 1, -0.5, 0.59999996, 1, -0.5, -0.59999996, -1, -0.5, -0.59999996)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kem4b"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dsgtm"]
+plane = Plane(0, 0, 1, 0)
+
+[node name="Prototype Level" type="Node3D" unique_id=573298799]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=84319190]
+environment = SubResource("Environment_dsgtm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1422306252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3538675, -1.2099841)
+light_energy = 15.0
+omni_range = 10.0
+
+[node name="Environment" type="Node3D" parent="." unique_id=560163200]
+
+[node name="Ground" type="MeshInstance3D" parent="Environment" unique_id=550847409]
+material_override = ExtResource("1_f64p4")
+mesh = SubResource("PlaneMesh_dsgtm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Ground" unique_id=1287128937]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground/StaticBody3D" unique_id=1850535570]
+shape = SubResource("ConcavePolygonShape3D_dsgtm")
+
+[node name="Table" type="Node3D" parent="Environment" unique_id=2029151190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Table" unique_id=1136169329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("2_nphs0")
+mesh = SubResource("BoxMesh_uojjs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Table/MeshInstance3D" unique_id=1490364972]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table/MeshInstance3D/StaticBody3D" unique_id=1938646227]
+shape = SubResource("ConcavePolygonShape3D_nphs0")
+
+[node name="Table2" type="Node3D" parent="Environment" unique_id=1679732028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Table2" unique_id=115256548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("2_nphs0")
+mesh = SubResource("BoxMesh_uojjs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Table2/MeshInstance3D" unique_id=1428691720]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Table2/MeshInstance3D/StaticBody3D" unique_id=480022588]
+shape = SubResource("ConcavePolygonShape3D_nphs0")
+
+[node name="Interactive Object" type="Node3D" parent="Environment" unique_id=224935980]
+transform = Transform3D(0.87451816, 0, -0.4849928, 0, 1, 0, 0.4849928, 0, 0.87451816, 0, 1, -0.650916)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Interactive Object" unique_id=448095138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+material_override = ExtResource("3_uojjs")
+mesh = SubResource("BoxMesh_kem4b")
+
+[node name="World Boundaries" type="Node3D" parent="." unique_id=1849628260]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World Boundaries" unique_id=1302554427]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries/StaticBody3D" unique_id=2068537761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+shape = SubResource("WorldBoundaryShape3D_dsgtm")
+debug_color = Color(0.9882353, 0, 0.32941177, 1)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="World Boundaries" unique_id=306518216]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries/StaticBody3D2" unique_id=1584759661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+shape = SubResource("WorldBoundaryShape3D_dsgtm")
+debug_color = Color(0.9882353, 0, 0.32941177, 1)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="World Boundaries" unique_id=483207342]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries/StaticBody3D3" unique_id=1655856471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+shape = SubResource("WorldBoundaryShape3D_dsgtm")
+debug_color = Color(0.9882353, 0, 0.32941177, 1)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="World Boundaries" unique_id=1410360110]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries/StaticBody3D4" unique_id=450401033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+shape = SubResource("WorldBoundaryShape3D_dsgtm")
+debug_color = Color(0.9882353, 0, 0.32941177, 1)
+
+[node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

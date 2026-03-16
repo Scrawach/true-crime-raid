@@ -1,32 +1,7 @@
 [gd_scene format=3 uid="uid://b2q2xjr1xt7rj"]
 
-[ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d25j0f0jg6nc6" path="res://prototyping/prototype_level.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node" unique_id=1525077625]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1780881840]
-
-[node name="Version Container" type="PanelContainer" parent="CanvasLayer" unique_id=794118606]
-modulate = Color(1, 1, 1, 0.39215687)
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset_ratio = Vector2(0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Version Container" unique_id=2112973385]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="CurrentVersionLabel" type="Label" parent="CanvasLayer/Version Container/MarginContainer" unique_id=18169655]
-layout_mode = 2
-text = "vMAJOR.MINOR.PATCH YYYY-MM-DD HH-MM-SS"
-horizontal_alignment = 2
-script = ExtResource("2_0xm2m")
-show_datetime = true
-metadata/_custom_type_script = "uid://bxgh4maetkofo"
+[node name="Prototype Level" parent="." unique_id=573298799 instance=ExtResource("2_h2yge")]
