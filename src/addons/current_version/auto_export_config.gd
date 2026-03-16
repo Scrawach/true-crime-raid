@@ -2,7 +2,7 @@ extends "res://addons/AutoExportVersion/VersionProvider.gd"
 
 func get_version(features: PackedStringArray, is_debug: bool, path: String, flags: int) -> String:
 	var version := format_version_line(get_git_previous_tag(), get_git_commit_count())
-	update_version_file(version)
+	update_version_file(version, get_git_commit_hash())
 	return "v" + version
 
 func get_git_previous_tag() -> String:
@@ -22,7 +22,7 @@ func get_git_previous_tag() -> String:
 func format_version_line(previous_tag: String, patch_version: String) -> String:
 	return "%s.%s" % [previous_tag, patch_version]
 
-func update_version_file(next_version: String) -> void:
-	var error := CurrentVersion._save_to_file(next_version)
+func update_version_file(next_version: String, commit_hash: String) -> void:
+	var error := CurrentVersion._save_to_file(next_version, commit_hash)
 	if error != OK:
 		push_error("Failed to update version file!")

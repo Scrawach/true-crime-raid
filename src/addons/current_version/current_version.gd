@@ -3,6 +3,7 @@ class_name CurrentVersion
 
 const PATH_TO_DATA: String = "res://addons/current_version/version.json"
 
+static var _commit_hash: String
 static var _date_line: String
 static var _time_line: String
 static var _version_line: String
@@ -13,6 +14,9 @@ static func _static_init() -> void:
 ## YYYY-MM-DD HH:MM:SS format
 static func get_datetime_string() -> String:
 	return get_date_string() + " " + get_time_string()
+
+static func get_commit_hash() -> String:
+	return _commit_hash
 
 static func get_date_string() -> String:
 	return _date_line
@@ -38,9 +42,11 @@ static func _load_from_file(path: String) -> void:
 	_date_line = json["Date"]
 	_time_line = json["Time"]
 	_version_line = json["Version"]
+	_commit_hash = json["Hash"]
 
-static func _save_to_file(next_version: String) -> int:
+static func _save_to_file(next_version: String, commit_hash: String) -> int:
 	var version_data := {
+		"Hash": commit_hash,
 		"Date": Time.get_date_string_from_system(true),
 		"Time": Time.get_time_string_from_system(true),
 		"Version": next_version

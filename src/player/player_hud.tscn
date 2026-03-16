@@ -37,10 +37,9 @@ theme_override_constants/margin_bottom = 10
 
 [node name="CurrentVersionLabel" type="Label" parent="Version Container/MarginContainer" unique_id=104954214]
 layout_mode = 2
-text = "vMAJOR.MINOR.PATCH YYYY-MM-DD HH-MM-SS"
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 14
+text = "vMAJOR.MINOR.PATCH [commit-hash] YYYY-MM-DD HH-MM-SS"
 script = ExtResource("1_qo0ji")
-show_datetime = true
 metadata/_custom_type_script = "uid://bxgh4maetkofo"
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1513692102]
