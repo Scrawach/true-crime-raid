@@ -5,7 +5,7 @@ extends Node
 @export var sensitivity: float = 0.2
 @export var is_enabled: bool = true
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if not is_enabled:
 		return
 	
