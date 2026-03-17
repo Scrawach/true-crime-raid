@@ -4,6 +4,7 @@ extends Node
 @export var monitor_3d: Monitor3D
 @export var computer_camera: Camera3D
 @export var interaction: InteractionArea3D
+@export var computer_canvas: CanvasLayer
 
 var interactor: PlayerBody3D
 var is_interacted: bool = false
@@ -31,6 +32,7 @@ func start_interaction(target: PlayerBody3D) -> void:
 	target.input.disable()
 	target.input.mouse_capture.uncapture()
 	target.player_hud.hide_aim_pointer()
+	computer_canvas.show()
 
 func stop_interaction(target: PlayerBody3D) -> void:
 	target.main_camera.make_current()
@@ -41,4 +43,5 @@ func stop_interaction(target: PlayerBody3D) -> void:
 	target.input.enable()
 	target.input.mouse_capture.capture()
 	target.player_hud.show_aim_pointer()
+	computer_canvas.hide()
 	

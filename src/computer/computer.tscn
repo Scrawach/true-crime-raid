@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="3_xcml3"]
 [ext_resource type="Script" uid="uid://dqb5iahmx3rfl" path="res://computer/interactions/interact_with_computer.gd" id="4_678jo"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_m7yhb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_678jo"]
 viewport_path = NodePath("Monitor SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcml3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tor1g"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_m7yhb")
+albedo_texture = SubResource("ViewportTexture_678jo")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m7yhb"]
 
@@ -24,7 +24,7 @@ visible = false
 
 [node name="Monitor 3D" parent="." unique_id=2020143861 instance=ExtResource("2_m7yhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38410348, 0.23149653)
-surface_material_override/0 = SubResource("StandardMaterial3D_xcml3")
+surface_material_override/0 = SubResource("StandardMaterial3D_tor1g")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=254273876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35859597, 0.7838893)
@@ -40,11 +40,21 @@ metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 shape = SubResource("SphereShape3D_m7yhb")
 debug_color = Color(0.627451, 0.53333336, 0, 1)
 
-[node name="InteractWithComputer" type="Node" parent="." unique_id=1631449373 node_paths=PackedStringArray("monitor_3d", "computer_camera", "interaction")]
+[node name="InteractWithComputer" type="Node" parent="." unique_id=1631449373 node_paths=PackedStringArray("monitor_3d", "computer_camera", "interaction", "computer_canvas")]
 script = ExtResource("4_678jo")
 monitor_3d = NodePath("../Monitor 3D")
 computer_camera = NodePath("../Camera")
 interaction = NodePath("../Interaction Area3D")
+computer_canvas = NodePath("../CanvasLayer")
 metadata/_custom_type_script = "uid://dqb5iahmx3rfl"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816382861]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1469962850]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "ESC - exit"
 
 [editable path="proto_computer"]
