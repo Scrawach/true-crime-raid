@@ -2,6 +2,8 @@ class_name PlayerInput
 extends Node
 
 @export var body: PlayerBody3D
+@export var interactor: PlayerInteractor
+@export var mouse_capture: MouseCapture
 @export var sensitivity: float = 0.2
 @export var is_enabled: bool = true
 
@@ -12,9 +14,21 @@ func _input(event: InputEvent) -> void:
 	if not is_instance_valid(body):
 		return
 	
+	if not mouse_capture.is_captured():
+		return
+	
 	_process_input(event)
 
-func _process_input(event: InputEvent) -> void:	
+func enable() -> void:
+	is_enabled = true
+
+func disable() -> void:
+	is_enabled = false
+
+func _process_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		interactor.try_interact()
+	
 	if event is InputEventMouseMotion:
 		body.head_rotate(-event.relative * sensitivity)
 	

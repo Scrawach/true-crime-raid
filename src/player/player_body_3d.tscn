@@ -4,12 +4,18 @@
 [ext_resource type="Script" uid="uid://bh8qx82tccq08" path="res://player/player_input.gd" id="2_ryni8"]
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
+[ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 
-[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head")]
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "input", "player_hud")]
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
+main_camera = NodePath("Head/Camera3D")
+input = NodePath("PlayerInput")
+player_hud = NodePath("Player HUD")
+
+[node name="Player HUD" parent="." unique_id=1872789362 instance=ExtResource("4_cnqhg")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=532195772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -20,9 +26,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
 
-[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body")]
+[node name="Camera RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1691169396]
+target_position = Vector3(0, 0, -1.8)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body", "interactor", "mouse_capture")]
 script = ExtResource("2_ryni8")
 body = NodePath("..")
+interactor = NodePath("../PlayerInteractor")
+mouse_capture = NodePath("MouseCapture")
 metadata/_custom_type_script = "uid://bh8qx82tccq08"
 
 [node name="MouseCapture" type="Node" parent="PlayerInput" unique_id=1129688267 node_paths=PackedStringArray("player_input")]
@@ -30,4 +44,9 @@ script = ExtResource("3_rjoga")
 player_input = NodePath("..")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
-[node name="Player HUD" parent="." unique_id=1872789362 instance=ExtResource("4_cnqhg")]
+[node name="PlayerInteractor" type="Node" parent="." unique_id=459244660 node_paths=PackedStringArray("player", "player_hud", "raycast_3d")]
+script = ExtResource("5_qh2r7")
+player = NodePath("..")
+player_hud = NodePath("../Player HUD")
+raycast_3d = NodePath("../Head/Camera3D/Camera RayCast3D")
+metadata/_custom_type_script = "uid://blhol6udoquwp"

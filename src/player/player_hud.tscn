@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://yer5qkd6lp65"]
 
 [ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="1_qo0ji"]
+[ext_resource type="Script" uid="uid://juqqi502av0g" path="res://player/player_hud.gd" id="1_r44wa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0ji"]
 bg_color = Color(1, 1, 1, 1)
@@ -17,6 +18,7 @@ corner_radius_bottom_left = 20
 shadow_size = 1
 
 [node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
+script = ExtResource("1_r44wa")
 
 [node name="Version Container" type="PanelContainer" parent="." unique_id=974151896]
 modulate = Color(1, 1, 1, 0.39215687)
@@ -43,6 +45,7 @@ script = ExtResource("1_qo0ji")
 metadata/_custom_type_script = "uid://bxgh4maetkofo"
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1513692102]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,3 +58,20 @@ custom_minimum_size = Vector2(4, 4)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qo0ji")
+
+[node name="Interact Label" type="Label" parent="." unique_id=928946081]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = 16.0
+offset_right = 87.5
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+text = "PRESS E FOR INTERACT"

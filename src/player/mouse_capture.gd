@@ -6,6 +6,9 @@ extends Node
 var _is_captured: bool
 
 func _input(event: InputEvent) -> void:
+	if not player_input.is_enabled:
+		return
+	
 	if event is InputEventMouseButton and event.is_pressed() and not is_captured():
 		capture()
 	if event.is_action_pressed("escape"):
@@ -22,9 +25,7 @@ func is_captured() -> bool:
 func capture() -> void:
 	_is_captured = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	player_input.is_enabled = true
 
 func uncapture() -> void:
 	_is_captured = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	player_input.is_enabled = false

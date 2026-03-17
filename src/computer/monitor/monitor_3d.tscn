@@ -25,6 +25,7 @@ script = ExtResource("2_ehm3h")
 [node name="Monitor SubViewport" type="SubViewport" parent="." unique_id=70997439]
 unique_name_in_owner = true
 disable_3d = true
+gui_embed_subwindows = true
 
 [node name="Monitor Control" parent="Monitor SubViewport" unique_id=918670776 instance=ExtResource("2_yf60s")]
 unique_name_in_owner = true
@@ -38,6 +39,11 @@ grow_vertical = 2
 
 [node name="Monitor Area3D" type="Area3D" parent="." unique_id=1823387035]
 unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor Area3D" unique_id=1266299004]
 shape = SubResource("ConcavePolygonShape3D_ehm3h")
+debug_color = Color(1.347661e-06, 0.5716817, 0.84383035, 1)
