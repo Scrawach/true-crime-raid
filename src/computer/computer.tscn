@@ -19,11 +19,8 @@ albedo_texture = SubResource("ViewportTexture_678jo")
 
 [node name="proto_computer" parent="." unique_id=129414773 instance=ExtResource("1_xcml3")]
 
-[node name="proto_monitor" parent="proto_computer/proto_computer_base/proto_computer" parent_id_path=PackedInt32Array(129414773, 2067234096) index="0" unique_id=678780964]
-visible = false
-
 [node name="Monitor 3D" parent="." unique_id=2020143861 instance=ExtResource("2_m7yhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38410348, 0.23149653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38410348, 0.23340233)
 surface_material_override/0 = SubResource("StandardMaterial3D_tor1g")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=254273876]
@@ -56,5 +53,3 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 32
 text = "ESC - exit"
-
-[editable path="proto_computer"]
