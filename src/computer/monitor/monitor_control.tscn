@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dvlpgtj5jf6de"]
+
+[ext_resource type="Script" uid="uid://ch8753l8oejgl" path="res://computer/monitor/monitor_control.gd" id="1_6xg1g"]
+[ext_resource type="Script" uid="uid://b2po74o83srcy" path="res://computer/monitor/computer_mouse_cursor.gd" id="1_igrys"]
+[ext_resource type="Texture2D" uid="uid://i51evci1idyq" path="res://icon.svg" id="1_ws3o4"]
+
+[node name="Monitor Control" type="Control" unique_id=803566879 node_paths=PackedStringArray("mouse_cursor")]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 512.0
+script = ExtResource("1_6xg1g")
+mouse_cursor = NodePath("Computer Mouse Cursor")
+
+[node name="Label" type="Label" parent="." unique_id=1238381602]
+layout_mode = 0
+offset_top = 244.0
+offset_right = 512.0
+offset_bottom = 267.0
+text = "MONITOR"
+horizontal_alignment = 1
+
+[node name="Computer Mouse Cursor" type="Control" parent="." unique_id=670048113]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_igrys")
+
+[node name="TextureRect" type="TextureRect" parent="Computer Mouse Cursor" unique_id=1035349906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ws3o4")
+expand_mode = 3

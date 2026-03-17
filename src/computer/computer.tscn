@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://btnady6llxq52"]
+
+[ext_resource type="PackedScene" uid="uid://c3v8oktfnar82" path="res://computer/assets/proto_computer.glb" id="1_xcml3"]
+[ext_resource type="PackedScene" uid="uid://dmts2qqce58kq" path="res://computer/monitor/monitor_3d.tscn" id="2_m7yhb"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m7yhb"]
+viewport_path = NodePath("Monitor SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcml3"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_m7yhb")
+
+[node name="Computer" type="Node3D" unique_id=799874042]
+
+[node name="proto_computer" parent="." unique_id=129414773 instance=ExtResource("1_xcml3")]
+
+[node name="proto_monitor" parent="proto_computer/proto_computer_base/proto_computer" parent_id_path=PackedInt32Array(129414773, 2067234096) index="0" unique_id=678780964]
+visible = false
+
+[node name="Monitor 3D" parent="." unique_id=2020143861 instance=ExtResource("2_m7yhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38410348, 0.23149653)
+surface_material_override/0 = SubResource("StandardMaterial3D_xcml3")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=254273876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35859597, 0.7838893)
+
+[editable path="proto_computer"]
