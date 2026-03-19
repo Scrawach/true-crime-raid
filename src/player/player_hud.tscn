@@ -17,6 +17,8 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 1
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r44wa"]
+
 [node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
 script = ExtResource("1_r44wa")
 
@@ -75,3 +77,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 2
 text = "PRESS E FOR INTERACT"
+
+[node name="Item Handle Tooltip" type="PanelContainer" parent="." unique_id=334198679]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -73.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r44wa")
+
+[node name="Label" type="Label" parent="Item Handle Tooltip" unique_id=699579115]
+layout_mode = 2
+text = "[E] - DROP"
+horizontal_alignment = 1

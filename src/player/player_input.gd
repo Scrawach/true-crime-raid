@@ -3,6 +3,8 @@ extends Node
 
 @export var body: PlayerBody3D
 @export var interactor: PlayerInteractor
+@export var hand: PlayerHand
+
 @export var mouse_capture: MouseCapture
 @export var sensitivity: float = 0.2
 @export var is_enabled: bool = true
@@ -27,7 +29,10 @@ func disable() -> void:
 
 func _process_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		interactor.try_interact()
+		if hand.has_item():
+			hand.drop()
+		else:
+			interactor.try_interact()
 	
 	if event is InputEventMouseMotion:
 		body.head_rotate(-event.relative * sensitivity)

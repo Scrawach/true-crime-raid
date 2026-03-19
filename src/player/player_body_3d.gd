@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var head: Node3D
 @export var movement_speed: float = 5.0
 @export var main_camera: Camera3D
+
+@export var hand: PlayerHand
 @export var input: PlayerInput
 @export var player_hud: PlayerHUD
 

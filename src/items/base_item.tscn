@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://3274lr6yan17"]
+
+[ext_resource type="Script" uid="uid://d2c1vsvgotnka" path="res://items/base_item.gd" id="1_2fo1j"]
+[ext_resource type="PackedScene" uid="uid://dnhkt7fnjsjh0" path="res://prototyping/assets/simple_packet.glb" id="1_m53hc"]
+[ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_yksll"]
+[ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kem4b"]
+points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c43hp"]
+radius = 0.26145676
+
+[node name="Base Item" type="RigidBody3D" unique_id=679873917]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_2fo1j")
+
+[node name="simple_packet" parent="." unique_id=1452893256 instance=ExtResource("1_m53hc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1659647824]
+shape = SubResource("ConvexPolygonShape3D_kem4b")
+
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=786297931]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_yksll")
+metadata/_custom_type_script = "uid://dlm1uspq25qm7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=2136988761]
+shape = SubResource("SphereShape3D_c43hp")
+
+[node name="PickUpInteraction" type="Node" parent="." unique_id=1626426014 node_paths=PackedStringArray("body", "interaction_area_3d")]
+script = ExtResource("3_c43hp")
+body = NodePath("..")
+interaction_area_3d = NodePath("../InteractionArea3D")
+metadata/_custom_type_script = "uid://bk7ahkuijm3d4"
+
+[editable path="simple_packet"]

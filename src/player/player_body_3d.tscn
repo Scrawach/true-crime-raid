@@ -5,14 +5,17 @@
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
 [ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
+[ext_resource type="Script" uid="uid://b1nf2orlq6dqd" path="res://player/player_hand.gd" id="6_pyi6a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
 
-[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "input", "player_hud")]
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "input", "player_hud")]
+collision_layer = 4
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
 main_camera = NodePath("Head/Camera3D")
+hand = NodePath("PlayerHand")
 input = NodePath("PlayerInput")
 player_hud = NodePath("Player HUD")
 
@@ -34,10 +37,15 @@ collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body", "interactor", "mouse_capture")]
+[node name="Hand Point" type="Marker3D" parent="Head/Camera3D" unique_id=2028372810]
+unique_name_in_owner = true
+transform = Transform3D(0.72657466, 0, 0.6870875, 0, 1, 0, -0.6870875, 0, 0.72657466, 0.499, -0.422, -0.557)
+
+[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body", "interactor", "hand", "mouse_capture")]
 script = ExtResource("2_ryni8")
 body = NodePath("..")
 interactor = NodePath("../PlayerInteractor")
+hand = NodePath("../PlayerHand")
 mouse_capture = NodePath("MouseCapture")
 metadata/_custom_type_script = "uid://bh8qx82tccq08"
 
@@ -52,3 +60,10 @@ player = NodePath("..")
 player_hud = NodePath("../Player HUD")
 raycast_3d = NodePath("../Head/Camera3D/Camera RayCast3D")
 metadata/_custom_type_script = "uid://blhol6udoquwp"
+
+[node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point")]
+script = ExtResource("6_pyi6a")
+body = NodePath("..")
+hud = NodePath("../Player HUD")
+hand_point = NodePath("../Head/Camera3D/Hand Point")
+metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
