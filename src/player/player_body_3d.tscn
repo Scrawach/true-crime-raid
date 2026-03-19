@@ -54,10 +54,9 @@ script = ExtResource("3_rjoga")
 player_input = NodePath("..")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
-[node name="PlayerInteractor" type="Node" parent="." unique_id=459244660 node_paths=PackedStringArray("player", "player_hud", "raycast_3d")]
+[node name="PlayerInteractor" type="Node" parent="." unique_id=459244660 node_paths=PackedStringArray("player", "raycast_3d")]
 script = ExtResource("5_qh2r7")
 player = NodePath("..")
-player_hud = NodePath("../Player HUD")
 raycast_3d = NodePath("../Head/Camera3D/Camera RayCast3D")
 metadata/_custom_type_script = "uid://blhol6udoquwp"
 

@@ -2,7 +2,6 @@ class_name PlayerInteractor
 extends Node
 
 @export var player: PlayerBody3D
-@export var player_hud: PlayerHUD
 @export var raycast_3d: RayCast3D
 @export var max_distance: float = 2.0
 
@@ -30,12 +29,10 @@ func _start_interaction(target: InteractionArea3D) -> void:
 	
 	interaction = target
 	interaction.hover()
-	player_hud.show_interact_tooltip()
 
 func _stop_interaction() -> void:
 	if interaction:
 		interaction.unhover()
-	player_hud.hide_interact_tooltip()
 	interaction = null
 
 func try_interact() -> bool:
