@@ -17,19 +17,18 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 1
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r44wa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r44wa"]
+bg_color = Color(0, 0, 0, 0.39215687)
 
 [node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
 script = ExtResource("1_r44wa")
 
 [node name="Version Container" type="PanelContainer" parent="." unique_id=974151896]
 modulate = Color(1, 1, 1, 0.39215687)
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 40.0
 grow_horizontal = 2
-grow_vertical = 0
 pivot_offset_ratio = Vector2(0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Version Container" unique_id=956075531]
@@ -68,14 +67,40 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -73.0
-offset_bottom = -50.0
+offset_top = -42.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_r44wa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_r44wa")
 
 [node name="Label" type="Label" parent="Item Handle Tooltip" unique_id=699579115]
+visible = false
 layout_mode = 2
 text = "[E] - DROP"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Item Handle Tooltip" unique_id=1255191530]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Item Handle Tooltip/MarginContainer" unique_id=141196191]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item Handle Tooltip/MarginContainer/HBoxContainer" unique_id=2101944851]
+visible = false
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[img height=32]uid://blvvxcjuyqu33[/img] ОСМОТРЕТЬ"
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Item Handle Tooltip/MarginContainer/HBoxContainer" unique_id=1324536637]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[img height=32]uid://c4du1csjis387[/img] ВЫКИНУТЬ"
 horizontal_alignment = 1
