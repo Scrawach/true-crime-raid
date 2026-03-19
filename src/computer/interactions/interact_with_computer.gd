@@ -27,21 +27,21 @@ func start_interaction(target: PlayerBody3D) -> void:
 	computer_camera.make_current()
 	interaction.disable()
 	monitor_3d.power_on()
-	
+	computer_canvas.show()
 	set_process_input(true)
+	
 	target.input.disable()
 	target.input.mouse_capture.uncapture()
 	target.player_hud.hide_aim_pointer()
-	computer_canvas.show()
 
 func stop_interaction(target: PlayerBody3D) -> void:
 	target.main_camera.make_current()
 	interaction.enable()
 	monitor_3d.power_off()
-	
+	computer_canvas.hide()
 	set_process_input(false)
+	
 	target.input.enable()
 	target.input.mouse_capture.capture()
 	target.player_hud.show_aim_pointer()
-	computer_canvas.hide()
 	

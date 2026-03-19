@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvlpgtj5jf6de" path="res://computer/monitor/monitor_control.tscn" id="2_yf60s"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_d6q3r"]
-size = Vector2(0.5, 0.5)
+size = Vector2(0.8, 0.49)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_d6q3r"]
 viewport_path = NodePath("Monitor SubViewport")
@@ -14,8 +14,8 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_d6q3r")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ehm3h"]
-data = PackedVector3Array(-0.2601, -0.2601, 0, 0.2601, 0.2601, 0, 0.2601, -0.2601, 0, -0.2601, -0.2601, 0, -0.2601, 0.2601, 0, 0.2601, 0.2601, 0)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d6q3r"]
+data = PackedVector3Array(0.39999998, -0.24499999, 0, -0.39999998, -0.24499999, 0, 0.39999998, 0.24499999, 0, -0.39999998, -0.24499999, 0, -0.39999998, 0.24499999, 0, 0.39999998, 0.24499999, 0)
 
 [node name="Monitor 3D" type="MeshInstance3D" unique_id=2020143861]
 mesh = SubResource("QuadMesh_d6q3r")
@@ -26,6 +26,7 @@ script = ExtResource("2_ehm3h")
 unique_name_in_owner = true
 disable_3d = true
 gui_embed_subwindows = true
+size = Vector2i(819, 502)
 
 [node name="Monitor Control" parent="Monitor SubViewport" unique_id=918670776 instance=ExtResource("2_yf60s")]
 unique_name_in_owner = true
@@ -44,6 +45,6 @@ collision_mask = 0
 monitoring = false
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor Area3D" unique_id=1266299004]
-shape = SubResource("ConcavePolygonShape3D_ehm3h")
-debug_color = Color(1.347661e-06, 0.5716817, 0.84383035, 1)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor Area3D" unique_id=695689548]
+shape = SubResource("ConcavePolygonShape3D_d6q3r")
+debug_color = Color(0, 0.5950001, 0.7, 1)
