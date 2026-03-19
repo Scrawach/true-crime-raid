@@ -4,6 +4,7 @@ extends Node
 @export var player: PlayerBody3D
 @export var player_hud: PlayerHUD
 @export var raycast_3d: RayCast3D
+@export var max_distance: float = 2.0
 
 var interaction: InteractionArea3D
 
@@ -23,6 +24,9 @@ func _physics_process(_delta: float) -> void:
 func _start_interaction(target: InteractionArea3D) -> void:
 	if interaction == target:
 		return
+	
+	if interaction != null:
+		interaction.unhover()
 	
 	interaction = target
 	interaction.hover()

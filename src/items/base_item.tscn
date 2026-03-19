@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dnhkt7fnjsjh0" path="res://prototyping/assets/simple_packet.glb" id="1_m53hc"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_yksll"]
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
+[ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kem4b"]
 points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
@@ -35,5 +36,8 @@ script = ExtResource("3_c43hp")
 body = NodePath("..")
 interaction_area_3d = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://bk7ahkuijm3d4"
+
+[node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("5_jc8hu")]
+interaction = NodePath("../InteractionArea3D")
 
 [editable path="simple_packet"]

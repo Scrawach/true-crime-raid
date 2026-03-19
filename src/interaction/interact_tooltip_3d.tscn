@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bt1yx4ek5sc2a"]
+
+[ext_resource type="Texture2D" uid="uid://bckfkncjhesyp" path="res://interaction/assets/interaction-circle.svg" id="1_2h3jp"]
+[ext_resource type="Script" uid="uid://bako3bwjptcn7" path="res://interaction/interact_tooltip_3d.gd" id="1_jl87e"]
+[ext_resource type="Texture2D" uid="uid://cu38j3bkpfea2" path="res://interaction/assets/interaction-circle-bg.png" id="2_jl87e"]
+[ext_resource type="Texture2D" uid="uid://c4du1csjis387" path="res://interaction/assets/e.svg" id="4_bm1bt"]
+[ext_resource type="Script" uid="uid://cfi3v2ljy8weo" path="res://interaction/smooth_appear_sprite_3d.gd" id="4_cc4ni"]
+[ext_resource type="Texture2D" uid="uid://b5rolmisoio4h" path="res://interaction/assets/key-bg.png" id="5_tfoj7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aqq7f"]
+radius = 2.0
+
+[node name="InteractTooltip3D" type="Area3D" unique_id=603151964]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_jl87e")
+
+[node name="Main Tooltip" type="Sprite3D" parent="." unique_id=1300343581]
+visible = false
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+texture = ExtResource("1_2h3jp")
+
+[node name="Background Tooltip" type="Sprite3D" parent="Main Tooltip" unique_id=1742718030]
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+render_priority = -1
+texture = ExtResource("2_jl87e")
+
+[node name="SmoothAppearSprite3D" type="Node" parent="Main Tooltip" unique_id=398859513 node_paths=PackedStringArray("target")]
+script = ExtResource("4_cc4ni")
+target = NodePath("..")
+metadata/_custom_type_script = "uid://cfi3v2ljy8weo"
+
+[node name="Interact Tooltip" type="Sprite3D" parent="." unique_id=1801849350]
+visible = false
+pixel_size = 0.0015
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+texture = ExtResource("4_bm1bt")
+
+[node name="Key Background Tooltip" type="Sprite3D" parent="Interact Tooltip" unique_id=1609942753]
+pixel_size = 0.0015
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+render_priority = -1
+texture = ExtResource("5_tfoj7")
+
+[node name="SmoothAppearSprite3D" type="Node" parent="Interact Tooltip" unique_id=994689107 node_paths=PackedStringArray("target")]
+script = ExtResource("4_cc4ni")
+target = NodePath("..")
+target_scale = 1.6
+metadata/_custom_type_script = "uid://cfi3v2ljy8weo"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=915978142]
+shape = SubResource("SphereShape3D_aqq7f")
+debug_color = Color(0.13333334, 0.52156866, 1, 1)

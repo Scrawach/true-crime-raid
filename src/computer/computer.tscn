@@ -5,14 +5,15 @@
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="3_xcml3"]
 [ext_resource type="Script" uid="uid://dqb5iahmx3rfl" path="res://computer/interactions/interact_with_computer.gd" id="4_678jo"]
 [ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="5_tor1g"]
+[ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="6_wwkpl"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tor1g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1kucm"]
 viewport_path = NodePath("Monitor SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwkpl"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxth2"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_tor1g")
+albedo_texture = SubResource("ViewportTexture_1kucm")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m7yhb"]
 
@@ -151,7 +152,7 @@ visible = false
 
 [node name="Monitor 3D" parent="." unique_id=2020143861 instance=ExtResource("2_m7yhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00936681, 0.3705353, -0.10390858)
-surface_material_override/0 = SubResource("StandardMaterial3D_wwkpl")
+surface_material_override/0 = SubResource("StandardMaterial3D_oxth2")
 
 [node name="Camera" type="Camera3D" parent="." unique_id=254273876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.369811, 0.30224383)
@@ -203,3 +204,6 @@ mesh = SubResource("ArrayMesh_pxjeu")
 [node name="MonitorScreen" type="MeshInstance3D" parent="computer" unique_id=1127201590]
 transform = Transform3D(0.21085258, 0, 0.040256474, 0, 0.21466108, 0, -0.040256474, 0, 0.21085258, 0.11237027, 0.37330422, 0.16267473)
 mesh = SubResource("ArrayMesh_4m2ur")
+
+[node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("6_wwkpl")]
+interaction = NodePath("../Interaction Area3D")

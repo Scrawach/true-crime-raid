@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 current = true
 
 [node name="Camera RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1691169396]
-target_position = Vector3(0, 0, -1.8)
+target_position = Vector3(0, 0, -2)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
@@ -61,9 +61,10 @@ player_hud = NodePath("../Player HUD")
 raycast_3d = NodePath("../Head/Camera3D/Camera RayCast3D")
 metadata/_custom_type_script = "uid://blhol6udoquwp"
 
-[node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point")]
+[node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point", "head")]
 script = ExtResource("6_pyi6a")
 body = NodePath("..")
 hud = NodePath("../Player HUD")
 hand_point = NodePath("../Head/Camera3D/Hand Point")
+head = NodePath("../Head")
 metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
