@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvlpgtj5jf6de"]
 
 [ext_resource type="Script" uid="uid://ch8753l8oejgl" path="res://computer/monitor/monitor_control.gd" id="1_6xg1g"]
+[ext_resource type="Script" uid="uid://dg4c1w04cm6ft" path="res://computer/os/os_gameplay/os_gameplay.gd" id="2_6xg1g"]
 [ext_resource type="PackedScene" uid="uid://bd3xc6heiw3hi" path="res://computer/monitor/computer_mouse_cursor.tscn" id="2_igrys"]
 
 [node name="Monitor Control" type="Control" unique_id=803566879 node_paths=PackedStringArray("mouse_cursor")]
@@ -12,13 +13,9 @@ offset_bottom = 512.0
 script = ExtResource("1_6xg1g")
 mouse_cursor = NodePath("CanvasLayer/Computer Mouse Cursor")
 
-[node name="Label" type="Label" parent="." unique_id=1238381602]
-layout_mode = 0
-offset_top = 244.0
-offset_right = 512.0
-offset_bottom = 267.0
-text = "MONITOR"
-horizontal_alignment = 1
+[node name="OSGameplay" type="Node" parent="." unique_id=709959101]
+script = ExtResource("2_6xg1g")
+metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1397955558]
 layer = 1024
@@ -31,6 +28,14 @@ offset_top = 89.0
 offset_right = 97.0
 offset_bottom = 129.0
 
+[node name="Label" type="Label" parent="." unique_id=1238381602]
+layout_mode = 0
+offset_top = 244.0
+offset_right = 512.0
+offset_bottom = 267.0
+text = "MONITOR"
+horizontal_alignment = 1
+
 [node name="Background" type="ColorRect" parent="." unique_id=620913889]
 layout_mode = 1
 anchors_preset = 15
@@ -40,16 +45,69 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 
-[node name="Window" type="Window" parent="." unique_id=263566514]
+[node name="Windows" type="Control" parent="." unique_id=1727660633]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Window" type="Window" parent="Windows" unique_id=263566514]
 oversampling_override = 1.0
 position = Vector2i(22, 72)
-size = Vector2i(300, 100)
+size = Vector2i(300, 122)
 
-[node name="Window2" type="Window" parent="." unique_id=885344644]
+[node name="Window2" type="Window" parent="Windows" unique_id=885344644]
 oversampling_override = 1.0
 position = Vector2i(117, 315)
 
-[node name="Window3" type="Window" parent="." unique_id=1138022410]
+[node name="Window3" type="Window" parent="Windows" unique_id=1138022410]
 oversampling_override = 1.0
 position = Vector2i(318, 251)
 size = Vector2i(150, 100)
+
+[node name="OSWorkspace" type="MarginContainer" parent="." unique_id=1410614578]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OSWorkspace" unique_id=1931282625]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="OSWorkspace/VBoxContainer" unique_id=1364823291]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="OSWorkspace/VBoxContainer" unique_id=174499602]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OSWorkspace/VBoxContainer/PanelContainer" unique_id=1716236550]
+layout_mode = 2
+
+[node name="btn_exit" type="Button" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer" unique_id=82512826]
+unique_name_in_owner = true
+layout_mode = 2
+text = "EXIT"
+
+[node name="VSeparator" type="VSeparator" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1374791975]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer" unique_id=308736402]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=1125601404]
+layout_mode = 2
+text = "App1"
+
+[node name="Button2" type="Button" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=2125311120]
+layout_mode = 2
+text = "App1"
+
+[node name="Button3" type="Button" parent="OSWorkspace/VBoxContainer/PanelContainer/HBoxContainer/HBoxContainer2" unique_id=854208479]
+layout_mode = 2
+text = "App1"

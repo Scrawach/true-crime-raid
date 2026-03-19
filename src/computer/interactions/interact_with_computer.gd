@@ -12,6 +12,7 @@ var is_interacted: bool = false
 func _ready() -> void:
 	interaction.interacted.connect(_on_interacted)
 	set_process_input(false)
+	monitor_3d.monitor_control.exited.connect(exit_computer)
 
 func _on_interacted(player: PlayerBody3D) -> void:
 	interactor = player
@@ -20,8 +21,11 @@ func _on_interacted(player: PlayerBody3D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape"):
-		stop_interaction(interactor)
-		get_viewport().set_input_as_handled()
+		exit_computer()
+
+func exit_computer():
+	stop_interaction(interactor)
+	get_viewport().set_input_as_handled()
 
 func start_interaction(target: PlayerBody3D) -> void:
 	computer_camera.make_current()
