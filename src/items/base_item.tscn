@@ -15,6 +15,7 @@ radius = 0.26145676
 [node name="Base Item" type="RigidBody3D" unique_id=679873917]
 collision_layer = 8
 collision_mask = 9
+can_sleep = false
 script = ExtResource("1_2fo1j")
 
 [node name="simple_packet" parent="." unique_id=1452893256 instance=ExtResource("1_m53hc")]
