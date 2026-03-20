@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bw4exub0ilkrk"]
+
+[ext_resource type="Script" uid="uid://dpfhn1eix7dsw" path="res://keywords/keyword_effect.gd" id="1_glqrn"]
+[ext_resource type="Script" uid="uid://f5a8govximco" path="res://keywords/matrix.gd" id="2_p1rl4"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_p1rl4"]
+script = ExtResource("1_glqrn")
+metadata/_custom_type_script = "uid://dpfhn1eix7dsw"
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_xbj1h"]
+script = ExtResource("2_p1rl4")
+metadata/_custom_type_script = "uid://f5a8govximco"
+
+[node name="Control" type="Control" unique_id=1561406751]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1689579163]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "Hello, world! [matrix param=2.0]hello[/matrix]"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_p1rl4"), SubResource("RichTextEffect_xbj1h")]

@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
 [ext_resource type="Script" uid="uid://bh8qx82tccq08" path="res://player/player_input.gd" id="2_ryni8"]
+[ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect_item_scene.tscn" id="3_iveab"]
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
 [ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
 [ext_resource type="Script" uid="uid://b1nf2orlq6dqd" path="res://player/player_hand.gd" id="6_pyi6a"]
+[ext_resource type="Script" uid="uid://qf264oarf0um" path="res://player/player_inspector.gd" id="8_467px"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
@@ -28,18 +30,20 @@ shape = SubResource("CapsuleShape3D_f64p4")
 [node name="Head" type="Node3D" parent="." unique_id=866222162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
-current = true
-
-[node name="Camera RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1691169396]
+[node name="Camera RayCast3D" type="RayCast3D" parent="Head" unique_id=1691169396]
 target_position = Vector3(0, 0, -2)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Hand Point" type="Marker3D" parent="Head/Camera3D" unique_id=2028372810]
+[node name="Hand Point" type="Marker3D" parent="Head" unique_id=2028372810]
 unique_name_in_owner = true
-transform = Transform3D(0.72657466, 0, 0.6870875, 0, 1, 0, -0.6870875, 0, 0.72657466, 0.499, -0.422, -0.557)
+transform = Transform3D(0.72657466, 0, 0.6870875, 0, 1, 0, -0.6870875, 0, 0.72657466, 0.499, -0.42199993, -0.557)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
+current = true
+
+[node name="Inspect Item Scene" parent="Head" unique_id=1090415660 instance=ExtResource("3_iveab")]
 
 [node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body", "interactor", "hand", "mouse_capture")]
 script = ExtResource("2_ryni8")
@@ -57,13 +61,20 @@ metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 [node name="PlayerInteractor" type="Node" parent="." unique_id=459244660 node_paths=PackedStringArray("player", "raycast_3d")]
 script = ExtResource("5_qh2r7")
 player = NodePath("..")
-raycast_3d = NodePath("../Head/Camera3D/Camera RayCast3D")
+raycast_3d = NodePath("../Head/Camera RayCast3D")
 metadata/_custom_type_script = "uid://blhol6udoquwp"
 
 [node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point", "head")]
 script = ExtResource("6_pyi6a")
 body = NodePath("..")
 hud = NodePath("../Player HUD")
-hand_point = NodePath("../Head/Camera3D/Hand Point")
+hand_point = NodePath("../Head/Hand Point")
 head = NodePath("../Head")
 metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
+
+[node name="PlayerInspector" type="Node" parent="." unique_id=500224783 node_paths=PackedStringArray("player_hand", "inspect_item", "player_input")]
+script = ExtResource("8_467px")
+player_hand = NodePath("../PlayerHand")
+inspect_item = NodePath("../Head/Inspect Item Scene")
+player_input = NodePath("../PlayerInput")
+metadata/_custom_type_script = "uid://qf264oarf0um"

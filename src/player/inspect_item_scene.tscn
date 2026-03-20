@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://ci4quctybs3ev"]
+
+[ext_resource type="Script" uid="uid://cnkvijwhyjdi" path="res://player/inspect_item_scene.gd" id="1_3lwxk"]
+[ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspector_item_handler.gd" id="1_o01jm"]
+[ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
+[ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="3_pgr2k"]
+[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/keyword_interactive_point_3d.tscn" id="4_pgr2k"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/keyword_data.gd" id="5_n62re"]
+[ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
+[ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxa35"]
+shader = ExtResource("2_36l5p")
+shader_parameter/blur_amount = 2.000000095
+
+[sub_resource type="Animation" id="Animation_8gyb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.000000095]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_dsp5a"]
+resource_name = "fade_in"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0000001425]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.47058824)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qt7t"]
+_data = {
+&"RESET": SubResource("Animation_8gyb5"),
+&"fade_in": SubResource("Animation_dsp5a")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_o01jm"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5lpsv"]
+data = PackedVector3Array(-0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, -0.125, -0.125, -0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, -0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, -0.125, 0.125, 0.125, -0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, 0.125, 0.125, -0.125, 0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, 0.125, -0.125, 0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, -0.125, -0.125)
+
+[sub_resource type="Resource" id="Resource_36l5p"]
+script = ExtResource("5_n62re")
+id = "0"
+words = "Белый кубик"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_n62re"]
+script = ExtResource("5_n62re")
+id = "1"
+words = "Красный квадрат"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="BoxMesh" id="BoxMesh_36l5p"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxa35"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n62re"]
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
+script = ExtResource("1_3lwxk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1210359484]
+visible = false
+
+[node name="Curtain" type="ColorRect" parent="CanvasLayer" unique_id=385278155]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Curtain" unique_id=1169628558]
+material = SubResource("ShaderMaterial_hxa35")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Curtain AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Curtain" unique_id=1634036830]
+libraries/ = SubResource("AnimationLibrary_8qt7t")
+
+[node name="Keyboard Tooltips" type="PanelContainer" parent="CanvasLayer" unique_id=1724217216]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Keyboard Tooltips" unique_id=1519401425]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Keyboard Tooltips/MarginContainer" unique_id=23862261]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Keyboard Tooltips/MarginContainer/HBoxContainer" unique_id=200841944]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[img height=32]uid://skb1eu8dskay[/img] ВРАЩАТЬ"
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Keyboard Tooltips/MarginContainer/HBoxContainer" unique_id=43490850]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[img height=32]uid://blvvxcjuyqu33[/img] ВЫЙТИ"
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1905044472]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1827899256]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=382465319]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2016256201]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=676341912]
+unique_name_in_owner = true
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 3
+physics_object_picking = true
+render_target_update_mode = 0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1362888435]
+transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.5, 0.6971901, -0.35844314, 0.6208417, 0, 0, 0)
+
+[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1355981507]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.65)
+script = ExtResource("1_o01jm")
+
+[node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler" unique_id=2025649021]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point" unique_id=411162708]
+transform = Transform3D(1, 0, 0, 0, 0.8843611, -0.46680343, 0, 0.46680343, 0.8843611, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_o01jm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=170810963]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/StaticBody3D" unique_id=550830016]
+shape = SubResource("ConcavePolygonShape3D_5lpsv")
+
+[node name="InteractivePoints" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=1531920389]
+unique_name_in_owner = true
+script = ExtResource("3_pgr2k")
+metadata/_custom_type_script = "uid://tjsmymhm5aj6"
+
+[node name="Keyword Interactive Point 3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/InteractivePoints" unique_id=1261566614 instance=ExtResource("4_pgr2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14363298, -0.07581562)
+data = SubResource("Resource_36l5p")
+
+[node name="Keyword Interactive Point 3D2" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/InteractivePoints" unique_id=687022659 instance=ExtResource("4_pgr2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15090048, 0.0034854412)
+data = SubResource("Resource_n62re")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=746076305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13275409, -0.023047388)
+visible = false
+mesh = SubResource("BoxMesh_36l5p")
+surface_material_override/0 = SubResource("StandardMaterial3D_hxa35")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1316467038]
+environment = ExtResource("7_hxa35")
+
+[node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1029310352]
+unique_name_in_owner = true
+
+[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Camera3D" unique_id=1094695431]
+script = ExtResource("9_dsp5a")
+target_layer = 16
+collide_with_areas = true
+metadata/_custom_type_script = "uid://by08m6irb8rp6"
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1502097046]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "УЛИКИ:"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1295817533]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer" unique_id=1493557766]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1257386008]
+layout_mode = 2
+
+[node name="Keywords Count" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1418150819]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0/3"
+horizontal_alignment = 2
+
+[node name="Keywords Container" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=160180791]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Control Container" type="Control" parent="CanvasLayer" unique_id=1408155094]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

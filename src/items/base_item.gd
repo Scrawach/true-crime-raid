@@ -1,6 +1,8 @@
 class_name BaseItem
 extends RigidBody3D
 
+@export var points: InteractivePoints
+
 @onready var interact_tooltip_3d: InteractTooltip3D = $InteractTooltip3D
 
 func grab() -> void:
@@ -10,3 +12,6 @@ func grab() -> void:
 func ungrab() -> void:
 	freeze = false
 	interact_tooltip_3d.enable()
+
+func get_interactive_points() -> InteractivePoints:
+	return points

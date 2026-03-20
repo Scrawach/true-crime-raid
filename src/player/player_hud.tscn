@@ -89,7 +89,6 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Item Handle Tooltip/MarginContainer/HBoxContainer" unique_id=2101944851]
-visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -103,4 +102,3 @@ layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[img height=32]uid://c4du1csjis387[/img] ВЫКИНУТЬ"
-horizontal_alignment = 1

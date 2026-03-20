@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cqqignvh7giv"]
+
+[ext_resource type="Script" uid="uid://bnw7ydxscxv83" path="res://player/interactive_point_3d.gd" id="1_ackyc"]
+[ext_resource type="Texture2D" uid="uid://bckfkncjhesyp" path="res://interaction/assets/interaction-circle.svg" id="2_4ku1e"]
+[ext_resource type="Script" uid="uid://d3dff21rrx8s3" path="res://player/visible_point_on_camera.gd" id="3_ejouk"]
+[ext_resource type="Texture2D" uid="uid://cu38j3bkpfea2" path="res://interaction/assets/interaction-circle-bg.png" id="3_nbwov"]
+[ext_resource type="Script" uid="uid://cfi3v2ljy8weo" path="res://interaction/smooth_appear_sprite_3d.gd" id="4_nbwov"]
+[ext_resource type="Script" uid="uid://dyn1podjnuscv" path="res://common/clickable_area_3d.gd" id="6_wvc76"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbwov"]
+radius = 0.025
+
+[node name="Interactive Point 3D" type="Node3D" unique_id=1261566614]
+script = ExtResource("1_ackyc")
+is_disabled = true
+
+[node name="Tooltip" type="Sprite3D" parent="." unique_id=102488355]
+visible = false
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+fixed_size = true
+render_priority = 1
+texture = ExtResource("2_4ku1e")
+
+[node name="TooltipBG" type="Sprite3D" parent="Tooltip" unique_id=2074337698]
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+fixed_size = true
+texture = ExtResource("3_nbwov")
+
+[node name="SmoothAppearSprite3D" type="Node" parent="Tooltip" unique_id=904958464 node_paths=PackedStringArray("target")]
+script = ExtResource("4_nbwov")
+target = NodePath("..")
+metadata/_custom_type_script = "uid://cfi3v2ljy8weo"
+
+[node name="VisiblePointOnCamera" type="Node3D" parent="." unique_id=1037494564]
+script = ExtResource("3_ejouk")
+collision_layer = 8
+metadata/_custom_type_script = "uid://d3dff21rrx8s3"
+
+[node name="ClickableArea3D" type="Area3D" parent="." unique_id=1752660681]
+collision_layer = 16
+collision_mask = 0
+monitoring = false
+monitorable = false
+script = ExtResource("6_wvc76")
+metadata/_custom_type_script = "uid://dyn1podjnuscv"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClickableArea3D" unique_id=1317162194]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_nbwov")
+debug_color = Color(0.47352934, 0.8856195, 0, 1)
