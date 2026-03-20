@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c3v8oktfnar82"
-path="res://.godot/imported/proto_computer.glb-baa4b9dda88f8028929f3d200cba7305.scn"
+path="res://.godot/imported/proto_computer.glb-139353f39270799a10ac335e5c6d6185.scn"
 
 [deps]
 
-source_file="res://computer/assets/proto_computer.glb"
-dest_files=["res://.godot/imported/proto_computer.glb-baa4b9dda88f8028929f3d200cba7305.scn"]
+source_file="res://computer/assets/obj/proto_computer.glb"
+dest_files=["res://.godot/imported/proto_computer.glb-139353f39270799a10ac335e5c6d6185.scn"]
 
 [params]
 
@@ -41,12 +41,12 @@ _subresources={
 "materials": {
 "computer": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://computer/assets/M_computer.tres",
+"use_external/fallback_path": "res://computer/assets/materials/M_computer.tres",
 "use_external/path": "uid://bvs3unetsuhxw"
 },
 "monitor": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://computer/assets/M_monitor.tres",
+"use_external/fallback_path": "res://computer/assets/materials/M_monitor.tres",
 "use_external/path": "uid://daheupmyxv1rf"
 }
 }

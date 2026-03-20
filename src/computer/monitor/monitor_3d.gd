@@ -34,11 +34,9 @@ func power_off() -> void:
 
 func _on_mouse_entered() -> void:
 	is_mouse_inside_monitor = true
-	monitor_control.mouse_cursor.enable()
 
 func _on_mouse_exited() -> void:
 	is_mouse_inside_monitor = false
-	monitor_control.mouse_cursor.disable()
 
 func _on_input_event(_camera: Camera3D, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	var monitor_event := _translate_to_monitor_event(event, event_position)

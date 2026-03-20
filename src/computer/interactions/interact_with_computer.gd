@@ -35,7 +35,7 @@ func start_interaction(target: PlayerBody3D) -> void:
 	set_process_input(true)
 	
 	target.input.disable()
-	target.input.mouse_capture.uncapture()
+	target.input.mouse_capture.hide_cursor()
 	target.player_hud.hide_aim_pointer()
 
 func stop_interaction(target: PlayerBody3D) -> void:
