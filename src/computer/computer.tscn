@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://btnady6llxq52"]
 
-[ext_resource type="PackedScene" uid="uid://c3v8oktfnar82" path="res://computer/assets/proto_computer.glb" id="1_xcml3"]
+[ext_resource type="PackedScene" uid="uid://c3v8oktfnar82" path="res://computer/assets/obj/proto_computer.glb" id="1_xcml3"]
 [ext_resource type="PackedScene" uid="uid://dmts2qqce58kq" path="res://computer/monitor/monitor_3d.tscn" id="2_m7yhb"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="3_xcml3"]
 [ext_resource type="Script" uid="uid://dqb5iahmx3rfl" path="res://computer/interactions/interact_with_computer.gd" id="4_678jo"]
@@ -150,7 +150,7 @@ shadow_mesh = SubResource("ArrayMesh_jfqgf")
 
 [node name="Computer" type="Node3D" unique_id=799874042]
 
-[node name="proto_computer" parent="." unique_id=129414773 instance=ExtResource("1_xcml3")]
+[node name="proto_computer" parent="." unique_id=2059864805 instance=ExtResource("1_xcml3")]
 visible = false
 
 [node name="Monitor 3D" parent="." unique_id=2020143861 instance=ExtResource("2_m7yhb")]

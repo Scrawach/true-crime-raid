@@ -26,6 +26,10 @@ func capture() -> void:
 	_is_captured = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+func hide_cursor():
+	_is_captured = true
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+
 func uncapture() -> void:
 	_is_captured = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
