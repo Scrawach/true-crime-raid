@@ -16,7 +16,7 @@ extends Node3D
 
 @onready var keyword_description: KeywordDescription = %"Keyword Description"
 
-var found_keywords: Array[KeywordData]
+var found_keywords: Dictionary[String, KeywordData]
 
 var item: BaseItem
 
@@ -78,7 +78,10 @@ func _process_keyword(point: KeywordInteractivePoint3D) -> void:
 	_add_keyword(point.data)
 
 func _add_keyword(data: KeywordData) -> void:
-	found_keywords.append(data)
+	if found_keywords.has(data.id):
+		return
+	
+	found_keywords[data.id] = data
 	_update_keyword_counts()
 	var flow_label := make_label_for(data)
 	keywords_container.add_child(flow_label)
