@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
 [ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="6_celoj"]
-[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/keyword_interactive_point_3d.tscn" id="7_celoj"]
-[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/keyword_data.gd" id="8_y61xs"]
+[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/scene/keyword_interactive_point_3d.tscn" id="7_celoj"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="8_y61xs"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kem4b"]
 points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)

@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspector_item_handler.gd" id="1_o01jm"]
 [ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
 [ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="3_pgr2k"]
-[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/keyword_interactive_point_3d.tscn" id="4_pgr2k"]
-[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/keyword_data.gd" id="5_n62re"]
+[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/scene/keyword_interactive_point_3d.tscn" id="4_pgr2k"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="5_n62re"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
+[ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxa35"]
@@ -245,6 +246,24 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 text = "УЛИКИ:"
+
+[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2039322736]
+layout_mode = 2
+
+[node name="Keyword Description" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/Control" unique_id=1598517834 instance=ExtResource("9_8qt7t")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -197.0
+offset_right = 169.5
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1295817533]
 layout_mode = 2

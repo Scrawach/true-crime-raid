@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ci1li6fq3u8dx"]
 
 [ext_resource type="PackedScene" uid="uid://cqqignvh7giv" path="res://player/interactive_point_3d.tscn" id="1_ti2b2"]
-[ext_resource type="Script" uid="uid://doidrl5ord2cm" path="res://keywords/keyword_interactive_point_3d.gd" id="2_r20m6"]
+[ext_resource type="Script" uid="uid://doidrl5ord2cm" path="res://keywords/scene/keyword_interactive_point_3d.gd" id="2_r20m6"]
 
 [node name="Keyword Interactive Point 3D" unique_id=1261566614 instance=ExtResource("1_ti2b2")]
 script = ExtResource("2_r20m6")

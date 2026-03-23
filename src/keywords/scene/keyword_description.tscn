@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cjtwkbu7pdtt5"]
+
+[ext_resource type="Script" uid="uid://ysxab3xkb0kq" path="res://keywords/scene/keyword_description.gd" id="1_e7kcq"]
+[ext_resource type="Script" uid="uid://chqlg7ov33048" path="res://keywords/scene/keyword_text_label.gd" id="1_lv4e0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsp5a"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_dsp5a"]
+color = Color(0.5729883, 0.5729883, 0.5729883, 1)
+grow_begin = -25.0
+grow_end = -25.0
+
+[node name="Keyword Description" type="PanelContainer" unique_id=1598517834]
+custom_minimum_size = Vector2(300, 200)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsp5a")
+script = ExtResource("1_e7kcq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=556854604]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2010649486]
+layout_mode = 2
+
+[node name="Header Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=34839269]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ОПИСАНИЕ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=2013421463]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_dsp5a")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=202654207]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1719331141]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="KeywordTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer" unique_id=1108021475]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[url=k00][keyword id=k00 type=date]Text[/keyword][/url] dasd 
+asdad [url=k00][keyword id=k00 type=date]Text[/keyword][/url] 
+
+asda
+adsad
+adsasdad
+
+asdasdad
+
+asdasda
+asdad
+adasd"
+fit_content = true
+script = ExtResource("1_lv4e0")
+metadata/_custom_type_script = "uid://chqlg7ov33048"
