@@ -20,22 +20,33 @@ var found_keywords: Array[KeywordData]
 
 var item: BaseItem
 
+func _ready() -> void:
+	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
+
 func inspect(target: BaseItem) -> void:
+	_update_item_description(target.data)
+	canvas_layer.show()
 	clear_keywords()
+	
 	item = target
 	item_handler.stop_rotation()
 	target.reparent(item_point)
 	target.position = Vector3.ZERO
 	target.rotation = Vector3.ZERO
-	canvas_layer.show()
 	
 	var points := target.get_interactive_points()
 	points.enable()
 	points.clicked.connect(_on_clicked)
-	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
 	
 	_update_keyword_counts()
 	set_process_input(true)
+
+func _update_item_description(data: ItemData) -> void:
+	if data == null:
+		keyword_description.hide()
+		return
+	keyword_description.show()
+	keyword_description.initialize(data.name, data.description)
 
 func abort() -> void:
 	canvas_layer.hide()
@@ -43,7 +54,6 @@ func abort() -> void:
 	var points := item.get_interactive_points()
 	points.disable()
 	points.clicked.disconnect(_on_clicked)
-	keyword_description.keyword_clicked.disconnect(_on_keyword_clicked)
 	
 	set_process_input(false)
 
@@ -53,6 +63,15 @@ func _on_keyword_clicked(data: KeywordData) -> void:
 func _on_clicked(point: InteractivePoint3D) -> void:
 	if point is KeywordInteractivePoint3D:
 		_process_keyword(point)
+	elif point is OpenInteractivePoint3D:
+		_process_open(point)
+
+func _process_open(point: OpenInteractivePoint3D) -> void:
+	var spawn_object := point.open_item.instantiate() as BaseItem
+	add_sibling(spawn_object)
+	spawn_object.grab()
+	item.queue_free()
+	inspect(spawn_object)
 
 func _process_keyword(point: KeywordInteractivePoint3D) -> void:
 	spawn_smooth_label(point.data, _get_screen_position(point.global_position))

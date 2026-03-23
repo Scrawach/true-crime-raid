@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cnkvijwhyjdi" path="res://player/inspect_item_scene.gd" id="1_3lwxk"]
 [ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspector_item_handler.gd" id="1_o01jm"]
 [ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
-[ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="3_pgr2k"]
-[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/scene/keyword_interactive_point_3d.tscn" id="4_pgr2k"]
-[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="5_n62re"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
@@ -74,30 +71,6 @@ _data = {
 &"RESET": SubResource("Animation_8gyb5"),
 &"fade_in": SubResource("Animation_dsp5a")
 }
-
-[sub_resource type="BoxMesh" id="BoxMesh_o01jm"]
-size = Vector3(0.25, 0.25, 0.25)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5lpsv"]
-data = PackedVector3Array(-0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, -0.125, -0.125, -0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, 0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, -0.125, 0.125, -0.125, 0.125, -0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, -0.125, 0.125, 0.125, -0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, 0.125, 0.125, -0.125, 0.125, 0.125, 0.125, 0.125, -0.125, -0.125, 0.125, 0.125, -0.125, 0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, 0.125, 0.125, -0.125, 0.125, -0.125, -0.125, -0.125, 0.125, -0.125, 0.125, 0.125, -0.125, -0.125, -0.125, -0.125, -0.125)
-
-[sub_resource type="Resource" id="Resource_36l5p"]
-script = ExtResource("5_n62re")
-id = "0"
-words = "Белый кубик"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_n62re"]
-script = ExtResource("5_n62re")
-id = "1"
-words = "Красный квадрат"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="BoxMesh" id="BoxMesh_36l5p"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxa35"]
-albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n62re"]
 bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
@@ -199,35 +172,6 @@ script = ExtResource("1_o01jm")
 
 [node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler" unique_id=2025649021]
 unique_name_in_owner = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point" unique_id=411162708]
-transform = Transform3D(1, 0, 0, 0, 0.8843611, -0.46680343, 0, 0.46680343, 0.8843611, 0, 0, 0)
-visible = false
-mesh = SubResource("BoxMesh_o01jm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=170810963]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/StaticBody3D" unique_id=550830016]
-shape = SubResource("ConcavePolygonShape3D_5lpsv")
-
-[node name="InteractivePoints" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=1531920389]
-unique_name_in_owner = true
-script = ExtResource("3_pgr2k")
-metadata/_custom_type_script = "uid://tjsmymhm5aj6"
-
-[node name="Keyword Interactive Point 3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/InteractivePoints" unique_id=1261566614 instance=ExtResource("4_pgr2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14363298, -0.07581562)
-data = SubResource("Resource_36l5p")
-
-[node name="Keyword Interactive Point 3D2" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D/InteractivePoints" unique_id=687022659 instance=ExtResource("4_pgr2k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15090048, 0.0034854412)
-data = SubResource("Resource_n62re")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler/Item Point/MeshInstance3D" unique_id=746076305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13275409, -0.023047388)
-visible = false
-mesh = SubResource("BoxMesh_36l5p")
-surface_material_override/0 = SubResource("StandardMaterial3D_hxa35")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1316467038]
 environment = ExtResource("7_hxa35")

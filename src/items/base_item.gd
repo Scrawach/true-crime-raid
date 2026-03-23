@@ -1,6 +1,7 @@
 class_name BaseItem
 extends RigidBody3D
 
+@export var data: ItemData
 @export var points: InteractivePoints
 
 @onready var interact_tooltip_3d: InteractTooltip3D = $InteractTooltip3D

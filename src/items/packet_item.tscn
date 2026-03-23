@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bnx5gsb7lhbew"]
+
+[ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_vibhd"]
+[ext_resource type="Script" uid="uid://cs0u7kl2ckr6" path="res://items/packet_item.gd" id="2_01kyl"]
+[ext_resource type="PackedScene" uid="uid://clqulkru0e7s2" path="res://items/interactions/open_interactive_point_3d.tscn" id="3_01kyl"]
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="3_h1uc7"]
+[ext_resource type="PackedScene" uid="uid://dnhkt7fnjsjh0" path="res://prototyping/assets/simple_packet.glb" id="4_1cjvx"]
+
+[sub_resource type="Resource" id="Resource_0ce85"]
+script = ExtResource("3_h1uc7")
+name = "Пакет с уликами"
+description = "Внутри лежат улики. Можно открыть."
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h1uc7"]
+points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
+
+[node name="Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point") instance=ExtResource("1_vibhd")]
+script = ExtResource("2_01kyl")
+open_item = null
+open_point = NodePath("InteractivePoints/Open Interactive Point 3D")
+data = SubResource("Resource_0ce85")
+
+[node name="Open Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 instance=ExtResource("3_01kyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3027399, 0)
+
+[node name="simple_packet" parent="." index="5" unique_id=1452893256 instance=ExtResource("4_1cjvx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="6" unique_id=1295232183]
+shape = SubResource("ConvexPolygonShape3D_h1uc7")
+
+[editable path="simple_packet"]

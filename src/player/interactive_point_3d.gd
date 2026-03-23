@@ -8,28 +8,31 @@ signal clicked(point: InteractivePoint3D)
 @export var is_disabled: bool
 
 @onready var smooth_appear_sprite_3d: SmoothAppearSprite3D = $Tooltip/SmoothAppearSprite3D
+@onready var tooltip: Sprite3D = $Tooltip
+
 @onready var visible_point_on_camera: VisiblePointOnCamera = $VisiblePointOnCamera
 @onready var clickable_area_3d: ClickableArea3D = $ClickableArea3D
 @onready var collision_shape_3d: CollisionShape3D = %CollisionShape3D
 
+var hover_tween: Tween
+
 func _ready() -> void:
-	visible_point_on_camera.screen_entered.connect(_on_screen_entered)
-	visible_point_on_camera.screen_exited.connect(_on_screen_exited)
-	clickable_area_3d.hovered.connect(mouse_entered.emit)
-	clickable_area_3d.unhovered.connect(mouse_exited.emit)
-	
 	if is_disabled:
 		disable()
 	else:
 		enable()
+	
+	visible_point_on_camera.screen_entered.connect(_on_screen_entered)
+	visible_point_on_camera.screen_exited.connect(_on_screen_exited)
+	clickable_area_3d.hovered.connect(_on_mouse_entered)
+	clickable_area_3d.unhovered.connect(_on_mouse_exited)
+	clickable_area_3d.clicked.connect(_on_clicked)
 
 func _on_screen_entered() -> void:
 	smooth_appear_sprite_3d.smooth_show()
-	clickable_area_3d.clicked.connect(_on_clicked)
 
 func _on_screen_exited() -> void:
 	smooth_appear_sprite_3d.smooth_hide()
-	clickable_area_3d.clicked.disconnect(_on_clicked)
 
 func is_active() -> bool:
 	return visible_point_on_camera.is_visible_on_screen
@@ -46,3 +49,20 @@ func enable() -> void:
 
 func _on_clicked() -> void:
 	clicked.emit(self)
+
+func _on_mouse_entered() -> void:
+	mouse_entered.emit()
+	_kill_hover_if_need()
+	hover_tween = create_tween()
+	hover_tween.tween_property(tooltip, "pixel_size", 0.0015, 0.15)
+
+func _on_mouse_exited() -> void:
+	mouse_exited.emit()
+	_kill_hover_if_need()
+	hover_tween = create_tween()
+	hover_tween.tween_property(tooltip, "pixel_size", 0.001, 0.15)
+
+func _kill_hover_if_need() -> void:
+	if hover_tween:
+		hover_tween.custom_step(9999)
+		hover_tween.kill()

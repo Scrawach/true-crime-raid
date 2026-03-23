@@ -1,37 +1,13 @@
 [gd_scene format=3 uid="uid://3274lr6yan17"]
 
 [ext_resource type="Script" uid="uid://d2c1vsvgotnka" path="res://items/base_item.gd" id="1_2fo1j"]
-[ext_resource type="PackedScene" uid="uid://dnhkt7fnjsjh0" path="res://prototyping/assets/simple_packet.glb" id="1_m53hc"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_yksll"]
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
 [ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="6_celoj"]
-[ext_resource type="PackedScene" uid="uid://ci1li6fq3u8dx" path="res://keywords/scene/keyword_interactive_point_3d.tscn" id="7_celoj"]
-[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="8_y61xs"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kem4b"]
-points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c43hp"]
 radius = 0.26145676
-
-[sub_resource type="Resource" id="Resource_celoj"]
-script = ExtResource("8_y61xs")
-id = "2"
-words = "СТОРОНА ПАКЕТА"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_y61xs"]
-script = ExtResource("8_y61xs")
-id = "2"
-words = "ДНО ПАКЕТА"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_05uhd"]
-script = ExtResource("8_y61xs")
-id = "2"
-words = "УГОЛ ПАКЕТА"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
 
 [node name="Base Item" type="RigidBody3D" unique_id=679873917 node_paths=PackedStringArray("points")]
 collision_layer = 8
@@ -39,11 +15,6 @@ collision_mask = 9
 can_sleep = false
 script = ExtResource("1_2fo1j")
 points = NodePath("InteractivePoints")
-
-[node name="simple_packet" parent="." unique_id=1452893256 instance=ExtResource("1_m53hc")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1659647824]
-shape = SubResource("ConvexPolygonShape3D_kem4b")
 
 [node name="InteractionArea3D" type="Area3D" parent="." unique_id=786297931]
 collision_layer = 2
@@ -67,16 +38,4 @@ interaction = NodePath("../InteractionArea3D")
 script = ExtResource("6_celoj")
 metadata/_custom_type_script = "uid://tjsmymhm5aj6"
 
-[node name="Keyword Interactive Point 3D" parent="InteractivePoints" unique_id=1261566614 instance=ExtResource("7_celoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.18414307)
-data = SubResource("Resource_celoj")
-
-[node name="Keyword Interactive Point 3D4" parent="InteractivePoints" unique_id=1516530236 instance=ExtResource("7_celoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11431478, 0.0006481409)
-data = SubResource("Resource_y61xs")
-
-[node name="Keyword Interactive Point 3D3" parent="InteractivePoints" unique_id=1127064054 instance=ExtResource("7_celoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005424768, 0.2902228, 0.17665266)
-data = SubResource("Resource_05uhd")
-
-[editable path="simple_packet"]
+[node name="Node3D" type="Node3D" parent="." unique_id=943194512]

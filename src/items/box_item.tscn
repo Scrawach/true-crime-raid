@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cb2bgby51ynsb"]
+
+[ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_70yj4"]
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="2_7nfn4"]
+
+[sub_resource type="Resource" id="Resource_nscao"]
+script = ExtResource("2_7nfn4")
+name = "Кубик"
+description = "Редкий [url=k01][keyword id=k01 type=date]кубик[/keyword][/url] , который можно получить из пакета только [url=k00][keyword id=k00 type=date]23 марта[/keyword][/url]!"
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"
+
+[sub_resource type="BoxMesh" id="BoxMesh_7nfn4"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nscao"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="Box Item" unique_id=679873917 instance=ExtResource("1_70yj4")]
+data = SubResource("Resource_nscao")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=1967260432]
+mesh = SubResource("BoxMesh_7nfn4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="6" unique_id=1891727295]
+shape = SubResource("BoxShape3D_nscao")

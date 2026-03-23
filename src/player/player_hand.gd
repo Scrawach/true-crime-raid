@@ -10,8 +10,10 @@ extends Node
 var item: BaseItem
 var tween: Tween
 
+var is_item_on_hand: bool
+
 func has_item() -> bool:
-	return item != null
+	return item != null and is_item_on_hand
 
 func pickup(object: BaseItem) -> void:
 	item = object
@@ -20,11 +22,13 @@ func pickup(object: BaseItem) -> void:
 	
 	tween = create_tween()
 	tween.tween_method(_move_to_hand, 0.0, 1.0, pickup_duration)
-	tween.tween_callback(hud.show_item_handle_tooltip)
+	tween.tween_callback(func():
+		hud.show_item_handle_tooltip()
+		is_item_on_hand = true)
 
 func drop() -> void:
 	_kill_if_needed()
-	
+	is_item_on_hand = false
 	hud.hide_item_handle_tooltip()
 	item.reparent(body.get_parent())
 	item.ungrab()
@@ -37,6 +41,7 @@ func _move_to_hand(progress: float) -> void:
 
 func _kill_if_needed() -> void:
 	if tween:
+		tween.custom_step(9999)
 		tween.kill()
 
 func get_drop_force() -> Vector3:

@@ -25,6 +25,7 @@ func inspect() -> void:
 
 func abort() -> void:
 	active = false
+	player_hand.item = inspect_item.item
 	player_hand.item.reparent(player_hand.hand_point)
 	player_hand.item.position = Vector3.ZERO
 	player_hand.item.rotation = Vector3.ZERO

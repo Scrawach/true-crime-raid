@@ -18,6 +18,8 @@ func enable() -> void:
 
 func disable() -> void:
 	set_process(false)
+	screen_exited.emit()
+	is_visible_on_screen = false
 
 func is_visible_to_camera(camera: Camera3D) -> bool:
 	var obstacles := get_obstacle_between(camera.global_position, global_position)
@@ -32,6 +34,7 @@ func get_obstacle_between(start_point: Vector3, target_point: Vector3) -> Dictio
 
 func _process(_delta: float) -> void:
 	var is_visible_now = is_visible_to_camera(camera_node)
+	
 	if is_visible_now != is_visible_on_screen:
 		is_visible_on_screen = is_visible_now
 		
