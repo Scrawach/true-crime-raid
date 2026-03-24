@@ -24,7 +24,7 @@ func power_off() -> void:
 
 func finish_process() -> void:
 	progress_bar.hide()
-	show_result_label(data)
+	show_result_label()
 
 func animate_progress_bar(callback: Callable = Callable()) -> void:
 	progress_tween = create_tween()
@@ -39,7 +39,7 @@ func _kill_tween_if_needed() -> void:
 		progress_tween.custom_step(9999)
 		progress_tween.kill()
 
-func show_result_label(data: DNAData) -> void:
+func show_result_label() -> void:
 	var message := "Имя: %s\nРезультат: %.2f%%" % [data.database_name, data.get_overlap_precentage()]
 	result_label.text = message
 	result_label.show()
