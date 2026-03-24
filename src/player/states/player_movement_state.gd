@@ -23,7 +23,7 @@ func state_handle_input(event: InputEvent) -> void:
 		elif hand.has_item():
 			hand.drop()
 	
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and mouse_capture.is_captured():
 		player.head_rotate(-event.relative * sensitivity)
 	
 	player.move(get_movement_input())

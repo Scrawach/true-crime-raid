@@ -76,9 +76,8 @@ player = NodePath("../../..")
 raycast_3d = NodePath("../../../Head/Camera RayCast3D")
 metadata/_custom_type_script = "uid://blhol6udoquwp"
 
-[node name="MouseCapture" type="Node" parent="StateMachine/PlayerMovementState" unique_id=1129688267 node_paths=PackedStringArray("player_input")]
+[node name="MouseCapture" type="Node" parent="StateMachine/PlayerMovementState" unique_id=1129688267]
 script = ExtResource("3_rjoga")
-player_input = NodePath("")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
 [node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "player")]
