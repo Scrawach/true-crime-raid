@@ -41,12 +41,13 @@ transform = Transform3D(0.45520613, 0, 0.16484837, 0, 0.48413593, 0, -0.16484837
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dna_analyzer/StaticBody3D" unique_id=791365023]
 shape = SubResource("ConvexPolygonShape3D_565ll")
 
-[node name="InteractionArea3D" type="Area3D" parent="." unique_id=2041205921 node_paths=PackedStringArray("conditions")]
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=2041205921 node_paths=PackedStringArray("conditions", "interact_state")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163059, 0)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_r1qmm")
 conditions = [NodePath("PlayerHasDNAItemInHandCondition")]
+interact_state = NodePath("../InteractWithDNAAnalyzer")
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=1397919245]

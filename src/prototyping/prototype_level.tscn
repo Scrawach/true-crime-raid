@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1kcea5mswfvx" path="res://prototyping/assets/lab.glb" id="4_huww6"]
 [ext_resource type="PackedScene" uid="uid://bnx5gsb7lhbew" path="res://items/packet_item.tscn" id="4_kem4b"]
 [ext_resource type="PackedScene" uid="uid://cb2bgby51ynsb" path="res://items/box_item.tscn" id="5_huww6"]
-[ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://computer/computer.tscn" id="5_kem4b"]
+[ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://devices/computer/computer.tscn" id="5_kem4b"]
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="6_eyxe0"]
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_kyd4t"]
 [ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="7_bujhi"]

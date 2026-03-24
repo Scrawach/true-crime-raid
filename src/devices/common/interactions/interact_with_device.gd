@@ -1,50 +1,30 @@
 class_name InteractWithDevice
-extends Node
+extends InteractState
 
 @export var interaction_camera: Camera3D
 @export var interaction_area: InteractionArea3D
 
-var interactor: PlayerBody3D
-var is_interacted: bool = false
-
 var camera_moving_tween: Tween
 var main_camera_local_transform: Transform3D
 
-func _ready() -> void:
-	interaction_area.interacted.connect(_on_interacted)
-	set_process_input(false)
-
-func _on_interacted(player: PlayerBody3D) -> void:
-	interactor = player
-	is_interacted = true
-	start_interaction(interactor)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape"):
-		exit_from_device()
-
 func exit_from_device():
-	stop_interaction(interactor)
+	stop_interaction()
 	get_viewport().set_input_as_handled()
 
 func start_interaction(target: PlayerBody3D) -> void:
+	super.start_interaction(target)
 	main_camera_local_transform = target.main_camera.transform
 	smooth_camera_moving(target.main_camera, interaction_camera.global_transform)
 	interaction_area.disable()
-	set_process_input(true)
 	
-	target.input.disable()
-	target.input.mouse_capture.hide_cursor()
 	target.player_hud.hide_aim_pointer()
 
-func stop_interaction(target: PlayerBody3D) -> void:
-	reset_main_camera(target.main_camera)
+func stop_interaction() -> void:
+	reset_main_camera(player.main_camera)
 	interaction_area.enable()
-	set_process_input(false)
 	
-	target.input.enable()
-	target.input.mouse_capture.capture()
-	target.player_hud.show_aim_pointer()
+	player.player_hud.show_aim_pointer()
+	super.stop_interaction()
 
 func smooth_camera_moving(target: Camera3D, target_transform: Transform3D) -> void:
 	_kill_camera_moving_if_needed()

@@ -1,6 +1,1 @@
-{
-	"Hash": "commit-hash",
-	"Date": "YYYY-MM-DD",
-	"Time": "HH-MM-SS",
-	"Version": "MAJOR.MINOR.PATCH"
-}
+{"Date":"2026-03-24","Hash":"2336d9a","Time":"12:54:59","Version":"0.0.36"}

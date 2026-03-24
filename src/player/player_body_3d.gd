@@ -6,8 +6,8 @@ extends CharacterBody3D
 @export var main_camera: Camera3D
 
 @export var hand: PlayerHand
-@export var input: PlayerInput
 @export var player_hud: PlayerHUD
+@export var mouse: MouseCapture
 
 var _moving_direction: Vector2
 var _gaze_direction: Vector2

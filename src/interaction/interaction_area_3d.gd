@@ -2,6 +2,7 @@ class_name InteractionArea3D
 extends Area3D
 
 @export var conditions: Array[InteractionCondition]
+@export var interact_state: InteractState
 
 signal hovered()
 signal interacted(player: PlayerBody3D)
@@ -25,6 +26,9 @@ func can_interact_with(player: PlayerBody3D) -> bool:
 		if condition.can_interact_with(player):
 			return true
 	return false
+
+func has_interact_state() -> bool:
+	return interact_state != null
 
 func hover() -> void:
 	hovered.emit()

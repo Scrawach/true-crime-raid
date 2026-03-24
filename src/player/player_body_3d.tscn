@@ -1,25 +1,27 @@
 [gd_scene format=3 uid="uid://cx7rsciexusnm"]
 
 [ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
-[ext_resource type="Script" uid="uid://bh8qx82tccq08" path="res://player/player_input.gd" id="2_ryni8"]
 [ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect_item_scene.tscn" id="3_iveab"]
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
 [ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
 [ext_resource type="Script" uid="uid://b1nf2orlq6dqd" path="res://player/player_hand.gd" id="6_pyi6a"]
-[ext_resource type="Script" uid="uid://qf264oarf0um" path="res://player/player_inspector.gd" id="8_467px"]
+[ext_resource type="Script" uid="uid://c7g5vauyit182" path="res://addons/states/state_machine.gd" id="9_nhl75"]
+[ext_resource type="Script" uid="uid://uvruv47ddr2a" path="res://player/states/player_movement_state.gd" id="10_mngrd"]
+[ext_resource type="Script" uid="uid://8y2v8pv4j56x" path="res://player/states/player_interact_state.gd" id="11_ehfks"]
+[ext_resource type="Script" uid="uid://b2p5svqerliud" path="res://player/states/player_inspect_state.gd" id="12_14877"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
 
-[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "input", "player_hud")]
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse")]
 collision_layer = 4
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
 main_camera = NodePath("Head/Camera3D")
 hand = NodePath("PlayerHand")
-input = NodePath("PlayerInput")
 player_hud = NodePath("Player HUD")
+mouse = NodePath("StateMachine/PlayerMovementState/MouseCapture")
 
 [node name="Player HUD" parent="." unique_id=1872789362 instance=ExtResource("4_cnqhg")]
 
@@ -45,25 +47,6 @@ current = true
 
 [node name="Inspect Item Scene" parent="Head" unique_id=1090415660 instance=ExtResource("3_iveab")]
 
-[node name="PlayerInput" type="Node" parent="." unique_id=559735247 node_paths=PackedStringArray("body", "interactor", "hand", "mouse_capture")]
-script = ExtResource("2_ryni8")
-body = NodePath("..")
-interactor = NodePath("../PlayerInteractor")
-hand = NodePath("../PlayerHand")
-mouse_capture = NodePath("MouseCapture")
-metadata/_custom_type_script = "uid://bh8qx82tccq08"
-
-[node name="MouseCapture" type="Node" parent="PlayerInput" unique_id=1129688267 node_paths=PackedStringArray("player_input")]
-script = ExtResource("3_rjoga")
-player_input = NodePath("..")
-metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
-
-[node name="PlayerInteractor" type="Node" parent="." unique_id=459244660 node_paths=PackedStringArray("player", "raycast_3d")]
-script = ExtResource("5_qh2r7")
-player = NodePath("..")
-raycast_3d = NodePath("../Head/Camera RayCast3D")
-metadata/_custom_type_script = "uid://blhol6udoquwp"
-
 [node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point", "head")]
 script = ExtResource("6_pyi6a")
 body = NodePath("..")
@@ -72,10 +55,41 @@ hand_point = NodePath("../Head/Hand Point")
 head = NodePath("../Head")
 metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
 
-[node name="PlayerInspector" type="Node" parent="." unique_id=500224783 node_paths=PackedStringArray("player", "player_hand", "inspect_item", "player_input")]
-script = ExtResource("8_467px")
-player = NodePath("..")
-player_hand = NodePath("../PlayerHand")
-inspect_item = NodePath("../Head/Inspect Item Scene")
-player_input = NodePath("../PlayerInput")
-metadata/_custom_type_script = "uid://qf264oarf0um"
+[node name="StateMachine" type="Node" parent="." unique_id=1878188691 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("9_nhl75")
+initial_state = NodePath("PlayerMovementState")
+metadata/_custom_type_script = "uid://c7g5vauyit182"
+
+[node name="PlayerMovementState" type="Node" parent="StateMachine" unique_id=1664808342 node_paths=PackedStringArray("inspect_state", "interact_state", "mouse_capture", "interactor", "hand", "player")]
+script = ExtResource("10_mngrd")
+inspect_state = NodePath("../PlayerInspectState")
+interact_state = NodePath("../PlayerInteractState")
+mouse_capture = NodePath("MouseCapture")
+interactor = NodePath("PlayerInteractor")
+hand = NodePath("../../PlayerHand")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://uvruv47ddr2a"
+
+[node name="PlayerInteractor" type="Node" parent="StateMachine/PlayerMovementState" unique_id=459244660 node_paths=PackedStringArray("player", "raycast_3d")]
+script = ExtResource("5_qh2r7")
+player = NodePath("../../..")
+raycast_3d = NodePath("../../../Head/Camera RayCast3D")
+metadata/_custom_type_script = "uid://blhol6udoquwp"
+
+[node name="MouseCapture" type="Node" parent="StateMachine/PlayerMovementState" unique_id=1129688267 node_paths=PackedStringArray("player_input")]
+script = ExtResource("3_rjoga")
+player_input = NodePath("")
+metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
+
+[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "player")]
+script = ExtResource("11_ehfks")
+interactor = NodePath("../PlayerMovementState/PlayerInteractor")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://8y2v8pv4j56x"
+
+[node name="PlayerInspectState" type="Node" parent="StateMachine" unique_id=633637750 node_paths=PackedStringArray("inspect_scene", "movement_state", "player")]
+script = ExtResource("12_14877")
+inspect_scene = NodePath("../../Head/Inspect Item Scene")
+movement_state = NodePath("../PlayerMovementState")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://b2p5svqerliud"

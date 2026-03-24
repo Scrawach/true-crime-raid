@@ -8,19 +8,19 @@ var tube_moving: Tween
 var monitor_content: DNAMonitorControl
 
 func start_interaction(target: PlayerBody3D) -> void:
-	move_tube_to_position(target.hand.item)
-	
 	super.start_interaction(target)
+	
+	move_tube_to_position(target.hand.item)
 	monitor.power_on()
 	monitor_content = monitor.content as DNAMonitorControl
 	monitor_content.initialize(get_dna_data_from_item(target.hand.item))
 	monitor_content.power_on()
 
-func stop_interaction(target: PlayerBody3D) -> void:
-	super.stop_interaction(target)
+func stop_interaction() -> void:
 	monitor.power_off()
 	monitor_content.power_off()
-	move_tube_to_player_hand(target.hand.item, target.hand)
+	move_tube_to_player_hand(player.hand.item, player.hand)
+	super.stop_interaction()
 
 func get_dna_data_from_item(item: BaseItem) -> DNAData:
 	if item is DNAItem:

@@ -5,15 +5,6 @@ extends Node
 
 var _is_captured: bool
 
-func _input(event: InputEvent) -> void:
-	if not player_input.is_enabled:
-		return
-	
-	if event is InputEventMouseButton and event.is_pressed() and not is_captured():
-		capture()
-	if event.is_action_pressed("escape"):
-		uncapture()
-
 func _physics_process(_delta: float) -> void:
 	if _is_captured and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		## WEB workaround (browser handle inputs)

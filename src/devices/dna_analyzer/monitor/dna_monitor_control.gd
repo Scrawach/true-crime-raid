@@ -37,7 +37,6 @@ func animate_progress_bar(callback: Callable = Callable()) -> void:
 
 func _kill_tween_if_needed() -> void:
 	if progress_tween:
-		progress_tween.custom_step(9999)
 		progress_tween.kill()
 
 func show_result_label() -> void:
