@@ -12,6 +12,7 @@ func _ready() -> void:
 func initialize(header: String, content: String) -> void:
 	header_label.text = header
 	keyword_text_label.text = content
+	keyword_text_label.initialize()
 
 func get_keyword_count() -> int:
 	return keyword_text_label.get_keyword_count()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnkvijwhyjdi" path="res://player/inspect_item_scene.gd" id="1_3lwxk"]
 [ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspector_item_handler.gd" id="1_o01jm"]
 [ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
+[ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
@@ -81,6 +82,10 @@ corner_radius_bottom_left = 10
 
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
 script = ExtResource("1_3lwxk")
+dna_tube = ExtResource("2_hxa35")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=342126816]
+remote_path = NodePath("../CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1210359484]
 visible = false
@@ -162,24 +167,26 @@ msaa_3d = 3
 physics_object_picking = true
 render_target_update_mode = 0
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1362888435]
-transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.5, 0.6971901, -0.35844314, 0.6208417, 0, 0, 0)
+[node name="Item Viewer" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1135401504]
 
-[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1355981507]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1362888435]
+transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.50000006, 0.6971901, -0.35844314, 0.6208418, 0, 0, 0)
+
+[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1355981507]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.65)
 script = ExtResource("1_o01jm")
 
-[node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Handler" unique_id=2025649021]
+[node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Handler" unique_id=2025649021]
 unique_name_in_owner = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1316467038]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1316467038]
 environment = ExtResource("7_hxa35")
 
-[node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1029310352]
+[node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1029310352]
 unique_name_in_owner = true
 
-[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Camera3D" unique_id=1094695431]
+[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=1094695431]
 script = ExtResource("9_dsp5a")
 target_layer = 16
 collide_with_areas = true
@@ -209,28 +216,29 @@ offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1295817533]
+[node name="Keywords Panel" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1295817533]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer" unique_id=1493557766]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel" unique_id=1493557766]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=1257386008]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer" unique_id=1257386008]
 layout_mode = 2
 
-[node name="Keywords Count" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1418150819]
+[node name="Keywords Count" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1418150819]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 text = "0/3"
 horizontal_alignment = 2
 
-[node name="Keywords Container" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=160180791]
+[node name="Keywords Container" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=160180791]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 23)
 layout_mode = 2

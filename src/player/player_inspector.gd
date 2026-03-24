@@ -1,6 +1,7 @@
 class_name PlayerInspector
 extends Node
 
+@export var player: PlayerBody3D
 @export var player_hand: PlayerHand
 @export var inspect_item: InspectItem
 @export var player_input: PlayerInput
@@ -18,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			inspect()
 
 func inspect() -> void:
+	inspect_item.player = player
 	active = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	player_input.disable()

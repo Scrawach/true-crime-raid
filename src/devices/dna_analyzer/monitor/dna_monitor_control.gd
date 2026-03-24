@@ -40,6 +40,6 @@ func _kill_tween_if_needed() -> void:
 		progress_tween.kill()
 
 func show_result_label() -> void:
-	var message := "Имя: %s\nРезультат: %.2f%%" % [data.database_name, data.get_overlap_precentage()]
+	var message := "Имя: %s\nРезультат: %.2f%%" % [data.database_name, data.overlap_percentage]
 	result_label.text = message
 	result_label.show()

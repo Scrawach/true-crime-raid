@@ -1,12 +1,15 @@
 class_name InspectItem
 extends Node3D
 
+@export var dna_tube: PackedScene
+
 @onready var control_container: Control = %"Control Container"
 
 @onready var sub_viewport: SubViewport = %SubViewport
 @onready var sub_viewport_container: SubViewportContainer = %SubViewportContainer
 @onready var item_camera_3d: Camera3D = %"Item Camera3D"
 
+@onready var keywords_panel: PanelContainer = %"Keywords Panel"
 @onready var keywords_count: Label = %"Keywords Count"
 @onready var keywords_container: HBoxContainer = %"Keywords Container"
 @onready var item_handler: InspectorItemHandler = %"Item Handler"
@@ -19,6 +22,7 @@ extends Node3D
 var found_keywords: Dictionary[String, KeywordData]
 
 var item: BaseItem
+var player: PlayerBody3D
 
 func _ready() -> void:
 	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
@@ -39,10 +43,15 @@ func inspect(target: BaseItem) -> void:
 	points.clicked.connect(_on_clicked)
 	
 	_update_keyword_counts()
+	if keyword_description.get_keyword_count() == 0:
+		keywords_panel.hide()
+	else:
+		keywords_panel.show()
 	set_process_input(true)
 
 func _update_item_description(data: ItemData) -> void:
 	if data == null:
+		keyword_description.initialize("", "")
 		keyword_description.hide()
 		return
 	keyword_description.show()
@@ -65,13 +74,32 @@ func _on_clicked(point: InteractivePoint3D) -> void:
 		_process_keyword(point)
 	elif point is OpenInteractivePoint3D:
 		_process_open(point)
+	elif point is DNAInteractivePoint3D:
+		_process_dna_open(point)
 
 func _process_open(point: OpenInteractivePoint3D) -> void:
 	var spawn_object := point.open_item.instantiate() as BaseItem
 	add_sibling(spawn_object)
 	spawn_object.grab()
 	item.queue_free()
+	player.hand.item = spawn_object
+	abort()
 	inspect(spawn_object)
+
+func _process_dna_open(point: DNAInteractivePoint3D) -> void:
+	## TODO: REFACTOR THIS SHIT
+	var data = point.dna_data
+	var tube := dna_tube.instantiate() as DNAItem
+	add_sibling(tube)
+	tube.grab()
+	
+	tube.dna_data = data
+	item.reparent(player.get_parent())
+	item.ungrab()
+	abort()
+	inspect(tube)
+	#player.hand.drop()
+	#player.hand.pickup(tube)
 
 func _process_keyword(point: KeywordInteractivePoint3D) -> void:
 	spawn_smooth_label(point.data, _get_screen_position(point.global_position))

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b7ydi1s8x2uv3"]
+
+[ext_resource type="PackedScene" uid="uid://cqqignvh7giv" path="res://player/interactive_point_3d.tscn" id="1_e1kor"]
+[ext_resource type="Script" uid="uid://c3vpbwrf1yaot" path="res://items/interactions/dna_interactive_point_3d.gd" id="2_ggr23"]
+
+[node name="DNA Interactive Point 3D" unique_id=1261566614 instance=ExtResource("1_e1kor")]
+script = ExtResource("2_ggr23")
+dna_data = null
+is_disabled = false

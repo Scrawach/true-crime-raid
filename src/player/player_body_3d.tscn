@@ -72,8 +72,9 @@ hand_point = NodePath("../Head/Hand Point")
 head = NodePath("../Head")
 metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
 
-[node name="PlayerInspector" type="Node" parent="." unique_id=500224783 node_paths=PackedStringArray("player_hand", "inspect_item", "player_input")]
+[node name="PlayerInspector" type="Node" parent="." unique_id=500224783 node_paths=PackedStringArray("player", "player_hand", "inspect_item", "player_input")]
 script = ExtResource("8_467px")
+player = NodePath("..")
 player_hand = NodePath("../PlayerHand")
 inspect_item = NodePath("../Head/Inspect Item Scene")
 player_input = NodePath("../PlayerInput")

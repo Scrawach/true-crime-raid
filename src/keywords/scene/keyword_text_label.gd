@@ -21,6 +21,7 @@ func _ready() -> void:
 	finished.connect(_on_finished)
 
 func initialize() -> void:
+	keywords_cache.clear()
 	var keywords := BBCodeParser.get_all("keyword", text)
 	for keyword in keywords:
 		var id: String = keyword["id"]
