@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c5yflwcg3h70p"]
+
+[ext_resource type="PackedScene" uid="uid://cq56d74h10uge" path="res://prototyping/assets/dna_analyzer.glb" id="1_xl3si"]
+[ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_r1qmm"]
+[ext_resource type="Script" uid="uid://cla47d17kgxnw" path="res://interaction/conditions/player_has_item_condition.gd" id="3_rnx7a"]
+[ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="4_565ll"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cjrne"]
+radius = 0.25
+
+[node name="DNA Analyzer" type="Node3D" unique_id=84210177]
+
+[node name="dna_analyzer" parent="." unique_id=250896132 instance=ExtResource("1_xl3si")]
+
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=2041205921 node_paths=PackedStringArray("conditions")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_r1qmm")
+conditions = [NodePath("PlayerHasItemCondition")]
+metadata/_custom_type_script = "uid://dlm1uspq25qm7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=1397919245]
+shape = SubResource("SphereShape3D_cjrne")
+
+[node name="PlayerHasItemCondition" type="Node" parent="InteractionArea3D" unique_id=1836645945]
+script = ExtResource("3_rnx7a")
+metadata/_custom_type_script = "uid://cla47d17kgxnw"
+
+[node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("4_565ll")]
+interaction = NodePath("../InteractionArea3D")

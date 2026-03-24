@@ -40,15 +40,15 @@ func disable() -> void:
 		key_tooltip.smooth_hide()
 
 func _on_update_timeout() -> void:
-	if key_tooltip.is_visible():
-		return
-	
 	var is_interactable := interaction.can_interact_with(inside_player)
 	
 	if is_interactable and not distance_tooltip.is_visible():
 		distance_tooltip.smooth_show()
 	elif not is_interactable and distance_tooltip.is_visible():
 		distance_tooltip.smooth_hide()
+	
+	if not is_interactable and key_tooltip.is_visible():
+		key_tooltip.smooth_hide() 
 
 func _on_body_entered(player: PlayerBody3D) -> void:
 	if interaction.can_interact_with(player):
