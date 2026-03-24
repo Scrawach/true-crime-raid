@@ -20,6 +20,11 @@ func _physics_process(_delta: float) -> void:
 	
 	_start_interaction(target as InteractionArea3D)
 
+func can_interact_with_target() -> bool:
+	if interaction == null:
+		return false
+	return interaction.can_interact_with(player)
+
 func _start_interaction(target: InteractionArea3D) -> void:
 	if interaction == target:
 		return

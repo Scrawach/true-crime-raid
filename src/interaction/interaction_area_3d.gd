@@ -7,6 +7,9 @@ signal hovered()
 signal interacted(player: PlayerBody3D)
 signal unhovered()
 
+signal disabled()
+signal enabled()
+
 var prev_collision_layer: int
 var prev_collision_mask: int
 
@@ -35,6 +38,7 @@ func unhover() -> void:
 func enable() -> void:
 	collision_layer = prev_collision_layer
 	collision_mask = prev_collision_layer
+	enabled.emit()
 
 func disable() -> void:
 	prev_collision_layer = collision_layer
@@ -42,3 +46,4 @@ func disable() -> void:
 	
 	collision_layer = 0
 	collision_mask = 0
+	disabled.emit()

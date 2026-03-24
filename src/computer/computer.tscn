@@ -172,12 +172,12 @@ metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 shape = SubResource("SphereShape3D_m7yhb")
 debug_color = Color(0.627451, 0.53333336, 0, 1)
 
-[node name="InteractWithComputer" type="Node" parent="." unique_id=1631449373 node_paths=PackedStringArray("monitor_3d", "computer_camera", "interaction", "computer_canvas")]
+[node name="InteractWithComputer" type="Node" parent="." unique_id=1631449373 node_paths=PackedStringArray("monitor_3d", "computer_canvas", "interaction_camera", "interaction_area")]
 script = ExtResource("4_678jo")
 monitor_3d = NodePath("../Monitor 3D")
-computer_camera = NodePath("../Camera")
-interaction = NodePath("../Interaction Area3D")
 computer_canvas = NodePath("../CanvasLayer")
+interaction_camera = NodePath("../Camera")
+interaction_area = NodePath("../Interaction Area3D")
 metadata/_custom_type_script = "uid://dqb5iahmx3rfl"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816382861]

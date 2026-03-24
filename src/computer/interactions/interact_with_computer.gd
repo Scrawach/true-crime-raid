@@ -1,51 +1,19 @@
 class_name InteractWithComputer
-extends Node
+extends InteractWithDevice
 
 @export var monitor_3d: Monitor3D
-@export var computer_camera: Camera3D
-@export var interaction: InteractionArea3D
 @export var computer_canvas: CanvasLayer
 
-var interactor: PlayerBody3D
-var is_interacted: bool = false
-
 func _ready() -> void:
-	interaction.interacted.connect(_on_interacted)
-	set_process_input(false)
-	monitor_3d.monitor_control.exited.connect(exit_computer)
-
-func _on_interacted(player: PlayerBody3D) -> void:
-	interactor = player
-	is_interacted = true
-	start_interaction(interactor)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape"):
-		exit_computer()
-
-func exit_computer():
-	stop_interaction(interactor)
-	get_viewport().set_input_as_handled()
+	super._ready()
+	monitor_3d.monitor_control.exited.connect(exit_from_device)
 
 func start_interaction(target: PlayerBody3D) -> void:
-	computer_camera.make_current()
-	interaction.disable()
+	super.start_interaction(target)
 	monitor_3d.power_on()
 	computer_canvas.show()
-	set_process_input(true)
-	
-	target.input.disable()
-	target.input.mouse_capture.hide_cursor()
-	target.player_hud.hide_aim_pointer()
 
 func stop_interaction(target: PlayerBody3D) -> void:
-	target.main_camera.make_current()
-	interaction.enable()
+	super.stop_interaction(target)
 	monitor_3d.power_off()
 	computer_canvas.hide()
-	set_process_input(false)
-	
-	target.input.enable()
-	target.input.mouse_capture.capture()
-	target.player_hud.show_aim_pointer()
-	

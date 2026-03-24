@@ -2,11 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://cq56d74h10uge" path="res://prototyping/assets/dna_analyzer.glb" id="1_xl3si"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_r1qmm"]
-[ext_resource type="Script" uid="uid://cla47d17kgxnw" path="res://interaction/conditions/player_has_item_condition.gd" id="3_rnx7a"]
+[ext_resource type="Script" uid="uid://bxrkxf3emx87w" path="res://interaction/conditions/player_has_dna_item_in_hand_condition.gd" id="3_565ll"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="4_565ll"]
+[ext_resource type="Script" uid="uid://nqo6a43tmhmd" path="res://devices/dna_analyzer/interactions/interact_with_dna_analyzer.gd" id="5_r1qmm"]
+[ext_resource type="PackedScene" uid="uid://dey8j5vkki2h5" path="res://devices/dna_analyzer/monitor/dna_monitor_3d.tscn" id="6_rnx7a"]
+[ext_resource type="PackedScene" uid="uid://jkmx15xw0i53" path="res://devices/dna_analyzer/monitor/dna_monitor_control.tscn" id="7_565ll"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cjrne"]
 radius = 0.25
+
+[sub_resource type="QuadMesh" id="QuadMesh_565ll"]
+resource_local_to_scene = true
+size = Vector2(0.38, 0.14)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gn2j6"]
+viewport_path = NodePath("Monitor SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d0n7"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = SubResource("ViewportTexture_gn2j6")
 
 [node name="DNA Analyzer" type="Node3D" unique_id=84210177]
 
@@ -16,15 +36,36 @@ radius = 0.25
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_r1qmm")
-conditions = [NodePath("PlayerHasItemCondition")]
+conditions = [NodePath("PlayerHasDNAItemInHandCondition")]
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=1397919245]
 shape = SubResource("SphereShape3D_cjrne")
 
-[node name="PlayerHasItemCondition" type="Node" parent="InteractionArea3D" unique_id=1836645945]
-script = ExtResource("3_rnx7a")
-metadata/_custom_type_script = "uid://cla47d17kgxnw"
+[node name="PlayerHasDNAItemInHandCondition" type="Node" parent="InteractionArea3D" unique_id=957089221]
+script = ExtResource("3_565ll")
+metadata/_custom_type_script = "uid://bxrkxf3emx87w"
 
 [node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("4_565ll")]
 interaction = NodePath("../InteractionArea3D")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1991075165]
+transform = Transform3D(-1, 0, -8.7422784e-08, -6.181724e-08, 0.7071068, 0.7071068, 6.181724e-08, 0.7071068, -0.7071068, 0.0070673227, 0.42661524, -0.3398452)
+
+[node name="InteractWithDNAAnalyzer" type="Node" parent="." unique_id=1041999696 node_paths=PackedStringArray("monitor", "tube_position", "interaction_camera", "interaction_area")]
+script = ExtResource("5_r1qmm")
+monitor = NodePath("../DNA Monitor3D")
+tube_position = NodePath("../Test Tube Position")
+interaction_camera = NodePath("../Camera3D")
+interaction_area = NodePath("../InteractionArea3D")
+metadata/_custom_type_script = "uid://nqo6a43tmhmd"
+
+[node name="DNA Monitor3D" parent="." unique_id=792307719 instance=ExtResource("6_rnx7a")]
+transform = Transform3D(-1, 0, 1.509958e-07, 1.14116894e-07, 0.6548464, 0.75576204, -9.887905e-08, 0.75576204, -0.6548464, 0.0026935935, 0.28741235, -0.17838687)
+mesh = SubResource("QuadMesh_565ll")
+surface_material_override/0 = SubResource("StandardMaterial3D_5d0n7")
+resolution = Vector2i(380, 140)
+initial_control = ExtResource("7_565ll")
+
+[node name="Test Tube Position" type="Marker3D" parent="." unique_id=1317996385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36345595, 0.06881434)

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dey8j5vkki2h5"]
+
+[ext_resource type="Script" uid="uid://8ao32cehk8st" path="res://devices/dna_analyzer/monitor/dna_monitor_3d.gd" id="1_22qrn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_565ll"]
+resource_local_to_scene = true
+size = Vector2(0.512, 0.512)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_22qrn"]
+viewport_path = NodePath("Monitor SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7clwn"]
+resource_local_to_scene = true
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = SubResource("ViewportTexture_22qrn")
+
+[node name="DNA Monitor3D" type="MeshInstance3D" unique_id=792307719]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_565ll")
+surface_material_override/0 = SubResource("StandardMaterial3D_7clwn")
+script = ExtResource("1_22qrn")
+
+[node name="Monitor SubViewport" type="SubViewport" parent="." unique_id=2024803822]
+unique_name_in_owner = true
+
+[node name="Background" type="ColorRect" parent="Monitor SubViewport" unique_id=698118395]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -15,6 +15,8 @@ var inside_player: PlayerBody3D
 
 func _ready() -> void:
 	enable()
+	interaction.enabled.connect(enable)
+	interaction.disabled.connect(disable)
 
 func enable() -> void:
 	is_disabled = false

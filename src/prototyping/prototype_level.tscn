@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bnx5gsb7lhbew" path="res://items/packet_item.tscn" id="4_kem4b"]
 [ext_resource type="PackedScene" uid="uid://cb2bgby51ynsb" path="res://items/box_item.tscn" id="5_huww6"]
 [ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://computer/computer.tscn" id="5_kem4b"]
+[ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="6_eyxe0"]
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_kyd4t"]
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="7_bujhi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -21,6 +23,12 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 1
 tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_7fl8n"]
+script = ExtResource("7_bujhi")
+database_name = "Джим Воллер"
+overlap_ratio = 0.74
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
 
@@ -49,6 +57,10 @@ open_item = ExtResource("5_huww6")
 [node name="Packet Item2" parent="Environment" unique_id=1195105743 instance=ExtResource("4_kem4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8713846, 0.80025876, -3.7754352)
 open_item = ExtResource("5_huww6")
+
+[node name="DNA Item" parent="Environment" unique_id=2056738664 instance=ExtResource("6_eyxe0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8713846, 1.286686, -3.5566838)
+dna_data = SubResource("Resource_7fl8n")
 
 [node name="Packet Item3" parent="Environment" unique_id=1976742655 instance=ExtResource("4_kem4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8713846, 1.3644004, -3.9787495)

@@ -29,10 +29,10 @@ func disable() -> void:
 
 func _process_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if hand.has_item():
-			hand.drop()
-		else:
+		if interactor.can_interact_with_target():
 			interactor.try_interact()
+		elif hand.has_item():
+			hand.drop()
 	
 	if event is InputEventMouseMotion:
 		body.head_rotate(-event.relative * sensitivity)
