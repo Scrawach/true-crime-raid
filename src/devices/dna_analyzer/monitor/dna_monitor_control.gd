@@ -25,6 +25,7 @@ func power_off() -> void:
 func finish_process() -> void:
 	progress_bar.hide()
 	show_result_label()
+	data.is_processed = true
 
 func animate_progress_bar(callback: Callable = Callable()) -> void:
 	progress_tween = create_tween()

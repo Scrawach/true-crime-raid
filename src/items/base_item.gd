@@ -16,3 +16,6 @@ func ungrab() -> void:
 
 func get_interactive_points() -> InteractivePoints:
 	return points
+
+func get_description() -> String:
+	return data.description

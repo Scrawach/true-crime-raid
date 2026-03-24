@@ -28,7 +28,7 @@ func _ready() -> void:
 	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
 
 func inspect(target: BaseItem) -> void:
-	_update_item_description(target.data)
+	_update_item_description(target)
 	canvas_layer.show()
 	clear_keywords()
 	
@@ -49,13 +49,13 @@ func inspect(target: BaseItem) -> void:
 		keywords_panel.show()
 	set_process_input(true)
 
-func _update_item_description(data: ItemData) -> void:
-	if data == null:
+func _update_item_description(target: BaseItem) -> void:
+	if target.data == null:
 		keyword_description.initialize("", "")
 		keyword_description.hide()
 		return
 	keyword_description.show()
-	keyword_description.initialize(data.name, data.description)
+	keyword_description.initialize(target.data.name, target.get_description())
 
 func abort() -> void:
 	canvas_layer.hide()
