@@ -86,9 +86,9 @@ interactor = NodePath("../PlayerMovementState/PlayerInteractor")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://8y2v8pv4j56x"
 
-[node name="PlayerInspectState" type="Node" parent="StateMachine" unique_id=633637750 node_paths=PackedStringArray("inspect_scene", "movement_state", "player")]
+[node name="PlayerInspectState" type="Node" parent="StateMachine" unique_id=633637750 node_paths=PackedStringArray("movement_state", "inspect_scene", "player")]
 script = ExtResource("12_14877")
-inspect_scene = NodePath("../../Head/Inspect Item Scene")
 movement_state = NodePath("../PlayerMovementState")
+inspect_scene = NodePath("../../Head/Inspect Item Scene")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://b2p5svqerliud"

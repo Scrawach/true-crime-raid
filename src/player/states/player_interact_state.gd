@@ -6,8 +6,9 @@ extends PlayerState
 var current_interaction: InteractState
 
 func state_handle_input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape") and current_interaction:
-		current_interaction.stop_interaction()
+	if event.is_action_pressed("escape") or event.is_action("inspect"):
+		if current_interaction:
+			current_interaction.stop_interaction()
 
 func enter() -> void:
 	var is_success := interactor.try_interact()
