@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2c1vsvgotnka" path="res://items/base_item.gd" id="1_2fo1j"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_yksll"]
+[ext_resource type="Script" uid="uid://darndg52oev8a" path="res://interaction/conditions/player_has_free_hand_condition.gd" id="3_aqq7f"]
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
 [ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="6_celoj"]
@@ -16,14 +17,19 @@ can_sleep = false
 script = ExtResource("1_2fo1j")
 points = NodePath("InteractivePoints")
 
-[node name="InteractionArea3D" type="Area3D" parent="." unique_id=786297931]
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=786297931 node_paths=PackedStringArray("conditions")]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_yksll")
+conditions = [NodePath("PlayerHasEmptyHandCondition")]
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=2136988761]
 shape = SubResource("SphereShape3D_c43hp")
+
+[node name="PlayerHasEmptyHandCondition" type="Node" parent="InteractionArea3D" unique_id=232188026]
+script = ExtResource("3_aqq7f")
+metadata/_custom_type_script = "uid://darndg52oev8a"
 
 [node name="PickUpInteraction" type="Node" parent="." unique_id=1626426014 node_paths=PackedStringArray("body", "interaction_area_3d")]
 script = ExtResource("3_c43hp")

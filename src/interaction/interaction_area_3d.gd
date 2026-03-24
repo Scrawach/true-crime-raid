@@ -1,6 +1,8 @@
 class_name InteractionArea3D
 extends Area3D
 
+@export var conditions: Array[InteractionCondition]
+
 signal hovered()
 signal interacted(player: PlayerBody3D)
 signal unhovered()
@@ -11,6 +13,15 @@ var prev_collision_mask: int
 func _ready() -> void:
 	prev_collision_layer = collision_layer
 	prev_collision_mask = collision_mask
+
+func can_interact_with(player: PlayerBody3D) -> bool:
+	if conditions.is_empty():
+		return true
+	
+	for condition in conditions:
+		if condition.can_interact_with(player):
+			return true
+	return false
 
 func hover() -> void:
 	hovered.emit()

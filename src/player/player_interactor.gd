@@ -26,6 +26,10 @@ func _start_interaction(target: InteractionArea3D) -> void:
 	
 	if interaction != null:
 		interaction.unhover()
+		interaction = null
+	
+	if not target.can_interact_with(player):
+		return
 	
 	interaction = target
 	interaction.hover()

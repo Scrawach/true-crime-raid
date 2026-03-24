@@ -13,7 +13,10 @@ var tween: Tween
 var is_item_on_hand: bool
 
 func has_item() -> bool:
-	return item != null and is_item_on_hand
+	return not is_empty() and is_item_on_hand
+
+func is_empty() -> bool:
+	return item == null
 
 func pickup(object: BaseItem) -> void:
 	item = object
