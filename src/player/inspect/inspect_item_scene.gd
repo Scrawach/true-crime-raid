@@ -11,7 +11,7 @@ extends Node3D
 
 @onready var keywords_panel: PanelContainer = %"Keywords Panel"
 @onready var keywords_count: Label = %"Keywords Count"
-@onready var keywords_container: HBoxContainer = %"Keywords Container"
+@onready var keywords_container: HFlowContainer = %"Keywords Container"
 @onready var item_handler: InspectorItemHandler = %"Item Handler"
 
 @onready var item_point: Marker3D = %"Item Point"

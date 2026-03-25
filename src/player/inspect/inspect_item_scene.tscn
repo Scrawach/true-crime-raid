@@ -13,67 +13,6 @@
 shader = ExtResource("2_36l5p")
 shader_parameter/blur_amount = 2.000000095
 
-[sub_resource type="Animation" id="Animation_8gyb5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.000000095]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.39215687)]
-}
-
-[sub_resource type="Animation" id="Animation_dsp5a"]
-resource_name = "fade_in"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:material:shader_parameter/blur_amount")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.0000001425]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.47058824)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qt7t"]
-_data = {
-&"RESET": SubResource("Animation_8gyb5"),
-&"fade_in": SubResource("Animation_dsp5a")
-}
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n62re"]
 bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
 corner_radius_top_left = 10
@@ -86,7 +25,7 @@ script = ExtResource("1_3lwxk")
 dna_tube = ExtResource("2_hxa35")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=342126816]
-remote_path = NodePath("../CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer")
+remote_path = NodePath("../CanvasLayer/SubViewportContainer/SubViewport/Item Viewer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1210359484]
 visible = false
@@ -109,8 +48,60 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Curtain AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Curtain" unique_id=1634036830]
-libraries/ = SubResource("AnimationLibrary_8qt7t")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=117065332]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=676341912]
+unique_name_in_owner = true
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 3
+physics_object_picking = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Item Viewer" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1135401504]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1362888435]
+transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.50000006, 0.6971901, -0.35844314, 0.6208418, 0, 0, 0)
+
+[node name="Item Handler" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1355981507 node_paths=PackedStringArray("camera_zoom")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
+script = ExtResource("1_o01jm")
+camera_zoom = NodePath("../Item Camera3D/CameraZoom")
+
+[node name="Item Point" type="Marker3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer/Item Handler" unique_id=2025649021]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1316467038]
+environment = ExtResource("7_hxa35")
+
+[node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1029310352]
+unique_name_in_owner = true
+
+[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=1094695431 node_paths=PackedStringArray("zoom")]
+script = ExtResource("9_dsp5a")
+zoom = NodePath("../CameraZoom")
+target_layer = 16
+small_target_layer = 32
+collide_with_areas = true
+metadata/_custom_type_script = "uid://by08m6irb8rp6"
+
+[node name="CameraZoom" type="Node" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=2059332607 node_paths=PackedStringArray("camera")]
+unique_name_in_owner = true
+script = ExtResource("8_0yr2y")
+min_distance = -0.2
+max_distance = 0.2
+camera = NodePath("..")
+metadata/_custom_type_script = "uid://dxo7ifkrsuskk"
 
 [node name="Keyboard Tooltips" type="PanelContainer" parent="CanvasLayer" unique_id=1724217216]
 anchors_preset = 10
@@ -142,118 +133,6 @@ size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[img height=32]uid://blvvxcjuyqu33[/img] ВЫЙТИ"
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1905044472]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=1827899256]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=382465319]
-layout_mode = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2016256201]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=676341912]
-unique_name_in_owner = true
-own_world_3d = true
-transparent_bg = true
-handle_input_locally = false
-msaa_3d = 3
-physics_object_picking = true
-render_target_update_mode = 0
-
-[node name="Item Viewer" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1135401504]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1362888435]
-transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.50000006, 0.6971901, -0.35844314, 0.6208418, 0, 0, 0)
-
-[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1355981507 node_paths=PackedStringArray("camera_zoom")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
-script = ExtResource("1_o01jm")
-camera_zoom = NodePath("../Item Camera3D/CameraZoom")
-
-[node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Handler" unique_id=2025649021]
-unique_name_in_owner = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1316467038]
-environment = ExtResource("7_hxa35")
-
-[node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1029310352]
-unique_name_in_owner = true
-
-[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=1094695431 node_paths=PackedStringArray("zoom")]
-script = ExtResource("9_dsp5a")
-zoom = NodePath("../CameraZoom")
-target_layer = 16
-small_target_layer = 32
-collide_with_areas = true
-metadata/_custom_type_script = "uid://by08m6irb8rp6"
-
-[node name="CameraZoom" type="Node" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=2059332607 node_paths=PackedStringArray("camera")]
-unique_name_in_owner = true
-script = ExtResource("8_0yr2y")
-camera = NodePath("..")
-metadata/_custom_type_script = "uid://dxo7ifkrsuskk"
-
-[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1502097046]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "УЛИКИ:"
-
-[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2039322736]
-layout_mode = 2
-
-[node name="Keyword Description" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/Control" unique_id=1598517834 instance=ExtResource("9_8qt7t")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -169.5
-offset_top = -197.0
-offset_right = 169.5
-offset_bottom = 197.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Keywords Panel" type="PanelContainer" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1295817533]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel" unique_id=1493557766]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer" unique_id=1257386008]
-layout_mode = 2
-
-[node name="Keywords Count" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1418150819]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 10
-text = "0/3"
-horizontal_alignment = 2
-
-[node name="Keywords Container" type="HBoxContainer" parent="CanvasLayer/CenterContainer/VBoxContainer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=160180791]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 23)
-layout_mode = 2
-theme_override_constants/separation = 24
-
 [node name="Control Container" type="Control" parent="CanvasLayer" unique_id=1408155094]
 unique_name_in_owner = true
 layout_mode = 3
@@ -263,3 +142,55 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Keyword Description" parent="CanvasLayer" unique_id=1598517834 instance=ExtResource("9_8qt7t")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 150.0
+offset_top = -200.0
+offset_bottom = 0.0
+
+[node name="Keywords Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1295817533]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -131.0
+offset_right = 200.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Keywords Panel" unique_id=1493557766]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Keywords Panel/MarginContainer" unique_id=1257386008]
+layout_mode = 2
+
+[node name="Keywords Count" type="Label" parent="CanvasLayer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1418150819]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0/3"
+horizontal_alignment = 2
+
+[node name="Keywords Container" type="HFlowContainer" parent="CanvasLayer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1725752971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
