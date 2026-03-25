@@ -34,6 +34,11 @@ func get_keyword_count() -> int:
 		initialize()
 	return keywords_cache.size()
 
+func get_all_keywords() -> Array[KeywordData]:
+	if not is_finished():
+		initialize()
+	return keywords_cache.values()
+
 func _on_finished() -> void:
 	initialize()
 

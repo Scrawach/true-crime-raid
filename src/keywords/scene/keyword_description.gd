@@ -16,3 +16,6 @@ func initialize(header: String, content: String) -> void:
 
 func get_keyword_count() -> int:
 	return keyword_text_label.get_keyword_count()
+
+func get_all_keywords() -> Array[KeywordData]:
+	return keyword_text_label.get_all_keywords()

@@ -6,19 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="Script" uid="uid://dxo7ifkrsuskk" path="res://player/camera/camera_distance_zoom.gd" id="8_0yr2y"]
+[ext_resource type="PackedScene" uid="uid://befpxu1lw234h" path="res://player/inspect/keywords_panel.tscn" id="9_0yr2y"]
 [ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hxa35"]
 shader = ExtResource("2_36l5p")
 shader_parameter/blur_amount = 2.000000095
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n62re"]
-bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
 script = ExtResource("1_3lwxk")
@@ -146,7 +140,7 @@ mouse_filter = 2
 [node name="Keyword Description" parent="CanvasLayer" unique_id=1598517834 instance=ExtResource("9_8qt7t")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 300)
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -155,42 +149,5 @@ offset_left = 150.0
 offset_top = -200.0
 offset_bottom = 0.0
 
-[node name="Keywords Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1295817533]
+[node name="Keywords Panel" parent="CanvasLayer" unique_id=1520725564 instance=ExtResource("9_0yr2y")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 0)
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -131.0
-offset_right = 200.0
-offset_bottom = -50.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Keywords Panel" unique_id=1493557766]
-layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Keywords Panel/MarginContainer" unique_id=1257386008]
-layout_mode = 2
-
-[node name="Keywords Count" type="Label" parent="CanvasLayer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1418150819]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 10
-text = "0/3"
-horizontal_alignment = 2
-
-[node name="Keywords Container" type="HFlowContainer" parent="CanvasLayer/Keywords Panel/MarginContainer/VBoxContainer" unique_id=1725752971]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-theme_override_constants/h_separation = 24
-theme_override_constants/v_separation = 12

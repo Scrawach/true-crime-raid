@@ -9,9 +9,7 @@ extends Node3D
 @onready var sub_viewport_container: SubViewportContainer = %SubViewportContainer
 @onready var item_camera_3d: Camera3D = %"Item Camera3D"
 
-@onready var keywords_panel: PanelContainer = %"Keywords Panel"
-@onready var keywords_count: Label = %"Keywords Count"
-@onready var keywords_container: HFlowContainer = %"Keywords Container"
+@onready var keywords_panel: KeywordsPanel = %"Keywords Panel"
 @onready var item_handler: InspectorItemHandler = %"Item Handler"
 
 @onready var item_point: Marker3D = %"Item Point"
@@ -19,8 +17,6 @@ extends Node3D
 
 @onready var keyword_description: KeywordDescription = %"Keyword Description"
 @onready var camera_zoom: CameraZoom = %CameraZoom
-
-var found_keywords: Dictionary[String, KeywordData]
 
 var item: BaseItem
 var player: PlayerBody3D
@@ -32,7 +28,7 @@ func inspect(target: BaseItem) -> void:
 	camera_zoom.enable()
 	_update_item_description(target)
 	canvas_layer.show()
-	clear_keywords()
+	keywords_panel.clear()
 	
 	item = target
 	item_handler.stop_rotation()
@@ -44,11 +40,12 @@ func inspect(target: BaseItem) -> void:
 	points.enable()
 	points.clicked.connect(_on_clicked)
 	
-	_update_keyword_counts()
 	if keyword_description.get_keyword_count() == 0:
 		keywords_panel.hide()
 	else:
 		keywords_panel.show()
+		keywords_panel.initialize(get_max_keyword_count())
+		keywords_panel.fill(get_found_keywords())
 	set_process_input(true)
 
 func _update_item_description(target: BaseItem) -> void:
@@ -109,16 +106,7 @@ func _process_keyword(point: KeywordInteractivePoint3D) -> void:
 	_add_keyword(point.data)
 
 func _add_keyword(data: KeywordData) -> void:
-	if found_keywords.has(data.id):
-		return
-	
-	found_keywords[data.id] = data
-	_update_keyword_counts()
-	var flow_label := make_label_for(data)
-	keywords_container.add_child(flow_label)
-
-func _update_keyword_counts() -> void:
-	keywords_count.text = "%s / %s" % [found_keywords.size(), get_max_keyword_count()]
+	keywords_panel.add_keyword(data)
 
 func _get_screen_position(pos_3d: Vector3) -> Vector2:
 	return sub_viewport_container.global_position + item_camera_3d.unproject_position(pos_3d)
@@ -142,10 +130,13 @@ func get_max_keyword_count() -> int:
 			sum += 1
 	return sum + keyword_description.get_keyword_count()
 
-func clear_keywords() -> void:
-	found_keywords.clear()
-	for child in keywords_container.get_children():
-		child.queue_free()
+func get_found_keywords() -> Array[KeywordData]:
+	var found_keywords: Array[KeywordData]
+	var text_keywords := keyword_description.get_all_keywords()
+	for keyword in text_keywords:
+		if keyword.is_found():
+			found_keywords.append(keyword)
+	return found_keywords
 
 func make_label_for(keyword: KeywordData) -> Label:
 	var key_label := Label.new()

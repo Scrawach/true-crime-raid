@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://befpxu1lw234h"]
+
+[ext_resource type="Script" uid="uid://2egrgtf4ehhu" path="res://player/inspect/keywords_panel.gd" id="1_3en02"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n62re"]
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Keywords Panel" type="PanelContainer" unique_id=1520725564]
+custom_minimum_size = Vector2(400, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -131.0
+offset_right = 200.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n62re")
+script = ExtResource("1_3en02")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2002655342]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2073915468]
+layout_mode = 2
+
+[node name="Keywords Count" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1274945827]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0/3"
+horizontal_alignment = 2
+
+[node name="Keywords Container" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1455661485]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 12
