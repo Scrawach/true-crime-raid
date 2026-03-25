@@ -6,4 +6,5 @@
 [node name="DNA Interactive Point 3D" unique_id=1261566614 instance=ExtResource("1_e1kor")]
 script = ExtResource("2_ggr23")
 dna_data = null
+only_once = false
 is_disabled = false

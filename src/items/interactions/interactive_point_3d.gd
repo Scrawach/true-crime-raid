@@ -6,17 +6,24 @@ signal mouse_exited()
 signal clicked(point: InteractivePoint3D)
 
 @export var is_disabled: bool
+@export var is_small: bool
 
 @onready var smooth_appear_sprite_3d: SmoothAppearSprite3D = $Tooltip/SmoothAppearSprite3D
 @onready var tooltip: Sprite3D = $Tooltip
 
-@onready var visible_point_on_camera: VisiblePointOnCamera = $VisiblePointOnCamera
+@onready var visible_point_on_camera: VisiblePointOnCameraWithSize = $VisiblePointOnCameraWithSize
 @onready var clickable_area_3d: ClickableArea3D = $ClickableArea3D
 @onready var collision_shape_3d: CollisionShape3D = %CollisionShape3D
 
 var hover_tween: Tween
 
 func _ready() -> void:
+	visible_point_on_camera.is_small_point = is_small
+	if is_small:
+		clickable_area_3d.collision_layer = 32
+	else:
+		clickable_area_3d.collision_layer = 16
+	
 	if is_disabled:
 		disable()
 	else:

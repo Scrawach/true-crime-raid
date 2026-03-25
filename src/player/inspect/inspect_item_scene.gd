@@ -18,6 +18,7 @@ extends Node3D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 @onready var keyword_description: KeywordDescription = %"Keyword Description"
+@onready var camera_zoom: CameraZoom = %CameraZoom
 
 var found_keywords: Dictionary[String, KeywordData]
 
@@ -28,6 +29,7 @@ func _ready() -> void:
 	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
 
 func inspect(target: BaseItem) -> void:
+	camera_zoom.enable()
 	_update_item_description(target)
 	canvas_layer.show()
 	clear_keywords()
@@ -58,6 +60,7 @@ func _update_item_description(target: BaseItem) -> void:
 	keyword_description.initialize(target.data.name, target.get_description())
 
 func abort() -> void:
+	camera_zoom.disable()
 	canvas_layer.hide()
 	
 	var points := item.get_interactive_points()

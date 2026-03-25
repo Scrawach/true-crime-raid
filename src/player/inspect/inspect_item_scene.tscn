@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
+[ext_resource type="Script" uid="uid://dxo7ifkrsuskk" path="res://player/camera/camera_distance_zoom.gd" id="8_0yr2y"]
 [ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
 
@@ -172,10 +173,11 @@ render_target_update_mode = 0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1362888435]
 transform = Transform3D(0.7168863, 0.34859505, -0.6037844, 2.1855694e-08, 0.8660254, 0.50000006, 0.6971901, -0.35844314, 0.6208418, 0, 0, 0)
 
-[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1355981507]
+[node name="Item Handler" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1355981507 node_paths=PackedStringArray("camera_zoom")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
 script = ExtResource("1_o01jm")
+camera_zoom = NodePath("../Item Camera3D/CameraZoom")
 
 [node name="Item Point" type="Marker3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Handler" unique_id=2025649021]
 unique_name_in_owner = true
@@ -186,11 +188,19 @@ environment = ExtResource("7_hxa35")
 [node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1029310352]
 unique_name_in_owner = true
 
-[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=1094695431]
+[node name="MouseRaycast3D" type="Node3D" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=1094695431 node_paths=PackedStringArray("zoom")]
 script = ExtResource("9_dsp5a")
+zoom = NodePath("../CameraZoom")
 target_layer = 16
+small_target_layer = 32
 collide_with_areas = true
 metadata/_custom_type_script = "uid://by08m6irb8rp6"
+
+[node name="CameraZoom" type="Node" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Item Viewer/Item Camera3D" unique_id=2059332607 node_paths=PackedStringArray("camera")]
+unique_name_in_owner = true
+script = ExtResource("8_0yr2y")
+camera = NodePath("..")
+metadata/_custom_type_script = "uid://dxo7ifkrsuskk"
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1502097046]
 unique_name_in_owner = true
