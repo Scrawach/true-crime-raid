@@ -33,15 +33,17 @@ size = Vector3(0.2, 0.2, 0.2)
 [node name="Box Item" unique_id=679873917 instance=ExtResource("1_70yj4")]
 data = SubResource("Resource_nscao")
 
-[node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 instance=ExtResource("3_5qmqt")]
+[node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("3_5qmqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12800446)
 dna_data = SubResource("Resource_lpgne")
+only_once = true
+dna_mesh = NodePath("../../MeshInstance3D/Blood Mesh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=1967260432]
 mesh = SubResource("BoxMesh_7nfn4")
 surface_material_override/0 = ExtResource("5_xjk1l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" index="0" unique_id=1128147441]
+[node name="Blood Mesh" type="MeshInstance3D" parent="MeshInstance3D" index="0" unique_id=1128147441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.09634587)
 mesh = SubResource("BoxMesh_lpgne")
 surface_material_override/0 = SubResource("StandardMaterial3D_65tqg")
