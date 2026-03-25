@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DNAData" format=3 uid="uid://4t3momjkuhtj"]
+
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="1_ruy73"]
+
+[resource]
+script = ExtResource("1_ruy73")
+database_name = "Austin Bolton"
+overlap_percentage = 52.0
+match_type = "Direct"
+description = "Обнаружено на окурке №3"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d340nck4oml82"]
+
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_xnmtn"]
+
+[resource]
+script = ExtResource("1_xnmtn")
+name = "Стакан"
+description = "Стеклянный [url=00nf-cup][keyword id=00nf-cup type=evidence]стакан[/keyword][/url], используемый в баре. Обнаружен на месте происшествия около служебного входа."
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"

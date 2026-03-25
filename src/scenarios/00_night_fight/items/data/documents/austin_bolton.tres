@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cymyweaslhn6d"]
+
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_k413q"]
+
+[resource]
+script = ExtResource("1_k413q")
+name = "Карточка подозреваемого"
+description = "[b]ФИО:[/b] [url=00nf-austin][keyword id=00nf-austin type=person]Austin Bolton[/keyword][/url], 19 лет [b]Род деятельности:[/b] студент колледжа, спортсмен
+
+[b]Статус:[/b] Сын погибшего [url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url], рассматривается в качестве подозреваемого
+
+[b]Связь с инцидентом:[/b] Проживал совместно с погибшим по одному адресу. По предварительным данным, находился в контакте с погибшим в день происшествия.
+
+[b]Показания:[/b] Со слов [url=00nf-austin][keyword id=00nf-austin type=person]Austin Bolton[/keyword][/url], в вечер происшествия находился вне дома. Точное местонахождение в промежутке времени 23:00–00:10 подтверждено частично.
+
+[b]Установленные факты:[/b]  • между подозреваемым и погибшим регулярно происходили [url=00nf-conflict][keyword id=00nf-conflict type=event]конфликты[/keyword][/url]  • причиной разногласий являлись финансовые споры, связанные с намерением подозреваемого получить средства на открытие бизнеса  • свидетели подтверждают наличие напряжённых отношений в семье
+
+[b]Возможный мотив:[/b] [url=00nf-revenge][keyword id=00nf-revenge type=event]Финансовая месть[/keyword][/url], связанная с отказом получения денежных средств от [url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url].
+
+[b]Дополнительные сведения:[/b]  • имеет доступ к личным вещам погибшего и жилому помещению  • мог знать о финансовом положении погибшего  • алиби не подтверждено   • потенциально осведомлён о распорядке дня погибшего
+
+[b]Текущий статус:[/b] Подлежит дополнительной проверке. Был проведен допрос и взяты образцы ДНК для сравнительного анализа.."
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"

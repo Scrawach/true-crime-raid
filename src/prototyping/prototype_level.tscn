@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="6_eyxe0"]
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_kyd4t"]
 [ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="7_bujhi"]
+[ext_resource type="PackedScene" uid="uid://c1lf10hvr208k" path="res://scenarios/00_night_fight/items/protocol_document.tscn" id="9_7fl8n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,7 +28,6 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_7fl8n"]
 script = ExtResource("7_bujhi")
 database_name = "Джим Воллер"
-overlap_ratio = 0.74
 metadata/_custom_type_script = "uid://bn7663kucbpmq"
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
@@ -68,6 +68,9 @@ open_item = ExtResource("5_huww6")
 
 [node name="DNA Analyzer" parent="Environment" unique_id=84210177 instance=ExtResource("6_kyd4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34784842, 0.85783553, -0.6997404)
+
+[node name="Protocol Document" parent="Environment" unique_id=1302776713 instance=ExtResource("9_7fl8n")]
+transform = Transform3D(1, 0, 0, 0, 0.37790543, 0.9258442, 0, -0.9258442, 0.37790543, 2.3375502, 1.0183903, -0.7020629)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)

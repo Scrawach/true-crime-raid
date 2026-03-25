@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://db8odvk73u8no"]
+
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_ubr0f"]
+
+[resource]
+script = ExtResource("1_ubr0f")
+name = "Кухонный нож"
+description = "Кухонный [url=00nf-knife][keyword id=00nf-knife type=weapon]нож[/keyword][/url], обнаруженный в мусорном контейнере за баром. Предположительно использовался в качестве орудия преступления."
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"

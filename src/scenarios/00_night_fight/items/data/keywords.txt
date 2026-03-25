@@ -1,0 +1,14 @@
+Persons:
+[url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url]
+[url=00nf-austin][keyword id=00nf-austin type=person]Austin Bolton[/keyword][/url]
+[url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url]
+[url=00nf-paul][keyword id=00nf-paul type=person]Paul Slater[/keyword][/url]
+
+Events:
+[url=00nf-conflict][keyword id=00nf-conflict type=event]конфликте[/keyword][/url]
+[url=00nf-revenge][keyword id=00nf-revenge type=event]финансовая месть[/keyword][/url]
+
+Evidence:
+[url=00nf-knife][keyword id=00nf-knife type=weapon]ножом[/keyword][/url]
+[url=00nf-cup][keyword id=00nf-cup type=evidence]стакан[/keyword][/url]
+[url=00nf-butts][keyword id=00nf-butts type=evidence]окурки[/keyword][/url]

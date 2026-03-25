@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ec8ekdji04b6"]
+
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_xphe8"]
+
+[resource]
+script = ExtResource("1_xphe8")
+name = "Окурки сигарет"
+description = "[url=00nf-butts][keyword id=00nf-butts type=evidence]Окурки сигарет[/keyword][/url], 3 шт., обнаруженные у служебного входа в бар. Потенциальный источник биологических следов."
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"

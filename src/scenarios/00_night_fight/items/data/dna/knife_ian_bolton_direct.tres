@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DNAData" format=3 uid="uid://bpl6fsaumbyi3"]
+
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="1_e8um3"]
+
+[resource]
+script = ExtResource("1_e8um3")
+database_name = "Ian Bolton"
+overlap_percentage = 96.0
+match_type = "Direct"
+description = "Обнаружено на ноже"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
