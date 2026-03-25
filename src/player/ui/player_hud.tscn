@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yer5qkd6lp65"]
 
 [ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="1_qo0ji"]
-[ext_resource type="Script" uid="uid://juqqi502av0g" path="res://player/player_hud.gd" id="1_r44wa"]
+[ext_resource type="Script" uid="uid://juqqi502av0g" path="res://player/ui/player_hud.gd" id="1_r44wa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0ji"]
 bg_color = Color(1, 1, 1, 1)

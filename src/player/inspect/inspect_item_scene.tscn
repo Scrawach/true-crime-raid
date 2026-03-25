@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ci4quctybs3ev"]
 
-[ext_resource type="Script" uid="uid://cnkvijwhyjdi" path="res://player/inspect_item_scene.gd" id="1_3lwxk"]
-[ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspector_item_handler.gd" id="1_o01jm"]
+[ext_resource type="Script" uid="uid://cnkvijwhyjdi" path="res://player/inspect/inspect_item_scene.gd" id="1_3lwxk"]
+[ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspect/inspector_item_handler.gd" id="1_o01jm"]
 [ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_36l5p"]
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]

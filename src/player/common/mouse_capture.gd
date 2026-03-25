@@ -1,8 +1,6 @@
 class_name MouseCapture
 extends Node
 
-@export var player_input: PlayerInput
-
 var _is_captured: bool
 
 ## Timer required, because WEB can't

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cx7rsciexusnm"]
 
 [ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
-[ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect_item_scene.tscn" id="3_iveab"]
-[ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/mouse_capture.gd" id="3_rjoga"]
-[ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/player_hud.tscn" id="4_cnqhg"]
+[ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect/inspect_item_scene.tscn" id="3_iveab"]
+[ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/common/mouse_capture.gd" id="3_rjoga"]
+[ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/ui/player_hud.tscn" id="4_cnqhg"]
 [ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
 [ext_resource type="Script" uid="uid://b1nf2orlq6dqd" path="res://player/player_hand.gd" id="6_pyi6a"]
 [ext_resource type="Script" uid="uid://c7g5vauyit182" path="res://addons/states/state_machine.gd" id="9_nhl75"]

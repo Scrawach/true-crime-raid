@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clqulkru0e7s2"]
 
-[ext_resource type="PackedScene" uid="uid://cqqignvh7giv" path="res://player/interactive_point_3d.tscn" id="1_kcxfp"]
+[ext_resource type="PackedScene" uid="uid://cqqignvh7giv" path="res://items/interactions/interactive_point_3d.tscn" id="1_kcxfp"]
 [ext_resource type="Script" uid="uid://c58c7o78gq038" path="res://items/interactions/open_interactive_point_3d.gd" id="2_w8nor"]
 
 [node name="Open Interactive Point 3D" unique_id=1261566614 instance=ExtResource("1_kcxfp")]

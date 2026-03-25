@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://darndg52oev8a" path="res://interaction/conditions/player_has_free_hand_condition.gd" id="3_aqq7f"]
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
-[ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://player/interactive_points.gd" id="6_celoj"]
+[ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://items/interactions/interactive_points.gd" id="6_celoj"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c43hp"]
 radius = 0.26145676
