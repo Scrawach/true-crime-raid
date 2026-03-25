@@ -27,7 +27,6 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_7fl8n"]
 script = ExtResource("7_bujhi")
 database_name = "Джим Воллер"
-overlap_ratio = 0.74
 metadata/_custom_type_script = "uid://bn7663kucbpmq"
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
