@@ -130,10 +130,19 @@ func get_max_keyword_count() -> int:
 			sum += 1
 	return sum + keyword_description.get_keyword_count()
 
+func get_keywords_from_interactive_points() -> Array[KeywordData]:
+	var keywords: Array[KeywordData]
+	for child in item.get_interactive_points().get_children():
+		if child is KeywordInteractivePoint3D:
+			keywords.append(child.data)
+	return keywords
+
 func get_found_keywords() -> Array[KeywordData]:
 	var found_keywords: Array[KeywordData]
-	var text_keywords := keyword_description.get_all_keywords()
-	for keyword in text_keywords:
+	for keyword in keyword_description.get_all_keywords():
+		if keyword.is_found():
+			found_keywords.append(keyword)
+	for keyword in get_keywords_from_interactive_points():
 		if keyword.is_found():
 			found_keywords.append(keyword)
 	return found_keywords
