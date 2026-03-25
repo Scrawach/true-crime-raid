@@ -3,6 +3,7 @@ extends Node3D
 
 @export var dna_tube: PackedScene
 
+@onready var inspect_scene_appear: InspectSceneAppear = %InspectSceneAppear
 @onready var control_container: Control = %"Control Container"
 
 @onready var sub_viewport: SubViewport = %SubViewport
@@ -23,6 +24,13 @@ var player: PlayerBody3D
 
 func _ready() -> void:
 	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
+
+func smooth_show(callback: Callable = Callable()) -> void:
+	inspect_scene_appear.smooth_show(callback)
+
+func smooth_hide(callback: Callable = Callable()) -> void:
+	inspect_scene_appear.smooth_hide(callback)
+	item_handler.stop_rotation()
 
 func inspect(target: BaseItem) -> void:
 	camera_zoom.enable()
@@ -58,7 +66,6 @@ func _update_item_description(target: BaseItem) -> void:
 
 func abort() -> void:
 	camera_zoom.disable()
-	canvas_layer.hide()
 	
 	var points := item.get_interactive_points()
 	points.disable()
@@ -98,6 +105,8 @@ func _process_dna_open(point: DNAInteractivePoint3D) -> void:
 	item.ungrab()
 	abort()
 	inspect(tube)
+	
+	player.hand.item = item
 	#player.hand.drop()
 	#player.hand.pickup(tube)
 

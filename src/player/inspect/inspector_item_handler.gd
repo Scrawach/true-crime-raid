@@ -16,6 +16,11 @@ var pitch := 0.0
 var pre_capture_mouse_position: Vector2
 var rotation_step: Vector2
 
+var init_rotation: Vector3
+
+func _ready() -> void:
+	init_rotation = rotation
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		dragging = event.pressed
@@ -33,6 +38,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func stop_rotation() -> void:
 	rotation_step = Vector2.ZERO
+
+func clear() -> void:
+	rotation = init_rotation
 
 func _restore_mouse_position() -> void:
 	Input.warp_mouse(pre_capture_mouse_position)

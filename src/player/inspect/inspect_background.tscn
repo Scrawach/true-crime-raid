@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bk3m0wd35n37r"]
+
+[ext_resource type="Script" uid="uid://d1aygl1fdb8ca" path="res://player/inspect/inspect_background.gd" id="1_fxv0j"]
+[ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="1_npai0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxv0j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxa35"]
+shader = ExtResource("1_npai0")
+shader_parameter/blur_amount = 2.000000095
+
+[node name="Inspect Background" type="PanelContainer" unique_id=100959864]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fxv0j")
+script = ExtResource("1_fxv0j")
+
+[node name="Curtain" type="ColorRect" parent="." unique_id=1308640639]
+layout_mode = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Blur Curtain" type="ColorRect" parent="Curtain" unique_id=29567164]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_hxa35")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
