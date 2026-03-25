@@ -27,6 +27,7 @@ func _ready() -> void:
 
 func smooth_show(callback: Callable = Callable()) -> void:
 	inspect_scene_appear.smooth_show(callback)
+	_update_item_description(item)
 
 func smooth_hide(callback: Callable = Callable()) -> void:
 	inspect_scene_appear.smooth_hide(callback)
@@ -34,7 +35,6 @@ func smooth_hide(callback: Callable = Callable()) -> void:
 
 func inspect(target: BaseItem) -> void:
 	camera_zoom.enable()
-	_update_item_description(target)
 	canvas_layer.show()
 	keywords_panel.clear()
 	
@@ -48,12 +48,7 @@ func inspect(target: BaseItem) -> void:
 	points.enable()
 	points.clicked.connect(_on_clicked)
 	
-	if keyword_description.get_keyword_count() == 0:
-		keywords_panel.hide()
-	else:
-		keywords_panel.show()
-		keywords_panel.initialize(get_max_keyword_count())
-		keywords_panel.fill(get_found_keywords())
+	_update_item_description(item)
 	set_process_input(true)
 
 func _update_item_description(target: BaseItem) -> void:
@@ -63,6 +58,13 @@ func _update_item_description(target: BaseItem) -> void:
 		return
 	keyword_description.show()
 	keyword_description.initialize(target.data.name, target.get_description())
+	
+	if get_max_keyword_count() == 0:
+		keywords_panel.hide()
+	else:
+		keywords_panel.show()
+		keywords_panel.initialize(get_max_keyword_count())
+		keywords_panel.fill(get_found_keywords())
 
 func abort() -> void:
 	camera_zoom.disable()

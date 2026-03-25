@@ -14,8 +14,8 @@ func smooth_show(callback: Callable = Callable()) -> Tween:
 	deffered_callback = callback
 	tween = create_tween()
 	tween.tween_subtween(background.smooth_show())
-	tween.parallel().tween_property(background, "modulate:a", 1.0, 0.25)
-	tween.parallel().tween_property(main_control, "modulate:a", 1.0, 0.25)
+	tween.parallel().tween_property(background, "modulate:a", 1.0, 0.15)
+	tween.parallel().tween_property(main_control, "modulate:a", 1.0, 0.15)
 	tween.tween_callback(callback.call)
 	return tween
 
@@ -24,8 +24,8 @@ func smooth_hide(callback: Callable = Callable()) -> Tween:
 	deffered_callback = callback
 	tween = create_tween()
 	tween.tween_subtween(background.smooth_hide())
-	tween.parallel().tween_property(background, "modulate:a", 1.0, 0.25)
-	tween.parallel().tween_property(main_control, "modulate:a", 0.0, 0.25)
+	tween.parallel().tween_property(background, "modulate:a", 0.0, 0.10)
+	tween.parallel().tween_property(main_control, "modulate:a", 0.0, 0.10)
 	tween.tween_callback(canvas_layer.hide)
 	tween.tween_callback(callback.call)
 	return tween

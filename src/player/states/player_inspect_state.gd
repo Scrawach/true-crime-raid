@@ -17,6 +17,7 @@ func state_handle_input(event: InputEvent) -> void:
 func enter() -> void:
 	is_animating = true
 	inspect_scene.player = player
+	inspect_scene.item = player.hand.item
 	inspect_scene.smooth_show(_on_enter)
 	player.hand.item.reparent(inspect_scene.item_point)
 	smooth_move_item_to_zero(player.hand.item, 0.2)
