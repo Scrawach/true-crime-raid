@@ -1,20 +1,11 @@
 [gd_scene format=3 uid="uid://d25j0f0jg6nc6"]
 
 [ext_resource type="PackedScene" uid="uid://cx7rsciexusnm" path="res://player/player_body_3d.tscn" id="2_dsgtm"]
-[ext_resource type="PackedScene" uid="uid://ub7r74d5ugx4" path="res://items/document_packet_item.tscn" id="3_kem4b"]
+[ext_resource type="PackedScene" uid="uid://dqosh81q150fd" path="res://scenarios/00_night_fight/00_night_fight_evidences.tscn" id="2_ia5wu"]
 [ext_resource type="PackedScene" uid="uid://d1kcea5mswfvx" path="res://prototyping/assets/lab.glb" id="4_huww6"]
-[ext_resource type="PackedScene" uid="uid://cfkjs653heppy" path="res://items/packet_item.tscn" id="4_kem4b"]
 [ext_resource type="PackedScene" uid="uid://dtthlhayjwcce" path="res://devices/trash/trash_holder.tscn" id="5_ia5wu"]
 [ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://devices/computer/computer.tscn" id="5_kem4b"]
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_17xy5"]
-[ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="6_bujhi"]
-[ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="7_7fl8n"]
-[ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="8_nb3ri"]
-[ext_resource type="PackedScene" uid="uid://c1lf10hvr208k" path="res://scenarios/00_night_fight/items/protocol_document.tscn" id="9_7fl8n"]
-[ext_resource type="Resource" uid="uid://bwiprlyrg26oj" path="res://scenarios/00_night_fight/items/data/documents/paul_slater.tres" id="9_cjrne"]
-[ext_resource type="PackedScene" uid="uid://gqfhoact6o3d" path="res://scenarios/00_night_fight/items/nn_kitchen_knife.tscn" id="10_nb3ri"]
-[ext_resource type="PackedScene" uid="uid://bbhmh0a4jrm28" path="res://scenarios/00_night_fight/items/nn_bear_cup.tscn" id="11_cjrne"]
-[ext_resource type="PackedScene" uid="uid://ct1a2ego76j0s" path="res://scenarios/00_night_fight/items/nn_ashpot.tscn" id="12_ygl3y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,7 +21,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 1
 tonemap_mode = 2
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ygl3y"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_huww6"]
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
 
@@ -46,36 +37,16 @@ shadow_opacity = 0.6
 
 [node name="lab" parent="Environment" unique_id=675065015 instance=ExtResource("4_huww6")]
 
+[node name="Ground World Boundary" type="StaticBody3D" parent="Environment/lab" unique_id=83751850]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/lab/Ground World Boundary" unique_id=2004881726]
+shape = SubResource("WorldBoundaryShape3D_huww6")
+debug_color = Color(0.7516415, 0.9316102, 0, 0.41960785)
+
 [node name="Evidences" type="Node3D" parent="Environment" unique_id=1536998085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0292587, 0.7222628, -3.756176)
 
-[node name="Document Packet Item" parent="Environment/Evidences" unique_id=679873917 node_paths=PackedStringArray("open_item") instance=ExtResource("3_kem4b")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45659018, 0.19906265, -0.1263678)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Documents/Jim Waller Document")
-
-[node name="Document Packet Item2" parent="Environment/Evidences" unique_id=722533305 node_paths=PackedStringArray("open_item") instance=ExtResource("3_kem4b")]
-transform = Transform3D(0.9836156, -0.18027882, -7.880237e-09, 0, -4.371139e-08, 1, -0.18027882, -0.9836156, -4.29952e-08, -0.44389367, 0.15595955, -0.1263678)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Documents/Austin Bolton Document")
-
-[node name="Document Packet Item3" parent="Environment/Evidences" unique_id=654236777 node_paths=PackedStringArray("open_item") instance=ExtResource("3_kem4b")]
-transform = Transform3D(0.9871976, 0.15950215, 6.9720603e-09, 0, -4.371139e-08, 1, 0.15950215, -0.9871976, -4.3151775e-08, -0.44732308, 0.23589224, -0.11130619)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Documents/Main Protocol")
-
-[node name="Document Packet Item4" parent="Environment/Evidences" unique_id=1693518317 node_paths=PackedStringArray("open_item") instance=ExtResource("3_kem4b")]
-transform = Transform3D(0.9975065, 0.07057476, 3.0849208e-09, 0, -4.371139e-08, 1, 0.07057476, -0.9975065, -4.3602395e-08, -0.44007087, 0.104350865, -0.101398945)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Documents/Paus Slater Document")
-
-[node name="Packet Item" parent="Environment/Evidences" unique_id=1084729045 node_paths=PackedStringArray("open_item") instance=ExtResource("4_kem4b")]
-transform = Transform3D(0.91207004, 0, 0.41003448, 0, 1, 0, -0.41003448, 0, 0.91207004, 0.13150716, 0.20324165, -0.36077023)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Objects/NN Ashpot")
-
-[node name="Packet Item2" parent="Environment/Evidences" unique_id=223584185 node_paths=PackedStringArray("open_item") instance=ExtResource("4_kem4b")]
-transform = Transform3D(0.70684755, 0, -0.70736593, 0, 1, 0, 0.70736593, 0, 0.70684755, 0.05653739, 0.18648344, 0.14124298)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Objects/NN Bear Cup")
-
-[node name="Packet Item3" parent="Environment/Evidences" unique_id=1581977830 node_paths=PackedStringArray("open_item") instance=ExtResource("4_kem4b")]
-transform = Transform3D(0.9790028, 0, -0.2038468, 0, 1, 0, 0.2038468, 0, 0.9790028, 0.4076929, 0.2428506, -0.0514102)
-open_item = NodePath("../../../Scenarios/00_NightFight/Items/Objects/NN Kitchen Knife")
+[node name="00NightFight Evidences" parent="Environment/Evidences" unique_id=1178563297 instance=ExtResource("2_ia5wu")]
 
 [node name="Devices" type="Node3D" parent="Environment" unique_id=259788603]
 
@@ -90,43 +61,3 @@ transform = Transform3D(0.8960297, 0, 0.4439941, 0, 1, 0, -0.4439941, 0, 0.89602
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
-
-[node name="Scenarios" type="Node" parent="." unique_id=1556102110]
-
-[node name="00_NightFight" type="Node" parent="Scenarios" unique_id=998407388]
-
-[node name="Items" type="Node3D" parent="Scenarios/00_NightFight" unique_id=346044527]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
-
-[node name="Documents" type="Node3D" parent="Scenarios/00_NightFight/Items" unique_id=1847717079]
-
-[node name="Jim Waller Document" parent="Scenarios/00_NightFight/Items/Documents" unique_id=152395786 instance=ExtResource("9_7fl8n")]
-data = ExtResource("6_bujhi")
-
-[node name="Austin Bolton Document" parent="Scenarios/00_NightFight/Items/Documents" unique_id=412592915 instance=ExtResource("9_7fl8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-data = ExtResource("7_7fl8n")
-
-[node name="Main Protocol" parent="Scenarios/00_NightFight/Items/Documents" unique_id=1212312699 instance=ExtResource("9_7fl8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
-data = ExtResource("8_nb3ri")
-
-[node name="Paus Slater Document" parent="Scenarios/00_NightFight/Items/Documents" unique_id=1642022541 instance=ExtResource("9_7fl8n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-data = ExtResource("9_cjrne")
-
-[node name="Objects" type="Node3D" parent="Scenarios/00_NightFight/Items" unique_id=516990934]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-
-[node name="NN Ashpot" parent="Scenarios/00_NightFight/Items/Objects" unique_id=1892176734 instance=ExtResource("12_ygl3y")]
-
-[node name="NN Bear Cup" parent="Scenarios/00_NightFight/Items/Objects" unique_id=1671077726 instance=ExtResource("11_cjrne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
-
-[node name="NN Kitchen Knife" parent="Scenarios/00_NightFight/Items/Objects" unique_id=113370056 instance=ExtResource("10_nb3ri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Scenarios/00_NightFight" unique_id=281375373]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenarios/00_NightFight/StaticBody3D" unique_id=1944609556]
-shape = SubResource("WorldBoundaryShape3D_ygl3y")

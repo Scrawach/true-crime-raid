@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dqosh81q150fd"]
+
+[ext_resource type="PackedScene" uid="uid://ub7r74d5ugx4" path="res://items/document_packet_item.tscn" id="1_mlx2c"]
+[ext_resource type="PackedScene" uid="uid://cfkjs653heppy" path="res://items/packet_item.tscn" id="2_fmvw8"]
+[ext_resource type="PackedScene" uid="uid://c1lf10hvr208k" path="res://scenarios/00_night_fight/items/protocol_document.tscn" id="4_w0lc5"]
+[ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="5_2lsm7"]
+[ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="6_vktlg"]
+[ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="7_wte0g"]
+[ext_resource type="Resource" uid="uid://bwiprlyrg26oj" path="res://scenarios/00_night_fight/items/data/documents/paul_slater.tres" id="8_0pn4n"]
+[ext_resource type="PackedScene" uid="uid://ct1a2ego76j0s" path="res://scenarios/00_night_fight/items/nn_ashpot.tscn" id="9_l4yvo"]
+[ext_resource type="PackedScene" uid="uid://bbhmh0a4jrm28" path="res://scenarios/00_night_fight/items/nn_bear_cup.tscn" id="10_43ong"]
+[ext_resource type="PackedScene" uid="uid://gqfhoact6o3d" path="res://scenarios/00_night_fight/items/nn_kitchen_knife.tscn" id="11_i1sbt"]
+
+[node name="00NightFight Evidences" type="Node3D" unique_id=1178563297]
+
+[node name="Document Packet Item" parent="." unique_id=679873917 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45659018, 0.19906265, -0.1263678)
+open_item = NodePath("../Inner/Items/Documents/Main Protocol")
+
+[node name="Document Packet Item2" parent="." unique_id=1197350800 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
+transform = Transform3D(0.9836156, -0.18027882, -7.880237e-09, 0, -4.371139e-08, 1, -0.18027882, -0.9836156, -4.29952e-08, -0.44389367, 0.15595955, -0.1263678)
+open_item = NodePath("../Inner/Items/Documents/Jim Waller Document")
+
+[node name="Document Packet Item3" parent="." unique_id=16118365 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
+transform = Transform3D(0.9871976, 0.15950215, 6.9720603e-09, 0, -4.371139e-08, 1, 0.15950215, -0.9871976, -4.3151775e-08, -0.44732308, 0.23589224, -0.11130619)
+open_item = NodePath("../Inner/Items/Documents/Paus Slater Document")
+
+[node name="Document Packet Item4" parent="." unique_id=949247593 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
+transform = Transform3D(0.9975065, 0.07057476, 3.0849208e-09, 0, -4.371139e-08, 1, 0.07057476, -0.9975065, -4.3602395e-08, -0.44007087, 0.104350865, -0.101398945)
+open_item = NodePath("../Inner/Items/Documents/Austin Bolton Document")
+
+[node name="Packet Item" parent="." unique_id=867906055 node_paths=PackedStringArray("open_item") instance=ExtResource("2_fmvw8")]
+transform = Transform3D(0.91207004, 0, 0.41003448, 0, 1, 0, -0.41003448, 0, 0.91207004, 0.13150716, 0.20324165, -0.36077023)
+open_item = NodePath("../Inner/Items/Objects/NN Ashpot")
+
+[node name="Packet Item2" parent="." unique_id=415150462 node_paths=PackedStringArray("open_item") instance=ExtResource("2_fmvw8")]
+transform = Transform3D(0.70684755, 0, -0.70736593, 0, 1, 0, 0.70736593, 0, 0.70684755, 0.05653739, 0.18648344, 0.14124298)
+open_item = NodePath("../Inner/Items/Objects/NN Bear Cup")
+
+[node name="Packet Item3" parent="." unique_id=331800213 node_paths=PackedStringArray("open_item") instance=ExtResource("2_fmvw8")]
+transform = Transform3D(0.9790028, 0, -0.2038468, 0, 1, 0, 0.2038468, 0, 0.9790028, 0.4076929, 0.2428506, -0.0514102)
+open_item = NodePath("../Inner/Items/Objects/NN Kitchen Knife")
+
+[node name="Inner" type="Node3D" parent="." unique_id=2027055479]
+visible = false
+
+[node name="Items" type="Node3D" parent="Inner" unique_id=338381409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0292587, -0.7222628, -5.243824)
+
+[node name="Documents" type="Node3D" parent="Inner/Items" unique_id=559608917]
+
+[node name="Jim Waller Document" parent="Inner/Items/Documents" unique_id=229039977 instance=ExtResource("4_w0lc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+data = ExtResource("5_2lsm7")
+
+[node name="Austin Bolton Document" parent="Inner/Items/Documents" unique_id=2118043784 instance=ExtResource("4_w0lc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+data = ExtResource("6_vktlg")
+
+[node name="Main Protocol" parent="Inner/Items/Documents" unique_id=2135825815 instance=ExtResource("4_w0lc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+data = ExtResource("7_wte0g")
+
+[node name="Paus Slater Document" parent="Inner/Items/Documents" unique_id=246902903 instance=ExtResource("4_w0lc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+data = ExtResource("8_0pn4n")
+
+[node name="Objects" type="Node3D" parent="Inner/Items" unique_id=815429403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="NN Ashpot" parent="Inner/Items/Objects" unique_id=1591572147 instance=ExtResource("9_l4yvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="NN Bear Cup" parent="Inner/Items/Objects" unique_id=368907928 instance=ExtResource("10_43ong")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 0)
+
+[node name="NN Kitchen Knife" parent="Inner/Items/Objects" unique_id=1022924863 instance=ExtResource("11_i1sbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
