@@ -69,6 +69,7 @@ func _update_item_description(target: BaseItem) -> void:
 
 func abort() -> void:
 	camera_zoom.disable()
+	camera_zoom.clear()
 	
 	var points := item.get_interactive_points()
 	points.disable()

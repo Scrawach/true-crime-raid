@@ -21,6 +21,9 @@ func get_zoom_ratio() -> float:
 func is_small_enough() -> bool:
 	return get_zoom_ratio() < 0.5
 
+func clear() -> void:
+	pass
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
 		if zoom_relative > 0:

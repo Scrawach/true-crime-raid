@@ -22,11 +22,10 @@ points = PackedVector3Array(0.026089145, -0.23624727, 0.013968218, 0.030054262, 
 data = ExtResource("2_kbe3i")
 
 [node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_hojxe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0030265003, -0.0872384, 0.019575655)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0017851519, -0.0872384, -0.01820842)
 dna_data = ExtResource("3_kbe3i")
 only_once = true
 dna_mesh = NodePath("../../kitchen-knife/FingerPrint")
-is_disabled = true
 is_small = true
 visible_distance = 0.6
 
@@ -35,14 +34,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030212548, 0.19282097, -0.0
 dna_data = ExtResource("4_xhr34")
 only_once = true
 dna_mesh = NodePath("../../kitchen-knife/kitchen-knife-blood")
-is_disabled = true
 
 [node name="kitchen-knife" parent="." index="5" unique_id=1375673245 instance=ExtResource("5_xpbyt")]
 
 [node name="kitchen-knife-blood" parent="kitchen-knife" index="1" unique_id=1359230406 instance=ExtResource("6_aaqqt")]
 
 [node name="FingerPrint" type="MeshInstance3D" parent="kitchen-knife" index="2" unique_id=1653475780]
-transform = Transform3D(0.8565194, -0.5161148, 0, 0.5161148, 0.8565194, 0, 0, 0, 1, 0.0017851517, -0.084734425, 0.013224095)
+transform = Transform3D(-0.8565195, 0.51611483, 8.7422784e-08, 0.51611483, 0.8565195, 0, -7.48793e-08, 4.5120185e-08, -1, 0.0030265, -0.084734425, -0.01185686)
 mesh = SubResource("QuadMesh_2t5iu")
 surface_material_override/0 = ExtResource("7_mt0kw")
 

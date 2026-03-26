@@ -11,6 +11,8 @@ func _ready() -> void:
 
 func disable() -> void:
 	super.disable()
+
+func clear() -> void:
 	desired_distance = max_distance
 
 func get_zoom_ratio() -> float:

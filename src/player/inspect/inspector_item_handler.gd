@@ -41,6 +41,7 @@ func stop_rotation() -> void:
 
 func clear() -> void:
 	rotation = init_rotation
+	camera_zoom.clear()
 
 func _restore_mouse_position() -> void:
 	Input.warp_mouse(pre_capture_mouse_position)
