@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_kyd4t"]
 [ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="7_bujhi"]
 [ext_resource type="PackedScene" uid="uid://c1lf10hvr208k" path="res://scenarios/00_night_fight/items/protocol_document.tscn" id="9_7fl8n"]
+[ext_resource type="PackedScene" uid="uid://gqfhoact6o3d" path="res://scenarios/00_night_fight/items/nn_kitchen_knife.tscn" id="10_nb3ri"]
+[ext_resource type="PackedScene" uid="uid://bbhmh0a4jrm28" path="res://scenarios/00_night_fight/items/nn_bear_cup.tscn" id="11_cjrne"]
+[ext_resource type="PackedScene" uid="uid://ct1a2ego76j0s" path="res://scenarios/00_night_fight/items/nn_ashpot.tscn" id="12_ygl3y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -71,6 +74,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34784842, 0.85783553, -0.69
 
 [node name="Protocol Document" parent="Environment" unique_id=1302776713 instance=ExtResource("9_7fl8n")]
 transform = Transform3D(1, 0, 0, 0, 0.37790543, 0.9258442, 0, -0.9258442, 0.37790543, 2.3375502, 1.0183903, -0.7020629)
+
+[node name="NN Kitchen Knife" parent="Environment" unique_id=1269655749 instance=ExtResource("10_nb3ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.6683146, -2)
+
+[node name="NN Bear Cup" parent="Environment" unique_id=158136272 instance=ExtResource("11_cjrne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67097163, -2.1297522)
+
+[node name="NN Ashpot" parent="Environment" unique_id=353926000 instance=ExtResource("12_ygl3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38326287, 1.6443626, -2.441432)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)

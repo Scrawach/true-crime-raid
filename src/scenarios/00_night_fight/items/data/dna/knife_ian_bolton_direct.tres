@@ -7,5 +7,5 @@ script = ExtResource("1_e8um3")
 database_name = "Ian Bolton"
 overlap_percentage = 96.0
 match_type = "Direct"
-description = "Обнаружено на ноже"
+description = "Образец крови с ножа"
 metadata/_custom_type_script = "uid://bn7663kucbpmq"

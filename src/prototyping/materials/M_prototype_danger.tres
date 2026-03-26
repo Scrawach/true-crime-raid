@@ -1,15 +1,15 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://dkfvrhwojym1q"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bseibvgr10j2a"]
 
-[ext_resource type="Shader" uid="uid://dbfn7oq3tqx0w" path="res://prototyping/materials/prototype_grid.gdshader" id="1_j7rvt"]
+[ext_resource type="Shader" uid="uid://dbfn7oq3tqx0w" path="res://prototyping/materials/prototype_grid.gdshader" id="1_0pesw"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_j7rvt")
+shader = ExtResource("1_0pesw")
 shader_parameter/world_uv = false
 shader_parameter/object_uv = false
 shader_parameter/object_uv_scale = Vector2(1, 1)
 shader_parameter/preset_color = 0
-shader_parameter/base_color = Color(0.11636595, 0.10810348, 0.44555676, 1)
+shader_parameter/base_color = Color(0.42, 0.105, 0.105, 1)
 shader_parameter/emmision_color = Color(0, 0, 0, 1)
 shader_parameter/metalic = 0.25
 shader_parameter/roughness = 1.0

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DNAData" format=3 uid="uid://4t3momjkuhtj"]
+
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="1_ukgx4"]
+
+[resource]
+script = ExtResource("1_ukgx4")
+match_type = "Null"
+description = "Образец слюны. Обнаружен на окруке №2"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"

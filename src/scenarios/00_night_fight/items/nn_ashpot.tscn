@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://ct1a2ego76j0s"]
+
+[ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_7ubpt"]
+[ext_resource type="PackedScene" uid="uid://b7ydi1s8x2uv3" path="res://items/interactions/dna_interactive_point_3d.tscn" id="2_fs17s"]
+[ext_resource type="Resource" uid="uid://ec8ekdji04b6" path="res://scenarios/00_night_fight/items/data/items/butts.tres" id="2_uf3j3"]
+[ext_resource type="Resource" uid="uid://jbubfiyk733x" path="res://scenarios/00_night_fight/items/data/dna/butts_austin_bolton_direct.tres" id="3_34e28"]
+[ext_resource type="Resource" uid="uid://b1uc7bcajfvy2" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_1.tres" id="4_152wy"]
+[ext_resource type="PackedScene" uid="uid://4dgefl100kt3" path="res://scenarios/00_night_fight/items/assets/ashpot.glb" id="4_qytvs"]
+[ext_resource type="Resource" uid="uid://4t3momjkuhtj" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_2.tres" id="5_uf3j3"]
+[ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="7_152wy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_uf3j3"]
+size = Vector2(0.01, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_152wy"]
+size = Vector3(0.21490479, 0.026920319, 0.21850586)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uf3j3"]
+size = Vector3(0.014678955, 0.041902542, 0.21850586)
+
+[node name="NN Ashpot" unique_id=679873917 instance=ExtResource("1_7ubpt")]
+data = ExtResource("2_uf3j3")
+
+[node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039506212, 0.008693501, -0.05701466)
+dna_data = ExtResource("3_34e28")
+only_once = true
+dna_mesh = NodePath("../../ashpot/Spit")
+is_small = true
+visible_distance = 0.6
+
+[node name="DNA Interactive Point 3D2" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="1" unique_id=1874189529 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04893385, 0.047528088, -0.12553425)
+dna_data = ExtResource("4_152wy")
+only_once = true
+dna_mesh = NodePath("../../ashpot/Spit3")
+is_small = true
+visible_distance = 0.6
+
+[node name="DNA Interactive Point 3D3" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="2" unique_id=821512495 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06279821, 0.003997816, 0.052502364)
+dna_data = ExtResource("5_uf3j3")
+only_once = true
+dna_mesh = NodePath("../../ashpot/Spit2")
+is_small = true
+visible_distance = 0.6
+
+[node name="ashpot" parent="." index="5" unique_id=44307244 instance=ExtResource("4_qytvs")]
+
+[node name="Spit" type="MeshInstance3D" parent="ashpot" index="1" unique_id=857780575]
+transform = Transform3D(0.64778745, -0.76182103, -3.3300253e-08, 0, -4.371139e-08, 1, -0.76182103, -0.64778745, -2.8315691e-08, 0.0401181, 0.003160376, -0.05513211)
+mesh = SubResource("QuadMesh_uf3j3")
+surface_material_override/0 = ExtResource("7_152wy")
+
+[node name="Spit2" type="MeshInstance3D" parent="ashpot" index="2" unique_id=1037835494]
+transform = Transform3D(0.428746, 0.903425, 3.948996e-08, 3.6546693e-15, -4.3711392e-08, 1, 0.903425, -0.428746, -1.8741087e-08, -0.062687874, 0.003160376, 0.052612145)
+mesh = SubResource("QuadMesh_uf3j3")
+surface_material_override/0 = ExtResource("7_152wy")
+
+[node name="Spit3" type="MeshInstance3D" parent="ashpot" index="3" unique_id=171954376]
+transform = Transform3D(0.34079605, 0.93995315, 0.01860407, -0.31621677, 0.09596919, 0.9438205, 0.88536143, -0.3275331, 0.32993484, -0.0501177, 0.043803234, -0.12606373)
+mesh = SubResource("QuadMesh_uf3j3")
+surface_material_override/0 = ExtResource("7_152wy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="6" unique_id=1680598996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1552734e-05, -0.013700485, -0.00061035156)
+shape = SubResource("BoxShape3D_152wy")
+debug_color = Color(0.84307903, 0.35079107, 0.35154405, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7" unique_id=1406163469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10002136, 0.016841523, -0.00061035156)
+shape = SubResource("BoxShape3D_uf3j3")
+debug_color = Color(0.99591225, 0, 0.060205683, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="8" unique_id=2064142922]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.553795e-05, 0.016841523, -0.10018912)
+shape = SubResource("BoxShape3D_uf3j3")
+debug_color = Color(0.99591225, 0, 0.060205683, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="9" unique_id=516600575]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0015099347, 0.016841523, 0.10043281)
+shape = SubResource("BoxShape3D_uf3j3")
+debug_color = Color(0.99591225, 0, 0.060205683, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="10" unique_id=2055123823]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.1006006, 0.016841523, -0.00061035156)
+shape = SubResource("BoxShape3D_uf3j3")
+debug_color = Color(0.99591225, 0, 0.060205683, 1)

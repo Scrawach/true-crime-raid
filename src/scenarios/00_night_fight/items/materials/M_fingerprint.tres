@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://i8mcg8qfkqxe"]
+
+[ext_resource type="Texture2D" uid="uid://cjlmf8mabgbkr" path="res://scenarios/00_night_fight/items/assets/fingerprint_256p.png" id="1_7ha2l"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_7ha2l")
