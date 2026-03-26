@@ -2,13 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_kdftl"]
 [ext_resource type="PackedScene" uid="uid://oo03c6trv6q0" path="res://prototyping/assets/document.glb" id="2_ixs7t"]
-[ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="2_vkrfa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vkrfa"]
 size = Vector3(0.28134155, 0.40167236, 0.018981934)
 
 [node name="Protocol Document" unique_id=679873917 instance=ExtResource("1_kdftl")]
-data = ExtResource("2_vkrfa")
 
 [node name="document" parent="." index="5" unique_id=1409174497 instance=ExtResource("2_ixs7t")]
 

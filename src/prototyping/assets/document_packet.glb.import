@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnhkt7fnjsjh0"
-path="res://.godot/imported/simple_packet.glb-e62e37b81486205db9bb6bac666dd014.scn"
+uid="uid://4ud1ahmo46fh"
+path="res://.godot/imported/document_packet.glb-5c706a55018dceed4c6135313b36fc2a.scn"
 
 [deps]
 
-source_file="res://prototyping/assets/simple_packet.glb"
-dest_files=["res://.godot/imported/simple_packet.glb-e62e37b81486205db9bb6bac666dd014.scn"]
+source_file="res://prototyping/assets/document_packet.glb"
+dest_files=["res://.godot/imported/document_packet.glb-5c706a55018dceed4c6135313b36fc2a.scn"]
 
 [params]
 
@@ -39,6 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"Graybox.Danger": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://prototyping/materials/M_prototype_danger.tres",
+"use_external/path": "uid://bseibvgr10j2a"
+},
 "Graybox.Document": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://prototyping/materials/M_prototype_document.tres",

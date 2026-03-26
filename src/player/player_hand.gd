@@ -39,8 +39,8 @@ func drop() -> void:
 	item = null
 
 func _move_to_hand(progress: float) -> void:
-	item.global_position = lerp(item.global_position, hand_point.global_position, progress)
-	item.rotation = lerp(item.rotation, hand_point.rotation, progress)
+	item.position = lerp(item.position, Vector3.ZERO, progress)
+	item.rotation = lerp(item.rotation, Vector3.ZERO, progress)
 
 func _kill_if_needed() -> void:
 	if tween:

@@ -87,8 +87,11 @@ func _on_clicked(point: InteractivePoint3D) -> void:
 		_process_dna_open(point)
 
 func _process_open(point: OpenInteractivePoint3D) -> void:
-	var spawn_object := point.open_item.instantiate() as BaseItem
-	add_sibling(spawn_object)
+	var spawn_object := point.open_item
+	if spawn_object.get_parent() == null:
+		add_sibling(spawn_object)
+	else:
+		spawn_object.reparent(get_parent())
 	spawn_object.grab()
 	item.queue_free()
 	player.hand.item = spawn_object

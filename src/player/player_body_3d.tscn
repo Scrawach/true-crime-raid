@@ -40,7 +40,7 @@ collide_with_bodies = false
 
 [node name="Hand Point" type="Marker3D" parent="Head" unique_id=2028372810]
 unique_name_in_owner = true
-transform = Transform3D(0.72657466, 0, 0.6870875, 0, 1, 0, -0.6870875, 0, 0.72657466, 0.499, -0.42199993, -0.557)
+transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.8660253, 0.499, -0.42199993, -0.557)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
 current = true
