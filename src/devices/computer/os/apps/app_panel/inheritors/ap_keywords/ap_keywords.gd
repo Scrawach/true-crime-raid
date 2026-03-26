@@ -1,31 +1,42 @@
+class_name APKeywords
 extends AppPanel
 
-@onready var hfc_words: HFlowContainer = $VBoxContainer/Content/hfc_words
+@onready var hfc_kwbs_personas: HFlowContainer = %hfc_kwbs_personas
+@onready var hfc_kwbs_events: HFlowContainer = %hfc_kwbs_events
+@onready var hfc_kwbs_evidences: HFlowContainer = %hfc_kwbs_evidences
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	super._ready()
-	GameManager.keywords_updated.connect(on_keywords_updated)
-	clear_container()
-	fill_container()
+var keyword_buttons:Dictionary[KeywordData, APButtonTransmitter]
 
 
-func on_keywords_updated():
-	clear_container()
-	fill_container()
-
-
-func clear_container():
-	for child in hfc_words.get_children():
+func clear_containers():
+	for child in hfc_kwbs_personas.get_children():
+		child.queue_free()
+	for child in hfc_kwbs_events.get_children():
+		child.queue_free()
+	for child in hfc_kwbs_evidences.get_children():
 		child.queue_free()
 
 
-func fill_container():
-	for keyword_data in GameManager.found_keywords.values():
-		hfc_words.add_child(create_keyword_button(keyword_data))
+func fill_containers(data:Dictionary[KeywordData, bool]):
+	for keyword_data in data.keys():
+		if keyword_data == null:
+			printerr(" to do - APKeywords - fill_containers - keyword_data == null")
+			continue
+		match keyword_data.type:
+			"PERSON":
+				hfc_kwbs_personas.add_child(create_keyword_button(keyword_data, data[keyword_data]))
+			"EVENT":
+				hfc_kwbs_events.add_child(create_keyword_button(keyword_data, data[keyword_data]))
+			"EVIDENCE":
+				hfc_kwbs_evidences.add_child(create_keyword_button(keyword_data, data[keyword_data]))
+			_:
+				printerr(" to do - APKeywords - fill_containers - no type for keyword: ", keyword_data)
 
 
-func create_keyword_button(keyword_data:KeywordData) -> Button:
-	var btn = APButton.new()
+func create_keyword_button(keyword_data:KeywordData, _visible:bool) -> Button:
+	var btn = APButtonTransmitter.new()
+	keyword_buttons[keyword_data] = btn
 	btn.text = keyword_data.words
+	btn.visible = _visible
+	btn.keyword = keyword_data
 	return btn

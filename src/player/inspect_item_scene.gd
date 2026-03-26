@@ -113,7 +113,7 @@ func _add_keyword(data: KeywordData) -> void:
 	_update_keyword_counts()
 	var flow_label := make_label_for(data)
 	keywords_container.add_child(flow_label)
-	GameManager.update_keywords(found_keywords)
+	GameManager.keyword_found.emit(data)
 
 func _update_keyword_counts() -> void:
 	keywords_count.text = "%s / %s" % [found_keywords.size(), get_max_keyword_count()]

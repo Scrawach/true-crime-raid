@@ -13,10 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://b743b3jrd5671" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_report.tscn" id="9_gth8j"]
 [ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="9_qf42x"]
 [ext_resource type="Texture2D" uid="uid://c5leegj3263sk" path="res://devices/computer/assets/img/os_gui/Windows_Button.png" id="10_a7cm2"]
+[ext_resource type="PackedScene" uid="uid://cxu2lejo35spp" path="res://devices/computer/os/apps/app_panel/inheritors/ap_debug/ap_debug.tscn" id="10_dalv8"]
 [ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/Windows_Button_Pressed.png" id="11_a7cm2"]
 [ext_resource type="Texture2D" uid="uid://xknefb2o63xm" path="res://devices/computer/assets/img/os_gui/Window_Base.png" id="12_anpc4"]
 [ext_resource type="Texture2D" uid="uid://8vsiaduloe33" path="res://devices/computer/assets/img/cursors/cursor0010.png" id="13_2t07n"]
 [ext_resource type="Script" uid="uid://b2po74o83srcy" path="res://devices/computer/monitor/computer_mouse_cursor.gd" id="14_c0d2k"]
+[ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="18_gsb3y"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="19_dalv8"]
+[ext_resource type="Script" uid="uid://dlggi3csk17kq" path="res://devices/computer/os/os_gameplay/dna_cluster/dna_cluster.gd" id="20_ww1kh"]
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="22_ww1kh"]
 
 [sub_resource type="Theme" id="Theme_anpc4"]
 Button/font_sizes/font_size = 24
@@ -26,6 +31,9 @@ Label/fonts/font = ExtResource("1_1hhjf")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xg1g"]
 bg_color = Color(0.21960784, 0.16862746, 0.14901961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ww1kh"]
+font_size = 48
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anpc4"]
 content_margin_top = 1.0
@@ -90,6 +98,81 @@ PanelContainer/styles/panel = SubResource("StyleBoxTexture_numv4")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hhjf"]
 
+[sub_resource type="Resource" id="Resource_ww1kh"]
+script = ExtResource("19_dalv8")
+id = "x007"
+words = "Conflict"
+type = "EVENT"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_j7fte"]
+script = ExtResource("19_dalv8")
+id = "x003"
+words = "Knife"
+type = "EVIDENCE"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_x8pnj"]
+script = ExtResource("20_ww1kh")
+evidence = SubResource("Resource_j7fte")
+metadata/_custom_type_script = "uid://dlggi3csk17kq"
+
+[sub_resource type="Resource" id="Resource_7hpiq"]
+script = ExtResource("19_dalv8")
+id = "x008"
+words = "Butt"
+type = "EVIDENCE"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_64sn2"]
+script = ExtResource("20_ww1kh")
+evidence = SubResource("Resource_7hpiq")
+metadata/_custom_type_script = "uid://dlggi3csk17kq"
+
+[sub_resource type="Resource" id="Resource_sab36"]
+script = ExtResource("19_dalv8")
+id = "x001"
+words = "Austin Bolton"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_dalv8"]
+script = ExtResource("19_dalv8")
+id = "x002"
+words = "Finance"
+type = "EVENT"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_qiysj"]
+script = ExtResource("19_dalv8")
+id = "x004"
+words = "Ian Bolton"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_g05ep"]
+script = ExtResource("19_dalv8")
+id = "x005"
+words = "Jim Waller"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_lv3v4"]
+script = ExtResource("19_dalv8")
+id = "x006"
+words = "Paul Slater"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_5hud7"]
+script = ExtResource("18_gsb3y")
+felon = SubResource("Resource_sab36")
+personas = Array[ExtResource("19_dalv8")]([SubResource("Resource_qiysj"), SubResource("Resource_g05ep"), SubResource("Resource_lv3v4")])
+motive = SubResource("Resource_dalv8")
+events = Array[ExtResource("19_dalv8")]([SubResource("Resource_ww1kh")])
+evidences = Array[ExtResource("20_ww1kh")]([SubResource("Resource_x8pnj"), SubResource("Resource_64sn2")])
+metadata/_custom_type_script = "uid://dtlybdfupvk30"
+
 [node name="Monitor Control" type="Control" unique_id=803566879]
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 3
@@ -98,10 +181,6 @@ offset_right = 771.0
 offset_bottom = 512.0
 theme = SubResource("Theme_anpc4")
 script = ExtResource("1_6xg1g")
-
-[node name="OSGameplay" type="Node" parent="." unique_id=709959101]
-script = ExtResource("2_6xg1g")
-metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
 [node name="Background" type="ColorRect" parent="." unique_id=620913889]
 layout_mode = 1
@@ -181,6 +260,19 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 
+[node name="btn_debug" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=988282608]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 6.0
+offset_right = 725.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 12
+text = "DEBUG"
+icon = ExtResource("7_qf42x")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
 [node name="c_windows" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=1108269385]
 layout_mode = 2
 mouse_filter = 2
@@ -194,12 +286,19 @@ offset_bottom = 408.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_dna_composer")
 btn_ico = NodePath("../../c_apps/btn_dna_composer")
 
-[node name="pc_app" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
+[node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
 layout_mode = 0
+offset_left = 118.0
+offset_top = 53.0
+offset_right = 412.0
+offset_bottom = 247.0
+notification_success = NodePath("../../c_notifications/notify_report_success")
+notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess")
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_personas_db")
 btn_ico = NodePath("../../c_apps/btn_personas_db")
 
 [node name="pc_app3" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=51728572 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("9_qf42x")]
+visible = false
 layout_mode = 0
 offset_left = 194.0
 offset_top = 220.0
@@ -207,6 +306,82 @@ offset_right = 379.0
 offset_bottom = 376.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_dossier_viewer")
 btn_ico = NodePath("../../c_apps/btn_dossier_viewer")
+
+[node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 11.0
+offset_right = 578.0
+offset_bottom = 167.0
+btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_debug")
+btn_ico = NodePath("../../c_apps/btn_debug")
+
+[node name="c_notifications" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=512799671]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="notify_report_unsuccess" type="ColorRect" parent="mc_os_workspace/pc_wallpaper/c_notifications" unique_id=452544713]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)
+
+[node name="Label" type="Label" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=889220886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The report was compiled incorrectly"
+label_settings = SubResource("LabelSettings_ww1kh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=989561926]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="notify_report_success" type="ColorRect" parent="mc_os_workspace/pc_wallpaper/c_notifications" unique_id=1418437112]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.66, 0.48400003, 1)
+
+[node name="Label" type="Label" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=408831511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have successfully
+ compiled the report"
+label_settings = SubResource("LabelSettings_ww1kh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=3142391]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
 
 [node name="vbc_bottom_panel" type="VBoxContainer" parent="mc_os_workspace/pc_wallpaper" unique_id=1931282625]
 texture_filter = 1
@@ -255,6 +430,10 @@ text = "Personas DB"
 layout_mode = 2
 text = "Dossier viewer"
 
+[node name="btn_debug" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=2083767328]
+layout_mode = 2
+text = "DEBUG"
+
 [node name="HSeparator" type="HSeparator" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer" unique_id=296921173]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -287,3 +466,14 @@ layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_5od7m")
 stretch_mode = 1
+
+[node name="OSGameplay" type="Node" parent="." unique_id=709959101 node_paths=PackedStringArray("ap_debug", "ap_keywords", "ap_report")]
+script = ExtResource("2_6xg1g")
+scenarios = Array[ExtResource("18_gsb3y")]([SubResource("Resource_5hud7")])
+ap_debug = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_debug")
+ap_keywords = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_keywords")
+ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_report")
+metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
+
+[connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" method="hide"]
+[connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" method="hide"]

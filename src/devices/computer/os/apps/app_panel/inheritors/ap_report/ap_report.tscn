@@ -2,12 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_wxddj"]
 [ext_resource type="Script" uid="uid://bhcgo6w4j4ak3" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_report.gd" id="2_vyolp"]
-[ext_resource type="Script" uid="uid://deuhin5bbfo0a" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/button.gd" id="3_lc2qe"]
+[ext_resource type="Script" uid="uid://deuhin5bbfo0a" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_button_reciever.gd" id="3_lc2qe"]
+[ext_resource type="Script" uid="uid://bfwwl31r6sp8y" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_button_evidence_reciever.gd" id="4_idbk2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lc2qe"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="pc_app" unique_id=1906431389 instance=ExtResource("1_wxddj")]
 offset_right = 494.0
 offset_bottom = 240.0
 script = ExtResource("2_vyolp")
+
+[node name="btn_label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer" parent_id_path=PackedInt32Array(2109690939) index="0" unique_id=1824432215]
+text = "Report"
 
 [node name="Content" type="MarginContainer" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="1" unique_id=1753691050]
 layout_mode = 2
@@ -26,11 +33,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="0" unique_id=294520570]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Дата"
+text = "Felon"
+label_settings = SubResource("LabelSettings_lc2qe")
 
-[node name="Button" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="1" unique_id=1496826334]
+[node name="apbr_felon" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="1" unique_id=1496826334]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Не найдено"
+text = "Not determined"
 script = ExtResource("3_lc2qe")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=1509870818]
@@ -39,12 +48,37 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="0" unique_id=1205586525]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Предмет"
+text = "Motive"
+label_settings = SubResource("LabelSettings_lc2qe")
 
-[node name="Button" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="1" unique_id=33186686]
+[node name="apbr_motive" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="1" unique_id=33186686]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Не найдено"
+text = "Not determined"
 script = ExtResource("3_lc2qe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=1394275244]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="0" unique_id=2006218492]
+layout_mode = 2
+text = "Evidences"
+label_settings = SubResource("LabelSettings_lc2qe")
+
+[node name="vbc_evidences" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="1" unique_id=1070652391]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="btn_add" type="Button" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="2" unique_id=1150644853]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Add"
+script = ExtResource("4_idbk2")
+
+[node name="btn_approve" type="Button" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=266223024]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Approve"
 
 [node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
 visible = false
