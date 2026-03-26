@@ -2,6 +2,7 @@ class_name DNAMonitorControl
 extends Control
 
 @onready var progress_bar: ProgressBar = %ProgressBar
+@onready var process_container: VBoxContainer = %"Process Container"
 @onready var result_label: Label = %"Result Label"
 
 var data: DNAData
@@ -13,6 +14,7 @@ func initialize(dna: DNAData) -> void:
 func power_on() -> void:
 	_kill_tween_if_needed()
 	result_label.hide()
+	process_container.show()
 	progress_bar.show()
 	progress_bar.value = 0
 	animate_progress_bar()
@@ -21,11 +23,13 @@ func power_off() -> void:
 	_kill_tween_if_needed()
 	result_label.hide()
 	progress_bar.hide()
+	process_container.hide()
 
 func finish_process() -> void:
-	progress_bar.hide()
-	show_result_label()
 	data.is_processed = true
+	progress_bar.hide()
+	process_container.hide()
+	show_result_label()
 
 func animate_progress_bar(callback: Callable = Callable()) -> void:
 	progress_tween = create_tween()
@@ -40,6 +44,5 @@ func _kill_tween_if_needed() -> void:
 		progress_tween.kill()
 
 func show_result_label() -> void:
-	var message := "Имя: %s\nРезультат: %.2f%%" % [data.database_name, data.overlap_percentage]
-	result_label.text = message
+	result_label.text = data.get_content_string()
 	result_label.show()
