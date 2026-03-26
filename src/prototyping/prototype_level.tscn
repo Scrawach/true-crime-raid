@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ub7r74d5ugx4" path="res://items/document_packet_item.tscn" id="3_kem4b"]
 [ext_resource type="PackedScene" uid="uid://d1kcea5mswfvx" path="res://prototyping/assets/lab.glb" id="4_huww6"]
 [ext_resource type="PackedScene" uid="uid://cfkjs653heppy" path="res://items/packet_item.tscn" id="4_kem4b"]
+[ext_resource type="PackedScene" uid="uid://dtthlhayjwcce" path="res://devices/trash/trash_holder.tscn" id="5_ia5wu"]
 [ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://devices/computer/computer.tscn" id="5_kem4b"]
+[ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_17xy5"]
 [ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="6_bujhi"]
 [ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="7_7fl8n"]
 [ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="8_nb3ri"]
@@ -74,6 +76,12 @@ open_item = NodePath("../../Scenarios/00_NightFight/Items/Objects/NN Bear Cup")
 [node name="Packet Item3" parent="Environment" unique_id=1581977830 node_paths=PackedStringArray("open_item") instance=ExtResource("4_kem4b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -3)
 open_item = NodePath("../../Scenarios/00_NightFight/Items/Objects/NN Kitchen Knife")
+
+[node name="Trash Holder" parent="Environment" unique_id=84210177 instance=ExtResource("5_ia5wu")]
+transform = Transform3D(0.97678834, 0, 0.21420686, 0, 1, 0, -0.21420686, 0, 0.97678834, -4.6657453, 0, -3.9481316)
+
+[node name="DNA Analyzer" parent="Environment" unique_id=513514856 instance=ExtResource("6_17xy5")]
+transform = Transform3D(0.8960297, 0, 0.4439941, 0, 1, 0, -0.4439941, 0, 0.8960297, 0.3757767, 0.86830235, -0.5718197)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)

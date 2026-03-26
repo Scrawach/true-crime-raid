@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dtthlhayjwcce"]
+
+[ext_resource type="PackedScene" uid="uid://bbt4ebi7dnhdm" path="res://items/trash_item.tscn" id="4_5v4sw"]
+[ext_resource type="PackedScene" uid="uid://s60ncpbjjkh8" path="res://prototyping/assets/trash_holder.glb" id="4_p4uqm"]
+[ext_resource type="Script" uid="uid://baahqbcuixkq3" path="res://devices/trash/interact_with_trash_holder.gd" id="6_5v4sw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n2lqv"]
+radius = 4.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p54kf"]
+radius = 0.15
+
+[sub_resource type="Animation" id="Animation_5v4sw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashHolder_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eqbwy"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TrashHolder_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5707964, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywcdn"]
+_data = {
+&"RESET": SubResource("Animation_5v4sw"),
+&"open": SubResource("Animation_eqbwy")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2lqv"]
+size = Vector3(1.4380493, 0.13928223, 1.4418945)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p54kf"]
+size = Vector3(0.08129883, 0.68322754, 0.5416565)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4uqm"]
+size = Vector3(0.36419678, 0.10961914, 0.41986084)
+
+[node name="Trash Holder" type="Node3D" unique_id=84210177]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=478133678]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1705816866]
+shape = SubResource("SphereShape3D_n2lqv")
+
+[node name="Destroy Area3D" type="Area3D" parent="." unique_id=551384017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16559938, 0)
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Destroy Area3D" unique_id=1514440407]
+shape = SubResource("SphereShape3D_p54kf")
+debug_color = Color(0.98, 0.13066666, 0, 1)
+
+[node name="trash_holder" parent="." unique_id=440250395 instance=ExtResource("4_p4uqm")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="trash_holder" unique_id=1096129986]
+libraries/ = SubResource("AnimationLibrary_ywcdn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="trash_holder/TrashHolder_001" parent_id_path=PackedInt32Array(440250395, 513760335) index="0" unique_id=69920856]
+transform = Transform3D(0.9999511, 2.2195654e-10, 0.009878402, -2.2195651e-10, 0.99999994, -1.0968449e-12, -0.009878402, -1.0968448e-12, 0.9999511, 0, 0, 0.49533895)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trash_holder/TrashHolder_001/StaticBody3D" unique_id=1522188982]
+transform = Transform3D(1, 2.4281893e-17, -2.9616058e-07, 4.1236105e-17, 1, 3.3176586e-17, 2.9616058e-07, 1.0842022e-19, 1, 0.0076599047, 0.062317014, 0.0061035063)
+shape = SubResource("BoxShape3D_n2lqv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1726276467]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=793470551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23132324, 0.34259033, 0.001449585)
+shape = SubResource("BoxShape3D_p54kf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1549469625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23316091, 0.34259033, 0.001449585)
+shape = SubResource("BoxShape3D_p54kf")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1078474745]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0024568588, 0.34259033, -0.22925448)
+shape = SubResource("BoxShape3D_p54kf")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1555317348]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0024568588, 0.34259033, 0.22446352)
+shape = SubResource("BoxShape3D_p54kf")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=1604982032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0054626465, 0.0559486, -0.008880615)
+shape = SubResource("BoxShape3D_p4uqm")
+
+[node name="InteractWithTrashHolder" type="Node" parent="." unique_id=1941251182 node_paths=PackedStringArray("interaction", "destroy_area", "animation")]
+script = ExtResource("6_5v4sw")
+trash_scene = ExtResource("4_5v4sw")
+interaction = NodePath("../Area3D")
+destroy_area = NodePath("../Destroy Area3D")
+animation = NodePath("../trash_holder/AnimationPlayer")
+metadata/_custom_type_script = "uid://baahqbcuixkq3"
+
+[editable path="trash_holder"]
