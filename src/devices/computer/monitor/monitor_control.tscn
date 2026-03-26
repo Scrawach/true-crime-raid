@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dj7ek454oudwe" path="res://devices/computer/os/apps/app_panel/inheritors/ap_keywords/ap_keywords.tscn" id="8_7us4k"]
 [ext_resource type="Texture2D" uid="uid://c6nhhxkewq6q7" path="res://devices/computer/assets/img/os_gui/Windows_Button_Focus_Outlined.png" id="9_1c880"]
 [ext_resource type="PackedScene" uid="uid://b743b3jrd5671" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_report.tscn" id="9_gth8j"]
-[ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="9_qf42x"]
 [ext_resource type="Texture2D" uid="uid://c5leegj3263sk" path="res://devices/computer/assets/img/os_gui/Windows_Button.png" id="10_a7cm2"]
 [ext_resource type="PackedScene" uid="uid://cxu2lejo35spp" path="res://devices/computer/os/apps/app_panel/inheritors/ap_debug/ap_debug.tscn" id="10_dalv8"]
+[ext_resource type="PackedScene" uid="uid://uuhh28fbqbic" path="res://devices/computer/os/apps/app_panel/inheritors/ap_map/ap_map.tscn" id="10_ww1kh"]
 [ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/Windows_Button_Pressed.png" id="11_a7cm2"]
 [ext_resource type="Texture2D" uid="uid://xknefb2o63xm" path="res://devices/computer/assets/img/os_gui/Window_Base.png" id="12_anpc4"]
 [ext_resource type="Texture2D" uid="uid://8vsiaduloe33" path="res://devices/computer/assets/img/cursors/cursor0010.png" id="13_2t07n"]
@@ -177,8 +177,8 @@ metadata/_custom_type_script = "uid://dtlybdfupvk30"
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 771.0
-offset_bottom = 512.0
+offset_right = 1150.0
+offset_bottom = 650.0
 theme = SubResource("Theme_anpc4")
 script = ExtResource("1_6xg1g")
 
@@ -198,13 +198,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
 
 [node name="pc_wallpaper" type="PanelContainer" parent="mc_os_workspace" unique_id=538355003]
-clip_children = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6xg1g")
 
@@ -297,16 +296,6 @@ notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_personas_db")
 btn_ico = NodePath("../../c_apps/btn_personas_db")
 
-[node name="pc_app3" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=51728572 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("9_qf42x")]
-visible = false
-layout_mode = 0
-offset_left = 194.0
-offset_top = 220.0
-offset_right = 379.0
-offset_bottom = 376.0
-btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_dossier_viewer")
-btn_ico = NodePath("../../c_apps/btn_dossier_viewer")
-
 [node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
 layout_mode = 0
 offset_left = 393.0
@@ -315,6 +304,13 @@ offset_right = 578.0
 offset_bottom = 167.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_debug")
 btn_ico = NodePath("../../c_apps/btn_debug")
+
+[node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 instance=ExtResource("10_ww1kh")]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 123.0
+offset_right = 459.0
+offset_bottom = 544.0
 
 [node name="c_notifications" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=512799671]
 layout_mode = 2

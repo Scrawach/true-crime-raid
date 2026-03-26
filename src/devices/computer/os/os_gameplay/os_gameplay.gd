@@ -15,6 +15,7 @@ var keywords_pool:Dictionary[KeywordData, bool]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.keyword_found.connect(on_keyword_found)
+	GameManager.dna_investigated.connect(on_dna_investigated)
 	ap_report.report_compiled_ok.connect(on_report_compiled_ok)
 	ap_debug.fill_scenarios_list(scenarios)
 	ap_debug.start_scenario.connect(setup_scenario)
@@ -49,3 +50,6 @@ func on_report_compiled_ok():
 	ap_debug.hide()
 	ap_keywords.hide()
 	ap_report.hide()
+
+func on_dna_investigated(dna_data:DNAData):
+	pass

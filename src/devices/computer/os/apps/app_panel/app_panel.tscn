@@ -98,7 +98,7 @@ Label/colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
 Label/styles/normal = SubResource("StyleBoxTexture_xe44h")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_numv4")
 
-[node name="pc_app" type="PanelContainer" unique_id=1906431389]
+[node name="pc_panel" type="PanelContainer" unique_id=1906431389]
 texture_filter = 1
 offset_left = 200.0
 offset_top = 46.0

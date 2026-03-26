@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://uuhh28fbqbic"]
+
+[ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_yamvk"]
+[ext_resource type="Script" uid="uid://jiu1ymknoeva" path="res://devices/computer/os/apps/app_panel/inheritors/ap_map/ap_map.gd" id="2_c30qu"]
+[ext_resource type="Texture2D" uid="uid://drmqx1kvitnba" path="res://devices/computer/assets/img/icons/question-mark.png" id="3_sd4ck"]
+[ext_resource type="Texture2D" uid="uid://daqf5gyi1ku36" path="res://devices/computer/assets/img/icons/cigar-pipe.png" id="4_f5vgv"]
+[ext_resource type="Texture2D" uid="uid://cmwwkj6qygq5f" path="res://devices/computer/assets/img/icons/knife.png" id="5_en7ll"]
+[ext_resource type="Texture2D" uid="uid://2skro8c3d5rw" path="res://devices/computer/assets/img/icons/paper-cup.png" id="6_gx6qh"]
+
+[node name="pc_panel" unique_id=1906431389 instance=ExtResource("1_yamvk")]
+offset_right = 663.0
+offset_bottom = 478.0
+script = ExtResource("2_c30qu")
+max_zoom = 2.0
+min_zoom = 0.5
+zoom_step = 0.1
+
+[node name="btn_label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer" parent_id_path=PackedInt32Array(2109690939) index="0" unique_id=1824432215]
+text = "Map"
+
+[node name="p_mouse_catcher" type="Panel" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="1" unique_id=1440096056]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="c_hinge" type="Control" parent="VBoxContainer/p_mouse_catcher" index="0" unique_id=244116130]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge" index="0" unique_id=1317542049]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lines" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="0" unique_id=589488878]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="0" unique_id=1597552178]
+points = PackedVector2Array(137, 84, 215, 178)
+
+[node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="1" unique_id=1633805473]
+points = PackedVector2Array(218, 178, 305, 93)
+
+[node name="Line2D3" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="2" unique_id=1438267880]
+points = PackedVector2Array(218, 178, 218, 309)
+
+[node name="profiles" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="1" unique_id=1710008622]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="0" unique_id=27823651]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 97.0
+offset_top = 53.0
+offset_right = 184.0
+offset_bottom = 139.0
+text = "Not found"
+icon = ExtResource("3_sd4ck")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+metadata/person = ""
+
+[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="1" unique_id=1726196160]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 259.0
+offset_top = 51.0
+offset_right = 346.0
+offset_bottom = 137.0
+text = "Not found"
+icon = ExtResource("3_sd4ck")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="2" unique_id=480833603]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 174.0
+offset_top = 146.0
+offset_right = 261.0
+offset_bottom = 232.0
+text = "Not found"
+icon = ExtResource("3_sd4ck")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="3" unique_id=1981505037]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 174.0
+offset_top = 281.0
+offset_right = 261.0
+offset_bottom = 367.0
+text = "Not found"
+icon = ExtResource("3_sd4ck")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="evidence" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="2" unique_id=1080147770]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="0" unique_id=975083259]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -2.0
+offset_top = 51.0
+offset_right = 85.0
+offset_bottom = 137.0
+text = "Butt"
+icon = ExtResource("4_f5vgv")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button2" index="0" unique_id=936213746]
+modulate = Color(1, 1, 1, 0.3019608)
+points = PackedVector2Array(44, 38, 140, 38)
+
+[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="1" unique_id=2140113189]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 57.0
+offset_top = 170.0
+offset_right = 144.0
+offset_bottom = 256.0
+text = "Knife"
+icon = ExtResource("5_en7ll")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=2079329667]
+modulate = Color(1, 1, 1, 0.3019608)
+position = Vector2(0, -13)
+points = PackedVector2Array(147, 23, 46, 42, 76, -50)
+
+[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="2" unique_id=1325642777]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 316.0
+offset_top = 308.0
+offset_right = 403.0
+offset_bottom = 394.0
+text = "Cup"
+icon = ExtResource("6_gx6qh")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=674825517]
+modulate = Color(1, 1, 1, 0.3019608)
+points = PackedVector2Array(44, 38, -91, 3)
+
+[node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher" index="1" unique_id=1936422630]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "+"
+
+[node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
+visible = false
+
+[connection signal="pressed" from="VBoxContainer/p_mouse_catcher/btn_center" to="." method="_on_btn_center_pressed"]
