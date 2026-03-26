@@ -39,6 +39,8 @@ func drop() -> void:
 	item = null
 
 func _move_to_hand(progress: float) -> void:
+	if not item:
+		return
 	item.position = lerp(item.position, Vector3.ZERO, progress)
 	item.rotation = lerp(item.rotation, Vector3.ZERO, progress)
 
