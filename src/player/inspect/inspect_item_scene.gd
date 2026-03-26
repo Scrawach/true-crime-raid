@@ -2,6 +2,7 @@ class_name InspectItem
 extends Node3D
 
 @export var dna_tube: PackedScene
+@export var trash_item: PackedScene
 
 @onready var inspect_scene_appear: InspectSceneAppear = %InspectSceneAppear
 @onready var control_container: Control = %"Control Container"
@@ -97,6 +98,10 @@ func _process_open(point: OpenInteractivePoint3D) -> void:
 	player.hand.item = spawn_object
 	abort()
 	inspect(spawn_object)
+	
+	var trash := trash_item.instantiate() as Node3D
+	player.add_sibling(trash)
+	trash.global_position = spawn_object.global_position
 
 func _process_dna_open(point: DNAInteractivePoint3D) -> void:
 	## TODO: REFACTOR THIS SHIT

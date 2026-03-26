@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bbt4ebi7dnhdm"]
+
+[ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_a3wwu"]
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="2_denrr"]
+[ext_resource type="PackedScene" uid="uid://bvdu1okjhkds7" path="res://prototyping/assets/trash.glb" id="3_kjcve"]
+
+[sub_resource type="Resource" id="Resource_kjcve"]
+script = ExtResource("2_denrr")
+name = "Мусор"
+description = "Раздражающий свёрток бумаги"
+metadata/_custom_type_script = "uid://d2y8emyuyj6is"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e48ku"]
+radius = 0.1231246
+
+[node name="Trash Item" unique_id=679873917 instance=ExtResource("1_a3wwu")]
+data = SubResource("Resource_kjcve")
+
+[node name="trash" parent="." index="5" unique_id=749394657 instance=ExtResource("3_kjcve")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="6" unique_id=1699931582]
+shape = SubResource("SphereShape3D_e48ku")

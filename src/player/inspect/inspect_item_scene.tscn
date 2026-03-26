@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bm48hmv21gae5" path="res://player/inspect/inspector_item_handler.gd" id="1_o01jm"]
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="PackedScene" uid="uid://bk3m0wd35n37r" path="res://player/inspect/inspect_background.tscn" id="3_0yr2y"]
+[ext_resource type="PackedScene" uid="uid://bbt4ebi7dnhdm" path="res://items/trash_item.tscn" id="3_et4ll"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="Script" uid="uid://dxo7ifkrsuskk" path="res://player/camera/camera_distance_zoom.gd" id="8_0yr2y"]
 [ext_resource type="PackedScene" uid="uid://befpxu1lw234h" path="res://player/inspect/keywords_panel.tscn" id="9_0yr2y"]
@@ -14,6 +15,7 @@
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
 script = ExtResource("1_3lwxk")
 dna_tube = ExtResource("2_hxa35")
+trash_item = ExtResource("3_et4ll")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=342126816]
 remote_path = NodePath("../CanvasLayer/SubViewportContainer/SubViewport/Item Viewer")
