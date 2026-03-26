@@ -7,6 +7,7 @@ signal clicked(point: InteractivePoint3D)
 
 @export var is_disabled: bool
 @export var is_small: bool
+@export var visible_distance: float = 0.4
 
 @onready var smooth_appear_sprite_3d: SmoothAppearSprite3D = $Tooltip/SmoothAppearSprite3D
 @onready var tooltip: Sprite3D = $Tooltip
@@ -19,6 +20,7 @@ var hover_tween: Tween
 
 func _ready() -> void:
 	visible_point_on_camera.is_small_point = is_small
+	visible_point_on_camera.visible_distance = visible_distance
 	if is_small:
 		clickable_area_3d.collision_layer = 32
 	else:

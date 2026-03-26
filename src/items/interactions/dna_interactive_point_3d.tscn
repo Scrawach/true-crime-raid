@@ -7,4 +7,3 @@
 script = ExtResource("2_ggr23")
 dna_data = null
 only_once = false
-is_disabled = false

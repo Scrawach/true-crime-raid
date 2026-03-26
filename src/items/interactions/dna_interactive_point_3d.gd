@@ -14,5 +14,6 @@ func _on_clicked() -> void:
 		disable()
 
 func dispose_dna() -> void:
-	dna_mesh.queue_free()
+	if dna_mesh:
+		dna_mesh.queue_free()
 	queue_free()
