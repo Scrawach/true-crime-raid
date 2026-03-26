@@ -36,6 +36,7 @@ func drop() -> void:
 	item.reparent(body.get_parent())
 	item.ungrab()
 	item.apply_force(get_drop_force())
+	item.apply_torque(item.basis * Vector3.LEFT)
 	item = null
 
 func _move_to_hand(progress: float) -> void:
@@ -52,6 +53,6 @@ func _kill_if_needed() -> void:
 func get_drop_force() -> Vector3:
 	const THROW_STRENGTH_MIN := 100
 	const THROW_STRENGTH_MAX := 150
-	var offset := randf_range(-.5, .3)
+	var offset := randf_range(-.25, .15)
 	var direction := head.global_basis * Vector3(offset, 0, -1.5) + Vector3.UP
 	return direction * randf_range(THROW_STRENGTH_MIN, THROW_STRENGTH_MAX)
