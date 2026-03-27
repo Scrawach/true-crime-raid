@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_yamvk"]
 [ext_resource type="Script" uid="uid://jiu1ymknoeva" path="res://devices/computer/os/apps/app_panel/inheritors/ap_map/ap_map.gd" id="2_c30qu"]
+[ext_resource type="Texture2D" uid="uid://buxiqn0osqtc2" path="res://devices/computer/assets/img/icons/user.png" id="3_f5vgv"]
 [ext_resource type="Texture2D" uid="uid://drmqx1kvitnba" path="res://devices/computer/assets/img/icons/question-mark.png" id="3_sd4ck"]
 [ext_resource type="Texture2D" uid="uid://daqf5gyi1ku36" path="res://devices/computer/assets/img/icons/cigar-pipe.png" id="4_f5vgv"]
 [ext_resource type="Texture2D" uid="uid://cmwwkj6qygq5f" path="res://devices/computer/assets/img/icons/knife.png" id="5_en7ll"]
@@ -11,6 +12,7 @@
 offset_right = 663.0
 offset_bottom = 478.0
 script = ExtResource("2_c30qu")
+image = ExtResource("3_f5vgv")
 max_zoom = 2.0
 min_zoom = 0.5
 zoom_step = 0.1
@@ -54,7 +56,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="0" unique_id=27823651]
+[node name="Button" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="0" unique_id=27823651 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 97.0
@@ -66,9 +68,9 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/person = ""
+metadata/person_id = "x001"
 
-[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="1" unique_id=1726196160]
+[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="1" unique_id=1726196160 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 259.0
@@ -80,8 +82,9 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/person_id = "x006"
 
-[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="2" unique_id=480833603]
+[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="2" unique_id=480833603 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 174.0
@@ -93,8 +96,9 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/person_id = "x004"
 
-[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="3" unique_id=1981505037]
+[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="3" unique_id=1981505037 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 174.0
@@ -106,13 +110,14 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/person_id = "x005"
 
 [node name="evidence" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="2" unique_id=1080147770]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="0" unique_id=975083259]
+[node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="0" unique_id=975083259 groups=["os_map_btn_evidence"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = -2.0
@@ -124,12 +129,14 @@ icon = ExtResource("4_f5vgv")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/evidence_id = "x011"
 
-[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button2" index="0" unique_id=936213746]
+[node name="l2d_dna" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button2" index="0" unique_id=936213746 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 points = PackedVector2Array(44, 38, 140, 38)
+metadata/dna_id = "x003"
 
-[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="1" unique_id=2140113189]
+[node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="1" unique_id=2140113189 groups=["os_map_btn_evidence"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 57.0
@@ -141,13 +148,21 @@ icon = ExtResource("5_en7ll")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/evidence_id = "x010"
 
-[node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=2079329667]
+[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=1782274975 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(0, -13)
-points = PackedVector2Array(147, 23, 46, 42, 76, -50)
+position = Vector2(1, 0)
+points = PackedVector2Array(41, 26, 80, -81)
+metadata/dna_id = "x001"
 
-[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="2" unique_id=1325642777]
+[node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="1" unique_id=1679123430 groups=["os_map_l2d_dna"]]
+modulate = Color(1, 1, 1, 0.3019608)
+position = Vector2(1, 0)
+points = PackedVector2Array(41, 26, 154, 14)
+metadata/dna_id = "x002"
+
+[node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="2" unique_id=1325642777 groups=["os_map_btn_evidence"]]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 316.0
@@ -159,10 +174,12 @@ icon = ExtResource("6_gx6qh")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+metadata/evidence_id = "x012"
 
-[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=674825517]
+[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=674825517 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 points = PackedVector2Array(44, 38, -91, 3)
+metadata/dna_id = "x004"
 
 [node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher" index="1" unique_id=1936422630]
 layout_mode = 1

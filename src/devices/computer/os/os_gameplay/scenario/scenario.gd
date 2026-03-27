@@ -28,3 +28,12 @@ func cluster_to_kw(arr:Array[DNACluster]) -> Array[KeywordData]:
 	for cl in arr:
 		kw_arr.append(cl.evidence)
 	return kw_arr
+
+func extract_dna_data():
+	var dna:Array[DNAData]
+	for ev in evidences:
+		dna.append_array(ev.dna_markers)
+	for ob in objects:
+		dna.append_array(ob.dna_markers)
+	return dna
+		

@@ -19,9 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://8vsiaduloe33" path="res://devices/computer/assets/img/cursors/cursor0010.png" id="13_2t07n"]
 [ext_resource type="Script" uid="uid://b2po74o83srcy" path="res://devices/computer/monitor/computer_mouse_cursor.gd" id="14_c0d2k"]
 [ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="18_gsb3y"]
-[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="19_dalv8"]
-[ext_resource type="Script" uid="uid://dlggi3csk17kq" path="res://devices/computer/os/os_gameplay/dna_cluster/dna_cluster.gd" id="20_ww1kh"]
-[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="22_ww1kh"]
+[ext_resource type="Resource" uid="uid://jt0l5j3fb0px" path="res://devices/computer/os/os_gameplay/scenario/scenario1.tres" id="20_gsb3y"]
 
 [sub_resource type="Theme" id="Theme_anpc4"]
 Button/font_sizes/font_size = 24
@@ -97,81 +95,6 @@ PanelContainer/styles/panel = SubResource("StyleBoxTexture_numv4")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5od7m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hhjf"]
-
-[sub_resource type="Resource" id="Resource_ww1kh"]
-script = ExtResource("19_dalv8")
-id = "x007"
-words = "Conflict"
-type = "EVENT"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_j7fte"]
-script = ExtResource("19_dalv8")
-id = "x003"
-words = "Knife"
-type = "EVIDENCE"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_x8pnj"]
-script = ExtResource("20_ww1kh")
-evidence = SubResource("Resource_j7fte")
-metadata/_custom_type_script = "uid://dlggi3csk17kq"
-
-[sub_resource type="Resource" id="Resource_7hpiq"]
-script = ExtResource("19_dalv8")
-id = "x008"
-words = "Butt"
-type = "EVIDENCE"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_64sn2"]
-script = ExtResource("20_ww1kh")
-evidence = SubResource("Resource_7hpiq")
-metadata/_custom_type_script = "uid://dlggi3csk17kq"
-
-[sub_resource type="Resource" id="Resource_sab36"]
-script = ExtResource("19_dalv8")
-id = "x001"
-words = "Austin Bolton"
-type = "PERSON"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_dalv8"]
-script = ExtResource("19_dalv8")
-id = "x002"
-words = "Finance"
-type = "EVENT"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_qiysj"]
-script = ExtResource("19_dalv8")
-id = "x004"
-words = "Ian Bolton"
-type = "PERSON"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_g05ep"]
-script = ExtResource("19_dalv8")
-id = "x005"
-words = "Jim Waller"
-type = "PERSON"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_lv3v4"]
-script = ExtResource("19_dalv8")
-id = "x006"
-words = "Paul Slater"
-type = "PERSON"
-metadata/_custom_type_script = "uid://ia3n8itvb8ly"
-
-[sub_resource type="Resource" id="Resource_5hud7"]
-script = ExtResource("18_gsb3y")
-felon = SubResource("Resource_sab36")
-personas = Array[ExtResource("19_dalv8")]([SubResource("Resource_qiysj"), SubResource("Resource_g05ep"), SubResource("Resource_lv3v4")])
-motive = SubResource("Resource_dalv8")
-events = Array[ExtResource("19_dalv8")]([SubResource("Resource_ww1kh")])
-evidences = Array[ExtResource("20_ww1kh")]([SubResource("Resource_x8pnj"), SubResource("Resource_64sn2")])
-metadata/_custom_type_script = "uid://dtlybdfupvk30"
 
 [node name="Monitor Control" type="Control" unique_id=803566879]
 custom_minimum_size = Vector2(512, 512)
@@ -463,12 +386,13 @@ mouse_filter = 2
 texture = ExtResource("3_5od7m")
 stretch_mode = 1
 
-[node name="OSGameplay" type="Node" parent="." unique_id=709959101 node_paths=PackedStringArray("ap_debug", "ap_keywords", "ap_report")]
+[node name="OSGameplay" type="Node" parent="." unique_id=709959101 node_paths=PackedStringArray("ap_debug", "ap_keywords", "ap_report", "ap_map")]
 script = ExtResource("2_6xg1g")
-scenarios = Array[ExtResource("18_gsb3y")]([SubResource("Resource_5hud7")])
+scenarios = Array[ExtResource("18_gsb3y")]([ExtResource("20_gsb3y")])
 ap_debug = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_debug")
 ap_keywords = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_keywords")
 ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_report")
+ap_map = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_map")
 metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" method="hide"]
