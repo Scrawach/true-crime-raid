@@ -14,7 +14,7 @@
 [node name="00NightFight Evidences" type="Node3D" unique_id=1178563297]
 
 [node name="Document Packet Item" parent="." unique_id=679873917 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45659018, 0.19906265, -0.1263678)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45659018, 0.2549175, -0.1263678)
 open_item = NodePath("../Inner/Items/Documents/Main Protocol")
 
 [node name="Document Packet Item2" parent="." unique_id=1197350800 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
@@ -22,7 +22,7 @@ transform = Transform3D(0.9836156, -0.18027882, -7.880237e-09, 0, -4.371139e-08,
 open_item = NodePath("../Inner/Items/Documents/Jim Waller Document")
 
 [node name="Document Packet Item3" parent="." unique_id=16118365 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
-transform = Transform3D(0.9871976, 0.15950215, 6.9720603e-09, 0, -4.371139e-08, 1, 0.15950215, -0.9871976, -4.3151775e-08, -0.44732308, 0.23589224, -0.11130619)
+transform = Transform3D(0.9871976, 0.15950215, 6.9720603e-09, 0, -4.371139e-08, 1, 0.15950215, -0.9871976, -4.3151775e-08, -0.44732308, 0.19971526, -0.11130619)
 open_item = NodePath("../Inner/Items/Documents/Paus Slater Document")
 
 [node name="Document Packet Item4" parent="." unique_id=949247593 node_paths=PackedStringArray("open_item") instance=ExtResource("1_mlx2c")]
