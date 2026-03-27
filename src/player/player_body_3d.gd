@@ -9,6 +9,8 @@ extends CharacterBody3D
 @export var player_hud: PlayerHUD
 @export var mouse: MouseCapture
 
+@export var inspect_item: InspectItem
+
 var _moving_direction: Vector2
 var _gaze_direction: Vector2
 

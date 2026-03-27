@@ -1,6 +1,8 @@
 class_name InspectItem
 extends Node3D
 
+@export var player: PlayerBody3D
+@export var player_hand: PlayerHand
 @export var dna_tube: PackedScene
 @export var trash_item: PackedScene
 
@@ -21,18 +23,39 @@ extends Node3D
 @onready var camera_zoom: CameraZoom = %CameraZoom
 
 var item: BaseItem
-var player: PlayerBody3D
 
 func _ready() -> void:
 	keyword_description.keyword_clicked.connect(_on_keyword_clicked)
 
 func smooth_show(callback: Callable = Callable()) -> void:
-	inspect_scene_appear.smooth_show(callback)
+	item_handler.clear()
+	item = player.hand.item
+	inspect_scene_appear.smooth_show(func():
+		inspect(player.hand.item)
+		if callback:
+			callback.call())
 	_update_item_description(item)
+	player.hand.item.reparent(item_point)
+	smooth_move_item_to_zero(player.hand.item, 0.2)
 
 func smooth_hide(callback: Callable = Callable()) -> void:
-	inspect_scene_appear.smooth_hide(callback)
+	inspect_scene_appear.smooth_hide(func():
+		player.hand.item = item
+		player.hand.item.reparent(player.hand.hand_point)
+		player.hand.item.position = Vector3.ZERO
+		player.hand.item.rotation = Vector3.ZERO
+		abort()
+		if callback:
+			callback.call())
 	item_handler.stop_rotation()
+	player.hand.item.reparent(player.hand.hand_point)
+	smooth_move_item_to_zero(player.hand.item, 0.15)
+
+func smooth_move_item_to_zero(target: BaseItem, duration: float) -> Tween:
+	var tween := create_tween()
+	tween.tween_property(target, "position", Vector3.ZERO, duration)
+	tween.parallel().tween_property(target, "rotation", Vector3.ZERO, duration)
+	return tween
 
 func inspect(target: BaseItem) -> void:
 	camera_zoom.enable()
