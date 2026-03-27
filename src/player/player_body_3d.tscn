@@ -89,8 +89,9 @@ interactor = NodePath("../PlayerMovementState/PlayerInteractor")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://8y2v8pv4j56x"
 
-[node name="PlayerInspectState" type="Node" parent="StateMachine" unique_id=633637750 node_paths=PackedStringArray("movement_state", "inspect_scene", "mouse_capture", "player")]
+[node name="PlayerInspectState" type="Node" parent="StateMachine" unique_id=633637750 node_paths=PackedStringArray("player_hud", "movement_state", "inspect_scene", "mouse_capture", "player")]
 script = ExtResource("12_14877")
+player_hud = NodePath("../../Player HUD")
 movement_state = NodePath("../PlayerMovementState")
 inspect_scene = NodePath("../../Head/Inspect Item Scene")
 mouse_capture = NodePath("../PlayerMovementState/MouseCapture")
