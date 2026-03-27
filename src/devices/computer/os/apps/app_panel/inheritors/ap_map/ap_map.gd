@@ -73,11 +73,11 @@ func _on_btn_center_pressed() -> void:
 
 func on_keyword_found(kw:KeywordData):
 	#
-	if kw.type == "EVIDENCE":
+	if kw.type == "evidence":
 		if kw.id in evidence_buttons.keys():
 			evidence_buttons[kw.id].show()
 	#
-	if kw.type == "PERSON":
+	if kw.type == "person":
 		if kw.id in person_buttons.keys():
 			person_buttons[kw.id].text = kw.words
 			person_buttons[kw.id].icon = image

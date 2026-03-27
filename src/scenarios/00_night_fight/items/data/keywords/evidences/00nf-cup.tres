@@ -6,5 +6,5 @@
 script = ExtResource("1_kw4yr")
 id = "00nf-cup"
 words = "Стакан"
-type = "Evidence"
+type = "evidence"
 metadata/_custom_type_script = "uid://ia3n8itvb8ly"

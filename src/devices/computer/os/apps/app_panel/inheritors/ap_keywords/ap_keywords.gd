@@ -17,18 +17,18 @@ func clear_containers():
 		child.queue_free()
 
 
-func fill_containers(data:Dictionary[KeywordData, bool]):
-	for keyword_data in data.keys():
+func fill_containers(data: Array[KeywordData]):
+	for keyword_data in data:
 		if keyword_data == null:
 			printerr(" to do - APKeywords - fill_containers - keyword_data == null")
 			continue
 		match keyword_data.type:
-			"PERSON":
-				hfc_kwbs_personas.add_child(create_keyword_button(keyword_data, data[keyword_data]))
-			"EVENT":
-				hfc_kwbs_events.add_child(create_keyword_button(keyword_data, data[keyword_data]))
-			"EVIDENCE":
-				hfc_kwbs_evidences.add_child(create_keyword_button(keyword_data, data[keyword_data]))
+			"person":
+				hfc_kwbs_personas.add_child(create_keyword_button(keyword_data, keyword_data.is_found()))
+			"event":
+				hfc_kwbs_events.add_child(create_keyword_button(keyword_data, keyword_data.is_found()))
+			"evidence":
+				hfc_kwbs_evidences.add_child(create_keyword_button(keyword_data, keyword_data.is_found()))
 			_:
 				printerr(" to do - APKeywords - fill_containers - no type for keyword: ", keyword_data)
 

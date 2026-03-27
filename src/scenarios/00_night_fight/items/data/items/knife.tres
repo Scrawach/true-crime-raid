@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ubr0f")
 name = "Кухонный нож"
-description = "Кухонный [url=00nf-knife][keyword id=00nf-knife type=weapon]нож[/keyword][/url], обнаруженный в мусорном контейнере за баром. Предположительно использовался в качестве орудия преступления."
+description = "Кухонный [url=00nf-knife][keyword id=00nf-knife type=evidence]нож[/keyword][/url], обнаруженный в мусорном контейнере за баром. Предположительно использовался в качестве орудия преступления."
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"

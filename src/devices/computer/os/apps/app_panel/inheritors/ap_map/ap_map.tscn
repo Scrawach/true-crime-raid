@@ -68,7 +68,7 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/person_id = "x001"
+metadata/person_id = "00nf-austin"
 
 [node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="1" unique_id=1726196160 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
@@ -82,7 +82,7 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/person_id = "x006"
+metadata/person_id = "00nf-paul"
 
 [node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="2" unique_id=480833603 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
@@ -96,7 +96,7 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/person_id = "x004"
+metadata/person_id = "00nf-ian"
 
 [node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="3" unique_id=1981505037 groups=["os_map_btn_person"]]
 modulate = Color(0, 0, 0, 1)
@@ -110,7 +110,7 @@ icon = ExtResource("3_sd4ck")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/person_id = "x005"
+metadata/person_id = "00nf-jim"
 
 [node name="evidence" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="2" unique_id=1080147770]
 anchors_preset = 0
@@ -129,12 +129,12 @@ icon = ExtResource("4_f5vgv")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/evidence_id = "x011"
+metadata/evidence_id = "00nf-butts"
 
 [node name="l2d_dna" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button2" index="0" unique_id=936213746 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 points = PackedVector2Array(44, 38, 140, 38)
-metadata/dna_id = "x003"
+metadata/dna_id = "00nf-dna-butts"
 
 [node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="1" unique_id=2140113189 groups=["os_map_btn_evidence"]]
 modulate = Color(0, 0, 0, 1)
@@ -148,19 +148,19 @@ icon = ExtResource("5_en7ll")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/evidence_id = "x010"
+metadata/evidence_id = "00nf-knife"
 
 [node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=1782274975 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 position = Vector2(1, 0)
 points = PackedVector2Array(41, 26, 80, -81)
-metadata/dna_id = "x001"
+metadata/dna_id = "00nf-dna-knife2"
 
 [node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="1" unique_id=1679123430 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 position = Vector2(1, 0)
 points = PackedVector2Array(41, 26, 154, 14)
-metadata/dna_id = "x002"
+metadata/dna_id = "00nf-dna-knife1"
 
 [node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="2" unique_id=1325642777 groups=["os_map_btn_evidence"]]
 modulate = Color(0, 0, 0, 1)
@@ -174,12 +174,12 @@ icon = ExtResource("6_gx6qh")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
-metadata/evidence_id = "x012"
+metadata/evidence_id = "00nf-cup"
 
 [node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=674825517 groups=["os_map_l2d_dna"]]
 modulate = Color(1, 1, 1, 0.3019608)
 points = PackedVector2Array(44, 38, -91, 3)
-metadata/dna_id = "x004"
+metadata/dna_id = "00nf-dna-cup"
 
 [node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher" index="1" unique_id=1936422630]
 layout_mode = 1

@@ -6,5 +6,5 @@
 script = ExtResource("1_mnown")
 id = "00nf-paul"
 words = "Paul Slater"
-type = "Person"
+type = "person"
 metadata/_custom_type_script = "uid://ia3n8itvb8ly"

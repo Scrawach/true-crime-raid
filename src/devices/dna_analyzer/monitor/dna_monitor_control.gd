@@ -27,6 +27,7 @@ func power_off() -> void:
 
 func finish_process() -> void:
 	data.is_processed = true
+	GameManager.dna_investigated.emit(data)
 	progress_bar.hide()
 	process_container.hide()
 	show_result_label()

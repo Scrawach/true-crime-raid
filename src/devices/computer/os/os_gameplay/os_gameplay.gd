@@ -11,7 +11,7 @@ extends Node
 
 
 var current_scenario:Scenario
-var keywords_pool:Dictionary[KeywordData, bool]
+var keywords_pool:Dictionary[String, KeywordData]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +20,7 @@ func _ready() -> void:
 	ap_report.report_compiled_ok.connect(on_report_compiled_ok)
 	ap_debug.fill_scenarios_list(scenarios)
 	ap_debug.start_scenario.connect(setup_scenario)
+	setup_scenario(scenarios.front())
 
 func setup_scenario(scenario:Scenario):
 	if scenario == current_scenario:
@@ -27,12 +28,12 @@ func setup_scenario(scenario:Scenario):
 	#
 	current_scenario = scenario
 	for kw in current_scenario.extract_keywords():
-		keywords_pool[kw] = false
+		keywords_pool[kw.id] = kw
 	#
 	ap_keywords.clear_containers()
-	ap_keywords.fill_containers(keywords_pool)
+	ap_keywords.fill_containers(keywords_pool.values())
 	#
-	ap_debug.fill_container(keywords_pool.keys())
+	ap_debug.fill_container(keywords_pool.values())
 	ap_debug.fill_dna(current_scenario.extract_dna_data())
 	#
 	ap_report.clear_data()
@@ -41,11 +42,14 @@ func setup_scenario(scenario:Scenario):
 	ap_map.registrate_ui_elements()
 
 func on_keyword_found(kw:KeywordData):
-	if not kw in keywords_pool.keys():
+	if not keywords_pool.has(kw.id):
 		printerr(" to do - OSGameplay - on_keyword_found - kw not registrated")
 		return
-	keywords_pool[kw] = true
-	ap_keywords.keyword_buttons[kw].show()
+	keywords_pool[kw.id] = kw
+	
+	for item in ap_keywords.keyword_buttons:
+		if item.id == kw.id:
+			ap_keywords.keyword_buttons[item].show()
 
 func on_report_compiled_ok():
 	current_scenario = null

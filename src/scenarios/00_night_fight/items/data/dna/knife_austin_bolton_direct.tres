@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_4klet")
+id = "00nf-dna-knife2"
 database_name = "Austin Bolton"
 overlap_percentage = 72.0
 match_type = "Direct"
