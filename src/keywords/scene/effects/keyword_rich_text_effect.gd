@@ -19,6 +19,7 @@ var hovered_keywords: Array[String]
 
 var last_start_range: int = -1
 var last_relative_index: int = -1
+var last_y_position: float = -1
 var offsets: Array[KeywordRichTextInfo]
 var current_offset: int = -1
 
@@ -64,7 +65,7 @@ func _process_custom_underline_fx(char_fx: CharFXTransform) -> void:
 		offsets.clear()
 		current_offset = -1
 	
-	if relative_index == 0:
+	if relative_index == 0 or last_y_position != char_fx.transform.origin.y:
 		var info := KeywordRichTextInfo.make_from(char_fx)
 		if clicked_keywords.has(info.id):
 			info.is_clicked = true
@@ -75,6 +76,7 @@ func _process_custom_underline_fx(char_fx: CharFXTransform) -> void:
 		offsets.append(info)
 		current_offset = offsets.size() - 1
 		last_relative_index = -1
+		last_y_position = char_fx.transform.origin.y
 	elif last_relative_index <= relative_index:
 		offsets[current_offset].end = char_fx.transform.origin + Vector2(get_glyph_width(char_fx), 0)
 	last_start_range = start_range
