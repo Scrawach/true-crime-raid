@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://devices/computer/computer.tscn" id="5_kem4b"]
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_17xy5"]
 [ext_resource type="PackedScene" uid="uid://cl701vbhrtifk" path="res://devices/workbench/workbench.tscn" id="6_kyd4t"]
+[ext_resource type="PackedScene" uid="uid://ckpmqqlqc72kj" path="res://devices/tubes_stand/tubes_stand.tscn" id="7_eyxe0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,7 +37,7 @@ shadow_opacity = 0.6
 
 [node name="Environment" type="Node3D" parent="." unique_id=560163200]
 
-[node name="lab" parent="Environment" unique_id=1969678603 instance=ExtResource("4_huww6")]
+[node name="lab" parent="Environment" unique_id=588306906 instance=ExtResource("4_huww6")]
 
 [node name="Ground World Boundary" type="StaticBody3D" parent="Environment/lab" unique_id=83751850]
 
@@ -65,6 +66,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6
 
 [node name="Workbench2" parent="Environment/Devices" unique_id=907132137 instance=ExtResource("6_kyd4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92435277, 0.87859845, -3.9388032)
+
+[node name="TubesStand" parent="Environment/Devices" unique_id=64065040 instance=ExtResource("7_eyxe0")]
+transform = Transform3D(-0.9567679, 0, 0.29085252, 0, 1, 0, -0.29085252, 0, -0.9567679, 0.26583588, 0.88206017, 0.111377716)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)

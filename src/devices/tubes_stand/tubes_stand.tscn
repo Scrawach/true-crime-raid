@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://ckpmqqlqc72kj"]
+
+[ext_resource type="PackedScene" uid="uid://dk1bydnennwf6" path="res://prototyping/assets/tubes_stand.glb" id="1_ps5at"]
+[ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_0m5el"]
+[ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_t8s4k"]
+[ext_resource type="Script" uid="uid://b83hw0cyge6d1" path="res://devices/tubes_stand/player_has_dna_or_can_take_dna.gd" id="4_tuhfg"]
+[ext_resource type="Script" uid="uid://c7ixsxog2qjgn" path="res://devices/tubes_stand/interact_with_tubes_stand.gd" id="4_ud2hb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8s4k"]
+size = Vector3(0.4729004, 0.26654053, 0.19384766)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ud2hb"]
+
+[node name="TubesStand" type="Node3D" unique_id=64065040]
+
+[node name="tubes_stand" parent="." unique_id=1417007498 instance=ExtResource("1_ps5at")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1756845987]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=687543605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, 0.13320923, 0.012939453)
+shape = SubResource("BoxShape3D_t8s4k")
+
+[node name="Handle Points" type="Node3D" parent="." unique_id=1355608473]
+
+[node name="Marker3D" type="Marker3D" parent="Handle Points" unique_id=1170130278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15546516, 0.10561536, -0.03624685)
+
+[node name="Marker3D2" type="Marker3D" parent="Handle Points" unique_id=1972368384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15546516, 0.10561536, 0.04074593)
+
+[node name="Marker3D3" type="Marker3D" parent="Handle Points" unique_id=1873769709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076319955, 0.10561536, -0.03624685)
+
+[node name="Marker3D4" type="Marker3D" parent="Handle Points" unique_id=765833929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076319955, 0.10561536, 0.04074593)
+
+[node name="Marker3D5" type="Marker3D" parent="Handle Points" unique_id=414303003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009922087, 0.10561536, -0.03624685)
+
+[node name="Marker3D6" type="Marker3D" parent="Handle Points" unique_id=679992524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009922087, 0.10561536, 0.04074593)
+
+[node name="Marker3D7" type="Marker3D" parent="Handle Points" unique_id=649827920]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07815299, 0.10561536, -0.03624685)
+
+[node name="Marker3D8" type="Marker3D" parent="Handle Points" unique_id=490314250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07815299, 0.10561536, 0.04074593)
+
+[node name="Marker3D9" type="Marker3D" parent="Handle Points" unique_id=853475036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1561749, 0.10561536, -0.03624685)
+
+[node name="Marker3D10" type="Marker3D" parent="Handle Points" unique_id=810741553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1561749, 0.10561536, 0.04074593)
+
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=769977601 node_paths=PackedStringArray("conditions")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_0m5el")
+conditions = [NodePath("PlayerHasDNAOrCanTakeDNA")]
+metadata/_custom_type_script = "uid://dlm1uspq25qm7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=629405571]
+shape = SubResource("SphereShape3D_ud2hb")
+
+[node name="InteractTooltip3D" parent="InteractionArea3D" unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("3_t8s4k")]
+interaction = NodePath("..")
+
+[node name="PlayerHasDNAOrCanTakeDNA" type="Node" parent="InteractionArea3D" unique_id=695822037 node_paths=PackedStringArray("tubes_stand")]
+script = ExtResource("4_tuhfg")
+tubes_stand = NodePath("../../InteractWithTubesStand")
+metadata/_custom_type_script = "uid://b83hw0cyge6d1"
+
+[node name="InteractWithTubesStand" type="Node" parent="." unique_id=104132821 node_paths=PackedStringArray("interaction", "handle_points")]
+script = ExtResource("4_ud2hb")
+interaction = NodePath("../InteractionArea3D")
+handle_points = NodePath("../Handle Points")
+metadata/_custom_type_script = "uid://c7ixsxog2qjgn"

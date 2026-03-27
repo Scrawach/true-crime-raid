@@ -7,10 +7,16 @@ extends RigidBody3D
 @onready var interact_tooltip_3d: InteractTooltip3D = $InteractTooltip3D
 
 func grab() -> void:
+	if freeze:
+		return
+	
 	freeze = true
 	interact_tooltip_3d.disable()
 
 func ungrab() -> void:
+	if not freeze:
+		return
+	
 	freeze = false
 	interact_tooltip_3d.enable()
 
