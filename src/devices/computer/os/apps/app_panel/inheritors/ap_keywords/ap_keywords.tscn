@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://dj7ek454oudwe"]
+
+[ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_amftr"]
+[ext_resource type="Script" uid="uid://lbcwqioplht1" path="res://devices/computer/os/apps/app_panel/inheritors/ap_keywords/ap_keywords.gd" id="2_mtvts"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mtvts"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="pa_keywords" unique_id=1906431389 instance=ExtResource("1_amftr")]
+offset_right = 423.0
+offset_bottom = 263.0
+script = ExtResource("2_mtvts")
+
+[node name="btn_label" parent="VBoxContainer/Header/HBoxContainer/MarginContainer" parent_id_path=PackedInt32Array(2109690939) index="0" unique_id=1824432215]
+text = "Keywords"
+
+[node name="Content" type="MarginContainer" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="1" unique_id=1725306089]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content" index="0" unique_id=1333959528]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="0" unique_id=1402518963]
+layout_mode = 2
+text = "Personas"
+label_settings = SubResource("LabelSettings_mtvts")
+
+[node name="hfc_kwbs_personas" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=2064394830]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="0" unique_id=965900139]
+layout_mode = 2
+text = "word"
+
+[node name="Button2" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="1" unique_id=1269291945]
+layout_mode = 2
+text = "word"
+
+[node name="Button3" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="2" unique_id=1509187010]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button4" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="3" unique_id=1169423046]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button5" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="4" unique_id=739399]
+layout_mode = 2
+text = "word"
+
+[node name="Button6" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="5" unique_id=1487352979]
+layout_mode = 2
+text = "word"
+
+[node name="Button7" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_personas" index="6" unique_id=1553946460]
+layout_mode = 2
+text = "word"
+
+[node name="Label2" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=2010581300]
+layout_mode = 2
+text = "Events"
+label_settings = SubResource("LabelSettings_mtvts")
+
+[node name="hfc_kwbs_events" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=1989916600]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="0" unique_id=1426495454]
+layout_mode = 2
+text = "word"
+
+[node name="Button2" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="1" unique_id=84985109]
+layout_mode = 2
+text = "word"
+
+[node name="Button3" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="2" unique_id=1383638261]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button4" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="3" unique_id=2065862304]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button5" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="4" unique_id=786536011]
+layout_mode = 2
+text = "word"
+
+[node name="Button6" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="5" unique_id=726777453]
+layout_mode = 2
+text = "word"
+
+[node name="Button7" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_events" index="6" unique_id=1963657751]
+layout_mode = 2
+text = "word"
+
+[node name="Label3" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="4" unique_id=1795812655]
+layout_mode = 2
+text = "Evidences"
+label_settings = SubResource("LabelSettings_mtvts")
+
+[node name="hfc_kwbs_evidences" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="5" unique_id=3769000]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="0" unique_id=1536571384]
+layout_mode = 2
+text = "word"
+
+[node name="Button2" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="1" unique_id=425434506]
+layout_mode = 2
+text = "word"
+
+[node name="Button3" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="2" unique_id=170521191]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button4" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="3" unique_id=949519178]
+layout_mode = 2
+text = "wordwdwd"
+
+[node name="Button5" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="4" unique_id=1462296766]
+layout_mode = 2
+text = "word"
+
+[node name="Button6" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="5" unique_id=1582055697]
+layout_mode = 2
+text = "word"
+
+[node name="Button7" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="6" unique_id=1024721143]
+layout_mode = 2
+text = "word"
+
+[node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
+visible = false
