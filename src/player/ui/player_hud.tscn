@@ -84,8 +84,8 @@ horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Item Handle Tooltip" unique_id=1255191530]
 layout_mode = 2
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Item Handle Tooltip/MarginContainer" unique_id=141196191]
 layout_mode = 2

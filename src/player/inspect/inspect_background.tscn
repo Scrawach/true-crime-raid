@@ -20,7 +20,7 @@ script = ExtResource("1_fxv0j")
 
 [node name="Curtain" type="ColorRect" parent="." unique_id=1308640639]
 layout_mode = 2
-color = Color(0, 0, 0, 0.39215687)
+color = Color(0, 0, 0, 0.47058824)
 
 [node name="Blur Curtain" type="ColorRect" parent="Curtain" unique_id=29567164]
 unique_name_in_owner = true
