@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_17xy5"]
 [ext_resource type="PackedScene" uid="uid://cl701vbhrtifk" path="res://devices/workbench/workbench.tscn" id="6_kyd4t"]
 [ext_resource type="PackedScene" uid="uid://ckpmqqlqc72kj" path="res://devices/tubes_stand/tubes_stand.tscn" id="7_eyxe0"]
+[ext_resource type="PackedScene" uid="uid://b40ypkl0nl4b2" path="res://devices/box/box.tscn" id="8_bujhi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -48,8 +49,6 @@ debug_color = Color(0.7516415, 0.9316102, 0, 0.41960785)
 [node name="Evidences" type="Node3D" parent="Environment" unique_id=1536998085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0292587, 0.7222628, -3.756176)
 
-[node name="00NightFight Evidences" parent="Environment/Evidences" unique_id=1178563297 instance=ExtResource("2_ia5wu")]
-
 [node name="Devices" type="Node3D" parent="Environment" unique_id=259788603]
 
 [node name="Computer" parent="Environment/Devices" unique_id=799874042 instance=ExtResource("5_kem4b")]
@@ -68,7 +67,11 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92435277, 0.87859845, -3.9388032)
 
 [node name="TubesStand" parent="Environment/Devices" unique_id=64065040 instance=ExtResource("7_eyxe0")]
-transform = Transform3D(-0.9567679, 0, 0.29085252, 0, 1, 0, -0.29085252, 0, -0.9567679, 0.26583588, 0.88206017, 0.111377716)
+transform = Transform3D(0.9166489, 0, -0.39969313, 0, 1, 0, 0.39969313, 0, 0.9166489, -0.9804554, 0.8797612, -0.12828612)
+
+[node name="Box" parent="Environment/Devices" unique_id=1870866890 instance=ExtResource("8_bujhi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0.6860082, -3.8331056)
+spawn_scene = ExtResource("2_ia5wu")
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
