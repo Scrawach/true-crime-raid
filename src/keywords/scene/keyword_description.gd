@@ -14,6 +14,9 @@ func initialize(header: String, content: String) -> void:
 	keyword_text_label.text = content
 	keyword_text_label.initialize()
 
+func clear() -> void:
+	keyword_text_label.clear()
+
 func get_keyword_count() -> int:
 	return keyword_text_label.get_keyword_count()
 

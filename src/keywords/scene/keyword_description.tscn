@@ -17,8 +17,9 @@ grow_end = -25.0
 
 [node name="Keyword Description" type="PanelContainer" unique_id=1598517834]
 custom_minimum_size = Vector2(300, 200)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 300.0
+offset_bottom = 200.0
+size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dsp5a")
 script = ExtResource("1_e7kcq")
@@ -38,6 +39,7 @@ mouse_filter = 2
 [node name="Header Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=34839269]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 18
 text = "ОПИСАНИЕ"
 horizontal_alignment = 1
 vertical_alignment = 1

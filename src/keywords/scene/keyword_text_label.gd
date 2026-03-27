@@ -22,6 +22,7 @@ func _ready() -> void:
 	draw.connect(queue_redraw)
 
 func initialize() -> void:
+	keyword_effect.clear()
 	keywords_cache.clear()
 	var keywords := BBCodeParser.get_all("keyword", text)
 	for keyword in keywords:

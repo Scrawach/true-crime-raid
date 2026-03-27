@@ -1,6 +1,8 @@
 class_name KeywordsPanel
 extends PanelContainer
 
+@export var keyword_panel_item: PackedScene
+
 @onready var keywords_count: Label = %"Keywords Count"
 @onready var keywords_container: HFlowContainer = %"Keywords Container"
 
@@ -24,14 +26,13 @@ func add_keyword(data: KeywordData) -> void:
 	
 	found_keywords[data.id] = data
 	update_count(found_keywords.size(), keywords_max_count)
-	var flow_label := make_label_for(data)
-	keywords_container.add_child(flow_label)
+	make_label_for(data)
 
-func make_label_for(keyword: KeywordData) -> Label:
-	var key_label := Label.new()
-	key_label.uppercase = true
-	key_label.text = keyword.words
-	return key_label
+func make_label_for(keyword: KeywordData) -> Control:
+	var item := keyword_panel_item.instantiate() as KeywordItemPanel
+	keywords_container.add_child(item)
+	item.initialize(keyword)
+	return item
 
 func clear() -> void:
 	keywords_count.text = ""

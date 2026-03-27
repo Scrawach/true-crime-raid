@@ -27,6 +27,7 @@ var font_size: int = 16
 func clear() -> void:
 	clicked_keywords.clear()
 	hovered_keywords.clear()
+	offsets.clear()
 
 func click(id: String) -> void:
 	if clicked_keywords.has(id):

@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bbt4ebi7dnhdm" path="res://items/trash_item.tscn" id="3_et4ll"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="Script" uid="uid://dxo7ifkrsuskk" path="res://player/camera/camera_distance_zoom.gd" id="8_0yr2y"]
-[ext_resource type="PackedScene" uid="uid://befpxu1lw234h" path="res://player/inspect/keywords_panel.tscn" id="9_0yr2y"]
-[ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="9_8qt7t"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
+[ext_resource type="PackedScene" uid="uid://d3ymyewlmpt84" path="res://player/inspect/ui/inspector_control.tscn" id="9_x0nva"]
 [ext_resource type="Script" uid="uid://lcrxqd5av3io" path="res://player/inspect/inspect_scene_appear.gd" id="10_x0nva"]
 
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
@@ -91,87 +90,8 @@ max_distance = 0.2
 camera = NodePath("..")
 metadata/_custom_type_script = "uid://dxo7ifkrsuskk"
 
-[node name="Inspector Control" type="Control" parent="CanvasLayer" unique_id=1207610378]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Keyboard Tooltips" type="PanelContainer" parent="CanvasLayer/Inspector Control" unique_id=1724217216]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 42.0
-grow_horizontal = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Inspector Control/Keyboard Tooltips" unique_id=1519401425]
-layout_mode = 2
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inspector Control/Keyboard Tooltips/MarginContainer" unique_id=23862261]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Inspector Control/Keyboard Tooltips/MarginContainer/HBoxContainer" unique_id=200841944]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[img height=32]uid://skb1eu8dskay[/img] ВРАЩАТЬ"
-horizontal_alignment = 2
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/Inspector Control/Keyboard Tooltips/MarginContainer/HBoxContainer" unique_id=1341950514]
-custom_minimum_size = Vector2(260, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-bbcode_enabled = true
-text = "[img height=32]uid://b062i0t3hmft0[/img] ПРИБЛИЗИТЬ / ОТДАЛИТЬ"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Inspector Control/Keyboard Tooltips/MarginContainer/HBoxContainer" unique_id=43490850]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[img height=32]uid://blvvxcjuyqu33[/img] ВЫЙТИ"
-
-[node name="Control Container" type="Control" parent="CanvasLayer/Inspector Control" unique_id=1408155094]
+[node name="Inspector Control" parent="CanvasLayer" unique_id=544111972 instance=ExtResource("9_x0nva")]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Keyword Description" parent="CanvasLayer/Inspector Control" unique_id=1598517834 instance=ExtResource("9_8qt7t")]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 150.0
-offset_top = -200.0
-offset_right = 550.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Keywords Panel" parent="CanvasLayer/Inspector Control" unique_id=1520725564 instance=ExtResource("9_0yr2y")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
 
 [node name="InspectSceneAppear" type="Node" parent="CanvasLayer" unique_id=2096623016 node_paths=PackedStringArray("canvas_layer", "main_control", "background")]
 unique_name_in_owner = true

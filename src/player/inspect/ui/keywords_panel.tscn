@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://befpxu1lw234h"]
+
+[ext_resource type="Script" uid="uid://2egrgtf4ehhu" path="res://player/inspect/ui/keywords_panel.gd" id="1_3en02"]
+[ext_resource type="PackedScene" uid="uid://cuebo5af1w176" path="res://player/inspect/ui/components/keyword_item_panel.tscn" id="2_3slmr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3en02"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Keywords Panel" type="PanelContainer" unique_id=1520725564]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -131.0
+offset_right = 100.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3en02")
+script = ExtResource("1_3en02")
+keyword_panel_item = ExtResource("2_3slmr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2002655342]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2073915468]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=192999399]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1404500638]
+layout_mode = 2
+size_flags_vertical = 0
+text = "КЛЮЧЕВЫЕ СЛОВА:"
+
+[node name="Keywords Count" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1274945827]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0 / 3"
+horizontal_alignment = 2
+
+[node name="Keywords Container" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1455661485]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 12

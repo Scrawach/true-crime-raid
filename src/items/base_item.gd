@@ -6,6 +6,11 @@ extends RigidBody3D
 
 @onready var interact_tooltip_3d: InteractTooltip3D = $InteractTooltip3D
 
+var total_dna_points: int
+
+func _ready() -> void:
+	total_dna_points = get_dna_interactive_points().size()
+
 func grab() -> void:
 	if freeze:
 		return
@@ -22,6 +27,13 @@ func ungrab() -> void:
 
 func get_interactive_points() -> InteractivePoints:
 	return points
+
+func get_dna_interactive_points() -> Array[DNAInteractivePoint3D]:
+	var dna_points: Array[DNAInteractivePoint3D]
+	for child in points.get_children():
+		if child is DNAInteractivePoint3D:
+			dna_points.append(child)
+	return dna_points
 
 func get_description() -> String:
 	return data.description
