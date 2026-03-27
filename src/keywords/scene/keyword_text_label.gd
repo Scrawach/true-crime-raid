@@ -19,6 +19,7 @@ func _ready() -> void:
 	meta_hover_started.connect(_on_meta_hovered)
 	meta_hover_ended.connect(_on_meta_unhovered)
 	finished.connect(_on_finished)
+	draw.connect(queue_redraw)
 
 func initialize() -> void:
 	keywords_cache.clear()
@@ -38,6 +39,17 @@ func get_all_keywords() -> Array[KeywordData]:
 	if not is_finished():
 		initialize()
 	return keywords_cache.values()
+
+func _draw() -> void:
+	_draw_underline()
+
+func _draw_underline() -> void:
+	for offset in keyword_effect.offsets:
+		if offset.is_clicked:
+			continue
+		draw_set_transform(Vector2(0, 2))
+		draw_dashed_line(offset.start, offset.end, Color(offset.color), 2.0, 2.0)
+		draw_set_transform(Vector2.ZERO)
 
 func _on_finished() -> void:
 	initialize()
