@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeywordData" format=3 uid="uid://fpx8hcbn5lyl"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_ashro"]
+
+[resource]
+script = ExtResource("1_ashro")
+id = "00nf-jim"
+words = "Jim Waller"
+type = "Person"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"

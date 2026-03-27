@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeywordData" format=3 uid="uid://ce37kjbghoc71"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_kw4yr"]
+
+[resource]
+script = ExtResource("1_kw4yr")
+id = "00nf-cup"
+words = "Стакан"
+type = "Evidence"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeywordData" format=3 uid="uid://bnsobiaw5guyc"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_i021d"]
+
+[resource]
+script = ExtResource("1_i021d")
+id = "00nf-butts"
+words = "Окурки"
+type = "Evidence"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeywordData" format=3 uid="uid://cfltodu0flf7e"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_qiy81"]
+
+[resource]
+script = ExtResource("1_qiy81")
+id = "00nf-austing"
+words = "Austin Bolton"
+type = "Person"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KeywordData" format=3 uid="uid://7f2f56elgx2d"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_5e1hv"]
+
+[resource]
+script = ExtResource("1_5e1hv")
+id = "00nf-revenge"
+words = "Финансовая месть"
+type = "Event"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
