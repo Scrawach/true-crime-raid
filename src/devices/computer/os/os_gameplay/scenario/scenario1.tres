@@ -1,0 +1,121 @@
+[gd_resource type="Resource" script_class="Scenario" format=3 uid="uid://jt0l5j3fb0px"]
+
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_5hmco"]
+[ext_resource type="Script" uid="uid://dlggi3csk17kq" path="res://devices/computer/os/os_gameplay/dna_cluster/dna_cluster.gd" id="2_w0bgd"]
+[ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="3_4pdhq"]
+[ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="4_gmcke"]
+
+[sub_resource type="Resource" id="Resource_ww1kh"]
+script = ExtResource("1_5hmco")
+id = "x007"
+words = "Conflict"
+type = "EVENT"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_j7fte"]
+script = ExtResource("3_4pdhq")
+id = "x001"
+database_name = "Austin Bolton"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
+
+[sub_resource type="Resource" id="Resource_x8pnj"]
+script = ExtResource("3_4pdhq")
+id = "x002"
+database_name = "Ian Bolton"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
+
+[sub_resource type="Resource" id="Resource_7hpiq"]
+script = ExtResource("1_5hmco")
+id = "x010"
+words = "Knife"
+type = "EVIDENCE"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_64sn2"]
+script = ExtResource("2_w0bgd")
+evidence = SubResource("Resource_7hpiq")
+dna_markers = Array[ExtResource("3_4pdhq")]([SubResource("Resource_j7fte"), SubResource("Resource_x8pnj")])
+metadata/_custom_type_script = "uid://dlggi3csk17kq"
+
+[sub_resource type="Resource" id="Resource_3ev0g"]
+script = ExtResource("3_4pdhq")
+id = "x003"
+database_name = "Austin Bolton"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
+
+[sub_resource type="Resource" id="Resource_kmi2b"]
+script = ExtResource("1_5hmco")
+id = "x011"
+words = "Butt"
+type = "EVIDENCE"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_s2eyh"]
+script = ExtResource("2_w0bgd")
+evidence = SubResource("Resource_kmi2b")
+dna_markers = Array[ExtResource("3_4pdhq")]([SubResource("Resource_3ev0g")])
+metadata/_custom_type_script = "uid://dlggi3csk17kq"
+
+[sub_resource type="Resource" id="Resource_sab36"]
+script = ExtResource("1_5hmco")
+id = "x001"
+words = "Austin Bolton"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_dalv8"]
+script = ExtResource("1_5hmco")
+id = "x002"
+words = "Finance"
+type = "EVENT"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_1tptd"]
+script = ExtResource("3_4pdhq")
+id = "x004"
+database_name = "Jim Waller"
+metadata/_custom_type_script = "uid://bn7663kucbpmq"
+
+[sub_resource type="Resource" id="Resource_mue60"]
+script = ExtResource("1_5hmco")
+id = "x012"
+words = "Cup"
+type = "EVIDENCE"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_rxnq0"]
+script = ExtResource("2_w0bgd")
+evidence = SubResource("Resource_mue60")
+dna_markers = Array[ExtResource("3_4pdhq")]([SubResource("Resource_1tptd")])
+metadata/_custom_type_script = "uid://dlggi3csk17kq"
+
+[sub_resource type="Resource" id="Resource_qiysj"]
+script = ExtResource("1_5hmco")
+id = "x004"
+words = "Ian Bolton"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_g05ep"]
+script = ExtResource("1_5hmco")
+id = "x005"
+words = "Jim Waller"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[sub_resource type="Resource" id="Resource_lv3v4"]
+script = ExtResource("1_5hmco")
+id = "x006"
+words = "Paul Slater"
+type = "PERSON"
+metadata/_custom_type_script = "uid://ia3n8itvb8ly"
+
+[resource]
+script = ExtResource("4_gmcke")
+felon = SubResource("Resource_sab36")
+personas = Array[ExtResource("1_5hmco")]([SubResource("Resource_qiysj"), SubResource("Resource_g05ep"), SubResource("Resource_lv3v4")])
+motive = SubResource("Resource_dalv8")
+events = Array[ExtResource("1_5hmco")]([SubResource("Resource_ww1kh")])
+evidences = Array[ExtResource("2_w0bgd")]([SubResource("Resource_64sn2"), SubResource("Resource_s2eyh")])
+objects = Array[ExtResource("2_w0bgd")]([SubResource("Resource_rxnq0")])
+metadata/_custom_type_script = "uid://dtlybdfupvk30"

@@ -7,6 +7,7 @@ extends Node
 @export var ap_debug:APDebug
 @export var ap_keywords:APKeywords
 @export var ap_report:APReport
+@export var ap_map:APMap
 
 
 var current_scenario:Scenario
@@ -32,9 +33,12 @@ func setup_scenario(scenario:Scenario):
 	ap_keywords.fill_containers(keywords_pool)
 	#
 	ap_debug.fill_container(keywords_pool.keys())
+	ap_debug.fill_dna(current_scenario.extract_dna_data())
 	#
 	ap_report.clear_data()
 	ap_report.fill_data(current_scenario.felon, current_scenario.motive, current_scenario.cluster_to_kw(current_scenario.evidences))
+	#
+	ap_map.registrate_ui_elements()
 
 func on_keyword_found(kw:KeywordData):
 	if not kw in keywords_pool.keys():

@@ -1,6 +1,8 @@
 class_name APMap
 extends AppPanel
 
+@export var image:Texture2D
+
 @export var max_zoom := 2.0
 @export var min_zoom := 0.5
 @export var zoom_step := 0.1
@@ -11,10 +13,15 @@ extends AppPanel
 var mouse_hovering = false
 var mmb_pressed = false
 
+var person_buttons:Dictionary[String, Button]
+var evidence_buttons:Dictionary[String, Button]
+var dna_lines:Dictionary[String, Line2D]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
+	GameManager.keyword_found.connect(on_keyword_found)
+	GameManager.dna_investigated.connect(on_dna_investigated)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,11 +42,50 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			zoom_out()
 
+func registrate_ui_elements():
+	#
+	person_buttons = {}
+	evidence_buttons = {}
+	dna_lines = {}
+	#
+	for node in get_tree().get_nodes_in_group("os_map_btn_evidence"):
+		if node.has_meta("evidence_id"):
+			evidence_buttons[node.get_meta("evidence_id")] = node
+	for node in get_tree().get_nodes_in_group("os_map_btn_person"):
+		if node.has_meta("person_id"):
+			person_buttons[node.get_meta("person_id")] = node
+	for node in get_tree().get_nodes_in_group("os_map_l2d_dna"):
+		if node.has_meta("dna_id"):
+			dna_lines[node.get_meta("dna_id")] = node
+	#
+	for btn in evidence_buttons.values():
+		btn.hide()
+	for l2d in dna_lines.values():
+		l2d.hide()
+		
+func synchronize_keywords(keywords_pool:Dictionary[KeywordData, bool]):
+	#TO DO
+	pass
 
 func _on_btn_center_pressed() -> void:
 	c_hinge.position = Vector2.ZERO
 	c_hinge.scale = Vector2.ONE
 
+func on_keyword_found(kw:KeywordData):
+	#
+	if kw.type == "EVIDENCE":
+		if kw.id in evidence_buttons.keys():
+			evidence_buttons[kw.id].show()
+	#
+	if kw.type == "PERSON":
+		if kw.id in person_buttons.keys():
+			person_buttons[kw.id].text = kw.words
+			person_buttons[kw.id].icon = image
+	
+
+func on_dna_investigated(dna:DNAData):
+	if dna.id in dna_lines.keys():
+		dna_lines[dna.id].show()
 
 func zoom_at_cursor(factor: float) -> void:
 	#
