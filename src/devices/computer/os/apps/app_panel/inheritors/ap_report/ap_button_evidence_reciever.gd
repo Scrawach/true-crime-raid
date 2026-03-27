@@ -5,7 +5,7 @@ signal data_dropped(data)
 
 func _can_drop_data(at_position, data):
 	if data != null and data is KeywordData:
-		return data.type == "EVIDENCE"
+		return data.type == "evidence"
 	else:
 		return false
 

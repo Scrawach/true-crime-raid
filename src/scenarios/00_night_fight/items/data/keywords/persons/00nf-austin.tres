@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_qiy81")
-id = "00nf-austing"
+id = "00nf-austin"
 words = "Austin Bolton"
 type = "person"
 metadata/_custom_type_script = "uid://ia3n8itvb8ly"
