@@ -15,7 +15,7 @@ AutoExportVersion/version_config_file="res://addons/current_version/auto_export_
 [application]
 
 config/name="True Crime RAID"
-config/version="v0.0.91"
+config/version="v0.0.93"
 run/main_scene="uid://b2q2xjr1xt7rj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -23,7 +23,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://c1c1ux05g0axv"
-Quest="*uid://kml4j3qno4yx"
 
 [editor_plugins]
 
