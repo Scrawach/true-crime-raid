@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://dvlpgtj5jf6de"]
 
-[ext_resource type="FontFile" uid="uid://dp4yid5ui873b" path="res://devices/computer/assets/font/monogram.ttf" id="1_1hhjf"]
 [ext_resource type="Script" uid="uid://ch8753l8oejgl" path="res://devices/computer/monitor/monitor_control.gd" id="1_6xg1g"]
 [ext_resource type="Script" uid="uid://dg4c1w04cm6ft" path="res://devices/computer/os/os_gameplay/os_gameplay.gd" id="2_6xg1g"]
+[ext_resource type="FontFile" uid="uid://bdocifsem66dn" path="res://devices/computer/assets/font/monogram-extended.ttf" id="2_dalv8"]
 [ext_resource type="Texture2D" uid="uid://cb1urhpwrqxo0" path="res://devices/computer/assets/img/patterns/pattern0011.png" id="3_5od7m"]
 [ext_resource type="Texture2D" uid="uid://cfnecb8qbcghb" path="res://devices/computer/assets/img/content/dna_science.png" id="3_6wppi"]
-[ext_resource type="Texture2D" uid="uid://bsfwss8xe7x6o" path="res://devices/computer/assets/img/icons/dna-strand.png" id="5_yckwh"]
-[ext_resource type="Texture2D" uid="uid://d1kphkwie1ank" path="res://devices/computer/assets/img/icons/database.png" id="6_q1kfc"]
+[ext_resource type="Texture2D" uid="uid://cmw5xr3hsf5ja" path="res://devices/computer/assets/img/icons/analysis.png" id="4_dalv8"]
+[ext_resource type="Texture2D" uid="uid://cv36psgm7in15" path="res://devices/computer/assets/img/icons/clipboard.png" id="5_ww1kh"]
+[ext_resource type="Texture2D" uid="uid://r8jiow65uxko" path="res://devices/computer/assets/img/icons/human-resources.png" id="6_sab36"]
 [ext_resource type="Texture2D" uid="uid://cxiwgacgvfxnc" path="res://devices/computer/assets/img/icons/personal-information.png" id="7_qf42x"]
 [ext_resource type="PackedScene" uid="uid://dj7ek454oudwe" path="res://devices/computer/os/apps/app_panel/inheritors/ap_keywords/ap_keywords.tscn" id="8_7us4k"]
 [ext_resource type="Texture2D" uid="uid://c6nhhxkewq6q7" path="res://devices/computer/assets/img/os_gui/Windows_Button_Focus_Outlined.png" id="9_1c880"]
@@ -23,12 +24,28 @@
 
 [sub_resource type="Theme" id="Theme_anpc4"]
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("1_1hhjf")
+Button/fonts/font = ExtResource("2_dalv8")
 Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("1_1hhjf")
+Label/fonts/font = ExtResource("2_dalv8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xg1g"]
-bg_color = Color(0.21960784, 0.16862746, 0.14901961, 1)
+bg_color = Color(0.3944, 0.58, 0.56762666, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hud7"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7fte"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ww1kh"]
 font_size = 48
@@ -140,47 +157,80 @@ texture = ExtResource("3_6wppi")
 [node name="c_apps" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=1503191333]
 layout_mode = 2
 
-[node name="btn_dna_composer" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=499371516]
+[node name="btn_keywords" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=499371516]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 19.0
 offset_right = 87.0
 offset_bottom = 110.0
 theme_override_font_sizes/font_size = 12
-text = "DNA
-Composer"
-icon = ExtResource("5_yckwh")
+text = "Case
+materials"
+icon = ExtResource("4_dalv8")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="btn_personas_db" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=1623881921]
+[node name="Label" type="Label" parent="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords" unique_id=496162043]
+visible = false
+layout_mode = 0
+offset_left = 86.0
+offset_right = 271.0
+offset_bottom = 77.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hud7")
+text = "Используйте это приложение для управления материалами дела"
+label_settings = SubResource("LabelSettings_j7fte")
+autowrap_mode = 2
+
+[node name="btn_report" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=1623881921]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 113.0
+offset_top = 229.0
 offset_right = 86.0
-offset_bottom = 204.0
+offset_bottom = 320.0
 theme_override_font_sizes/font_size = 12
-text = "Personas
-DB"
-icon = ExtResource("6_q1kfc")
+text = "Report"
+icon = ExtResource("5_ww1kh")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="btn_dossier_viewer" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=662131782]
+[node name="Label3" type="Label" parent="mc_os_workspace/pc_wallpaper/c_apps/btn_report" unique_id=1381070515]
+visible = false
 layout_mode = 0
-offset_left = 18.0
-offset_top = 216.0
-offset_right = 86.0
-offset_bottom = 307.0
+offset_left = 87.0
+offset_top = 4.0
+offset_right = 272.0
+offset_bottom = 73.75
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hud7")
+text = "Используйте это приложение для составления отчета по делу"
+label_settings = SubResource("LabelSettings_j7fte")
+autowrap_mode = 2
+
+[node name="btn_map" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=662131782]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 136.0
+offset_right = 85.0
+offset_bottom = 227.0
 theme_override_font_sizes/font_size = 12
-text = "Dossier
-viewer"
-icon = ExtResource("7_qf42x")
+text = "Map"
+icon = ExtResource("6_sab36")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[node name="Label2" type="Label" parent="mc_os_workspace/pc_wallpaper/c_apps/btn_map" unique_id=1874959143]
+visible = false
+layout_mode = 0
+offset_left = 89.0
+offset_top = -9.0
+offset_right = 274.0
+offset_bottom = 60.75
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hud7")
+text = "Используйте это приложение для анализа дела"
+label_settings = SubResource("LabelSettings_j7fte")
+autowrap_mode = 2
 
 [node name="btn_debug" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=988282608]
 layout_mode = 0
@@ -201,39 +251,41 @@ mouse_filter = 2
 
 [node name="pa_keywords" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1906431389 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("8_7us4k")]
 layout_mode = 0
-offset_left = 501.0
-offset_top = 191.0
-offset_right = 724.0
-offset_bottom = 408.0
-btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_dna_composer")
-btn_ico = NodePath("../../c_apps/btn_dna_composer")
+offset_left = 907.0
+offset_top = 11.0
+offset_right = 1130.0
+offset_bottom = 322.0
+btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_keywords")
+btn_ico = NodePath("../../c_apps/btn_keywords")
 
 [node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
 layout_mode = 0
-offset_left = 118.0
-offset_top = 53.0
-offset_right = 412.0
-offset_bottom = 247.0
+offset_left = 101.0
+offset_top = 65.0
+offset_right = 395.0
+offset_bottom = 312.0
 notification_success = NodePath("../../c_notifications/notify_report_success")
 notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess")
-btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_personas_db")
-btn_ico = NodePath("../../c_apps/btn_personas_db")
+btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_report")
+btn_ico = NodePath("../../c_apps/btn_report")
 
 [node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
 layout_mode = 0
-offset_left = 393.0
-offset_top = 11.0
-offset_right = 578.0
-offset_bottom = 167.0
+offset_left = 922.0
+offset_top = 351.0
+offset_right = 1107.0
+offset_bottom = 507.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_debug")
 btn_ico = NodePath("../../c_apps/btn_debug")
 
-[node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 instance=ExtResource("10_ww1kh")]
+[node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_ww1kh")]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 123.0
-offset_right = 459.0
-offset_bottom = 544.0
+offset_left = 455.0
+offset_top = 25.0
+offset_right = 879.0
+offset_bottom = 446.0
+btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_map")
+btn_ico = NodePath("../../c_apps/btn_map")
 
 [node name="c_notifications" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=512799671]
 layout_mode = 2
@@ -260,6 +312,14 @@ text = "The report was compiled incorrectly"
 label_settings = SubResource("LabelSettings_ww1kh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=1292575288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=989561926]
 layout_mode = 1
@@ -292,6 +352,11 @@ text = "You have successfully
 label_settings = SubResource("LabelSettings_ww1kh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=1668245674]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=3142391]
 layout_mode = 1
@@ -337,17 +402,17 @@ mouse_filter = 2
 layout_mode = 2
 mouse_filter = 2
 
-[node name="btn_dna_composer" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=1125601404]
+[node name="btn_keywords" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=1125601404]
 layout_mode = 2
-text = "DNA Composer"
+text = "Keywords"
 
-[node name="btn_personas_db" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=2125311120]
+[node name="btn_report" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=2125311120]
 layout_mode = 2
-text = "Personas DB"
+text = "Report"
 
-[node name="btn_dossier_viewer" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=854208479]
+[node name="btn_map" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=854208479]
 layout_mode = 2
-text = "Dossier viewer"
+text = "Map"
 
 [node name="btn_debug" type="Button" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps" unique_id=2083767328]
 layout_mode = 2
@@ -378,7 +443,7 @@ script = ExtResource("14_c0d2k")
 metadata/_custom_type_script = "uid://b2po74o83srcy"
 
 [node name="tr_lcd" type="TextureRect" parent="mc_os_workspace/pc_wallpaper" unique_id=716415231]
-modulate = Color(1, 1, 1, 0.078431375)
+modulate = Color(1, 1, 1, 0.21176471)
 texture_filter = 1
 texture_repeat = 2
 layout_mode = 2
@@ -395,5 +460,11 @@ ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_report")
 ap_map = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_map")
 metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
+[connection signal="mouse_entered" from="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords" to="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords/Label" method="show"]
+[connection signal="mouse_exited" from="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords" to="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords/Label" method="hide"]
+[connection signal="mouse_entered" from="mc_os_workspace/pc_wallpaper/c_apps/btn_report" to="mc_os_workspace/pc_wallpaper/c_apps/btn_report/Label3" method="show"]
+[connection signal="mouse_exited" from="mc_os_workspace/pc_wallpaper/c_apps/btn_report" to="mc_os_workspace/pc_wallpaper/c_apps/btn_report/Label3" method="hide"]
+[connection signal="mouse_entered" from="mc_os_workspace/pc_wallpaper/c_apps/btn_map" to="mc_os_workspace/pc_wallpaper/c_apps/btn_map/Label2" method="show"]
+[connection signal="mouse_exited" from="mc_os_workspace/pc_wallpaper/c_apps/btn_map" to="mc_os_workspace/pc_wallpaper/c_apps/btn_map/Label2" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" method="hide"]

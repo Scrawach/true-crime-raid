@@ -15,17 +15,22 @@ signal report_compiled_ok
 var expected_evidences:Array[KeywordData]
 var current_evidence_lines:Dictionary[KeywordData, EvidenceLine]
 
+var apbr_felon_text:String
+var apbr_motive_text:String
+
 func _ready() -> void:
 	super._ready()
 	btn_approve.pressed.connect(on_btn_approve_pressed)
 	btn_add.data_dropped.connect(on_btn_add_data_dropped)
+	apbr_felon_text = apbr_felon.text
+	apbr_motive_text = apbr_motive.text
 
 func clear_data():
 	#
 	apbr_felon.expected_keyword = null
-	apbr_felon.text = "Not determined"
+	apbr_felon.text = apbr_felon_text
 	apbr_motive.expected_keyword = null
-	apbr_motive.text = "Not determined"
+	apbr_motive.text = apbr_motive_text
 	#
 	for child in vbc_evidences.get_children():
 		child.queue_free()

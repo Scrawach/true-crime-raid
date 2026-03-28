@@ -79,7 +79,7 @@ func on_keyword_found(kw:KeywordData):
 	#
 	if kw.type == "person":
 		if kw.id in person_buttons.keys():
-			person_buttons[kw.id].text = kw.words
+			person_buttons[kw.id].text = kw.words.replace(" ", "\n")
 			person_buttons[kw.id].icon = image
 	
 

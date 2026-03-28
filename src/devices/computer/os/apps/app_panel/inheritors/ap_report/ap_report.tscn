@@ -2,10 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_wxddj"]
 [ext_resource type="Script" uid="uid://bhcgo6w4j4ak3" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_report.gd" id="2_vyolp"]
+[ext_resource type="Theme" uid="uid://bxqkb70spq14l" path="res://devices/computer/data/theme/btn_reciever.tres" id="3_4ewm2"]
 [ext_resource type="Script" uid="uid://deuhin5bbfo0a" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_button_reciever.gd" id="3_lc2qe"]
 [ext_resource type="Script" uid="uid://bfwwl31r6sp8y" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/ap_button_evidence_reciever.gd" id="4_idbk2"]
+[ext_resource type="Texture2D" uid="uid://bjrnvre3ovxch" path="res://devices/computer/assets/img/icons/badge.png" id="4_y7t84"]
+[ext_resource type="Theme" uid="uid://veirtyrf82jh" path="res://devices/computer/data/theme/btn_lbl.tres" id="6_vkltl"]
+[ext_resource type="Theme" uid="uid://bn5kt8dw5t2t2" path="res://devices/computer/data/theme/btn_normal.tres" id="6_y7t84"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ewm2"]
+font_size = 12
+font_color = Color(0, 0.28600004, 0.66, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkltl"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lc2qe"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ewm2"]
+bg_color = Color(0.83137256, 0.8156863, 0.78431374, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_y7t84"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6rar"]
 font_color = Color(0, 0, 0, 1)
 
 [node name="pc_app" unique_id=1906431389 instance=ExtResource("1_wxddj")]
@@ -26,59 +57,149 @@ theme_override_constants/margin_bottom = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content" index="0" unique_id=274183837]
 layout_mode = 2
+theme = ExtResource("3_4ewm2")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="0" unique_id=1952495893]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="0" unique_id=748550637]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer3" index="0" unique_id=628998769]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Главное управление 
+по криминиальным 
+делам с истекшим 
+сроком давности"
+label_settings = SubResource("LabelSettings_4ewm2")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer3" index="1" unique_id=1704707602]
+modulate = Color(0, 0.28627452, 0.65882355, 1)
+layout_mode = 2
+texture = ExtResource("4_y7t84")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=2042144932]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Заявление о пересмотре дела"
+label_settings = SubResource("LabelSettings_vkltl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=1952495893]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="0" unique_id=294520570]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Felon"
+text = "Виновник"
 label_settings = SubResource("LabelSettings_lc2qe")
 
-[node name="apbr_felon" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="1" unique_id=1496826334]
-unique_name_in_owner = true
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="1" unique_id=1708391410]
 layout_mode = 2
-text = "Not determined"
+size_flags_horizontal = 3
+
+[node name="apbr_felon" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="2" unique_id=1496826334]
+unique_name_in_owner = true
+self_modulate = Color(0.89411765, 0.75686276, 0.654902, 1)
+layout_mode = 2
+text = "Не установлен"
 script = ExtResource("3_lc2qe")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=1509870818]
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer/apbr_felon" index="0" unique_id=1445018411]
+visible = false
+layout_mode = 0
+offset_left = 159.0
+offset_top = -1.0
+offset_right = 344.0
+offset_bottom = 76.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ewm2")
+text = "Поместите сюда имя виновника из окна материалов"
+label_settings = SubResource("LabelSettings_y7t84")
+autowrap_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=1509870818]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="0" unique_id=1205586525]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Motive"
+text = "Мотив"
 label_settings = SubResource("LabelSettings_lc2qe")
 
-[node name="apbr_motive" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="1" unique_id=33186686]
-unique_name_in_owner = true
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="1" unique_id=1205399488]
 layout_mode = 2
-text = "Not determined"
+size_flags_horizontal = 3
+
+[node name="apbr_motive" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="2" unique_id=33186686]
+unique_name_in_owner = true
+self_modulate = Color(0.81960785, 0.69803923, 0.9411765, 1)
+layout_mode = 2
+text = "Не установлен"
 script = ExtResource("3_lc2qe")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=1394275244]
+[node name="Label2" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2/apbr_motive" index="0" unique_id=607034066]
+visible = false
+layout_mode = 0
+offset_left = 159.0
+offset_top = -30.0
+offset_right = 344.0
+offset_bottom = 47.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ewm2")
+text = "Поместите сюда предполагаемый вами мотив"
+label_settings = SubResource("LabelSettings_y7t84")
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="4" unique_id=1394275244]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="0" unique_id=2006218492]
 layout_mode = 2
-text = "Evidences"
+text = "Доказательства ДНК:"
 label_settings = SubResource("LabelSettings_lc2qe")
 
 [node name="vbc_evidences" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="1" unique_id=1070652391]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("6_vkltl")
 
 [node name="btn_add" type="Button" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer" index="2" unique_id=1150644853]
 unique_name_in_owner = true
+self_modulate = Color(0.67058825, 0.6862745, 0.84313726, 1)
 layout_mode = 2
-text = "Add"
+text = "Добавить улику"
 script = ExtResource("4_idbk2")
 
-[node name="btn_approve" type="Button" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=266223024]
+[node name="Label3" type="Label" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer/btn_add" index="0" unique_id=1108710052]
+visible = false
+layout_mode = 0
+offset_left = 296.0
+offset_top = -14.0
+offset_right = 481.0
+offset_bottom = 63.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ewm2")
+text = "Поместите сюда улики из окна материалов дела"
+label_settings = SubResource("LabelSettings_y7t84")
+autowrap_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="5" unique_id=1084355186]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer4" index="0" unique_id=2059784401]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Дата 12.09.26"
+label_settings = SubResource("LabelSettings_g6rar")
+
+[node name="btn_approve" type="Button" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer4" index="1" unique_id=266223024]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Approve"
+theme = ExtResource("6_y7t84")
+text = "Подтвердить"
 
 [node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
 visible = false
+
+[connection signal="mouse_entered" from="VBoxContainer/Content/VBoxContainer/HBoxContainer/apbr_felon" to="VBoxContainer/Content/VBoxContainer/HBoxContainer/apbr_felon/Label" method="show"]
+[connection signal="mouse_exited" from="VBoxContainer/Content/VBoxContainer/HBoxContainer/apbr_felon" to="VBoxContainer/Content/VBoxContainer/HBoxContainer/apbr_felon/Label" method="hide"]
+[connection signal="mouse_entered" from="VBoxContainer/Content/VBoxContainer/HBoxContainer2/apbr_motive" to="VBoxContainer/Content/VBoxContainer/HBoxContainer2/apbr_motive/Label2" method="show"]
+[connection signal="mouse_exited" from="VBoxContainer/Content/VBoxContainer/HBoxContainer2/apbr_motive" to="VBoxContainer/Content/VBoxContainer/HBoxContainer2/apbr_motive/Label2" method="hide"]
+[connection signal="mouse_entered" from="VBoxContainer/Content/VBoxContainer/VBoxContainer/btn_add" to="VBoxContainer/Content/VBoxContainer/VBoxContainer/btn_add/Label3" method="show"]
+[connection signal="mouse_exited" from="VBoxContainer/Content/VBoxContainer/VBoxContainer/btn_add" to="VBoxContainer/Content/VBoxContainer/VBoxContainer/btn_add/Label3" method="hide"]

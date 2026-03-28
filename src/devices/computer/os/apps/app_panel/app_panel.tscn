@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://coawgcj38oq3u" path="res://devices/computer/os/apps/app_panel/app_panel.gd" id="1_2iytv"]
 [ext_resource type="Texture2D" uid="uid://eqncooiaayk2" path="res://devices/computer/assets/img/os_gui/Window_Header_Resizable_Inactive.png" id="1_23su3"]
 [ext_resource type="Texture2D" uid="uid://cscjjnu4646qc" path="res://devices/computer/assets/img/content/connection.png" id="2_hd38f"]
+[ext_resource type="Theme" uid="uid://veirtyrf82jh" path="res://devices/computer/data/theme/btn_lbl.tres" id="3_3l3v2"]
 [ext_resource type="Texture2D" uid="uid://t6yh2npjdk7t" path="res://devices/computer/assets/img/os_icos/cursor0013.png" id="3_v7o8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqe6u"]
@@ -17,86 +18,6 @@ texture_margin_right = 14.0
 texture_margin_bottom = 14.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xe44h"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a5bes"]
-load_path = "res://.godot/imported/Windows_Button_Focus_Outlined.png-32bbfca2d17a0bb357870b05495f4f11.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ychgc"]
-content_margin_left = 1.0
-content_margin_top = 1.0
-content_margin_right = 1.0
-content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_a5bes")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23su3"]
-load_path = "res://.godot/imported/Windows_Button.png-fc6f296dd80afbb1038c884dd2a34c2d.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oe53t"]
-content_margin_left = 1.0
-content_margin_top = 1.0
-content_margin_right = 1.0
-content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_23su3")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smhd"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2gyi"]
-content_margin_left = 1.0
-content_margin_top = 1.0
-content_margin_right = 1.0
-content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_3smhd")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6k57n"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xe44h"]
-content_margin_top = 1.0
-content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_6k57n")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8h1lp"]
-load_path = "res://.godot/imported/Window_Base.png-e951e313731ae3f1f35dca026728c054.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_numv4"]
-content_margin_top = 3.0
-content_margin_bottom = 3.0
-texture = SubResource("CompressedTexture2D_8h1lp")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
-texture_margin_right = 6.0
-texture_margin_bottom = 6.0
-
-[sub_resource type="Theme" id="Theme_eotfv"]
-Button/colors/font_color = Color(0.1404472, 0.14044762, 0.14044723, 1)
-Button/colors/font_hover_color = Color(0.37413898, 0.37413928, 0.37414008, 1)
-Button/colors/font_hover_pressed_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
-Button/colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
-Button/styles/hover = SubResource("StyleBoxTexture_ychgc")
-Button/styles/normal = SubResource("StyleBoxTexture_oe53t")
-Button/styles/pressed = SubResource("StyleBoxTexture_r2gyi")
-Label/colors/font_color = Color(0.099985994, 0.099985994, 0.099985994, 1)
-Label/styles/normal = SubResource("StyleBoxTexture_xe44h")
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_numv4")
 
 [node name="pc_panel" type="PanelContainer" unique_id=1906431389]
 texture_filter = 1
@@ -135,7 +56,7 @@ alignment = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-theme = SubResource("Theme_eotfv")
+theme = ExtResource("3_3l3v2")
 theme_override_font_sizes/font_size = 8
 icon = ExtResource("3_v7o8u")
 icon_alignment = 1

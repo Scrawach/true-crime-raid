@@ -6,6 +6,7 @@
 script = ExtResource("1_nrkst")
 
 [node name="Button" type="Button" parent="." unique_id=1915525756]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 text = "X"
 

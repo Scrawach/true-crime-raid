@@ -2,9 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://ncryxifsnjsc" path="res://devices/computer/os/apps/app_panel/app_panel.tscn" id="1_amftr"]
 [ext_resource type="Script" uid="uid://lbcwqioplht1" path="res://devices/computer/os/apps/app_panel/inheritors/ap_keywords/ap_keywords.gd" id="2_mtvts"]
+[ext_resource type="Theme" uid="uid://bn5kt8dw5t2t2" path="res://devices/computer/data/theme/btn_normal.tres" id="3_8tx0o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mtvts"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8tx0o"]
+color = Color(0.74509805, 0.61960787, 0.5137255, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_omsrf"]
+color = Color(0.68235296, 0.57254905, 0.7372549, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_kvym6"]
+color = Color(0.68235296, 0.57254905, 0.7372549, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wkj7y"]
+color = Color(0.5568628, 0.56078434, 0.65882355, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mtcia"]
+color = Color(0.5568628, 0.56078434, 0.65882355, 1)
+thickness = 4
 
 [node name="pa_keywords" unique_id=1906431389 instance=ExtResource("1_amftr")]
 offset_right = 423.0
@@ -16,6 +37,7 @@ text = "Keywords"
 
 [node name="Content" type="MarginContainer" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="1" unique_id=1725306089]
 layout_mode = 2
+theme = ExtResource("3_8tx0o")
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 6
 theme_override_constants/margin_right = 6
@@ -24,13 +46,29 @@ theme_override_constants/margin_bottom = 6
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content" index="0" unique_id=1333959528]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="0" unique_id=1402518963]
+[node name="Label4" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="0" unique_id=1075456437]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-text = "Personas"
+text = "Зажмите слово, чтобы вытащить"
+label_settings = SubResource("LabelSettings_mtvts")
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=477496336]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="0" unique_id=1402518963]
+layout_mode = 2
+text = "Подозреваемые"
 label_settings = SubResource("LabelSettings_mtvts")
 
-[node name="hfc_kwbs_personas" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=2064394830]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer" index="1" unique_id=1369950223]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_8tx0o")
+
+[node name="hfc_kwbs_personas" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=2064394830]
 unique_name_in_owner = true
+modulate = Color(0.89605397, 0.7582931, 0.6534341, 1)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -62,13 +100,27 @@ text = "word"
 layout_mode = 2
 text = "word"
 
-[node name="Label2" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="2" unique_id=2010581300]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=976124346]
 layout_mode = 2
-text = "Events"
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_8tx0o")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="4" unique_id=1992519666]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="0" unique_id=1318268108]
+layout_mode = 2
+text = "Мотивы"
 label_settings = SubResource("LabelSettings_mtvts")
 
-[node name="hfc_kwbs_events" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=1989916600]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer2" index="1" unique_id=1652289248]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_omsrf")
+
+[node name="hfc_kwbs_events" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="5" unique_id=1989916600]
 unique_name_in_owner = true
+modulate = Color(0.8190836, 0.6994441, 0.9423075, 1)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -100,13 +152,27 @@ text = "word"
 layout_mode = 2
 text = "word"
 
-[node name="Label3" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="4" unique_id=1795812655]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer" index="6" unique_id=829212407]
 layout_mode = 2
-text = "Evidences"
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_kvym6")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer" index="7" unique_id=603492940]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer3" index="0" unique_id=1445948341]
+layout_mode = 2
+text = "Улики"
 label_settings = SubResource("LabelSettings_mtvts")
 
-[node name="hfc_kwbs_evidences" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="5" unique_id=3769000]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/HBoxContainer3" index="1" unique_id=23926516]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_wkj7y")
+
+[node name="hfc_kwbs_evidences" type="HFlowContainer" parent="VBoxContainer/Content/VBoxContainer" index="8" unique_id=3769000]
 unique_name_in_owner = true
+modulate = Color(0.67058825, 0.6862745, 0.84313726, 1)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -137,6 +203,11 @@ text = "word"
 [node name="Button7" type="Button" parent="VBoxContainer/Content/VBoxContainer/hfc_kwbs_evidences" index="6" unique_id=1024721143]
 layout_mode = 2
 text = "word"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer" index="9" unique_id=1024421806]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_mtcia")
 
 [node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
 visible = false

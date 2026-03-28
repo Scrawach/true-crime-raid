@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://bo8hqtguwa32f"]
+
+[ext_resource type="Texture2D" uid="uid://bjrnvre3ovxch" path="res://devices/computer/assets/img/icons/badge.png" id="1_3mtho"]
+[ext_resource type="Texture2D" uid="uid://01x330m41vul" path="res://devices/computer/assets/img/patterns/pattern0013.png" id="2_50i4r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r264w"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mtho"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("CompressedTexture2D_r264w")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_50i4r"]
+font_size = 12
+font_color = Color(0, 0.28600004, 0.66, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xiex3"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tgjl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qavmp"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="ReportCheck" type="VBoxContainer" unique_id=1836261518]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -892.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1841823959]
+layout_mode = 2
+text = "Результат проверки"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=366805505]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3mtho")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1505830312]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1324670195]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1953317711]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Главное управление 
+по криминиальным 
+делам с истекшим 
+сроком давности"
+label_settings = SubResource("LabelSettings_50i4r")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer3" unique_id=1119156206]
+modulate = Color(0, 0.28627452, 0.65882355, 1)
+layout_mode = 2
+texture = ExtResource("1_3mtho")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=820976396]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Заявление о пересмотре дела"
+label_settings = SubResource("LabelSettings_xiex3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=399641996]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1465420382]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_50i4r")
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1263769162]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=2052449790]
+layout_mode = 2
+text = "Виновник"
+label_settings = SubResource("LabelSettings_qavmp")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1033045420]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=2121263373]
+layout_mode = 2
+text = "Виновник"
+label_settings = SubResource("LabelSettings_qavmp")
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=469626317]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer2" unique_id=237021258]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_50i4r")
+stretch_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer2" unique_id=1689908805]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1265229761]
+layout_mode = 2
+text = "Мотив"
+label_settings = SubResource("LabelSettings_qavmp")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=871795963]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1031547584]
+layout_mode = 2
+text = "Виновник"
+label_settings = SubResource("LabelSettings_qavmp")
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1306872893]
+layout_mode = 2
+text = "Доказательства ДНК"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=725670617]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=788681486]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=736182486]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_50i4r")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=452389232]
+layout_mode = 2
+text = "Доказательство"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1513739207]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1926128853]
+layout_mode = 2
+text = "Результат:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2093613771]
+layout_mode = 2

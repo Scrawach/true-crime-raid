@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://c1c1ux05g0axv"
+Quest="*uid://kml4j3qno4yx"
 
 [editor_plugins]
 

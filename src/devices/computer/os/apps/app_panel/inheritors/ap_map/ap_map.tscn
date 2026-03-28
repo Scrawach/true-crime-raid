@@ -4,9 +4,19 @@
 [ext_resource type="Script" uid="uid://jiu1ymknoeva" path="res://devices/computer/os/apps/app_panel/inheritors/ap_map/ap_map.gd" id="2_c30qu"]
 [ext_resource type="Texture2D" uid="uid://buxiqn0osqtc2" path="res://devices/computer/assets/img/icons/user.png" id="3_f5vgv"]
 [ext_resource type="Texture2D" uid="uid://drmqx1kvitnba" path="res://devices/computer/assets/img/icons/question-mark.png" id="3_sd4ck"]
+[ext_resource type="Theme" uid="uid://bpvptcf0cevm7" path="res://devices/computer/data/theme/btn_map.tres" id="4_en7ll"]
 [ext_resource type="Texture2D" uid="uid://daqf5gyi1ku36" path="res://devices/computer/assets/img/icons/cigar-pipe.png" id="4_f5vgv"]
 [ext_resource type="Texture2D" uid="uid://cmwwkj6qygq5f" path="res://devices/computer/assets/img/icons/knife.png" id="5_en7ll"]
 [ext_resource type="Texture2D" uid="uid://2skro8c3d5rw" path="res://devices/computer/assets/img/icons/paper-cup.png" id="6_gx6qh"]
+[ext_resource type="Texture2D" uid="uid://3kh2k4t3x0bx" path="res://devices/computer/assets/img/patterns/pattern00110.png" id="7_7knws"]
+[ext_resource type="Texture2D" uid="uid://dadi1hbxoj3qw" path="res://devices/computer/assets/img/patterns/pattern00119.png" id="9_lf4hl"]
+[ext_resource type="Texture2D" uid="uid://bpeigpkylrxpc" path="res://devices/computer/assets/img/patterns/pattern0016.png" id="11_w1alo"]
+[ext_resource type="Texture2D" uid="uid://dkdxo76jvj2gi" path="res://devices/computer/assets/img/icons/mouse-cursor.png" id="12_574b6"]
+[ext_resource type="Texture2D" uid="uid://bthqbqcqfibya" path="res://devices/computer/assets/img/icons/mouse-cursor (1).png" id="13_twvxb"]
+[ext_resource type="Theme" uid="uid://bn5kt8dw5t2t2" path="res://devices/computer/data/theme/btn_normal.tres" id="14_1xouq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8t7v"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="pc_panel" unique_id=1906431389 instance=ExtResource("1_yamvk")]
 offset_right = 663.0
@@ -34,8 +44,10 @@ offset_bottom = 40.0
 
 [node name="Control" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge" index="0" unique_id=1317542049]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 39.0
+offset_bottom = 39.0
 
 [node name="lines" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="0" unique_id=589488878]
 anchors_preset = 0
@@ -43,49 +55,48 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="0" unique_id=1597552178]
-points = PackedVector2Array(137, 84, 215, 178)
+points = PackedVector2Array(110, 69, 109, 177, 218, 177)
+default_color = Color(0.66, 0, 0, 1)
 
 [node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="1" unique_id=1633805473]
-points = PackedVector2Array(218, 178, 305, 93)
+points = PackedVector2Array(219, 177, 335, 176, 337, 74)
+default_color = Color(0.66, 0, 0, 1)
 
 [node name="Line2D3" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/lines" index="2" unique_id=1438267880]
 points = PackedVector2Array(218, 178, 218, 309)
+default_color = Color(0.66, 0, 0, 1)
 
 [node name="profiles" type="Control" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control" index="1" unique_id=1710008622]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("4_en7ll")
 
 [node name="Button" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="0" unique_id=27823651 groups=["os_map_btn_person"]]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 97.0
-offset_top = 53.0
-offset_right = 184.0
-offset_bottom = 139.0
+offset_left = 63.0
+offset_top = 40.0
+offset_right = 154.0
+offset_bottom = 126.0
 text = "Not found"
 icon = ExtResource("3_sd4ck")
-flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/person_id = "00nf-austin"
 
 [node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="1" unique_id=1726196160 groups=["os_map_btn_person"]]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 259.0
-offset_top = 51.0
-offset_right = 346.0
-offset_bottom = 137.0
+offset_left = 292.0
+offset_top = 44.0
+offset_right = 383.0
+offset_bottom = 130.0
 text = "Not found"
 icon = ExtResource("3_sd4ck")
-flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/person_id = "00nf-paul"
 
 [node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="2" unique_id=480833603 groups=["os_map_btn_person"]]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 174.0
 offset_top = 146.0
@@ -93,13 +104,11 @@ offset_right = 261.0
 offset_bottom = 232.0
 text = "Not found"
 icon = ExtResource("3_sd4ck")
-flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/person_id = "00nf-ian"
 
 [node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/profiles" index="3" unique_id=1981505037 groups=["os_map_btn_person"]]
-modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 174.0
 offset_top = 281.0
@@ -107,7 +116,6 @@ offset_right = 261.0
 offset_bottom = 367.0
 text = "Not found"
 icon = ExtResource("3_sd4ck")
-flat = true
 icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/person_id = "00nf-jim"
@@ -118,12 +126,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Button2" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="0" unique_id=975083259 groups=["os_map_btn_evidence"]]
-modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = -2.0
-offset_top = 51.0
-offset_right = 85.0
-offset_bottom = 137.0
+offset_left = 178.0
+offset_top = 19.0
+offset_right = 265.0
+offset_bottom = 105.0
 text = "Butt"
 icon = ExtResource("4_f5vgv")
 flat = true
@@ -132,17 +140,20 @@ vertical_icon_alignment = 0
 metadata/evidence_id = "00nf-butts"
 
 [node name="l2d_dna" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button2" index="0" unique_id=936213746 groups=["os_map_l2d_dna"]]
-modulate = Color(1, 1, 1, 0.3019608)
-points = PackedVector2Array(44, 38, 140, 38)
+self_modulate = Color(0.5568628, 0.56078434, 0.65882355, 1)
+texture_repeat = 2
+points = PackedVector2Array(44, 38, -45, 52)
+texture = ExtResource("7_7knws")
+texture_mode = 1
 metadata/dna_id = "00nf-dna-butts"
 
 [node name="Button3" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="1" unique_id=2140113189 groups=["os_map_btn_evidence"]]
-modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 57.0
-offset_top = 170.0
-offset_right = 144.0
-offset_bottom = 256.0
+offset_left = 7.0
+offset_top = 214.0
+offset_right = 94.0
+offset_bottom = 300.0
 text = "Knife"
 icon = ExtResource("5_en7ll")
 flat = true
@@ -150,20 +161,24 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/evidence_id = "00nf-knife"
 
-[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=1782274975 groups=["os_map_l2d_dna"]]
-modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(1, 0)
-points = PackedVector2Array(41, 26, 80, -81)
+[node name="l2d_dna" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="0" unique_id=458938100 groups=["os_map_l2d_dna"]]
+self_modulate = Color(0.5568628, 0.56078434, 0.65882355, 1)
+texture_repeat = 2
+points = PackedVector2Array(57, -5, 90, -96)
+texture = ExtResource("9_lf4hl")
+texture_mode = 1
 metadata/dna_id = "00nf-dna-knife2"
 
-[node name="Line2D2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="1" unique_id=1679123430 groups=["os_map_l2d_dna"]]
-modulate = Color(1, 1, 1, 0.3019608)
-position = Vector2(1, 0)
-points = PackedVector2Array(41, 26, 154, 14)
+[node name="l2d_dna2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button3" index="1" unique_id=931455394 groups=["os_map_l2d_dna"]]
+self_modulate = Color(0.5568628, 0.56078434, 0.65882355, 1)
+texture_repeat = 2
+points = PackedVector2Array(47, 43, 207, 7)
+texture = ExtResource("9_lf4hl")
+texture_mode = 1
 metadata/dna_id = "00nf-dna-knife1"
 
 [node name="Button4" type="Button" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence" index="2" unique_id=1325642777 groups=["os_map_btn_evidence"]]
-modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 316.0
 offset_top = 308.0
@@ -176,25 +191,54 @@ icon_alignment = 1
 vertical_icon_alignment = 0
 metadata/evidence_id = "00nf-cup"
 
-[node name="Line2D" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=674825517 groups=["os_map_l2d_dna"]]
-modulate = Color(1, 1, 1, 0.3019608)
-points = PackedVector2Array(44, 38, -91, 3)
+[node name="l2d_dna2" type="Line2D" parent="VBoxContainer/p_mouse_catcher/c_hinge/Control/evidence/Button4" index="0" unique_id=1807056626 groups=["os_map_l2d_dna"]]
+self_modulate = Color(0.5568628, 0.56078434, 0.65882355, 1)
+texture_repeat = 2
+points = PackedVector2Array(24, 22, -67, 14)
+texture = ExtResource("11_w1alo")
+texture_mode = 1
 metadata/dna_id = "00nf-dna-cup"
 
-[node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher" index="1" unique_id=1936422630]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/p_mouse_catcher" index="1" unique_id=605700653]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -18.0
-offset_top = -31.0
+offset_left = -124.0
+offset_top = -25.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="0" unique_id=1285062229]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("12_574b6")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="1" unique_id=2035196266]
+layout_mode = 2
+text = "Move"
+label_settings = SubResource("LabelSettings_v8t7v")
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="2" unique_id=1816285030]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("13_twvxb")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="3" unique_id=389598579]
+layout_mode = 2
+text = "Zoom"
+label_settings = SubResource("LabelSettings_v8t7v")
+
+[node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="4" unique_id=1936422630]
+layout_mode = 2
+theme = ExtResource("14_1xouq")
 text = "+"
 
 [node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
 visible = false
 
-[connection signal="pressed" from="VBoxContainer/p_mouse_catcher/btn_center" to="." method="_on_btn_center_pressed"]
+[connection signal="pressed" from="VBoxContainer/p_mouse_catcher/HBoxContainer/btn_center" to="." method="_on_btn_center_pressed"]
