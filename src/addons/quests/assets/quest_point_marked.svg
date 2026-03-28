@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666666"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="quest_point_marked.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="16.871996"
+     inkscape:cx="12.861549"
+     inkscape:cy="13.098628"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect234"
+       style="opacity:1;fill:#ffffff;stroke:none;stroke-width:0.870545;stroke-dashoffset:148.535"
+       d="M 3.6606529 -2.3261845 C 3.5199028 -2.1854344 3.4326386 -1.9908499 3.4326386 -1.7751499 L 3.4326386 1.7751499 C 3.4326386 2.2065499 3.7802875 2.5541988 4.2116875 2.5541988 L 7.7619873 2.5541988 C 8.1933873 2.5541988 8.5410362 2.2065499 8.5410362 1.7751499 L 8.5410362 -1.7751499 C 8.5410362 -2.2065499 8.1933873 -2.5541988 7.7619873 -2.5541988 L 4.2116875 -2.5541988 C 3.9959875 -2.5541988 3.801403 -2.4669346 3.6606529 -2.3261845 z M 4.458703 -1.5281344 C 4.5511488 -1.6205801 4.6791485 -1.6775861 4.8208219 -1.6775861 L 7.1528529 -1.6775861 C 7.4361998 -1.6775861 7.6644235 -1.4493624 7.6644235 -1.1660155 L 7.6644235 1.1660155 C 7.6644235 1.4493624 7.4361998 1.6775861 7.1528529 1.6775861 L 4.8208219 1.6775861 C 4.5374751 1.6775861 4.3092513 1.4493624 4.3092513 1.1660155 L 4.3092513 -1.1660155 C 4.3092513 -1.3076889 4.3662573 -1.4356887 4.458703 -1.5281344 z "
+       transform="rotate(45)" />
+    <rect
+       style="opacity:1;fill:#ffffff;stroke:none;stroke-width:0.4141;stroke-dashoffset:148.535;fill-opacity:1"
+       id="rect344"
+       width="2.4296997"
+       height="2.4296997"
+       x="4.7719879"
+       y="-1.2148498"
+       rx="0.37041137"
+       ry="0.37041137"
+       transform="rotate(45)" />
+  </g>
+</svg>

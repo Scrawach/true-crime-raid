@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cm33vd8h57jkn"]
+
+[ext_resource type="Script" uid="uid://0o5yt7y1rk2n" path="res://addons/quests/ui/quest_substage_panel.gd" id="1_7u21p"]
+[ext_resource type="Texture2D" uid="uid://dpg0y52p44p36" path="res://addons/quests/assets/quest_point.svg" id="1_s3cv6"]
+[ext_resource type="Texture2D" uid="uid://bmbva70r0q36g" path="res://addons/quests/assets/quest_point_marked.svg" id="3_84lpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kliqd"]
+
+[node name="Quest Substage Panel" type="PanelContainer" unique_id=1812841087]
+offset_right = 169.0
+offset_bottom = 27.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kliqd")
+script = ExtResource("1_7u21p")
+base_icon = ExtResource("1_s3cv6")
+mark_icon = ExtResource("3_84lpv")
+mark_color = Color(1, 1, 1, 0.54901963)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=913980414]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=684275739]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1430252213]
+layout_mode = 2
+
+[node name="Progress Texture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1309607981]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(17, 17)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_s3cv6")
+expand_mode = 3
+
+[node name="Quest Description" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1505663631]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+text = "Изучите пробирке в анализаторе"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Space" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1696552146]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Quest Target" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=7575394]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 14
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1007441618]
+layout_mode = 2

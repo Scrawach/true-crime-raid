@@ -9,6 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://cl701vbhrtifk" path="res://devices/workbench/workbench.tscn" id="6_kyd4t"]
 [ext_resource type="PackedScene" uid="uid://ckpmqqlqc72kj" path="res://devices/tubes_stand/tubes_stand.tscn" id="7_eyxe0"]
 [ext_resource type="PackedScene" uid="uid://b40ypkl0nl4b2" path="res://devices/box/box.tscn" id="8_bujhi"]
+[ext_resource type="Script" uid="uid://dmhxg22vk77yh" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.gd" id="10_7mksq"]
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="11_7nlvx"]
+[ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="12_swkav"]
+[ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="13_0hybi"]
+[ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="14_a8dk5"]
+[ext_resource type="Resource" uid="uid://bwiprlyrg26oj" path="res://scenarios/00_night_fight/items/data/documents/paul_slater.tres" id="15_3hvw4"]
+[ext_resource type="Resource" uid="uid://ec8ekdji04b6" path="res://scenarios/00_night_fight/items/data/items/butts.tres" id="16_yjvn4"]
+[ext_resource type="Resource" uid="uid://d340nck4oml82" path="res://scenarios/00_night_fight/items/data/items/cup.tres" id="17_pycv1"]
+[ext_resource type="Resource" uid="uid://db8odvk73u8no" path="res://scenarios/00_night_fight/items/data/items/knife.tres" id="18_llp4l"]
+[ext_resource type="PackedScene" uid="uid://blepeju13jkkf" path="res://addons/quests/ui/quest_container.tscn" id="19_jjnbj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -75,3 +85,17 @@ spawn_scene = ExtResource("2_ia5wu")
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
+
+[node name="TutorialRunner" type="Node" parent="." unique_id=1748173250 node_paths=PackedStringArray("player", "startup_box", "quest_container")]
+script = ExtResource("10_7mksq")
+player = NodePath("../Player Body3D")
+startup_box = NodePath("../Environment/Devices/Box")
+quest_container = NodePath("CanvasLayer/Quest Container")
+target_document_data = Array[ExtResource("11_7nlvx")]([ExtResource("12_swkav"), ExtResource("13_0hybi"), ExtResource("14_a8dk5"), ExtResource("15_3hvw4")])
+target_items_data = Array[ExtResource("11_7nlvx")]([ExtResource("16_yjvn4"), ExtResource("17_pycv1"), ExtResource("18_llp4l")])
+metadata/_custom_type_script = "uid://dmhxg22vk77yh"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TutorialRunner" unique_id=1287635085]
+layer = 5
+
+[node name="Quest Container" parent="TutorialRunner/CanvasLayer" unique_id=1705636581 instance=ExtResource("19_jjnbj")]

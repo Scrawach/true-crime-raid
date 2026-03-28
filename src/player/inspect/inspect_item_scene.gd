@@ -1,6 +1,8 @@
 class_name InspectItem
 extends Node3D
 
+signal inspect_started(target: BaseItem)
+
 @export var player: PlayerBody3D
 @export var player_hand: PlayerHand
 @export var dna_tube: PackedScene
@@ -64,6 +66,7 @@ func inspect(target: BaseItem) -> void:
 	points.clicked.connect(_on_clicked)
 	set_process_input(true)
 	inspector_control.initialize(item)
+	inspect_started.emit(item)
 
 func abort() -> void:
 	camera_zoom.disable()
