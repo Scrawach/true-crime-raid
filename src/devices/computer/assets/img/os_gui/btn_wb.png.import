@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6nhhxkewq6q7"
-path="res://.godot/imported/Windows_Button_Focus_Outlined.png-e3bdeba2371585b554920688611a7429.ctex"
+uid="uid://c5leegj3263sk"
+path="res://.godot/imported/btn_wb.png-34b79c02815d07a607cba73045374ce6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://devices/computer/assets/img/os_gui/Windows_Button_Focus_Outlined.png"
-dest_files=["res://.godot/imported/Windows_Button_Focus_Outlined.png-e3bdeba2371585b554920688611a7429.ctex"]
+source_file="res://devices/computer/assets/img/os_gui/btn_wb.png"
+dest_files=["res://.godot/imported/btn_wb.png-34b79c02815d07a607cba73045374ce6.ctex"]
 
 [params]
 

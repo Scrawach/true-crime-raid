@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cee7eoo0s42py"
-path="res://.godot/imported/Windows_Button_Pressed.png-93ea16ecb428b57bff910421a23849a4.ctex"
+path="res://.godot/imported/btn_wb_pressed.png-cc7e41f2ccbdf008fa7c1fd45c477a2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://devices/computer/assets/img/os_gui/Windows_Button_Pressed.png"
-dest_files=["res://.godot/imported/Windows_Button_Pressed.png-93ea16ecb428b57bff910421a23849a4.ctex"]
+source_file="res://devices/computer/assets/img/os_gui/btn_wb_pressed.png"
+dest_files=["res://.godot/imported/btn_wb_pressed.png-cc7e41f2ccbdf008fa7c1fd45c477a2b.ctex"]
 
 [params]
 
