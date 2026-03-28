@@ -90,8 +90,10 @@ max_distance = 0.2
 camera = NodePath("..")
 metadata/_custom_type_script = "uid://dxo7ifkrsuskk"
 
-[node name="Inspector Control" parent="CanvasLayer" unique_id=544111972 instance=ExtResource("9_x0nva")]
+[node name="Inspector Control" parent="CanvasLayer" unique_id=544111972 node_paths=PackedStringArray("sub_viewport_container", "item_camera_3d") instance=ExtResource("9_x0nva")]
 unique_name_in_owner = true
+sub_viewport_container = NodePath("../SubViewportContainer")
+item_camera_3d = NodePath("../SubViewportContainer/SubViewport/Item Viewer/Item Camera3D")
 
 [node name="InspectSceneAppear" type="Node" parent="CanvasLayer" unique_id=2096623016 node_paths=PackedStringArray("canvas_layer", "main_control", "background")]
 unique_name_in_owner = true
