@@ -2,15 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/btn_wb_pressed.png" id="1_siw7t"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7keda"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mdop"]
 content_margin_left = 6.0
 content_margin_top = 1.0
 content_margin_right = 6.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_7keda")
+texture = ExtResource("1_siw7t")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -27,15 +24,12 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smhd"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pyuf4"]
 content_margin_left = 6.0
 content_margin_top = 1.0
 content_margin_right = 6.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_3smhd")
+texture = ExtResource("1_siw7t")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0

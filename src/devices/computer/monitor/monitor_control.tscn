@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="18_gsb3y"]
 [ext_resource type="Resource" uid="uid://jt0l5j3fb0px" path="res://devices/computer/os/os_gameplay/scenario/scenario1.tres" id="20_gsb3y"]
 
-[sub_resource type="Theme" id="Theme_anpc4"]
+[sub_resource type="Theme" id="Theme_ww1kh"]
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("2_dalv8")
 Label/font_sizes/font_size = 24
@@ -117,7 +117,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
-theme = SubResource("Theme_anpc4")
+theme = SubResource("Theme_ww1kh")
 script = ExtResource("1_6xg1g")
 
 [node name="Background" type="ColorRect" parent="." unique_id=620913889]
@@ -231,6 +231,7 @@ label_settings = SubResource("LabelSettings_j7fte")
 autowrap_mode = 2
 
 [node name="btn_debug" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=988282608]
+visible = false
 layout_mode = 0
 offset_left = 657.0
 offset_top = 6.0
@@ -248,22 +249,21 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="pa_keywords" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1906431389 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("8_7us4k")]
-visible = false
 layout_mode = 0
-offset_left = 907.0
-offset_top = 11.0
-offset_right = 1130.0
-offset_bottom = 322.0
+offset_left = 54.0
+offset_top = 174.0
+offset_right = 277.0
+offset_bottom = 543.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_keywords")
 btn_ico = NodePath("../../c_apps/btn_keywords")
 
 [node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "report_check", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
-visible = false
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 101.0
-offset_top = 65.0
-offset_right = 395.0
-offset_bottom = 312.0
+offset_left = 734.0
+offset_top = 174.0
+offset_right = 1028.0
+offset_bottom = 447.0
 notification_success = NodePath("../../c_notifications/notify_report_success")
 notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess")
 report_check = NodePath("../../c_notifications/CenterContainer/ReportCheck")
@@ -281,12 +281,11 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_debug")
 
 [node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_ww1kh")]
-visible = false
 layout_mode = 0
-offset_left = 455.0
-offset_top = 25.0
-offset_right = 879.0
-offset_bottom = 446.0
+offset_left = 296.0
+offset_top = 174.0
+offset_right = 720.0
+offset_bottom = 595.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_map")
 btn_ico = NodePath("../../c_apps/btn_map")
 

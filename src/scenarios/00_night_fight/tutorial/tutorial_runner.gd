@@ -2,6 +2,7 @@ class_name TutorialRunner
 extends Node
 
 @export var player: PlayerBody3D
+@export var computer: Computer
 @export var startup_box: Box
 @export var quest_container: QuestContainer
 @export var target_document_data: Array[ItemData]
@@ -10,14 +11,9 @@ extends Node
 var tutorial: QuestData
 
 func _ready() -> void:
-	#tutorial = make_tutorial()
-	#quest_container.initialize(tutorial)
-	#tutorial.start()
-	
-	var quest := QuestData.create("Дело \"Ночная драка\"")
-	print(quest.name)
-	quest_container.initialize(quest)
-	start_tutorial(quest)
+	tutorial = QuestData.create("Дело \"Ночная драка\"")
+	quest_container.initialize(tutorial)
+	start_tutorial(tutorial)
 
 func start_tutorial(quest: QuestData) -> void:
 	var open_box := OpenBoxTutorial.create("Откройте коробку с первым делом", startup_box)
@@ -40,7 +36,7 @@ func start_tutorial(quest: QuestData) -> void:
 	find_dna.is_active = false
 	quest.add_stage(find_dna)
 	
-	var report := MakeReportTutorial.create("Составьте отчёт по делу")
+	var report := MakeReportTutorial.create("Составьте отчёт по делу", computer)
 	report.is_active = false
 	quest.add_stage(report)
 	report.finished.connect(_on_tutorial_ended)
@@ -62,5 +58,4 @@ func start_tutorial(quest: QuestData) -> void:
 	quest.finish()
 
 func _on_tutorial_ended(stage: QuestSubstageData) -> void:
-	print("GAME OVER!")
 	tutorial.finish()

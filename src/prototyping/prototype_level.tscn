@@ -129,9 +129,10 @@ spawn_scene = ExtResource("2_ia5wu")
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
 
-[node name="TutorialRunner" type="Node" parent="." unique_id=1748173250 node_paths=PackedStringArray("player", "startup_box", "quest_container")]
+[node name="TutorialRunner" type="Node" parent="." unique_id=1748173250 node_paths=PackedStringArray("player", "computer", "startup_box", "quest_container")]
 script = ExtResource("10_7mksq")
 player = NodePath("../Player Body3D")
+computer = NodePath("../Environment/Devices/Computer")
 startup_box = NodePath("../Environment/Devices/Box")
 quest_container = NodePath("CanvasLayer/Quest Container")
 target_document_data = Array[ExtResource("11_7nlvx")]([ExtResource("12_swkav"), ExtResource("13_0hybi"), ExtResource("14_a8dk5"), ExtResource("15_3hvw4")])

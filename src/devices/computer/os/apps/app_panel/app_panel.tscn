@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://coawgcj38oq3u" path="res://devices/computer/os/apps/app_panel/app_panel.gd" id="1_2iytv"]
 [ext_resource type="Texture2D" uid="uid://eqncooiaayk2" path="res://devices/computer/assets/img/os_gui/Window_Header_Resizable_Inactive.png" id="1_23su3"]
 [ext_resource type="Texture2D" uid="uid://cscjjnu4646qc" path="res://devices/computer/assets/img/content/connection.png" id="2_hd38f"]
+[ext_resource type="Texture2D" uid="uid://c5leegj3263sk" path="res://devices/computer/assets/img/os_gui/btn_wb.png" id="3_3l3v2"]
+[ext_resource type="Texture2D" uid="uid://c6nhhxkewq6q7" path="res://devices/computer/assets/img/os_gui/btn_wb_outline.png" id="3_p46jw"]
 [ext_resource type="Texture2D" uid="uid://t6yh2npjdk7t" path="res://devices/computer/assets/img/os_icos/cursor0013.png" id="3_v7o8u"]
+[ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/btn_wb_pressed.png" id="5_x000i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqe6u"]
 content_margin_left = 4.0
@@ -18,15 +21,12 @@ texture_margin_bottom = 14.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xe44h"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a5bes"]
-load_path = "res://.godot/imported/Windows_Button_Focus_Outlined.png-32bbfca2d17a0bb357870b05495f4f11.ctex"
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adhem"]
 content_margin_left = 1.0
 content_margin_top = 1.0
 content_margin_right = 1.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_a5bes")
+texture = ExtResource("3_p46jw")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -34,29 +34,23 @@ texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23su3"]
-load_path = "res://.godot/imported/Windows_Button.png-fc6f296dd80afbb1038c884dd2a34c2d.ctex"
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3l3v2"]
 content_margin_left = 1.0
 content_margin_top = 1.0
 content_margin_right = 1.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_23su3")
+texture = ExtResource("3_3l3v2")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smhd"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4nwhb"]
 content_margin_left = 1.0
 content_margin_top = 1.0
 content_margin_right = 1.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_3smhd")
+texture = ExtResource("5_x000i")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
