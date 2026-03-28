@@ -248,6 +248,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="pa_keywords" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1906431389 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("8_7us4k")]
+visible = false
 layout_mode = 0
 offset_left = 907.0
 offset_top = 11.0
@@ -257,6 +258,7 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_keywords")
 
 [node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "report_check", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
+visible = false
 layout_mode = 0
 offset_left = 101.0
 offset_top = 65.0
@@ -269,6 +271,7 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_report")
 
 [node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
+visible = false
 layout_mode = 0
 offset_left = 922.0
 offset_top = 351.0
@@ -278,6 +281,7 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_debug")
 
 [node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_ww1kh")]
+visible = false
 layout_mode = 0
 offset_left = 455.0
 offset_top = 25.0

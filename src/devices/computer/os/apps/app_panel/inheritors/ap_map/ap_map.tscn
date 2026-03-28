@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://bpvptcf0cevm7" path="res://devices/computer/data/theme/btn_map.tres" id="4_en7ll"]
 [ext_resource type="Texture2D" uid="uid://daqf5gyi1ku36" path="res://devices/computer/assets/img/icons/cigar-pipe.png" id="4_f5vgv"]
 [ext_resource type="Texture2D" uid="uid://cmwwkj6qygq5f" path="res://devices/computer/assets/img/icons/knife.png" id="5_en7ll"]
+[ext_resource type="Texture2D" uid="uid://dlq7avgr3rbw6" path="res://devices/computer/assets/img/os_gui/Windows_Progress_Fill.png" id="5_twvxb"]
 [ext_resource type="Texture2D" uid="uid://2skro8c3d5rw" path="res://devices/computer/assets/img/icons/paper-cup.png" id="6_gx6qh"]
 [ext_resource type="Texture2D" uid="uid://3kh2k4t3x0bx" path="res://devices/computer/assets/img/patterns/pattern00110.png" id="7_7knws"]
 [ext_resource type="Texture2D" uid="uid://dadi1hbxoj3qw" path="res://devices/computer/assets/img/patterns/pattern00119.png" id="9_lf4hl"]
@@ -14,6 +15,19 @@
 [ext_resource type="Texture2D" uid="uid://dkdxo76jvj2gi" path="res://devices/computer/assets/img/icons/mouse-cursor.png" id="12_574b6"]
 [ext_resource type="Texture2D" uid="uid://bthqbqcqfibya" path="res://devices/computer/assets/img/icons/mouse-cursor (1).png" id="13_twvxb"]
 [ext_resource type="Theme" uid="uid://bn5kt8dw5t2t2" path="res://devices/computer/data/theme/btn_normal.tres" id="14_1xouq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xouq"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = ExtResource("5_twvxb")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+modulate_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v8t7v"]
 font_color = Color(0, 0, 0, 1)
@@ -78,6 +92,7 @@ offset_left = 63.0
 offset_top = 40.0
 offset_right = 154.0
 offset_bottom = 126.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xouq")
 text = "Not found"
 icon = ExtResource("3_sd4ck")
 icon_alignment = 1

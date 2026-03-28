@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bxqkb70spq14l"]
 
+[ext_resource type="Texture2D" uid="uid://dlq7avgr3rbw6" path="res://devices/computer/assets/img/os_gui/Windows_Progress_Fill.png" id="1_siw7t"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7keda"]
 load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
 
@@ -14,15 +16,12 @@ texture_margin_top = 6.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mdop"]
-load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x8crs"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mdop"]
 content_margin_left = 6.0
 content_margin_top = 1.0
 content_margin_right = 6.0
 content_margin_bottom = 1.0
-texture = SubResource("CompressedTexture2D_4mdop")
+texture = ExtResource("1_siw7t")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -48,5 +47,5 @@ Button/colors/font_hover_color = Color(0.37413898, 0.37413928, 0.37414008, 1)
 Button/colors/font_hover_pressed_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
 Button/colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 Button/styles/hover = SubResource("StyleBoxTexture_siw7t")
-Button/styles/normal = SubResource("StyleBoxTexture_x8crs")
+Button/styles/normal = SubResource("StyleBoxTexture_4mdop")
 Button/styles/pressed = SubResource("StyleBoxTexture_r2gyi")
