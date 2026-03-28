@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ceifpmtir7twr"]
+
+[ext_resource type="Script" uid="uid://dksy3kwtkju24" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/report_check/rc_evidence_line.gd" id="1_afux5"]
+[ext_resource type="Texture2D" uid="uid://01x330m41vul" path="res://devices/computer/assets/img/patterns/pattern0013.png" id="1_crm5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tgjl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_crm5s"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" unique_id=932126029]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
+script = ExtResource("1_afux5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=80826139]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_crm5s")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=816174354]
+layout_mode = 2
+text = "Доказательство"
+label_settings = SubResource("LabelSettings_crm5s")

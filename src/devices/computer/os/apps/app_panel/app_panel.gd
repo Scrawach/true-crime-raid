@@ -48,7 +48,7 @@ func show_on_top(set_center = false):
 		position = get_viewport().get_visible_rect().size/2-size/2
 		
 func open():
-	show_on_top()
+	show_on_top(true)
 	show()
 	btn_bottom.show()
 

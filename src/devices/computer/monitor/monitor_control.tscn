@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://uuhh28fbqbic" path="res://devices/computer/os/apps/app_panel/inheritors/ap_map/ap_map.tscn" id="10_ww1kh"]
 [ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/Windows_Button_Pressed.png" id="11_a7cm2"]
 [ext_resource type="Texture2D" uid="uid://xknefb2o63xm" path="res://devices/computer/assets/img/os_gui/Window_Base.png" id="12_anpc4"]
+[ext_resource type="PackedScene" uid="uid://bo8hqtguwa32f" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/report_check/report_check.tscn" id="12_ww1kh"]
 [ext_resource type="Texture2D" uid="uid://8vsiaduloe33" path="res://devices/computer/assets/img/cursors/cursor0010.png" id="13_2t07n"]
 [ext_resource type="Script" uid="uid://b2po74o83srcy" path="res://devices/computer/monitor/computer_mouse_cursor.gd" id="14_c0d2k"]
 [ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="18_gsb3y"]
@@ -46,9 +47,6 @@ expand_margin_bottom = 2.0
 [sub_resource type="LabelSettings" id="LabelSettings_j7fte"]
 font_size = 26
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ww1kh"]
-font_size = 48
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_anpc4"]
 content_margin_top = 1.0
@@ -258,7 +256,7 @@ offset_bottom = 322.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_keywords")
 btn_ico = NodePath("../../c_apps/btn_keywords")
 
-[node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
+[node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "report_check", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 65.0
@@ -266,6 +264,7 @@ offset_right = 395.0
 offset_bottom = 312.0
 notification_success = NodePath("../../c_notifications/notify_report_success")
 notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess")
+report_check = NodePath("../../c_notifications/CenterContainer/ReportCheck")
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_report")
 btn_ico = NodePath("../../c_apps/btn_report")
 
@@ -301,26 +300,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)
 
-[node name="Label" type="Label" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=889220886]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "The report was compiled incorrectly"
-label_settings = SubResource("LabelSettings_ww1kh")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=1292575288]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" unique_id=989561926]
 layout_mode = 1
 anchors_preset = 15
@@ -340,24 +319,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.66, 0.48400003, 1)
 
-[node name="Label" type="Label" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=408831511]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "You have successfully
- compiled the report"
-label_settings = SubResource("LabelSettings_ww1kh")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=1668245674]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Button" type="Button" parent="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" unique_id=3142391]
 layout_mode = 1
 anchors_preset = 15
@@ -366,6 +327,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
+
+[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_notifications" unique_id=1872913803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ReportCheck" parent="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer" unique_id=1836261518 instance=ExtResource("12_ww1kh")]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 2
 
 [node name="vbc_bottom_panel" type="VBoxContainer" parent="mc_os_workspace/pc_wallpaper" unique_id=1931282625]
 texture_filter = 1
@@ -467,4 +443,6 @@ metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 [connection signal="mouse_entered" from="mc_os_workspace/pc_wallpaper/c_apps/btn_map" to="mc_os_workspace/pc_wallpaper/c_apps/btn_map/Label2" method="show"]
 [connection signal="mouse_exited" from="mc_os_workspace/pc_wallpaper/c_apps/btn_map" to="mc_os_workspace/pc_wallpaper/c_apps/btn_map/Label2" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" method="hide"]
+[connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" method="hide"]
+[connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" method="hide"]

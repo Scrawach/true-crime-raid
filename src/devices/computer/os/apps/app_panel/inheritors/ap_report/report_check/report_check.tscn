@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bo8hqtguwa32f"]
 
 [ext_resource type="Texture2D" uid="uid://bjrnvre3ovxch" path="res://devices/computer/assets/img/icons/badge.png" id="1_3mtho"]
+[ext_resource type="Script" uid="uid://boqqauvfjphl3" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/report_check/report_check.gd" id="1_e4d1t"]
 [ext_resource type="Texture2D" uid="uid://01x330m41vul" path="res://devices/computer/assets/img/patterns/pattern0013.png" id="2_50i4r"]
+[ext_resource type="PackedScene" uid="uid://ceifpmtir7twr" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/report_check/rc_evidence_line.tscn" id="3_qavmp"]
+[ext_resource type="Texture2D" uid="uid://cvu8bdwbydk2k" path="res://devices/computer/assets/img/icons/approve.png" id="4_e4d1t"]
+[ext_resource type="Texture2D" uid="uid://b8i2yqv5dkt3f" path="res://devices/computer/assets/img/icons/reject.png" id="5_p1lru"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r264w"]
 load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
@@ -28,16 +32,28 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tgjl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qavmp"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_mbjuo"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_e4d1t"]
+font_size = 18
+font_color = Color(0.81960785, 0.03137255, 0.25490198, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1lru"]
+font_size = 24
 font_color = Color(0, 0, 0, 1)
 
 [node name="ReportCheck" type="VBoxContainer" unique_id=1836261518]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -892.0
-offset_bottom = -262.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 454.0
+script = ExtResource("1_e4d1t")
+evidence_line = ExtResource("3_qavmp")
 
 [node name="Label" type="Label" parent="." unique_id=1841823959]
 layout_mode = 2
@@ -75,12 +91,14 @@ text = "Заявление о пересмотре дела"
 label_settings = SubResource("LabelSettings_xiex3")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=399641996]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1465420382]
+[node name="tr_felon_not_ok" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1465420382]
+unique_name_in_owner = true
 modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 layout_mode = 2
@@ -99,16 +117,18 @@ label_settings = SubResource("LabelSettings_qavmp")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=2121263373]
+[node name="lbl_felon" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=2121263373]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Виновник"
+text = "Не указан"
 label_settings = SubResource("LabelSettings_qavmp")
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=469626317]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer2" unique_id=237021258]
+[node name="tr_motive_not_ok" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer2" unique_id=237021258]
+unique_name_in_owner = true
 modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 layout_mode = 2
@@ -127,32 +147,26 @@ label_settings = SubResource("LabelSettings_qavmp")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1031547584]
+[node name="lbl_motive" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2/HBoxContainer" unique_id=1031547584]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Виновник"
+text = "Не указан"
 label_settings = SubResource("LabelSettings_qavmp")
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1306872893]
 layout_mode = 2
 text = "Доказательства ДНК"
+label_settings = SubResource("LabelSettings_mbjuo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=725670617]
+[node name="vbc_evidences" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=725670617]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=788681486]
+[node name="lbl_evidences_not_ok" type="Label" parent="PanelContainer/VBoxContainer" unique_id=163665668]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5tgjl")
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=736182486]
-modulate = Color(1, 0, 0, 1)
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("2_50i4r")
-stretch_mode = 1
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer/PanelContainer" unique_id=452389232]
-layout_mode = 2
-text = "Доказательство"
+text = "Недостаточно доказательств"
+label_settings = SubResource("LabelSettings_e4d1t")
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1513739207]
 layout_mode = 2
@@ -160,6 +174,30 @@ layout_mode = 2
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1926128853]
 layout_mode = 2
 text = "Результат:"
+label_settings = SubResource("LabelSettings_mbjuo")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=2093613771]
 layout_mode = 2
+
+[node name="lbl_result" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=236666476]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Отказать в пересмотре дела"
+label_settings = SubResource("LabelSettings_p1lru")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="tr_approve" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1459506435]
+unique_name_in_owner = true
+modulate = Color(0.2901961, 0.654902, 0.4117647, 1)
+layout_mode = 2
+texture = ExtResource("4_e4d1t")
+stretch_mode = 3
+
+[node name="tr_reject" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=753337960]
+unique_name_in_owner = true
+modulate = Color(0.81960785, 0.03137255, 0.25490198, 1)
+layout_mode = 2
+texture = ExtResource("5_p1lru")
+stretch_mode = 3
