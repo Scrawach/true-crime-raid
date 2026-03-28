@@ -101,7 +101,7 @@ mouse_filter = 2
 [node name="Inspect Tooltip Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=155026098]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_a2mbw")
 script = ExtResource("2_81wp7")
 

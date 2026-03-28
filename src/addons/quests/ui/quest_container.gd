@@ -14,6 +14,10 @@ func initialize(data: QuestData) -> void:
 	initialize_stages(data.substages)
 	data.stage_added.connect(_on_stage_added)
 	data.stage_removed.connect(_on_stage_removed)
+	data.finished.connect(_on_finished)
+
+func _on_finished() -> void:
+	hide()
 
 func _on_stage_added(stage: QuestSubstageData) -> void:
 	quest_panels[stage] = make_substage_panel(stage)

@@ -1,6 +1,8 @@
 class_name QuestData
 extends Resource
 
+signal finished()
+
 signal stage_added(stage: QuestSubstageData)
 signal stage_removed(stage: QuestSubstageData)
 
@@ -30,6 +32,9 @@ func remove_stage(stage: QuestSubstageData) -> void:
 	stage.stop()
 	substages.erase(stage)
 	stage_removed.emit(stage)
+
+func finish() -> void:
+	finished.emit()
 
 static func create(name: String, stages: Array[QuestSubstageData] = []) -> QuestData:
 	var data := QuestData.new()

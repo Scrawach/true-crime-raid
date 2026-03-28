@@ -59,7 +59,8 @@ func start_tutorial(quest: QuestData) -> void:
 	report.update()
 	await report.finished
 	_on_tutorial_ended(report)
+	quest.finish()
 
 func _on_tutorial_ended(stage: QuestSubstageData) -> void:
 	print("GAME OVER!")
-	pass
+	tutorial.finish()

@@ -99,3 +99,6 @@ metadata/_custom_type_script = "uid://dmhxg22vk77yh"
 layer = 5
 
 [node name="Quest Container" parent="TutorialRunner/CanvasLayer" unique_id=1705636581 instance=ExtResource("19_jjnbj")]
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 50.0
