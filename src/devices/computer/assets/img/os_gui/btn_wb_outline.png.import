@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5leegj3263sk"
-path="res://.godot/imported/Windows_Button.png-6066f60c0ac801cc35b9f12410f29f7d.ctex"
+uid="uid://c6nhhxkewq6q7"
+path="res://.godot/imported/btn_wb_outline.png-923885ca0e4a591d6eedac2af5f85fcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://devices/computer/assets/img/os_gui/Windows_Button.png"
-dest_files=["res://.godot/imported/Windows_Button.png-6066f60c0ac801cc35b9f12410f29f7d.ctex"]
+source_file="res://devices/computer/assets/img/os_gui/btn_wb_outline.png"
+dest_files=["res://.godot/imported/btn_wb_outline.png-923885ca0e4a591d6eedac2af5f85fcc.ctex"]
 
 [params]
 

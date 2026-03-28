@@ -6,22 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://drmqx1kvitnba" path="res://devices/computer/assets/img/icons/question-mark.png" id="3_sd4ck"]
 [ext_resource type="Theme" uid="uid://bpvptcf0cevm7" path="res://devices/computer/data/theme/btn_map.tres" id="4_en7ll"]
 [ext_resource type="Texture2D" uid="uid://daqf5gyi1ku36" path="res://devices/computer/assets/img/icons/cigar-pipe.png" id="4_f5vgv"]
+[ext_resource type="Texture2D" uid="uid://cee7eoo0s42py" path="res://devices/computer/assets/img/os_gui/btn_wb_pressed.png" id="5_574b6"]
 [ext_resource type="Texture2D" uid="uid://cmwwkj6qygq5f" path="res://devices/computer/assets/img/icons/knife.png" id="5_en7ll"]
-[ext_resource type="Texture2D" uid="uid://dlq7avgr3rbw6" path="res://devices/computer/assets/img/os_gui/Windows_Progress_Fill.png" id="5_twvxb"]
 [ext_resource type="Texture2D" uid="uid://2skro8c3d5rw" path="res://devices/computer/assets/img/icons/paper-cup.png" id="6_gx6qh"]
 [ext_resource type="Texture2D" uid="uid://3kh2k4t3x0bx" path="res://devices/computer/assets/img/patterns/pattern00110.png" id="7_7knws"]
 [ext_resource type="Texture2D" uid="uid://dadi1hbxoj3qw" path="res://devices/computer/assets/img/patterns/pattern00119.png" id="9_lf4hl"]
 [ext_resource type="Texture2D" uid="uid://bpeigpkylrxpc" path="res://devices/computer/assets/img/patterns/pattern0016.png" id="11_w1alo"]
 [ext_resource type="Texture2D" uid="uid://dkdxo76jvj2gi" path="res://devices/computer/assets/img/icons/mouse-cursor.png" id="12_574b6"]
 [ext_resource type="Texture2D" uid="uid://bthqbqcqfibya" path="res://devices/computer/assets/img/icons/mouse-cursor (1).png" id="13_twvxb"]
-[ext_resource type="Theme" uid="uid://bn5kt8dw5t2t2" path="res://devices/computer/data/theme/btn_normal.tres" id="14_1xouq"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xouq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twvxb"]
 content_margin_left = 6.0
 content_margin_top = 1.0
 content_margin_right = 6.0
 content_margin_bottom = 1.0
-texture = ExtResource("5_twvxb")
+texture = ExtResource("5_574b6")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -29,8 +28,205 @@ texture_margin_bottom = 6.0
 expand_margin_top = 20.0
 modulate_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xouq"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = ExtResource("5_574b6")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xb7fh"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8t7v"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_xb7fh")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ru64s"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ygsgp"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_ru64s")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+modulate_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_43n8b"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxhhh"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_43n8b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyv8v"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_xb7fh")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36v88"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_ru64s")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+modulate_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q28w6"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_43n8b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cnpd7"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_xb7fh")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45wo0"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_ru64s")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+modulate_color = Color(0.9297146, 0.9297147, 0.9297146, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_am2eu"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_43n8b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ql3i"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_xb7fh")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_top = 20.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_v8t7v"]
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a5bes"]
+load_path = "res://.godot/imported/Windows_Button_Focus_Outlined.png-32bbfca2d17a0bb357870b05495f4f11.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l14us"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_a5bes")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23su3"]
+load_path = "res://.godot/imported/Windows_Button.png-fc6f296dd80afbb1038c884dd2a34c2d.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87mfj"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_23su3")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3smhd"]
+load_path = "res://.godot/imported/Windows_Button_Pressed.png-1efaf26f9aa05bae8a79eb425442a600.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5m8hu"]
+content_margin_left = 6.0
+content_margin_top = 1.0
+content_margin_right = 6.0
+content_margin_bottom = 1.0
+texture = SubResource("CompressedTexture2D_3smhd")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="Theme" id="Theme_py1up"]
+Button/colors/font_color = Color(0.1404472, 0.14044762, 0.14044723, 1)
+Button/colors/font_hover_color = Color(0.37413898, 0.37413928, 0.37414008, 1)
+Button/colors/font_hover_pressed_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+Button/colors/font_pressed_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_l14us")
+Button/styles/normal = SubResource("StyleBoxTexture_87mfj")
+Button/styles/pressed = SubResource("StyleBoxTexture_5m8hu")
 
 [node name="pc_panel" unique_id=1906431389 instance=ExtResource("1_yamvk")]
 offset_right = 663.0
@@ -92,7 +288,9 @@ offset_left = 63.0
 offset_top = 40.0
 offset_right = 154.0
 offset_bottom = 126.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_1xouq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_twvxb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1xouq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v8t7v")
 text = "Not found"
 icon = ExtResource("3_sd4ck")
 icon_alignment = 1
@@ -105,6 +303,9 @@ offset_left = 292.0
 offset_top = 44.0
 offset_right = 383.0
 offset_bottom = 130.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ygsgp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sxhhh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gyv8v")
 text = "Not found"
 icon = ExtResource("3_sd4ck")
 icon_alignment = 1
@@ -117,6 +318,9 @@ offset_left = 174.0
 offset_top = 146.0
 offset_right = 261.0
 offset_bottom = 232.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_36v88")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q28w6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cnpd7")
 text = "Not found"
 icon = ExtResource("3_sd4ck")
 icon_alignment = 1
@@ -129,6 +333,9 @@ offset_left = 174.0
 offset_top = 281.0
 offset_right = 261.0
 offset_bottom = 367.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_45wo0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_am2eu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7ql3i")
 text = "Not found"
 icon = ExtResource("3_sd4ck")
 icon_alignment = 1
@@ -250,7 +457,7 @@ label_settings = SubResource("LabelSettings_v8t7v")
 
 [node name="btn_center" type="Button" parent="VBoxContainer/p_mouse_catcher/HBoxContainer" index="4" unique_id=1936422630]
 layout_mode = 2
-theme = ExtResource("14_1xouq")
+theme = SubResource("Theme_py1up")
 text = "+"
 
 [node name="Button" parent="VBoxContainer" parent_id_path=PackedInt32Array(1103464863) index="2" unique_id=1760796866]
