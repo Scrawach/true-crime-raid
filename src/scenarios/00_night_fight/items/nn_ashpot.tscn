@@ -9,6 +9,9 @@
 [ext_resource type="Resource" uid="uid://4t3momjkuhtj" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_2.tres" id="5_uf3j3"]
 [ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="7_152wy"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nygqo"]
+size = Vector3(0.22357178, 0.07861328, 0.22802734)
+
 [sub_resource type="QuadMesh" id="QuadMesh_uf3j3"]
 size = Vector2(0.01, 0.01)
 
@@ -20,6 +23,13 @@ size = Vector3(0.014678955, 0.041902542, 0.21850586)
 
 [node name="NN Ashpot" unique_id=679873917 instance=ExtResource("1_7ubpt")]
 data = ExtResource("2_uf3j3")
+
+[node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
+disabled = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="2" unique_id=1192770398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015563965, 0.008056641, -0.0031738281)
+shape = SubResource("BoxShape3D_nygqo")
 
 [node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039506212, 0.008693501, -0.05701466)

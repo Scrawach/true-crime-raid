@@ -16,7 +16,8 @@ resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_qsgli")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_m7yhb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_74c7k"]
+size = Vector3(1, 0.65411377, 0.65234375)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwkpl"]
 bg_color = Color(0, 0, 0, 0.39215687)
@@ -163,7 +164,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_anr2d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007278979, 0.3727399, 0.22392425)
 
 [node name="Interaction Area3D" type="Area3D" parent="." unique_id=1985108794 node_paths=PackedStringArray("interact_state")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35765696, 0.012227535)
 collision_layer = 2
 collision_mask = 0
 input_ray_pickable = false
@@ -171,9 +171,9 @@ script = ExtResource("3_xcml3")
 interact_state = NodePath("../InteractWithComputer")
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction Area3D" unique_id=1373076834]
-shape = SubResource("SphereShape3D_m7yhb")
-debug_color = Color(0.627451, 0.53333336, 0, 1)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction Area3D" unique_id=784227009]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32913208, 0.025634766)
+shape = SubResource("BoxShape3D_74c7k")
 
 [node name="InteractWithComputer" type="Node" parent="." unique_id=1631449373 node_paths=PackedStringArray("monitor_3d", "computer_canvas", "interaction_camera", "interaction_area")]
 unique_name_in_owner = true
@@ -242,3 +242,9 @@ mesh = SubResource("ArrayMesh_4m2ur")
 
 [node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("6_wwkpl")]
 interaction = NodePath("../Interaction Area3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1137943300]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=317978240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32913208, 0.025634766)
+shape = SubResource("BoxShape3D_74c7k")

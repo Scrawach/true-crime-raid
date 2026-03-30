@@ -10,6 +10,13 @@ points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0
 [node name="Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point") instance=ExtResource("1_pfyno")]
 open_point = NodePath("InteractivePoints/Open Interactive Point 3D")
 
+[node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
+disabled = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="2" unique_id=1765756327]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.10084693, 0)
+shape = SubResource("ConvexPolygonShape3D_h1uc7")
+
 [node name="Open Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 instance=ExtResource("2_hlbrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1973165, 0)
 

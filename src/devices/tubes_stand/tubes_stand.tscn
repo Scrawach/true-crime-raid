@@ -9,8 +9,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t8s4k"]
 size = Vector3(0.4729004, 0.26654053, 0.19384766)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ud2hb"]
-
 [node name="TubesStand" type="Node3D" unique_id=64065040]
 
 [node name="tubes_stand" parent="." unique_id=1417007498 instance=ExtResource("1_ps5at")]
@@ -60,8 +58,9 @@ script = ExtResource("2_0m5el")
 conditions = [NodePath("PlayerHasDNAOrCanTakeDNA")]
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=629405571]
-shape = SubResource("SphereShape3D_ud2hb")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=795228046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, 0.13320923, 0.012939453)
+shape = SubResource("BoxShape3D_t8s4k")
 
 [node name="InteractTooltip3D" parent="InteractionArea3D" unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("3_t8s4k")]
 interaction = NodePath("..")
