@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bocxkplxo28ht"]
+
+[ext_resource type="Script" uid="uid://dmhxg22vk77yh" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.gd" id="1_n7odh"]
+[ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="2_dat5g"]
+[ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="3_3ps2j"]
+[ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="4_n2gpb"]
+[ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="5_m053i"]
+[ext_resource type="Resource" uid="uid://bwiprlyrg26oj" path="res://scenarios/00_night_fight/items/data/documents/paul_slater.tres" id="6_7n2fi"]
+[ext_resource type="Resource" uid="uid://ec8ekdji04b6" path="res://scenarios/00_night_fight/items/data/items/butts.tres" id="7_21g0q"]
+[ext_resource type="Resource" uid="uid://d340nck4oml82" path="res://scenarios/00_night_fight/items/data/items/cup.tres" id="8_xhtsr"]
+[ext_resource type="Resource" uid="uid://db8odvk73u8no" path="res://scenarios/00_night_fight/items/data/items/knife.tres" id="9_u0b3i"]
+[ext_resource type="PackedScene" uid="uid://blepeju13jkkf" path="res://addons/quests/ui/quest_container.tscn" id="10_0uhfq"]
+[ext_resource type="Shader" uid="uid://mpvf1ywnuu5n" path="res://prototyping/materials/blink.gdshader" id="11_ybkmc"]
+[ext_resource type="PackedScene" uid="uid://daigvv5hp3v0r" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.tscn" id="12_3j466"]
+[ext_resource type="PackedScene" uid="uid://dn88gakl5muo8" path="res://scenarios/00_night_fight/tutorial/markers/tutorial_marker.tscn" id="13_2r38l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swkav"]
+shader = ExtResource("11_ybkmc")
+shader_parameter/open_amount = 0.0
+shader_parameter/edge_blur_amount = 0.15999999642368
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0hybi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/open_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a8dk5"]
+resource_name = "blinking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/open_amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.53267086, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3hvw4"]
+_data = {
+&"RESET": SubResource("Animation_0hybi"),
+&"blinking": SubResource("Animation_a8dk5")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0hybi"]
+viewport_path = NodePath("SubViewport")
+
+[node name="TutorialRunner" type="Node" unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "marker", "tooltip", "quest_container")]
+script = ExtResource("1_n7odh")
+player = NodePath("")
+computer = NodePath("")
+dna_analyzer = NodePath("")
+startup_box = NodePath("")
+marker = NodePath("TutorialMarker")
+tooltip = NodePath("CanvasLayer/Fullscreen Tooltip")
+quest_container = NodePath("CanvasLayer/Quest Container")
+target_document_data = Array[ExtResource("2_dat5g")]([ExtResource("3_3ps2j"), ExtResource("4_n2gpb"), ExtResource("5_m053i"), ExtResource("6_7n2fi")])
+target_items_data = Array[ExtResource("2_dat5g")]([ExtResource("7_21g0q"), ExtResource("8_xhtsr"), ExtResource("9_u0b3i")])
+metadata/_custom_type_script = "uid://dmhxg22vk77yh"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=719739630]
+layer = 5
+
+[node name="Quest Container" parent="CanvasLayer" unique_id=1705636581 instance=ExtResource("10_0uhfq")]
+offset_left = 50.0
+offset_top = 50.0
+
+[node name="Blink Rect" type="ColorRect" parent="CanvasLayer" unique_id=1828336104]
+material = SubResource("ShaderMaterial_swkav")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Blink Rect" unique_id=604783906]
+libraries/ = SubResource("AnimationLibrary_3hvw4")
+autoplay = &"blinking"
+
+[node name="Fullscreen Tooltip" parent="CanvasLayer" unique_id=860440637 instance=ExtResource("12_3j466")]
+visible = false
+
+[node name="TutorialMarker" parent="." unique_id=887935103 instance=ExtResource("13_2r38l")]
+visible = false
+texture = SubResource("ViewportTexture_0hybi")
