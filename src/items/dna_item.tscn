@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_xgl0d"]
 [ext_resource type="Script" uid="uid://bh64i2frmk7h4" path="res://items/dna_item.gd" id="2_h0oft"]
 [ext_resource type="PackedScene" uid="uid://c5uqptxqhf6w2" path="res://prototyping/assets/test_tube.glb" id="2_okoka"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="3_5nplh"]
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="3_wk14d"]
 
 [sub_resource type="Resource" id="Resource_5nplh"]
@@ -18,6 +19,12 @@ points = PackedVector3Array(-0.039956886, 0.10083556, -1.1175871e-08, -0.0391902
 script = ExtResource("2_h0oft")
 dna_data = null
 data = SubResource("Resource_5nplh")
+
+[node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
+disabled = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="2" unique_id=266861566]
+shape = SubResource("ConvexPolygonShape3D_wk14d")
 
 [node name="test_tube" parent="." index="5" unique_id=235241533 instance=ExtResource("2_okoka")]
 
