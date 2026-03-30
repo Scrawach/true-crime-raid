@@ -3,7 +3,10 @@ extends Node
 
 @export var player: PlayerBody3D
 @export var computer: Computer
+@export var dna_analyzer: Node3D
 @export var startup_box: Box
+
+@export var marker: TutorialMarker
 @export var quest_container: QuestContainer
 @export var target_document_data: Array[ItemData]
 @export var target_items_data: Array[ItemData]
@@ -16,7 +19,7 @@ func _ready() -> void:
 	start_tutorial(tutorial)
 
 func start_tutorial(quest: QuestData) -> void:
-	var open_box := OpenBoxTutorial.create("Откройте коробку с первым делом", startup_box)
+	var open_box := OpenBoxTutorial.create("Откройте коробку с первым делом", startup_box, marker)
 	quest.add_stage(open_box)
 	await open_box.finished
 	var check_documents := CheckItemTutorial.create("Осмотрите документы", player.inspect_item, target_document_data)
@@ -32,11 +35,11 @@ func start_tutorial(quest: QuestData) -> void:
 	var find_keywords := FindKeywordCountTutorial.create("Соберите ключевые слова", 9)
 	quest.add_stage(find_keywords)
 	
-	var find_dna := FindDNACountTutorial.create("Изучите пробирке в анализаторе", 6)
+	var find_dna := FindDNACountTutorial.create("Изучите пробирке в анализаторе", 6, dna_analyzer, marker)
 	find_dna.is_active = false
 	quest.add_stage(find_dna)
 	
-	var report := MakeReportTutorial.create("Составьте отчёт по делу", computer)
+	var report := MakeReportTutorial.create("Составьте отчёт по делу", computer, marker)
 	report.is_active = false
 	quest.add_stage(report)
 	report.finished.connect(_on_tutorial_ended)

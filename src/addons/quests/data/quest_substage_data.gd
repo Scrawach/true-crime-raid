@@ -17,8 +17,11 @@ func start() -> void:
 
 func update() -> void:
 	if not is_active:
-		is_active = true
+		activate()
 	updated.emit(self)
+
+func activate() -> void:
+	is_active = true
 
 func stop() -> void:
 	pass
