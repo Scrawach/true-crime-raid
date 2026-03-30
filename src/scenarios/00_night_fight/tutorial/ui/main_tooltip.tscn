@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://daigvv5hp3v0r"]
+
+[ext_resource type="Script" uid="uid://bg4ak5ci1lk7" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.gd" id="1_yhbyv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjaiq"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Fullscreen Tooltip" type="PanelContainer" unique_id=860440637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yhbyv")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=946944718]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1123415139]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjaiq")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=466518459]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=293140099]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=486898641]
+layout_mode = 2
+
+[node name="Header Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1609682627]
+layout_mode = 2
+text = "ВАЖНО!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1227608668]
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1327398266]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "Некоторые важные детали можно обнаружить только приблизив улику. 
+
+Используйте [img height=32]uid://b062i0t3hmft0[/img] для приближения."
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1134564511]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Accept Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=553320311]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+text = "Понятно"

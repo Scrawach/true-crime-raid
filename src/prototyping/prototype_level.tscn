@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://db8odvk73u8no" path="res://scenarios/00_night_fight/items/data/items/knife.tres" id="18_llp4l"]
 [ext_resource type="PackedScene" uid="uid://blepeju13jkkf" path="res://addons/quests/ui/quest_container.tscn" id="19_jjnbj"]
 [ext_resource type="Shader" uid="uid://mpvf1ywnuu5n" path="res://prototyping/materials/blink.gdshader" id="20_7nlvx"]
+[ext_resource type="PackedScene" uid="uid://daigvv5hp3v0r" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.tscn" id="21_0hybi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -80,7 +81,7 @@ _data = {
 &"blinking": SubResource("Animation_a8dk5")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_swkav"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0hybi"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
@@ -133,13 +134,14 @@ spawn_scene = ExtResource("2_ia5wu")
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
 
-[node name="TutorialRunner" type="Node" parent="." unique_id=1748173250 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "marker", "quest_container")]
+[node name="TutorialRunner" type="Node" parent="." unique_id=1748173250 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "marker", "tooltip", "quest_container")]
 script = ExtResource("10_7mksq")
 player = NodePath("../Player Body3D")
 computer = NodePath("../Environment/Devices/Computer")
 dna_analyzer = NodePath("../Environment/Devices/DNA Analyzer")
 startup_box = NodePath("../Environment/Devices/Box")
 marker = NodePath("TutorialMarker")
+tooltip = NodePath("CanvasLayer/Fullscreen Tooltip")
 quest_container = NodePath("CanvasLayer/Quest Container")
 target_document_data = Array[ExtResource("11_7nlvx")]([ExtResource("12_swkav"), ExtResource("13_0hybi"), ExtResource("14_a8dk5"), ExtResource("15_3hvw4")])
 target_items_data = Array[ExtResource("11_7nlvx")]([ExtResource("16_yjvn4"), ExtResource("17_pycv1"), ExtResource("18_llp4l")])
@@ -165,5 +167,8 @@ mouse_filter = 2
 libraries/ = SubResource("AnimationLibrary_3hvw4")
 autoplay = &"blinking"
 
+[node name="Fullscreen Tooltip" parent="TutorialRunner/CanvasLayer" unique_id=860440637 instance=ExtResource("21_0hybi")]
+visible = false
+
 [node name="TutorialMarker" parent="TutorialRunner" unique_id=887935103 instance=ExtResource("10_swkav")]
-texture = SubResource("ViewportTexture_swkav")
+texture = SubResource("ViewportTexture_0hybi")

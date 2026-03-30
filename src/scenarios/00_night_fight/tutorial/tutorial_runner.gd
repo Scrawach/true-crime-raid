@@ -7,6 +7,7 @@ extends Node
 @export var startup_box: Box
 
 @export var marker: TutorialMarker
+@export var tooltip: FullscreenTooltip
 @export var quest_container: QuestContainer
 @export var target_document_data: Array[ItemData]
 @export var target_items_data: Array[ItemData]
@@ -19,6 +20,8 @@ func _ready() -> void:
 	start_tutorial(tutorial)
 
 func start_tutorial(quest: QuestData) -> void:
+	player.inspect_item.inspect_started.connect(_on_inspect_started)
+	
 	var open_box := OpenBoxTutorial.create("Откройте коробку с первым делом", startup_box, marker)
 	quest.add_stage(open_box)
 	await open_box.finished
@@ -59,6 +62,10 @@ func start_tutorial(quest: QuestData) -> void:
 	await report.finished
 	_on_tutorial_ended(report)
 	quest.finish()
+
+func _on_inspect_started(item: BaseItem) -> void:
+	tooltip.show()
+	player.inspect_item.inspect_started.disconnect(_on_inspect_started)
 
 func _on_tutorial_ended(stage: QuestSubstageData) -> void:
 	tutorial.finish()
