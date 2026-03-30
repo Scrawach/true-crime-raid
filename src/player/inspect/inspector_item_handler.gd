@@ -9,6 +9,8 @@ extends Node3D
 @export var rotation_speed: float = 1.5
 @export var rotation_damper: float = 2.0
 
+@export var inertia: bool
+
 var dragging := false
 var yaw := 0.0
 var pitch := 0.0
@@ -50,5 +52,11 @@ func _restore_mouse_position() -> void:
 func _physics_process(delta: float) -> void:
 	rotate(Vector3.UP, rotation_step.x * delta)
 	rotate(Vector3.RIGHT, rotation_step.y * delta)
+	rotation_step = _get_next_rotation_step(delta)
+
+func _get_next_rotation_step(delta: float) -> Vector2:
+	if not inertia:
+		return Vector2.ZERO
+	
 	var step := rotation_step.length() * delta
-	rotation_step = rotation_step.move_toward(Vector2.ZERO, step)
+	return rotation_step.move_toward(Vector2.ZERO, step)
