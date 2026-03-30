@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ec8ekdji04b6"]
 
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_fdvh3"]
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_xphe8"]
+[ext_resource type="Resource" uid="uid://bnsobiaw5guyc" path="res://scenarios/00_night_fight/items/data/keywords/evidences/00nf-butts.tres" id="2_2ctpq"]
 
 [resource]
 script = ExtResource("1_xphe8")
 name = "Окурки сигарет"
 description = "[url=00nf-butts][keyword id=00nf-butts type=evidence]Окурки сигарет[/keyword][/url], обнаруженные у служебного входа в бар. Потенциальный источник биологических следов."
+auto_picked_in_inspect = Array[ExtResource("1_fdvh3")]([ExtResource("2_2ctpq")])
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"

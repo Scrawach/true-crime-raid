@@ -1,9 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d340nck4oml82"]
 
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_l3xhe"]
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_xnmtn"]
+[ext_resource type="Resource" uid="uid://ce37kjbghoc71" path="res://scenarios/00_night_fight/items/data/keywords/evidences/00nf-cup.tres" id="2_fwnxh"]
 
 [resource]
 script = ExtResource("1_xnmtn")
 name = "Стакан"
 description = "Стеклянный [url=00nf-cup][keyword id=00nf-cup type=evidence]стакан[/keyword][/url], используемый в баре. Обнаружен на месте происшествия около служебного входа."
+auto_picked_in_inspect = Array[ExtResource("1_l3xhe")]([ExtResource("2_fwnxh")])
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"

@@ -8,6 +8,9 @@ extends Resource
 func is_found() -> bool:
 	return KeywordDatabase.instance.has_keyword(id)
 
+func pickup() -> void:
+	KeywordDatabase.instance.add_keyword(self)
+
 static func from_dict(dict: Dictionary) -> KeywordData:
 	var keyword := KeywordData.new()
 	keyword.id = dict.get("id", "")

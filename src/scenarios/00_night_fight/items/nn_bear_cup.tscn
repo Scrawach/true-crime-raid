@@ -3,9 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_fdnml"]
 [ext_resource type="Resource" uid="uid://d340nck4oml82" path="res://scenarios/00_night_fight/items/data/items/cup.tres" id="2_ar4d3"]
 [ext_resource type="PackedScene" uid="uid://b7ydi1s8x2uv3" path="res://items/interactions/dna_interactive_point_3d.tscn" id="2_nkiai"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="3_787wu"]
 [ext_resource type="Resource" uid="uid://6g6x17sbkj6e" path="res://scenarios/00_night_fight/items/data/dna/beer_cup_jim_waller_partial.tres" id="3_ar4d3"]
 [ext_resource type="PackedScene" uid="uid://di14nf8akrjdx" path="res://scenarios/00_night_fight/items/assets/beer-cup.glb" id="3_xlexf"]
 [ext_resource type="Material" uid="uid://i8mcg8qfkqxe" path="res://scenarios/00_night_fight/items/materials/M_fingerprint.tres" id="4_ar4d3"]
+[ext_resource type="Resource" uid="uid://ce37kjbghoc71" path="res://scenarios/00_night_fight/items/data/keywords/evidences/00nf-cup.tres" id="4_e6mjq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_wq6kc"]
 size = Vector2(0.03, 0.03)
@@ -15,6 +17,7 @@ points = PackedVector3Array(-0.052787255, -0.12543818, 0, -0.0517745, -0.1254381
 
 [node name="NN Bear Cup" unique_id=679873917 instance=ExtResource("1_fdnml")]
 data = ExtResource("2_ar4d3")
+auto_picked_keywords = Array[ExtResource("3_787wu")]([ExtResource("4_e6mjq")])
 
 [node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_nkiai")]
 transform = Transform3D(-0.95040727, 0, -0.3110081, 0, 1, 0, 0.3110081, 0, -0.95040727, -0.012588289, -0.033432953, -0.052246183)

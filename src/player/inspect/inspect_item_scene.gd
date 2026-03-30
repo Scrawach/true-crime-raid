@@ -64,10 +64,15 @@ func inspect(target: BaseItem) -> void:
 	var points := target.get_interactive_points()
 	points.enable()
 	points.clicked.connect(_on_clicked)
+	
+	if item.data:
+		for keyword in item.data.auto_picked_in_inspect:
+			keyword.pickup()
+	
 	set_process_input(true)
 	inspector_control.initialize(item)
 	inspect_started.emit(item)
-
+	
 func abort() -> void:
 	camera_zoom.disable()
 	camera_zoom.clear()
