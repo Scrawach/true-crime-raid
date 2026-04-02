@@ -23,7 +23,7 @@ func make_cast(camera: Camera3D) -> Dictionary:
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	query.collision_mask = target_layer
 	
-	if zoom.is_small_enough():
+	if zoom and zoom.is_small_enough():
 		query.collision_mask |= small_target_layer
 	
 	query.collide_with_areas = collide_with_areas

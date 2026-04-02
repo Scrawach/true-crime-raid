@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cg4baw6qki8cw"]
+
+[ext_resource type="Script" uid="uid://dfirt24d33h4t" path="res://devices/workbench/uv_lamp/uv_lamp.gd" id="1_4xwvm"]
+[ext_resource type="Script" uid="uid://dyn1podjnuscv" path="res://common/clickable_area_3d.gd" id="2_nj8km"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_631vq"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_34nby"]
+radius = 0.118432514
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xwvm"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[node name="UV Lamp" type="Node3D" unique_id=124618261]
+script = ExtResource("1_4xwvm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1978739256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5109756)
+mesh = SubResource("SphereMesh_631vq")
+
+[node name="Button ClickableArea3D" type="Area3D" parent="MeshInstance3D" unique_id=1159630619]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_nj8km")
+metadata/_custom_type_script = "uid://dyn1podjnuscv"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Button ClickableArea3D" unique_id=1049320614]
+shape = SubResource("SphereShape3D_34nby")
+
+[node name="proto" type="MeshInstance3D" parent="." unique_id=1130737105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5109756)
+visible = false
+mesh = SubResource("BoxMesh_4xwvm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=937282620]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.94741094, 0)
+light_color = Color(0, 0.54216856, 0.9473787, 1)
+light_energy = 2.0
+spot_range = 1.952

@@ -5,3 +5,4 @@
 [node name="Main" type="Node" unique_id=1525077625]
 
 [node name="Prototype Level" parent="." unique_id=573298799 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001955986, -0.004543543, 0.009936869)

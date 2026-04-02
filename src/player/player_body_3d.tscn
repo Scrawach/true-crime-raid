@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cx7rsciexusnm"]
 
 [ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
+[ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="3_ax4t0"]
 [ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect/inspect_item_scene.tscn" id="3_iveab"]
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/common/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/ui/player_hud.tscn" id="4_cnqhg"]
@@ -45,6 +46,13 @@ transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.866
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
 current = true
+
+[node name="MouseRaycast3D" type="Node3D" parent="Head/Camera3D" unique_id=1367191301]
+script = ExtResource("3_ax4t0")
+target_layer = 16
+small_target_layer = 32
+collide_with_areas = true
+metadata/_custom_type_script = "uid://by08m6irb8rp6"
 
 [node name="Inspect Item Scene" parent="Head" unique_id=1090415660 node_paths=PackedStringArray("player", "player_hand") instance=ExtResource("3_iveab")]
 player = NodePath("../..")
