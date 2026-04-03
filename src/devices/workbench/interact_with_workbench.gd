@@ -6,6 +6,7 @@ extends InteractWithDevice
 @export var uv_lamp: UVLamp
 @export var item_handler: ItemHandler
 @export var tubes: InteractWithTubesStand
+@export var item_zoom: ItemZoom
 
 @export var sample_timed_panel: TimedPanel
 
@@ -20,8 +21,11 @@ func start_interaction(target: PlayerBody3D) -> void:
 	uv_lamp.enable()
 	grab(target.hand.item)
 	subscribe_on_dna_points()
+	item_zoom.enable()
 	
 func stop_interaction() -> void:
+	item_zoom.clear()
+	item_zoom.disable()
 	unsubscribe_from_dna_points()
 	uv_lamp.disable()
 	ungrab(item)

@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://jbubfiyk733x" path="res://scenarios/00_night_fight/items/data/dna/butts_austin_bolton_direct.tres" id="3_34e28"]
 [ext_resource type="Resource" uid="uid://b1uc7bcajfvy2" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_1.tres" id="4_152wy"]
 [ext_resource type="PackedScene" uid="uid://4dgefl100kt3" path="res://scenarios/00_night_fight/items/assets/ashpot.glb" id="4_qytvs"]
+[ext_resource type="Material" uid="uid://c2baunhei548p" path="res://scenarios/00_night_fight/items/materials/M_uv_overlay.tres" id="5_nygqo"]
 [ext_resource type="Resource" uid="uid://4t3momjkuhtj" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_2.tres" id="5_uf3j3"]
 [ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="7_152wy"]
 
@@ -31,34 +32,34 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015563965, 0.008056641, -0.0031738281)
 shape = SubResource("BoxShape3D_nygqo")
 
-[node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+[node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039506212, 0.008693501, -0.05701466)
 dna_data = ExtResource("3_34e28")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit")
-uv_required = false
-uv_material = null
-is_small = true
+uv_required = true
+uv_material = ExtResource("5_nygqo")
+uv_mesh = NodePath("../../ashpot/Spit")
 visible_distance = 0.6
 
-[node name="DNA Interactive Point 3D2" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="1" unique_id=1874189529 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+[node name="DNA Interactive Point 3D2" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="1" unique_id=1874189529 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04893385, 0.047528088, -0.12553425)
 dna_data = ExtResource("4_152wy")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit3")
-uv_required = false
-uv_material = null
-is_small = true
+uv_required = true
+uv_material = ExtResource("5_nygqo")
+uv_mesh = NodePath("../../ashpot/Spit3")
 visible_distance = 0.6
 
-[node name="DNA Interactive Point 3D3" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="2" unique_id=821512495 node_paths=PackedStringArray("dna_mesh") instance=ExtResource("2_fs17s")]
+[node name="DNA Interactive Point 3D3" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="2" unique_id=821512495 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06279821, 0.003997816, 0.052502364)
 dna_data = ExtResource("5_uf3j3")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit2")
-uv_required = false
-uv_material = null
-is_small = true
+uv_required = true
+uv_material = ExtResource("5_nygqo")
+uv_mesh = NodePath("../../ashpot/Spit2")
 visible_distance = 0.6
 
 [node name="ashpot" parent="." index="5" unique_id=44307244 instance=ExtResource("4_qytvs")]
