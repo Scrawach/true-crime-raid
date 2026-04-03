@@ -5,9 +5,11 @@ extends Node
 @export var computer: Computer
 @export var dna_analyzer: Node3D
 @export var startup_box: Box
+@export var workbenches: Array[Workbench]
 
 @export var marker: TutorialMarker
 @export var tooltip: FullscreenTooltip
+@export var video_tooltip: FullscreenVideoTooltip
 @export var quest_container: QuestContainer
 @export var target_document_data: Array[ItemData]
 @export var target_items_data: Array[ItemData]
@@ -21,6 +23,9 @@ func _ready() -> void:
 
 func start_tutorial(quest: QuestData) -> void:
 	player.inspect_item.inspect_started.connect(_on_inspect_started)
+	
+	for bench in workbenches:
+		bench.interaction_started.connect(_on_workbench_interacted)
 	
 	var open_box := OpenBoxTutorial.create("Откройте коробку с первым делом", startup_box, marker)
 	quest.add_stage(open_box)
@@ -69,3 +74,8 @@ func _on_inspect_started(item: BaseItem) -> void:
 
 func _on_tutorial_ended(stage: QuestSubstageData) -> void:
 	tutorial.finish()
+
+func _on_workbench_interacted() -> void:
+	for bench in workbenches:
+		bench.interaction_started.disconnect(_on_workbench_interacted)
+	video_tooltip.start()

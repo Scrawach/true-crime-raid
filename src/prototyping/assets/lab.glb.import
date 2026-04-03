@@ -44,11 +44,6 @@ _subresources={
 "use_external/fallback_path": "res://prototyping/materials/M_prototype_objects.tres",
 "use_external/path": "uid://k6o3p3mevgv3"
 },
-"Graybox.Interactive": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://prototyping/materials/M_prototype_blue.tres",
-"use_external/path": "uid://dkfvrhwojym1q"
-},
 "Graybox.Light": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://prototyping/materials/M_prototype_objects.tres",

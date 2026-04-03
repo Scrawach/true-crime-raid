@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://mpvf1ywnuu5n" path="res://prototyping/materials/blink.gdshader" id="11_ybkmc"]
 [ext_resource type="PackedScene" uid="uid://daigvv5hp3v0r" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.tscn" id="12_3j466"]
 [ext_resource type="PackedScene" uid="uid://dn88gakl5muo8" path="res://scenarios/00_night_fight/tutorial/markers/tutorial_marker.tscn" id="13_2r38l"]
+[ext_resource type="PackedScene" uid="uid://c52r48qf8v0m2" path="res://scenarios/00_night_fight/tutorial/ui/fullscreen_video_tooltip.tscn" id="13_dat5g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swkav"]
 shader = ExtResource("11_ybkmc")
@@ -56,17 +57,14 @@ _data = {
 &"blinking": SubResource("Animation_a8dk5")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0hybi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dat5g"]
 viewport_path = NodePath("SubViewport")
 
-[node name="TutorialRunner" type="Node" unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "marker", "tooltip", "quest_container")]
+[node name="TutorialRunner" type="Node" unique_id=664550998 node_paths=PackedStringArray("marker", "tooltip", "video_tooltip", "quest_container")]
 script = ExtResource("1_n7odh")
-player = NodePath("")
-computer = NodePath("")
-dna_analyzer = NodePath("")
-startup_box = NodePath("")
 marker = NodePath("TutorialMarker")
 tooltip = NodePath("CanvasLayer/Fullscreen Tooltip")
+video_tooltip = NodePath("CanvasLayer/Fullscreen Video Tooltip")
 quest_container = NodePath("CanvasLayer/Quest Container")
 target_document_data = Array[ExtResource("2_dat5g")]([ExtResource("3_3ps2j"), ExtResource("4_n2gpb"), ExtResource("5_m053i"), ExtResource("6_7n2fi")])
 target_items_data = Array[ExtResource("2_dat5g")]([ExtResource("7_21g0q"), ExtResource("8_xhtsr"), ExtResource("9_u0b3i")])
@@ -76,10 +74,12 @@ metadata/_custom_type_script = "uid://dmhxg22vk77yh"
 layer = 5
 
 [node name="Quest Container" parent="CanvasLayer" unique_id=1705636581 instance=ExtResource("10_0uhfq")]
+visible = false
 offset_left = 50.0
 offset_top = 50.0
 
 [node name="Blink Rect" type="ColorRect" parent="CanvasLayer" unique_id=1828336104]
+visible = false
 material = SubResource("ShaderMaterial_swkav")
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,6 +95,9 @@ autoplay = &"blinking"
 [node name="Fullscreen Tooltip" parent="CanvasLayer" unique_id=860440637 instance=ExtResource("12_3j466")]
 visible = false
 
+[node name="Fullscreen Video Tooltip" parent="CanvasLayer" unique_id=1324370766 instance=ExtResource("13_dat5g")]
+visible = false
+
 [node name="TutorialMarker" parent="." unique_id=887935103 instance=ExtResource("13_2r38l")]
 visible = false
-texture = SubResource("ViewportTexture_0hybi")
+texture = SubResource("ViewportTexture_dat5g")

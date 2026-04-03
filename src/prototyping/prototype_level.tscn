@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d25j0f0jg6nc6"]
 
+[ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="1_nb3ri"]
 [ext_resource type="PackedScene" uid="uid://cx7rsciexusnm" path="res://player/player_body_3d.tscn" id="2_dsgtm"]
 [ext_resource type="PackedScene" uid="uid://dqosh81q150fd" path="res://scenarios/00_night_fight/00_night_fight_evidences.tscn" id="2_ia5wu"]
 [ext_resource type="PackedScene" uid="uid://d1kcea5mswfvx" path="res://prototyping/assets/lab.glb" id="4_huww6"]
@@ -11,26 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://b40ypkl0nl4b2" path="res://devices/box/box.tscn" id="8_bujhi"]
 [ext_resource type="PackedScene" uid="uid://bocxkplxo28ht" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.tscn" id="10_7fl8n"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1jnja"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_f64p4"]
-sky_material = SubResource("ProceduralSkyMaterial_1jnja")
-
-[sub_resource type="Environment" id="Environment_dsgtm"]
-sky = SubResource("Sky_f64p4")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-reflected_light_source = 1
-tonemap_mode = 2
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_huww6"]
 
 [node name="Prototype Level" type="Node3D" unique_id=573298799]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=84319190]
-environment = SubResource("Environment_dsgtm")
+environment = ExtResource("1_nb3ri")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1162066091]
 transform = Transform3D(-0.9012211, -0.433273, -0.008668685, 0.01733774, -0.056036025, 0.9982782, -0.43301275, 0.8995191, 0.058012817, 0, 0, 0)
@@ -39,7 +26,7 @@ shadow_opacity = 0.6
 
 [node name="Environment" type="Node3D" parent="." unique_id=560163200]
 
-[node name="lab" parent="Environment" unique_id=588306906 instance=ExtResource("4_huww6")]
+[node name="lab" parent="Environment" unique_id=1184155872 instance=ExtResource("4_huww6")]
 
 [node name="Ground World Boundary" type="StaticBody3D" parent="Environment/lab" unique_id=83751850]
 
@@ -77,8 +64,9 @@ spawn_scene = ExtResource("2_ia5wu")
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
 
-[node name="TutorialRunner" parent="." unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box") instance=ExtResource("10_7fl8n")]
+[node name="TutorialRunner" parent="." unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "workbenches") instance=ExtResource("10_7fl8n")]
 player = NodePath("../Player Body3D")
 computer = NodePath("../Environment/Devices/Computer")
 dna_analyzer = NodePath("../Environment/Devices/DNA Analyzer")
 startup_box = NodePath("../Environment/Devices/Box")
+workbenches = [NodePath("../Environment/Devices/Workbench"), NodePath("../Environment/Devices/Workbench2")]

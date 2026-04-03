@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cl701vbhrtifk"]
 
+[ext_resource type="Script" uid="uid://d01v5sqxjuv6m" path="res://devices/workbench/workbench.gd" id="1_oste8"]
 [ext_resource type="PackedScene" uid="uid://cv2wnuby2d1nk" path="res://prototyping/assets/workbench_mat.glb" id="1_s2jfl"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_7f03q"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_15uph"]
@@ -7,22 +8,63 @@
 [ext_resource type="Script" uid="uid://3ms34aqil1yq" path="res://devices/workbench/interact_with_workbench.gd" id="5_dqg1t"]
 [ext_resource type="Script" uid="uid://dfirt24d33h4t" path="res://devices/workbench/uv_lamp/uv_lamp.gd" id="6_1l1er"]
 [ext_resource type="Script" uid="uid://dyn1podjnuscv" path="res://common/clickable_area_3d.gd" id="6_te8by"]
+[ext_resource type="Script" uid="uid://o2k8na7qop34" path="res://devices/workbench/button_3d.gd" id="8_ba23d"]
+[ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="8_br3u5"]
 [ext_resource type="Script" uid="uid://dqub8wp4vk6wr" path="res://devices/workbench/item_handler.gd" id="8_danfj"]
+[ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="9_4de6e"]
+[ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="10_ba23d"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s2jfl"]
 data = PackedVector3Array(-0.6074, 0.018299999, -0.29209998, -0.598, 0.018299999, 0.2958, -0.6074, 0.018299999, 0.27699998, -0.598, 0.018299999, 0.2958, -0.5373, 0.018299999, 0.3146, -0.5724, 0.018299999, 0.3096, -0.6074, 0.018299999, -0.29209998, -0.5373, 0.018299999, 0.3146, -0.598, 0.018299999, 0.2958, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.5219, 0.018299999, 0.3146, -0.5373, 0.018299999, 0.3146, 0.5919, 0.018299999, 0.27699998, 0.55689996, 0.018299999, 0.3096, -0.6074, 0.018299999, -0.29209998, 0.5919, 0.018299999, 0.27699998, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.5919, 0.018299999, 0.27699998, 0.5826, 0.018299999, 0.2958, -0.5724, 0.018299999, -0.3247, -0.6074, 0.018299999, -0.29209998, -0.598, 0.018299999, -0.3109, 0.5219, 0.018299999, -0.32979998, -0.6074, 0.018299999, -0.29209998, -0.5724, 0.018299999, -0.3247, 0.5919, 0.018299999, 0.27699998, -0.6074, 0.018299999, -0.29209998, 0.5219, 0.018299999, -0.32979998, 0.5219, 0.018299999, -0.32979998, -0.5724, 0.018299999, -0.3247, -0.5373, 0.018299999, -0.32979998, 0.5919, 0.018299999, 0.27699998, 0.5219, 0.018299999, -0.32979998, 0.5826, 0.018299999, -0.3109, 0.5826, 0.018299999, -0.3109, 0.5219, 0.018299999, -0.32979998, 0.55689996, 0.018299999, -0.3247, 0.5919, 0.018299999, 0.27699998, 0.5826, 0.018299999, -0.3109, 0.5919, 0.018299999, -0.29209998, -0.598, 0.0018, 0.2958, -0.6074, 0.0018, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.6074, 0.0018, -0.29209998, -0.5724, 0.0018, -0.3247, -0.598, 0.0018, -0.3109, -0.598, 0.0018, 0.2958, -0.5724, 0.0018, -0.3247, -0.6074, 0.0018, -0.29209998, -0.5724, 0.0018, -0.3247, 0.5219, 0.0018, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5724, 0.0018, -0.3247, 0.5826, 0.0018, -0.3109, 0.5219, 0.0018, -0.32979998, -0.598, 0.0018, 0.2958, 0.5826, 0.0018, -0.3109, -0.5724, 0.0018, -0.3247, 0.5219, 0.0018, -0.32979998, 0.5826, 0.0018, -0.3109, 0.55689996, 0.0018, -0.3247, -0.5373, 0.0018, 0.3146, -0.598, 0.0018, 0.2958, -0.5724, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, -0.598, 0.0018, 0.2958, -0.5373, 0.0018, 0.3146, 0.5826, 0.0018, -0.3109, -0.598, 0.0018, 0.2958, 0.55689996, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, -0.5373, 0.0018, 0.3146, 0.5219, 0.0018, 0.3146, 0.5826, 0.0018, -0.3109, 0.55689996, 0.0018, 0.3096, 0.5919, 0.0018, 0.27699998, 0.5919, 0.0018, 0.27699998, 0.55689996, 0.0018, 0.3096, 0.5826, 0.0018, 0.2958, 0.5826, 0.0018, -0.3109, 0.5919, 0.0018, 0.27699998, 0.5919, 0.0018, -0.29209998, 0.5219, 0.0018, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5724, 0.018299999, -0.3247, 0.5219, 0.0018, -0.32979998, 0.5219, 0.018299999, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5724, 0.018299999, -0.3247, -0.5724, 0.0018, -0.3247, 0.55689996, 0.0018, -0.3247, 0.5219, 0.018299999, -0.32979998, 0.5219, 0.0018, -0.32979998, -0.5724, 0.0018, -0.3247, -0.5724, 0.018299999, -0.3247, -0.598, 0.018299999, -0.3109, 0.55689996, 0.0018, -0.3247, 0.55689996, 0.018299999, -0.3247, 0.5219, 0.018299999, -0.32979998, -0.5724, 0.0018, -0.3247, -0.598, 0.018299999, -0.3109, -0.598, 0.0018, -0.3109, 0.5826, 0.0018, -0.3109, 0.55689996, 0.018299999, -0.3247, 0.55689996, 0.0018, -0.3247, -0.598, 0.0018, -0.3109, -0.598, 0.018299999, -0.3109, -0.6074, 0.018299999, -0.29209998, 0.5826, 0.0018, -0.3109, 0.5826, 0.018299999, -0.3109, 0.55689996, 0.018299999, -0.3247, -0.598, 0.0018, -0.3109, -0.6074, 0.018299999, -0.29209998, -0.6074, 0.0018, -0.29209998, 0.5919, 0.0018, -0.29209998, 0.5826, 0.018299999, -0.3109, 0.5826, 0.0018, -0.3109, -0.6074, 0.0018, -0.29209998, -0.6074, 0.018299999, -0.29209998, -0.6074, 0.018299999, 0.27699998, 0.5919, 0.0018, -0.29209998, 0.5919, 0.018299999, -0.29209998, 0.5826, 0.018299999, -0.3109, -0.6074, 0.0018, -0.29209998, -0.6074, 0.018299999, 0.27699998, -0.6074, 0.0018, 0.27699998, 0.5919, 0.0018, 0.27699998, 0.5919, 0.018299999, -0.29209998, 0.5919, 0.0018, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.6074, 0.018299999, 0.27699998, -0.598, 0.018299999, 0.2958, 0.5919, 0.0018, 0.27699998, 0.5919, 0.018299999, 0.27699998, 0.5919, 0.018299999, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.598, 0.018299999, 0.2958, -0.598, 0.0018, 0.2958, 0.5826, 0.0018, 0.2958, 0.5919, 0.018299999, 0.27699998, 0.5919, 0.0018, 0.27699998, -0.598, 0.0018, 0.2958, -0.598, 0.018299999, 0.2958, -0.5724, 0.018299999, 0.3096, 0.5826, 0.0018, 0.2958, 0.5826, 0.018299999, 0.2958, 0.5919, 0.018299999, 0.27699998, -0.598, 0.0018, 0.2958, -0.5724, 0.018299999, 0.3096, -0.5724, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, 0.5826, 0.018299999, 0.2958, 0.5826, 0.0018, 0.2958, -0.5724, 0.0018, 0.3096, -0.5724, 0.018299999, 0.3096, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.0018, 0.3096, 0.55689996, 0.018299999, 0.3096, 0.5826, 0.018299999, 0.2958, -0.5724, 0.0018, 0.3096, -0.5373, 0.018299999, 0.3146, -0.5373, 0.0018, 0.3146, 0.5219, 0.0018, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.55689996, 0.0018, 0.3096, -0.5373, 0.0018, 0.3146, -0.5373, 0.018299999, 0.3146, 0.5219, 0.018299999, 0.3146, 0.5219, 0.0018, 0.3146, 0.5219, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, -0.5373, 0.0018, 0.3146, 0.5219, 0.018299999, 0.3146, 0.5219, 0.0018, 0.3146)
 
-[sub_resource type="SphereMesh" id="SphereMesh_631vq"]
-radius = 0.1
-height = 0.2
+[sub_resource type="BoxMesh" id="BoxMesh_br3u5"]
+size = Vector3(0.2, 0.1, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cw7x4"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_34nby"]
 radius = 0.118432514
 
-[sub_resource type="BoxMesh" id="BoxMesh_4xwvm"]
-size = Vector3(0.2, 0.2, 0.2)
+[sub_resource type="Animation" id="Animation_4de6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.056813687, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ba23d"]
+resource_name = "press"
+length = 0.13333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.10000001, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.056813687, 0), Vector3(0, 0.065, 0), Vector3(0, 0.015, 0), Vector3(0, 0.025, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oste8"]
+_data = {
+&"RESET": SubResource("Animation_4de6e"),
+&"press": SubResource("Animation_ba23d")
+}
 
 [node name="Workbench" type="Node3D" unique_id=1556907178]
+script = ExtResource("1_oste8")
 
 [node name="workbench_mat" parent="." unique_id=1588581640 instance=ExtResource("1_s2jfl")]
 
@@ -53,6 +95,7 @@ shape = SubResource("ConcavePolygonShape3D_s2jfl")
 transform = Transform3D(1, 0, 0, 0, 0.41310444, 0.91068363, 0, -0.9106837, 0.41310444, 0, 0.7931682, 0.25878954)
 
 [node name="InteractWithWorkbench" type="Node" parent="." unique_id=610222775 node_paths=PackedStringArray("uv_lamp", "item_handler", "interaction_camera", "interaction_area")]
+unique_name_in_owner = true
 script = ExtResource("5_dqg1t")
 uv_lamp = NodePath("../UV Lamp")
 item_handler = NodePath("../ItemHandler")
@@ -60,36 +103,52 @@ interaction_camera = NodePath("../Camera3D")
 interaction_area = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://3ms34aqil1yq"
 
-[node name="UV Lamp" type="Node3D" parent="." unique_id=124618261]
+[node name="UV Lamp" type="Node3D" parent="." unique_id=124618261 node_paths=PackedStringArray("uv_label")]
 script = ExtResource("6_1l1er")
+environment = ExtResource("8_br3u5")
+uv_label = NodePath("Button 3D/UV Label3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="UV Lamp" unique_id=1978739256]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5109756)
-mesh = SubResource("SphereMesh_631vq")
+[node name="SpotLight3D" type="SpotLight3D" parent="UV Lamp" unique_id=937282620]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.98637104, 0)
+visible = false
+light_color = Color(0, 0.702, 0.78, 1)
+spot_range = 1.643
+spot_angle = 49.69
 
-[node name="Button ClickableArea3D" type="Area3D" parent="UV Lamp/MeshInstance3D" unique_id=1159630619]
+[node name="Button 3D" type="Node3D" parent="UV Lamp" unique_id=104633759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7478763, 0, 0)
+script = ExtResource("8_ba23d")
+
+[node name="Button Base Mesh" type="MeshInstance3D" parent="UV Lamp/Button 3D" unique_id=1789569918]
+mesh = SubResource("BoxMesh_br3u5")
+surface_material_override/0 = ExtResource("9_4de6e")
+
+[node name="Button Mesh" type="MeshInstance3D" parent="UV Lamp/Button 3D/Button Base Mesh" unique_id=976195202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.056813687, 0)
+mesh = SubResource("BoxMesh_cw7x4")
+surface_material_override/0 = ExtResource("10_ba23d")
+
+[node name="Button ClickableArea3D" type="Area3D" parent="UV Lamp/Button 3D/Button Base Mesh/Button Mesh" unique_id=1159630619]
 unique_name_in_owner = true
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("6_te8by")
 metadata/_custom_type_script = "uid://dyn1podjnuscv"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="UV Lamp/MeshInstance3D/Button ClickableArea3D" unique_id=1049320614]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UV Lamp/Button 3D/Button Base Mesh/Button Mesh/Button ClickableArea3D" unique_id=1049320614]
 shape = SubResource("SphereShape3D_34nby")
 
-[node name="proto" type="MeshInstance3D" parent="UV Lamp" unique_id=1130737105]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5109756)
-visible = false
-mesh = SubResource("BoxMesh_4xwvm")
+[node name="Button AnimationPlayer" type="AnimationPlayer" parent="UV Lamp/Button 3D/Button Base Mesh" unique_id=698220851]
+libraries/ = SubResource("AnimationLibrary_oste8")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="UV Lamp" unique_id=937282620]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.98637104, 0)
-visible = false
-light_color = Color(0, 0.9019608, 1, 1)
-light_energy = 30.0
-spot_range = 1.643
-spot_angle = 49.69
+[node name="UV Label3D" type="Label3D" parent="UV Lamp/Button 3D" unique_id=2040948552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.004488513)
+pixel_size = 0.003
+billboard = 1
+no_depth_test = true
+fixed_size = true
+text = "УФ"
 
 [node name="ItemHandler" type="Node3D" parent="." unique_id=74848627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2187564, 0)
