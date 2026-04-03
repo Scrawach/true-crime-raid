@@ -8,5 +8,6 @@
 script = ExtResource("1_xnmtn")
 name = "Стакан"
 description = "Стеклянный [url=00nf-cup][keyword id=00nf-cup type=evidence]стакан[/keyword][/url], используемый в баре. Обнаружен на месте происшествия около служебного входа."
+can_interact_with_workbench = true
 auto_picked_in_inspect = Array[ExtResource("1_l3xhe")]([ExtResource("2_fwnxh")])
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"

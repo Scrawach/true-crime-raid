@@ -8,5 +8,6 @@
 script = ExtResource("1_xphe8")
 name = "Окурки сигарет"
 description = "[url=00nf-butts][keyword id=00nf-butts type=evidence]Окурки сигарет[/keyword][/url], обнаруженные у служебного входа в бар. Потенциальный источник биологических следов."
+can_interact_with_workbench = true
 auto_picked_in_inspect = Array[ExtResource("1_fdvh3")]([ExtResource("2_2ctpq")])
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"

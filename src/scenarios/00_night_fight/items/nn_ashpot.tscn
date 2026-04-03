@@ -36,6 +36,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039506212, 0.008693501, -0.
 dna_data = ExtResource("3_34e28")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit")
+uv_required = false
+uv_material = null
 is_small = true
 visible_distance = 0.6
 
@@ -44,6 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04893385, 0.047528088, -0.
 dna_data = ExtResource("4_152wy")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit3")
+uv_required = false
+uv_material = null
 is_small = true
 visible_distance = 0.6
 
@@ -52,6 +56,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06279821, 0.003997816, 0.0
 dna_data = ExtResource("5_uf3j3")
 only_once = true
 dna_mesh = NodePath("../../ashpot/Spit2")
+uv_required = false
+uv_material = null
 is_small = true
 visible_distance = 0.6
 

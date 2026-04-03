@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cv2wnuby2d1nk" path="res://prototyping/assets/workbench_mat.glb" id="1_s2jfl"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_7f03q"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_15uph"]
-[ext_resource type="Script" uid="uid://cla47d17kgxnw" path="res://interaction/conditions/player_has_item_condition.gd" id="4_15uph"]
 [ext_resource type="Script" uid="uid://3ms34aqil1yq" path="res://devices/workbench/interact_with_workbench.gd" id="5_dqg1t"]
+[ext_resource type="Script" uid="uid://1hjwth1nqlj1" path="res://interaction/conditions/player_has_interactable_item_with_workbench.gd" id="5_kagso"]
 [ext_resource type="Script" uid="uid://dfirt24d33h4t" path="res://devices/workbench/uv_lamp/uv_lamp.gd" id="6_1l1er"]
 [ext_resource type="Script" uid="uid://dyn1podjnuscv" path="res://common/clickable_area_3d.gd" id="6_te8by"]
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="7_kagso"]
@@ -87,19 +87,19 @@ shape = SubResource("ConcavePolygonShape3D_s2jfl")
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_7f03q")
-conditions = [NodePath("PlayerHasItemCondition")]
+conditions = [NodePath("PlayerHasInteractableItemWithWorkbench")]
 interact_state = NodePath("../InteractWithWorkbench")
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
 [node name="InteractTooltip3D" parent="InteractionArea3D" unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("3_15uph")]
 interaction = NodePath("..")
 
-[node name="PlayerHasItemCondition" type="Node" parent="InteractionArea3D" unique_id=652466399]
-script = ExtResource("4_15uph")
-metadata/_custom_type_script = "uid://cla47d17kgxnw"
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=1700354452]
 shape = SubResource("ConcavePolygonShape3D_s2jfl")
+
+[node name="PlayerHasInteractableItemWithWorkbench" type="Node" parent="InteractionArea3D" unique_id=164972671]
+script = ExtResource("5_kagso")
+metadata/_custom_type_script = "uid://1hjwth1nqlj1"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=495345202]
 transform = Transform3D(1, 0, 0, 0, 0.41310444, 0.91068363, 0, -0.9106837, 0.41310444, 0, 0.7931682, 0.25878954)
