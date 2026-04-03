@@ -18,6 +18,7 @@ signal inspect_started(target: BaseItem)
 @onready var inspector_control: InspectorControl = %"Inspector Control"
 
 var item: BaseItem
+var is_interruptable: bool = true
 
 func smooth_show(callback: Callable = Callable()) -> void:
 	item_handler.clear()
@@ -82,6 +83,12 @@ func abort() -> void:
 	points.clicked.disconnect(_on_clicked)
 	
 	set_process_input(false)
+
+func can_interupt() -> bool:
+	return is_interruptable
+
+func set_interruptable(new_value: bool) -> void:
+	is_interruptable = new_value
 
 func _on_clicked(point: InteractivePoint3D) -> void:
 	if point is KeywordInteractivePoint3D:

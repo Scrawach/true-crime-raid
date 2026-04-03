@@ -12,7 +12,7 @@ func state_handle_input(event: InputEvent) -> void:
 	if is_animating:
 		return
 	
-	if is_quit_inspect_pressed(event):
+	if is_quit_inspect_pressed(event) and inspect_scene.can_interupt():
 		deffered_switch_to_movement_state()
 
 func enter() -> void:

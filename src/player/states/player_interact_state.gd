@@ -7,7 +7,7 @@ var current_interaction: InteractState
 
 func state_handle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escape") or event.is_action("inspect"):
-		if current_interaction:
+		if current_interaction and current_interaction.can_interupt():
 			current_interaction.stop_interaction()
 
 func enter() -> void:

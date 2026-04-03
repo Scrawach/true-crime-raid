@@ -69,8 +69,11 @@ func start_tutorial(quest: QuestData) -> void:
 	quest.finish()
 
 func _on_inspect_started(item: BaseItem) -> void:
+	player.inspect_item.set_interruptable(false)
 	tooltip.show()
 	player.inspect_item.inspect_started.disconnect(_on_inspect_started)
+	await tooltip.accept_button.pressed
+	player.inspect_item.set_interruptable(true)
 
 func _on_tutorial_ended(stage: QuestSubstageData) -> void:
 	tutorial.finish()
@@ -78,4 +81,8 @@ func _on_tutorial_ended(stage: QuestSubstageData) -> void:
 func _on_workbench_interacted() -> void:
 	for bench in workbenches:
 		bench.interaction_started.disconnect(_on_workbench_interacted)
+		bench.interact_with_workbench.set_interuptable(false)
 	video_tooltip.start()
+	await video_tooltip.accept_button.pressed
+	for bench in workbenches:
+		bench.interact_with_workbench.set_interuptable(true)

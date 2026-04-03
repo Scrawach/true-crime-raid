@@ -23,7 +23,6 @@ remote_path = NodePath("../CanvasLayer/SubViewportContainer/SubViewport/Item Vie
 visible = false
 
 [node name="Background" type="Control" parent="CanvasLayer" unique_id=1486299946]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
