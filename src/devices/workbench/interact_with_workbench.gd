@@ -1,6 +1,8 @@
 class_name InteractWithWorkbench
 extends InteractWithDevice
 
+signal sample_taked(data: DNAData)
+
 @export var dna_tube_scene: PackedScene
 
 @export var uv_lamp: UVLamp
@@ -56,6 +58,7 @@ func _on_dna_clicked(point: DNAInteractivePoint3D) -> void:
 	var dna_tube := dna_tube_scene.instantiate() as DNAItem
 	add_child(dna_tube)
 	dna_tube.dna_data = point.dna_data
+	sample_taked.emit(point.dna_data)
 	tubes.put_dna(dna_tube)
 
 func _on_uv_lamp_changed(is_active: bool) -> void:

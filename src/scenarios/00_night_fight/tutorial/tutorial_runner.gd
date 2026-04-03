@@ -11,6 +11,7 @@ extends Node
 @export var tooltip: FullscreenTooltip
 @export var video_tooltip: FullscreenVideoTooltip
 @export var quest_container: QuestContainer
+@export var target_keywords: Array[KeywordData]
 @export var target_document_data: Array[ItemData]
 @export var target_items_data: Array[ItemData]
 
@@ -40,8 +41,12 @@ func start_tutorial(quest: QuestData) -> void:
 	await awaiter.finished
 	quest.remove_stage(open_box)
 	
-	var find_keywords := FindKeywordCountTutorial.create("Соберите ключевые слова", 9)
+	var find_keywords := FindKeywordCountTutorial.create("Соберите ключевые слова", target_keywords)
 	quest.add_stage(find_keywords)
+	
+	var find_tubes := TakeDNATubesCountTutorial.create("Соберите образцы с улик", 6, workbenches, marker)
+	find_tubes.is_active = false
+	quest.add_stage(find_tubes)
 	
 	var find_dna := FindDNACountTutorial.create("Изучите пробирке в анализаторе", 6, dna_analyzer, marker)
 	find_dna.is_active = false
@@ -57,6 +62,12 @@ func start_tutorial(quest: QuestData) -> void:
 	quest.remove_stage(find_keywords)
 	quest.remove_stage(check_documents)
 	quest.remove_stage(check_items)
+	find_tubes.update()
+	
+	if not find_tubes.is_finished:
+		await find_tubes.finished
+	
+	quest.remove_stage(find_tubes)
 	find_dna.update()
 	
 	if not find_dna.is_finished:
@@ -68,14 +79,14 @@ func start_tutorial(quest: QuestData) -> void:
 	_on_tutorial_ended(report)
 	quest.finish()
 
-func _on_inspect_started(item: BaseItem) -> void:
+func _on_inspect_started(_item: BaseItem) -> void:
 	player.inspect_item.set_interruptable(false)
 	tooltip.show()
 	player.inspect_item.inspect_started.disconnect(_on_inspect_started)
 	await tooltip.accept_button.pressed
 	player.inspect_item.set_interruptable(true)
 
-func _on_tutorial_ended(stage: QuestSubstageData) -> void:
+func _on_tutorial_ended(_stage: QuestSubstageData) -> void:
 	tutorial.finish()
 
 func _on_workbench_interacted() -> void:

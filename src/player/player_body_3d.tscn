@@ -15,7 +15,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
 
-[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item")]
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item", "state_machine")]
 collision_layer = 4
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
@@ -24,6 +24,7 @@ hand = NodePath("PlayerHand")
 player_hud = NodePath("Player HUD")
 mouse = NodePath("StateMachine/PlayerMovementState/MouseCapture")
 inspect_item = NodePath("Head/Inspect Item Scene")
+state_machine = NodePath("StateMachine")
 
 [node name="Player HUD" parent="." unique_id=1872789362 instance=ExtResource("4_cnqhg")]
 

@@ -10,6 +10,7 @@ extends CharacterBody3D
 @export var mouse: MouseCapture
 
 @export var inspect_item: InspectItem
+@export var state_machine: StateMachine
 
 var _moving_direction: Vector2
 var _gaze_direction: Vector2

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_t8s4k"]
 [ext_resource type="Script" uid="uid://b83hw0cyge6d1" path="res://devices/tubes_stand/player_has_dna_or_can_take_dna.gd" id="4_tuhfg"]
 [ext_resource type="Script" uid="uid://c7ixsxog2qjgn" path="res://devices/tubes_stand/interact_with_tubes_stand.gd" id="4_ud2hb"]
+[ext_resource type="Script" uid="uid://be6cwceyen6xi" path="res://interaction/conditions/player_in_moving_state_condition.gd" id="5_mi3qc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t8s4k"]
 size = Vector3(0.4729004, 0.26654053, 0.19384766)
@@ -55,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1561749, 0.10561536, 0.0407
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("2_0m5el")
-conditions = [NodePath("PlayerHasDNAOrCanTakeDNA")]
+conditions = [NodePath("PlayerHasDNAOrCanTakeDNA"), NodePath("PlayerInMovingStateCondition")]
 metadata/_custom_type_script = "uid://dlm1uspq25qm7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=795228046]
@@ -69,6 +70,10 @@ interaction = NodePath("..")
 script = ExtResource("4_tuhfg")
 tubes_stand = NodePath("../../InteractWithTubesStand")
 metadata/_custom_type_script = "uid://b83hw0cyge6d1"
+
+[node name="PlayerInMovingStateCondition" type="Node" parent="InteractionArea3D" unique_id=1901847787]
+script = ExtResource("5_mi3qc")
+metadata/_custom_type_script = "uid://be6cwceyen6xi"
 
 [node name="InteractWithTubesStand" type="Node" parent="." unique_id=104132821 node_paths=PackedStringArray("interaction", "handle_points")]
 script = ExtResource("4_ud2hb")

@@ -16,3 +16,4 @@ func setup(text: String) -> void:
 
 func clear() -> void:
 	label.text = ""
+	hide()

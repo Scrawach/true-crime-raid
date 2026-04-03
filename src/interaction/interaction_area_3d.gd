@@ -22,10 +22,10 @@ func can_interact_with(player: PlayerBody3D) -> bool:
 	if conditions.is_empty():
 		return true
 	
+	var result := true
 	for condition in conditions:
-		if condition.can_interact_with(player):
-			return true
-	return false
+		result = result && condition.can_interact_with(player)
+	return result
 
 func has_interact_state() -> bool:
 	return interact_state != null

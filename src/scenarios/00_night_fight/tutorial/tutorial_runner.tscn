@@ -2,11 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dmhxg22vk77yh" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.gd" id="1_n7odh"]
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="2_dat5g"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="2_u0b3i"]
+[ext_resource type="Resource" uid="uid://cfltodu0flf7e" path="res://scenarios/00_night_fight/items/data/keywords/persons/00nf-austin.tres" id="3_0uhfq"]
 [ext_resource type="Resource" uid="uid://dg7qj5mtjfkn3" path="res://scenarios/00_night_fight/items/data/documents/main_protocol.tres" id="3_3ps2j"]
 [ext_resource type="Resource" uid="uid://cymyweaslhn6d" path="res://scenarios/00_night_fight/items/data/documents/austin_bolton.tres" id="4_n2gpb"]
+[ext_resource type="Resource" uid="uid://bio7a0jhwx8o3" path="res://scenarios/00_night_fight/items/data/keywords/persons/00nf-ian.tres" id="4_ybkmc"]
+[ext_resource type="Resource" uid="uid://fpx8hcbn5lyl" path="res://scenarios/00_night_fight/items/data/keywords/persons/00nf-jim.tres" id="5_3j466"]
 [ext_resource type="Resource" uid="uid://btm31hv34gdxv" path="res://scenarios/00_night_fight/items/data/documents/jim_waller.tres" id="5_m053i"]
+[ext_resource type="Resource" uid="uid://dh3jswypv5elf" path="res://scenarios/00_night_fight/items/data/keywords/persons/00nf-paul.tres" id="6_2r38l"]
 [ext_resource type="Resource" uid="uid://bwiprlyrg26oj" path="res://scenarios/00_night_fight/items/data/documents/paul_slater.tres" id="6_7n2fi"]
 [ext_resource type="Resource" uid="uid://ec8ekdji04b6" path="res://scenarios/00_night_fight/items/data/items/butts.tres" id="7_21g0q"]
+[ext_resource type="Resource" uid="uid://dovyxd0b3naog" path="res://scenarios/00_night_fight/items/data/keywords/events/00nf-conflict.tres" id="7_271ir"]
+[ext_resource type="Resource" uid="uid://7f2f56elgx2d" path="res://scenarios/00_night_fight/items/data/keywords/events/00nf-revenge.tres" id="8_b601k"]
 [ext_resource type="Resource" uid="uid://d340nck4oml82" path="res://scenarios/00_night_fight/items/data/items/cup.tres" id="8_xhtsr"]
 [ext_resource type="Resource" uid="uid://db8odvk73u8no" path="res://scenarios/00_night_fight/items/data/items/knife.tres" id="9_u0b3i"]
 [ext_resource type="PackedScene" uid="uid://blepeju13jkkf" path="res://addons/quests/ui/quest_container.tscn" id="10_0uhfq"]
@@ -66,6 +73,7 @@ marker = NodePath("TutorialMarker")
 tooltip = NodePath("CanvasLayer/Fullscreen Tooltip")
 video_tooltip = NodePath("CanvasLayer/Fullscreen Video Tooltip")
 quest_container = NodePath("CanvasLayer/Quest Container")
+target_keywords = Array[ExtResource("2_u0b3i")]([ExtResource("3_0uhfq"), ExtResource("4_ybkmc"), ExtResource("5_3j466"), ExtResource("6_2r38l"), ExtResource("7_271ir"), ExtResource("8_b601k")])
 target_document_data = Array[ExtResource("2_dat5g")]([ExtResource("3_3ps2j"), ExtResource("4_n2gpb"), ExtResource("5_m053i"), ExtResource("6_7n2fi")])
 target_items_data = Array[ExtResource("2_dat5g")]([ExtResource("7_21g0q"), ExtResource("8_xhtsr"), ExtResource("9_u0b3i")])
 metadata/_custom_type_script = "uid://dmhxg22vk77yh"
