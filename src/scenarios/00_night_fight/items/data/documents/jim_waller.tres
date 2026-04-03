@@ -1,24 +1,24 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://btm31hv34gdxv"]
 
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="1_5n8v4"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="1_xr5fk"]
 
 [resource]
 script = ExtResource("1_5n8v4")
 name = "Карточка подозреваемого"
 description = "[b]ФИО:[/b] [url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url], 39 лет [b]Род деятельности:[/b] бармен бара The Silver Seagull
 
-[b]Статус:[/b] Основной свидетель, рассматривается в качестве подозреваемого 
+[b]Статус:[/b] Основной свидетель, рассматривается как подозреваемый. Был проведен допрос и взяты образцы ДНК для сравнительного анализа.
 
 [b]Связь с инцидентом:[/b] Последний установленный человек, контактировавший с погибшим [url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url] в помещении бара в вечер происшествия. 
-[b]Показания:[/b] Согласно заявлению [url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url], погибший находился в баре в состоянии алкогольного опьянения и покинул заведение приблизительно в 23:50–00:10. Указывает, что после выхода потерял его из виду. 
 
-[b]Установленные факты:[/b] • персонал бара подтверждает присутствие погибшего в указанный вечер • зафиксирован словесный [url=00nf-conflict][keyword id=00nf-conflict type=event]конфликт[/keyword][/url] между [url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url] и погибшим [url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url] незадолго до закрытия бара 
+[b]Показания:[/b] Согласно заявлению [url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url], погибший находился в баре в состоянии алкогольного опьянения и покинул заведение приблизительно в 23:00. Указывает, что после его не видел. 
 
-[b]Криминальное прошлое:[/b] Ранее был судим по статье, связанной с нанесением телесных повреждений с применением холодного оружия. Инцидент квалифицирован как участие в драке с использованием [url=00nf-knife][keyword id=00nf-knife type=weapon]ножа[/keyword][/url]. 
+[b]Установленные факты:[/b] • персонал бара подтверждает присутствие погибшего в указанный вечер; • зафиксирован словесный [url=00nf-conflict][keyword id=00nf-conflict type=event]конфликт[/keyword][/url] между [url=00nf-jim][keyword id=00nf-jim type=person]Jim Waller[/keyword][/url] и погибшим [url=00nf-ian][keyword id=00nf-ian type=person]Ian Bolton[/keyword][/url] незадолго до закрытия бара .
+
+[b]Криминальное прошлое:[/b] Ранее был судим по статье, связанной с нанесением телесных повреждений с применением холодного оружия.
 
 [b]Возможный мотив:[/b] Личный [url=00nf-conflict][keyword id=00nf-conflict type=event]конфликт[/keyword][/url], предположительно связанный с финансовыми разногласиями или нарушением порядка в заведении. 
 
-[b]Дополнительные сведения:[/b] • доступ к кухонным и барным [url=00nf-knife][keyword id=00nf-knife type=evidence]ножам[/keyword][/url] в пределах заведения • находился на рабочем месте в момент происшествия • алиби после закрытия бара не подтверждено 
-
-[b]Текущий статус:[/b] Подлежит дополнительной проверке. Был проведен допрос и взяты образцы ДНК для сравнительного анализа."
+[b]Дополнительные сведения:[/b] • находился на рабочем месте в момент происшествия • алиби после закрытия бара не подтверждено "
 metadata/_custom_type_script = "uid://d2y8emyuyj6is"
