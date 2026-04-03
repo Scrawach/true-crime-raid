@@ -13,9 +13,9 @@ func _ready() -> void:
 
 func _on_interacted(body: PlayerBody3D) -> void:
 	if body.hand.is_empty():
-		take_dna(body.hand)
+		player_take_dna(body.hand)
 	else:
-		put_dna(body.hand)
+		player_put_dna(body.hand)
 
 func initialize() -> void:
 	for point in handle_points.get_children():
@@ -24,23 +24,29 @@ func initialize() -> void:
 func has_tubes() -> bool:
 	return not closed_points.is_empty()
 
-func take_dna(hand: PlayerHand) -> void:
+func player_take_dna(hand: PlayerHand) -> void:
+	hand.pickup(take_dna())
+
+func take_dna() -> DNAItem:
 	var random_point: Node3D = closed_points.keys().pick_random()
 	var random_dna := closed_points[random_point]
 	closed_points.erase(random_point)
 	free_points.append(random_point)
-	hand.pickup(random_dna)
+	return random_dna
 
-func put_dna(hand: PlayerHand) -> void:
+func put_dna(dna: DNAItem) -> void:
+	var random_point: Node3D = free_points.pick_random()
+	free_points.erase(random_point)
+	closed_points[random_point] = dna
+	dna.reparent(random_point)
+	dna.position = Vector3.ZERO
+	dna.rotation = Vector3.ZERO
+	dna.grab()
+
+func player_put_dna(hand: PlayerHand) -> void:
 	if not hand.item is DNAItem:
 		return
 	
-	var random_point: Node3D = free_points.pick_random()
-	var dna_item := hand.item
-	free_points.erase(random_point)
-	closed_points[random_point] = dna_item
+	var player_dna := hand.item
 	hand.drop()
-	dna_item.reparent(random_point)
-	dna_item.position = Vector3.ZERO
-	dna_item.rotation = Vector3.ZERO
-	dna_item.grab()
+	put_dna(player_dna)

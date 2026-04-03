@@ -8,11 +8,14 @@
 [ext_resource type="Script" uid="uid://3ms34aqil1yq" path="res://devices/workbench/interact_with_workbench.gd" id="5_dqg1t"]
 [ext_resource type="Script" uid="uid://dfirt24d33h4t" path="res://devices/workbench/uv_lamp/uv_lamp.gd" id="6_1l1er"]
 [ext_resource type="Script" uid="uid://dyn1podjnuscv" path="res://common/clickable_area_3d.gd" id="6_te8by"]
+[ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="7_kagso"]
 [ext_resource type="Script" uid="uid://o2k8na7qop34" path="res://devices/workbench/button_3d.gd" id="8_ba23d"]
 [ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="8_br3u5"]
 [ext_resource type="Script" uid="uid://dqub8wp4vk6wr" path="res://devices/workbench/item_handler.gd" id="8_danfj"]
 [ext_resource type="Material" uid="uid://dkfvrhwojym1q" path="res://prototyping/materials/M_prototype_blue.tres" id="9_4de6e"]
 [ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="10_ba23d"]
+[ext_resource type="Script" uid="uid://djn3m31bhndl" path="res://devices/workbench/timed_panel.gd" id="14_rsvmc"]
+[ext_resource type="PackedScene" uid="uid://ckpmqqlqc72kj" path="res://devices/tubes_stand/tubes_stand.tscn" id="15_y2s4f"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_s2jfl"]
 data = PackedVector3Array(-0.6074, 0.018299999, -0.29209998, -0.598, 0.018299999, 0.2958, -0.6074, 0.018299999, 0.27699998, -0.598, 0.018299999, 0.2958, -0.5373, 0.018299999, 0.3146, -0.5724, 0.018299999, 0.3096, -0.6074, 0.018299999, -0.29209998, -0.5373, 0.018299999, 0.3146, -0.598, 0.018299999, 0.2958, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.5219, 0.018299999, 0.3146, -0.5373, 0.018299999, 0.3146, 0.5919, 0.018299999, 0.27699998, 0.55689996, 0.018299999, 0.3096, -0.6074, 0.018299999, -0.29209998, 0.5919, 0.018299999, 0.27699998, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.5919, 0.018299999, 0.27699998, 0.5826, 0.018299999, 0.2958, -0.5724, 0.018299999, -0.3247, -0.6074, 0.018299999, -0.29209998, -0.598, 0.018299999, -0.3109, 0.5219, 0.018299999, -0.32979998, -0.6074, 0.018299999, -0.29209998, -0.5724, 0.018299999, -0.3247, 0.5919, 0.018299999, 0.27699998, -0.6074, 0.018299999, -0.29209998, 0.5219, 0.018299999, -0.32979998, 0.5219, 0.018299999, -0.32979998, -0.5724, 0.018299999, -0.3247, -0.5373, 0.018299999, -0.32979998, 0.5919, 0.018299999, 0.27699998, 0.5219, 0.018299999, -0.32979998, 0.5826, 0.018299999, -0.3109, 0.5826, 0.018299999, -0.3109, 0.5219, 0.018299999, -0.32979998, 0.55689996, 0.018299999, -0.3247, 0.5919, 0.018299999, 0.27699998, 0.5826, 0.018299999, -0.3109, 0.5919, 0.018299999, -0.29209998, -0.598, 0.0018, 0.2958, -0.6074, 0.0018, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.6074, 0.0018, -0.29209998, -0.5724, 0.0018, -0.3247, -0.598, 0.0018, -0.3109, -0.598, 0.0018, 0.2958, -0.5724, 0.0018, -0.3247, -0.6074, 0.0018, -0.29209998, -0.5724, 0.0018, -0.3247, 0.5219, 0.0018, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5724, 0.0018, -0.3247, 0.5826, 0.0018, -0.3109, 0.5219, 0.0018, -0.32979998, -0.598, 0.0018, 0.2958, 0.5826, 0.0018, -0.3109, -0.5724, 0.0018, -0.3247, 0.5219, 0.0018, -0.32979998, 0.5826, 0.0018, -0.3109, 0.55689996, 0.0018, -0.3247, -0.5373, 0.0018, 0.3146, -0.598, 0.0018, 0.2958, -0.5724, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, -0.598, 0.0018, 0.2958, -0.5373, 0.0018, 0.3146, 0.5826, 0.0018, -0.3109, -0.598, 0.0018, 0.2958, 0.55689996, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, -0.5373, 0.0018, 0.3146, 0.5219, 0.0018, 0.3146, 0.5826, 0.0018, -0.3109, 0.55689996, 0.0018, 0.3096, 0.5919, 0.0018, 0.27699998, 0.5919, 0.0018, 0.27699998, 0.55689996, 0.0018, 0.3096, 0.5826, 0.0018, 0.2958, 0.5826, 0.0018, -0.3109, 0.5919, 0.0018, 0.27699998, 0.5919, 0.0018, -0.29209998, 0.5219, 0.0018, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5724, 0.018299999, -0.3247, 0.5219, 0.0018, -0.32979998, 0.5219, 0.018299999, -0.32979998, -0.5373, 0.018299999, -0.32979998, -0.5373, 0.0018, -0.32979998, -0.5724, 0.018299999, -0.3247, -0.5724, 0.0018, -0.3247, 0.55689996, 0.0018, -0.3247, 0.5219, 0.018299999, -0.32979998, 0.5219, 0.0018, -0.32979998, -0.5724, 0.0018, -0.3247, -0.5724, 0.018299999, -0.3247, -0.598, 0.018299999, -0.3109, 0.55689996, 0.0018, -0.3247, 0.55689996, 0.018299999, -0.3247, 0.5219, 0.018299999, -0.32979998, -0.5724, 0.0018, -0.3247, -0.598, 0.018299999, -0.3109, -0.598, 0.0018, -0.3109, 0.5826, 0.0018, -0.3109, 0.55689996, 0.018299999, -0.3247, 0.55689996, 0.0018, -0.3247, -0.598, 0.0018, -0.3109, -0.598, 0.018299999, -0.3109, -0.6074, 0.018299999, -0.29209998, 0.5826, 0.0018, -0.3109, 0.5826, 0.018299999, -0.3109, 0.55689996, 0.018299999, -0.3247, -0.598, 0.0018, -0.3109, -0.6074, 0.018299999, -0.29209998, -0.6074, 0.0018, -0.29209998, 0.5919, 0.0018, -0.29209998, 0.5826, 0.018299999, -0.3109, 0.5826, 0.0018, -0.3109, -0.6074, 0.0018, -0.29209998, -0.6074, 0.018299999, -0.29209998, -0.6074, 0.018299999, 0.27699998, 0.5919, 0.0018, -0.29209998, 0.5919, 0.018299999, -0.29209998, 0.5826, 0.018299999, -0.3109, -0.6074, 0.0018, -0.29209998, -0.6074, 0.018299999, 0.27699998, -0.6074, 0.0018, 0.27699998, 0.5919, 0.0018, 0.27699998, 0.5919, 0.018299999, -0.29209998, 0.5919, 0.0018, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.6074, 0.018299999, 0.27699998, -0.598, 0.018299999, 0.2958, 0.5919, 0.0018, 0.27699998, 0.5919, 0.018299999, 0.27699998, 0.5919, 0.018299999, -0.29209998, -0.6074, 0.0018, 0.27699998, -0.598, 0.018299999, 0.2958, -0.598, 0.0018, 0.2958, 0.5826, 0.0018, 0.2958, 0.5919, 0.018299999, 0.27699998, 0.5919, 0.0018, 0.27699998, -0.598, 0.0018, 0.2958, -0.598, 0.018299999, 0.2958, -0.5724, 0.018299999, 0.3096, 0.5826, 0.0018, 0.2958, 0.5826, 0.018299999, 0.2958, 0.5919, 0.018299999, 0.27699998, -0.598, 0.0018, 0.2958, -0.5724, 0.018299999, 0.3096, -0.5724, 0.0018, 0.3096, 0.55689996, 0.0018, 0.3096, 0.5826, 0.018299999, 0.2958, 0.5826, 0.0018, 0.2958, -0.5724, 0.0018, 0.3096, -0.5724, 0.018299999, 0.3096, -0.5373, 0.018299999, 0.3146, 0.55689996, 0.0018, 0.3096, 0.55689996, 0.018299999, 0.3096, 0.5826, 0.018299999, 0.2958, -0.5724, 0.0018, 0.3096, -0.5373, 0.018299999, 0.3146, -0.5373, 0.0018, 0.3146, 0.5219, 0.0018, 0.3146, 0.55689996, 0.018299999, 0.3096, 0.55689996, 0.0018, 0.3096, -0.5373, 0.0018, 0.3146, -0.5373, 0.018299999, 0.3146, 0.5219, 0.018299999, 0.3146, 0.5219, 0.0018, 0.3146, 0.5219, 0.018299999, 0.3146, 0.55689996, 0.018299999, 0.3096, -0.5373, 0.0018, 0.3146, 0.5219, 0.018299999, 0.3146, 0.5219, 0.0018, 0.3146)
@@ -63,6 +66,13 @@ _data = {
 &"press": SubResource("Animation_ba23d")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oste8"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Workbench" type="Node3D" unique_id=1556907178]
 script = ExtResource("1_oste8")
 
@@ -94,11 +104,14 @@ shape = SubResource("ConcavePolygonShape3D_s2jfl")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=495345202]
 transform = Transform3D(1, 0, 0, 0, 0.41310444, 0.91068363, 0, -0.9106837, 0.41310444, 0, 0.7931682, 0.25878954)
 
-[node name="InteractWithWorkbench" type="Node" parent="." unique_id=610222775 node_paths=PackedStringArray("uv_lamp", "item_handler", "interaction_camera", "interaction_area")]
+[node name="InteractWithWorkbench" type="Node" parent="." unique_id=610222775 node_paths=PackedStringArray("uv_lamp", "item_handler", "tubes", "sample_timed_panel", "interaction_camera", "interaction_area")]
 unique_name_in_owner = true
 script = ExtResource("5_dqg1t")
+dna_tube_scene = ExtResource("7_kagso")
 uv_lamp = NodePath("../UV Lamp")
 item_handler = NodePath("../ItemHandler")
+tubes = NodePath("../TubesStand/InteractWithTubesStand")
+sample_timed_panel = NodePath("../CanvasLayer/Sample Taken Panel/TimedPanel")
 interaction_camera = NodePath("../Camera3D")
 interaction_area = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://3ms34aqil1yq"
@@ -157,4 +170,39 @@ metadata/_custom_type_script = "uid://dqub8wp4vk6wr"
 
 [node name="Marker3D" type="Marker3D" parent="ItemHandler" unique_id=232145119]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1819227234]
+
+[node name="Sample Taken Panel" type="PanelContainer" parent="CanvasLayer" unique_id=1259595860]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = 63.0
+offset_right = 112.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oste8")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Sample Taken Panel" unique_id=1475940941]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Sample Taken Panel/MarginContainer" unique_id=1716308968]
+layout_mode = 2
+text = "СОБРАН ДНК-ОБРАЗЕЦ"
+
+[node name="TimedPanel" type="Node" parent="CanvasLayer/Sample Taken Panel" unique_id=1432075115 node_paths=PackedStringArray("panel")]
+script = ExtResource("14_rsvmc")
+panel = NodePath("..")
+time = 5.0
+metadata/_custom_type_script = "uid://djn3m31bhndl"
+
+[node name="TubesStand" parent="." unique_id=64065040 instance=ExtResource("15_y2s4f")]
+transform = Transform3D(-0.37000617, 0, -0.92902935, 0, 1, 0, 0.92902935, 0, -0.37000617, -0.7975156, 0, -0.16952023)
+
 [editable path="workbench_mat"]
+[editable path="TubesStand"]

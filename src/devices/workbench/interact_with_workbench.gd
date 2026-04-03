@@ -1,8 +1,13 @@
 class_name InteractWithWorkbench
 extends InteractWithDevice
 
+@export var dna_tube_scene: PackedScene
+
 @export var uv_lamp: UVLamp
 @export var item_handler: ItemHandler
+@export var tubes: InteractWithTubesStand
+
+@export var sample_timed_panel: TimedPanel
 
 var item: BaseItem
 
@@ -14,8 +19,10 @@ func start_interaction(target: PlayerBody3D) -> void:
 	item_handler.clear()
 	uv_lamp.enable()
 	grab(target.hand.item)
+	subscribe_on_dna_points()
 	
 func stop_interaction() -> void:
+	unsubscribe_from_dna_points()
 	uv_lamp.disable()
 	ungrab(item)
 	item_handler.clear()
@@ -31,6 +38,21 @@ func ungrab(target: BaseItem) -> void:
 	item.reparent(player.hand.hand_point)
 	target.position = Vector3.ZERO
 	target.rotation = Vector3.ZERO
+
+func subscribe_on_dna_points() -> void:
+	for point in item.get_dna_interactive_points():
+		point.clicked.connect(_on_dna_clicked)
+
+func unsubscribe_from_dna_points() -> void:
+	for point in item.get_dna_interactive_points():
+		point.clicked.disconnect(_on_dna_clicked)
+
+func _on_dna_clicked(point: DNAInteractivePoint3D) -> void:
+	sample_timed_panel.timed_show()
+	var dna_tube := dna_tube_scene.instantiate() as DNAItem
+	add_child(dna_tube)
+	dna_tube.dna_data = point.dna_data
+	tubes.put_dna(dna_tube)
 
 func _on_uv_lamp_changed(is_active: bool) -> void:
 	for point in item.get_interactive_points().get_children():

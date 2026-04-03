@@ -63,7 +63,9 @@ func inspect(target: BaseItem) -> void:
 	target.rotation = Vector3.ZERO
 	
 	var points := target.get_interactive_points()
-	points.enable()
+	for point in points.get_children():
+		if point is OpenInteractivePoint3D:
+			point.enable()
 	points.clicked.connect(_on_clicked)
 	
 	if item.data:
@@ -79,7 +81,9 @@ func abort() -> void:
 	camera_zoom.clear()
 	
 	var points := item.get_interactive_points()
-	points.disable()
+	for point in points.get_children():
+		if point is OpenInteractivePoint3D:
+			point.disable()
 	points.clicked.disconnect(_on_clicked)
 	
 	set_process_input(false)
