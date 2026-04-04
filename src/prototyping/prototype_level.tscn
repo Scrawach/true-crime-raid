@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="6_17xy5"]
 [ext_resource type="PackedScene" uid="uid://cl701vbhrtifk" path="res://devices/workbench/workbench.tscn" id="6_kyd4t"]
 [ext_resource type="PackedScene" uid="uid://b40ypkl0nl4b2" path="res://devices/box/box.tscn" id="8_bujhi"]
+[ext_resource type="PackedScene" uid="uid://dsegc2yupsshg" path="res://devices/table/table.tscn" id="9_nb3ri"]
 [ext_resource type="PackedScene" uid="uid://bocxkplxo28ht" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.tscn" id="10_7fl8n"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_huww6"]
@@ -56,6 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92435277, 0.87859845, -3.93
 [node name="Box" parent="Environment/Devices" unique_id=1870866890 instance=ExtResource("8_bujhi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0.6860082, -3.8331056)
 spawn_scene = ExtResource("2_ia5wu")
+
+[node name="Table" parent="Environment/Devices" unique_id=778473414 instance=ExtResource("9_nb3ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9567218, 0, 0)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("2_dsgtm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)

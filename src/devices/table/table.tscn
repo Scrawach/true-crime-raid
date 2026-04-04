@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dsegc2yupsshg"]
+
+[ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="1_5hina"]
+[ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="2_48rla"]
+[ext_resource type="Script" uid="uid://2t6nykh3ivmi" path="res://devices/table/interact_with_table.gd" id="3_48rla"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ia5wu"]
+size = Vector3(0.16772461, 1.510376, 3.111145)
+
+[node name="Table" type="Node3D" unique_id=778473414]
+
+[node name="InteractionArea3D" type="Area3D" parent="." unique_id=1454102033 node_paths=PackedStringArray("interact_state")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.788353, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_5hina")
+interact_state = NodePath("../InteractWithTable")
+metadata/_custom_type_script = "uid://dlm1uspq25qm7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea3D" unique_id=1585365414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016235352, -0.019714355, 0.021392822)
+shape = SubResource("BoxShape3D_ia5wu")
+
+[node name="InteractTooltip3D" parent="InteractionArea3D" unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("2_48rla")]
+interaction = NodePath("..")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1478012687]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
+
+[node name="InteractWithTable" type="Node" parent="." unique_id=1436366731 node_paths=PackedStringArray("interaction_camera", "interaction_area")]
+script = ExtResource("3_48rla")
+interaction_camera = NodePath("../Camera3D")
+interaction_area = NodePath("../InteractionArea3D")
+metadata/_custom_type_script = "uid://2t6nykh3ivmi"
