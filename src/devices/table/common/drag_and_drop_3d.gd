@@ -98,7 +98,7 @@ func _drag() -> void:
 
 func _end_drag() -> void:
 	is_dragging = false
-	if table_raycast.is_colliding():
+	if table_raycast.is_colliding() and sticker_hover.is_valid_position():
 		dragging_body.global_position = table_raycast.get_collision_point()
 		table_stickers.append(dragging_body)
 		dragging_body = null
@@ -111,7 +111,7 @@ func _update_hover_position() -> void:
 	
 	var target_position: Vector3
 	
-	if table_raycast.is_colliding():
+	if table_raycast.is_colliding() and sticker_hover.is_valid_position():
 		target_position = table_raycast.get_collision_point()
 		hover_offset = target_position - dragging_body.global_position
 		sticker_hover.make_valid()
