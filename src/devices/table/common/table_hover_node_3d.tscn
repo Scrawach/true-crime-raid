@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cbp6cvnr6t8d8"]
+
+[ext_resource type="Script" uid="uid://uk5haho3gpw5" path="res://devices/table/common/table_hover_node_3d.gd" id="1_xqgvk"]
+[ext_resource type="Material" uid="uid://c15wp3qwtyeih" path="res://devices/table/materials/M_table_hover.tres" id="2_qq1k1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y55wg"]
+size = Vector3(0.2, 0.2, 0.02)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_26vo7"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
+
+[node name="TableHoverNode3D" type="Node3D" unique_id=703492729]
+script = ExtResource("1_xqgvk")
+metadata/_custom_type_script = "uid://uk5haho3gpw5"
+
+[node name="Table Hover Mesh" type="MeshInstance3D" parent="." unique_id=412232189]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_y55wg")
+surface_material_override/0 = ExtResource("2_qq1k1")
+
+[node name="Table Hover Path" type="MeshInstance3D" parent="Table Hover Mesh" unique_id=533013697]
+unique_name_in_owner = true
+transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 1.1554839e-08, 0, 0.2643435)
+mesh = SubResource("CylinderMesh_26vo7")
+surface_material_override/0 = ExtResource("2_qq1k1")

@@ -1,6 +1,8 @@
 class_name TableStickers
 extends Node3D
 
+@export var connection_material: ShaderMaterial
+
 var connections: Array[Connection]
 
 func append(sticker: Sticker) -> void:
@@ -39,7 +41,7 @@ func create_connections_between() -> void:
 			
 			var start_pos := target_sticker.pin_node.global_position
 			var end_pos := sticker.pin_node.global_position
-			var connection = Draw3D.line(start_pos, end_pos, Color.FIREBRICK, self, 0.005)
+			var connection = Draw3D.line(start_pos, end_pos, self, connection_material, 0.005)
 			connections.append(Connection.new(target_sticker, sticker, connection))
 
 func has_connection_between(a: Sticker, b: Sticker) -> bool:

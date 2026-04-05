@@ -10,10 +10,10 @@ const RAY_LENGTH := 100
 @export var hand: StickerHand
 @export var table_raycast: RayCast3D
 
-@export var hover_mesh: Node3D
-@export var hover_mesh_path: Node3D
+@export var sticker_hover: TableHoverNode3D
 
 @export var table_stickers: TableStickers
+@export var is_disabled: bool = true
 
 var dragging_body: Sticker
 var dragging_body_offset: Vector3
@@ -21,8 +21,16 @@ var dragging_body_offset: Vector3
 var is_dragging: bool
 var main_camera: Camera3D
 
+var hover_offset: Vector3
+
 func _ready() -> void:
 	main_camera = get_viewport().get_camera_3d()
+
+func enable() -> void:
+	is_disabled = false
+
+func disable() -> void:
+	is_disabled = true
 
 func make_cast(camera: Camera3D) -> Dictionary:
 	var mouse_position := get_viewport().get_mouse_position()
@@ -41,6 +49,9 @@ func get_mouse_position_in_world_3d() -> Vector3:
 	return main_camera.project_position(mouse_position, depth)
 
 func _input(event: InputEvent) -> void:
+	if is_disabled:
+		return
+	
 	if event is InputEventMouseMotion and is_dragging:
 		_drag()
 		return
@@ -78,8 +89,7 @@ func _start_drag() -> void:
 	dragging_body.global_position = target + dragging_body_offset
 	
 	_update_hover_position()
-	var distance := dragging_body.global_position.distance_to(hover_mesh.global_position)
-	hover_mesh_path.scale.y = distance
+	sticker_hover.enable()
 
 func _drag() -> void:
 	_update_hover_position()
@@ -92,16 +102,22 @@ func _end_drag() -> void:
 		dragging_body.global_position = table_raycast.get_collision_point()
 		table_stickers.append(dragging_body)
 		dragging_body = null
-	hover_mesh.hide()
-	pass
+	sticker_hover.disable()
 
 func _update_hover_position() -> void:
 	table_raycast.global_position = dragging_body.global_position
 	table_raycast.force_update_transform()
 	table_raycast.force_raycast_update()
 	
+	var target_position: Vector3
+	
 	if table_raycast.is_colliding():
-		hover_mesh.global_position = table_raycast.get_collision_point()
-		hover_mesh.show()
+		target_position = table_raycast.get_collision_point()
+		hover_offset = target_position - dragging_body.global_position
+		sticker_hover.make_valid()
 	else:
-		hover_mesh.hide()
+		target_position = dragging_body.global_position + hover_offset
+		sticker_hover.make_invalid()
+	
+	sticker_hover.update(dragging_body.global_position, target_position)
+	
