@@ -59,6 +59,11 @@ func _input(event: InputEvent) -> void:
 	if not event is InputEventMouseButton:
 		return
 	
+	if event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT and is_dragging:
+		is_dragging = false
+		hand.update_sticker_positions()
+		sticker_hover.hide()
+	
 	if event.button_index != MOUSE_BUTTON_LEFT:
 		return
 	
@@ -101,8 +106,12 @@ func _end_drag() -> void:
 	if table_raycast.is_colliding() and sticker_hover.is_valid_position():
 		dragging_body.global_position = table_raycast.get_collision_point()
 		table_stickers.append(dragging_body)
-		dragging_body = null
+	else:
+		hand.update_sticker_positions()
+		
 	sticker_hover.disable()
+	dragging_body = null
+	hand.update_sticker_positions()
 
 func _update_hover_position() -> void:
 	table_raycast.global_position = dragging_body.global_position

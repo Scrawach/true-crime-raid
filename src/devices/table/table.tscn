@@ -73,6 +73,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
 [node name="Sticker3" parent="Stickers Node3D/Stickers Hand" unique_id=365103148 instance=ExtResource("5_26vo7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
 
+[node name="Sticker4" parent="Stickers Node3D/Stickers Hand" unique_id=733177796 instance=ExtResource("5_26vo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
+
 [node name="Show Hand Position" type="Marker3D" parent="Stickers Node3D" unique_id=38995899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.26591372, -0.6013519)
 
@@ -81,6 +84,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.5840533, -
 
 [node name="TableHoverNode3D" parent="Stickers Node3D" unique_id=703492729 instance=ExtResource("6_4brtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.967015e-08, -0.58996344, -1.1363208)
+visible = false
 valid_material = ExtResource("4_b7tqs")
 invalid_material = ExtResource("8_k5arx")
 
