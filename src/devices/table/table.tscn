@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://dvs73hbvr0e2g" path="res://devices/table/table_stickers.gd" id="8_4brtg"]
 [ext_resource type="Material" uid="uid://u1w1ss6emu5j" path="res://devices/table/materials/M_table_invalid_hover.tres" id="8_k5arx"]
 [ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="9_xlcn7"]
+[ext_resource type="Script" uid="uid://cp1rw6ijyemtg" path="res://devices/table/table_initializer.gd" id="12_5boxa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia5wu"]
 size = Vector3(0.16772461, 1.510376, 3.111145)
@@ -65,17 +66,6 @@ show_position = NodePath("../Show Hand Position")
 hide_position = NodePath("../Hide Hand Position")
 smooth_duration = 0.3
 
-[node name="Sticker" parent="Stickers Node3D/Stickers Hand" unique_id=958233916 instance=ExtResource("5_26vo7")]
-
-[node name="Sticker2" parent="Stickers Node3D/Stickers Hand" unique_id=1922272832 instance=ExtResource("5_26vo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
-
-[node name="Sticker3" parent="Stickers Node3D/Stickers Hand" unique_id=365103148 instance=ExtResource("5_26vo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
-
-[node name="Sticker4" parent="Stickers Node3D/Stickers Hand" unique_id=733177796 instance=ExtResource("5_26vo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
-
 [node name="Show Hand Position" type="Marker3D" parent="Stickers Node3D" unique_id=38995899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.26591372, -0.6013519)
 
@@ -117,3 +107,10 @@ shape = SubResource("BoxShape3D_4brtg")
 [node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553]
 script = ExtResource("8_4brtg")
 connection_material = ExtResource("9_xlcn7")
+
+[node name="TableInitializer" type="Node" parent="." unique_id=112741787 node_paths=PackedStringArray("hand")]
+script = ExtResource("12_5boxa")
+directory_path = "res://scenarios/00_night_fight/items/data/stickers/"
+hand = NodePath("../Stickers Node3D/Stickers Hand")
+sticker_scene = ExtResource("5_26vo7")
+metadata/_custom_type_script = "uid://cp1rw6ijyemtg"

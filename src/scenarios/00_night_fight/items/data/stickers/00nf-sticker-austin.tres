@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://bejkr5yp32d76"]
+
+[ext_resource type="Texture2D" uid="uid://i51evci1idyq" path="res://icon.svg" id="1_xuvrp"]
+[ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_b4ud4"]
+
+[resource]
+script = ExtResource("2_b4ud4")
+id = "00nf-sticker-austin"
+name = "Austin Bolton"
+photo = ExtResource("1_xuvrp")
+connections = Array[String](["00nf-sticker-austin", "00nf-sticker-knife-fingerprint", "00nf-sticker-butts-austin", "00nf-sticker-ian"])
+keyword_id = "00nf-austin"
+metadata/_custom_type_script = "uid://cc1doh1puvrhv"

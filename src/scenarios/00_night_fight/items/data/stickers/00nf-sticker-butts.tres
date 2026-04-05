@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://bq3yk2h68t8vt"]
+
+[ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="1_busdd"]
+
+[resource]
+script = ExtResource("1_busdd")
+id = "00nf-sticker-butts"
+name = "Окурки"
+connections = Array[String](["00nf-sticker-butts-austin"])
+keyword_id = "00nf-butts"
+metadata/_custom_type_script = "uid://cc1doh1puvrhv"

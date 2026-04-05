@@ -3,6 +3,7 @@ extends Node3D
 
 @export var connection_material: ShaderMaterial
 
+var stickers: Dictionary[String, Sticker]
 var connections: Array[Connection]
 
 func append(sticker: Sticker) -> void:
@@ -10,12 +11,18 @@ func append(sticker: Sticker) -> void:
 		sticker.reparent(self)
 	else:
 		add_child(sticker)
-		
+	
+	if sticker.data:
+		stickers[sticker.data.id] = sticker
+	
 	sticker.pin()
-	create_connections_between()
+	create_connections(sticker)
 
 func remove(sticker: Sticker) -> void:
 	sticker.unpin()
+	
+	if sticker.data:
+		stickers.erase(sticker.data.id)
 	
 	var sticker_connections := find_all_connections(sticker)
 	for connection in sticker_connections:
@@ -32,17 +39,17 @@ func get_appended_stickers() -> Array[Sticker]:
 			result.append(child)
 	return result
 
-func create_connections_between() -> void:
-	var stickers := get_appended_stickers()
-	for sticker in stickers:
-		for target_sticker in stickers:
-			if sticker == target_sticker:
-				continue
-			
-			var start_pos := target_sticker.pin_node.global_position
-			var end_pos := sticker.pin_node.global_position
-			var connection = Draw3D.line(start_pos, end_pos, self, connection_material, 0.005)
-			connections.append(Connection.new(target_sticker, sticker, connection))
+func create_connections(sticker: Sticker) -> void:
+	if not sticker.data:
+		return
+	
+	for connection in sticker.data.connections:
+		if not stickers.has(connection):
+			continue
+		
+		var target := stickers[connection]
+		var line := Draw3D.line(sticker.pin_node.global_position, target.pin_node.global_position, self, connection_material, 0.005)
+		connections.append(Connection.new(sticker, target, line))
 
 func has_connection_between(a: Sticker, b: Sticker) -> bool:
 	for connection in connections:

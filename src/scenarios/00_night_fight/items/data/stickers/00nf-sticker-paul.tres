@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://b7kfhx25su13p"]
+
+[ext_resource type="Texture2D" uid="uid://i51evci1idyq" path="res://icon.svg" id="1_8qvgy"]
+[ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_bywq6"]
+
+[resource]
+script = ExtResource("2_bywq6")
+id = "00nf-sticker-paul"
+name = "Paul Slater"
+photo = ExtResource("1_8qvgy")
+connections = Array[String](["00nf-sticker-ian"])
+keyword_id = "00nf-paul"
+metadata/_custom_type_script = "uid://cc1doh1puvrhv"

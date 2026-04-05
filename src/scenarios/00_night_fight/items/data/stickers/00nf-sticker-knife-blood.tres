@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://cuamm6fmr65tq"]
+
+[ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="1_5cwwe"]
+
+[resource]
+script = ExtResource("1_5cwwe")
+id = "00nf-sticker-knife-blood"
+name = "Кровь"
+connections = Array[String](["00nf-sticker-ian", "00nf-sticker-knife"])
+dna_id = "00nf-dna-knife1"
+metadata/_custom_type_script = "uid://cc1doh1puvrhv"
