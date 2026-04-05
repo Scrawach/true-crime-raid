@@ -84,6 +84,8 @@ scroll_down={
 3d_physics/layer_4="Items"
 3d_physics/layer_5="Item Interactive Point"
 3d_physics/layer_6="Small Item Interactive Point"
+3d_physics/layer_7="Sticker"
+3d_physics/layer_8="Table"
 
 [physics]
 

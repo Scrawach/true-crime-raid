@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://hm8yp8p4h68n"]
+
+[ext_resource type="Script" uid="uid://bjuijsgs5nexi" path="res://devices/table/stickers/sticker.gd" id="1_gp75q"]
+[ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="2_juudu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_48rla"]
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gp75q"]
+viewport_path = NodePath("Sticker Mesh/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y55wg"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_gp75q")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b7tqs"]
+data = PackedVector3Array(0.099999994, -0.099999994, 0, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, 0, -0.099999994, -0.099999994, 0, -0.099999994, 0.099999994, 0, 0.099999994, 0.099999994, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4brtg"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.02
+
+[node name="Sticker" type="Area3D" unique_id=958233916 node_paths=PackedStringArray("pin_node")]
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_gp75q")
+pin_node = NodePath("Piece")
+
+[node name="Sticker Mesh" type="MeshInstance3D" parent="." unique_id=1292297328]
+mesh = SubResource("QuadMesh_48rla")
+surface_material_override/0 = SubResource("StandardMaterial3D_y55wg")
+
+[node name="SubViewport" type="SubViewport" parent="Sticker Mesh" unique_id=508987566]
+size = Vector2i(128, 128)
+
+[node name="Sticker Control" type="Control" parent="Sticker Mesh/SubViewport" unique_id=856052641]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control" unique_id=1532332574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.735357, 0.7735731, 0.6986019, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect" unique_id=1082076562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer" unique_id=1006568512]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer/VBoxContainer" unique_id=576684762]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1684914882]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "УЛИКА"
+horizontal_alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=444722462]
+shape = SubResource("ConcavePolygonShape3D_b7tqs")
+
+[node name="Piece" type="MeshInstance3D" parent="." unique_id=247900771]
+transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 2.897398e-10, 0.08367419, 0.0066284537)
+mesh = SubResource("CylinderMesh_4brtg")
+surface_material_override/0 = ExtResource("2_juudu")

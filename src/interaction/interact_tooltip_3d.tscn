@@ -22,6 +22,7 @@ billboard = 1
 double_sided = false
 no_depth_test = true
 fixed_size = true
+render_priority = -3
 texture = ExtResource("1_2h3jp")
 
 [node name="Background Tooltip" type="Sprite3D" parent="Main Tooltip" unique_id=1742718030]
@@ -30,7 +31,7 @@ billboard = 1
 double_sided = false
 no_depth_test = true
 fixed_size = true
-render_priority = -1
+render_priority = -4
 texture = ExtResource("2_jl87e")
 
 [node name="SmoothAppearSprite3D" type="Node" parent="Main Tooltip" unique_id=398859513 node_paths=PackedStringArray("target")]
@@ -53,7 +54,7 @@ billboard = 1
 double_sided = false
 no_depth_test = true
 fixed_size = true
-render_priority = -1
+render_priority = -2
 texture = ExtResource("5_tfoj7")
 
 [node name="SmoothAppearSprite3D" type="Node" parent="Interact Tooltip" unique_id=994689107 node_paths=PackedStringArray("target")]

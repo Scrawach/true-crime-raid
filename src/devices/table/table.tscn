@@ -3,9 +3,22 @@
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="1_5hina"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="2_48rla"]
 [ext_resource type="Script" uid="uid://2t6nykh3ivmi" path="res://devices/table/interact_with_table.gd" id="3_48rla"]
+[ext_resource type="Script" uid="uid://dbepi38vebh87" path="res://devices/table/stickers/stickers_hand.gd" id="3_bbggy"]
+[ext_resource type="Material" uid="uid://c15wp3qwtyeih" path="res://devices/table/materials/M_table_hover.tres" id="4_b7tqs"]
+[ext_resource type="Script" uid="uid://c243uqlnixv4o" path="res://devices/table/common/drag_and_drop_3d.gd" id="4_y55wg"]
+[ext_resource type="PackedScene" uid="uid://hm8yp8p4h68n" path="res://devices/table/stickers/sticker.tscn" id="5_26vo7"]
+[ext_resource type="Script" uid="uid://dvs73hbvr0e2g" path="res://devices/table/table_stickers.gd" id="8_4brtg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia5wu"]
 size = Vector3(0.16772461, 1.510376, 3.111145)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y55wg"]
+size = Vector3(0.2, 0.2, 0.02)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_26vo7"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 1.0
 
 [node name="Table" type="Node3D" unique_id=778473414]
 
@@ -27,8 +40,82 @@ interaction = NodePath("..")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1478012687]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
 
-[node name="InteractWithTable" type="Node" parent="." unique_id=1436366731 node_paths=PackedStringArray("interaction_camera", "interaction_area")]
+[node name="InteractWithTable" type="Node" parent="." unique_id=1436366731 node_paths=PackedStringArray("sticker_hand", "label_3d", "interaction_camera", "interaction_area")]
 script = ExtResource("3_48rla")
+sticker_hand = NodePath("../Stickers Node3D/Stickers Hand")
+label_3d = NodePath("../Label3D")
 interaction_camera = NodePath("../Camera3D")
 interaction_area = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://2t6nykh3ivmi"
+
+[node name="Label3D" type="Label3D" parent="." unique_id=933331022]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0964776, 2.3079593, -0.56103826)
+visible = false
+text = "Найдено стикеров: 0/9"
+font_size = 24
+outline_size = 6
+
+[node name="Stickers Node3D" type="Node3D" parent="." unique_id=594218479]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
+
+[node name="Stickers Hand" type="Node3D" parent="Stickers Node3D" unique_id=1837169998 node_paths=PackedStringArray("show_position", "hide_position")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.58402884, -0.6013519)
+script = ExtResource("3_bbggy")
+show_position = NodePath("../Show Hand Position")
+hide_position = NodePath("../Hide Hand Position")
+smooth_duration = 0.3
+
+[node name="Sticker" parent="Stickers Node3D/Stickers Hand" unique_id=958233916 instance=ExtResource("5_26vo7")]
+
+[node name="Sticker2" parent="Stickers Node3D/Stickers Hand" unique_id=1922272832 instance=ExtResource("5_26vo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
+
+[node name="Sticker3" parent="Stickers Node3D/Stickers Hand" unique_id=365103148 instance=ExtResource("5_26vo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2791977, 0, 0)
+
+[node name="Show Hand Position" type="Marker3D" parent="Stickers Node3D" unique_id=38995899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.26591372, -0.6013519)
+
+[node name="Hide Hand Position" type="Marker3D" parent="Stickers Node3D" unique_id=1621710371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6285923e-08, -0.5840533, -0.6013519)
+
+[node name="Table Hover Mesh" type="MeshInstance3D" parent="Stickers Node3D" unique_id=1769160215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.967015e-08, -0.58996344, -1.1363208)
+visible = false
+mesh = SubResource("BoxMesh_y55wg")
+surface_material_override/0 = ExtResource("4_b7tqs")
+
+[node name="Table Hover Path" type="MeshInstance3D" parent="Stickers Node3D/Table Hover Mesh" unique_id=345200021]
+transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 1.1554839e-08, 0, 0.2643435)
+mesh = SubResource("CylinderMesh_26vo7")
+surface_material_override/0 = ExtResource("4_b7tqs")
+
+[node name="DragAndDrop3D" type="Node3D" parent="." unique_id=1407678083 node_paths=PackedStringArray("hand", "table_raycast", "hover_mesh", "hover_mesh_path", "table_stickers")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
+script = ExtResource("4_y55wg")
+target_layer = 64
+collide_with_areas = true
+hand = NodePath("../Stickers Node3D/Stickers Hand")
+table_raycast = NodePath("../RayCast3D")
+hover_mesh = NodePath("../Stickers Node3D/Table Hover Mesh")
+hover_mesh_path = NodePath("../Stickers Node3D/Table Hover Mesh/Table Hover Path")
+table_stickers = NodePath("../Table Stickers")
+metadata/_custom_type_script = "uid://c243uqlnixv4o"
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=699899790]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 128
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Area3D" type="Area3D" parent="." unique_id=860202046]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=801157807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016235352, 1.7686386, 0.021392822)
+shape = SubResource("BoxShape3D_ia5wu")
+
+[node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553]
+script = ExtResource("8_4brtg")
