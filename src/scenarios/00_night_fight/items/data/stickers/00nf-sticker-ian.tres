@@ -8,6 +8,6 @@ script = ExtResource("2_1rqgm")
 id = "00nf-sticker-ian"
 name = "Ian Bolton"
 photo = ExtResource("1_b2uj8")
-connections = Array[String](["00nf-sticker-jim", "00nf-sticker-paul", "00nf-sticker-austin", "00nf-sticker-knife-blood"])
+connections = Array[String](["00nf-sticker-jim", "00nf-sticker-paul", "00nf-sticker-austin", "00nf-sticker-knife-blood", "00nf-sticker-revenge"])
 keyword_id = "00nf-ian"
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

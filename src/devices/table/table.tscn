@@ -12,12 +12,13 @@
 [ext_resource type="Material" uid="uid://u1w1ss6emu5j" path="res://devices/table/materials/M_table_invalid_hover.tres" id="8_k5arx"]
 [ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="9_xlcn7"]
 [ext_resource type="Script" uid="uid://cp1rw6ijyemtg" path="res://devices/table/table_initializer.gd" id="12_5boxa"]
+[ext_resource type="PackedScene" uid="uid://db30afugfjy5o" path="res://prototyping/assets/table.glb" id="13_pu4re"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia5wu"]
 size = Vector3(0.16772461, 1.510376, 3.111145)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4brtg"]
-size = Vector3(0.16772461, 0.82315063, 1.4405308)
+size = Vector3(0.14050293, 1.0685978, 2.6515534)
 
 [node name="Table" type="Node3D" unique_id=778473414]
 
@@ -39,19 +40,21 @@ interaction = NodePath("..")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1478012687]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
 
-[node name="InteractWithTable" type="Node" parent="." unique_id=1436366731 node_paths=PackedStringArray("sticker_hand", "label_3d", "table_sticker_dragging", "interaction_camera", "interaction_area")]
+[node name="InteractWithTable" type="Node" parent="." unique_id=1436366731 node_paths=PackedStringArray("sticker_hand", "label_3d", "table_sticker_dragging", "initializer", "interaction_camera", "interaction_area")]
 script = ExtResource("3_48rla")
 sticker_hand = NodePath("../Stickers Node3D/Stickers Hand")
 label_3d = NodePath("../Label3D")
 table_sticker_dragging = NodePath("../DragAndDrop3D")
+initializer = NodePath("../TableInitializer")
 interaction_camera = NodePath("../Camera3D")
 interaction_area = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://2t6nykh3ivmi"
 
 [node name="Label3D" type="Label3D" parent="." unique_id=933331022]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0964776, 2.3079593, -0.56103826)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0964776, 1.2634875, -0.8472669)
 visible = false
-text = "Найдено стикеров: 0/9"
+pixel_size = 0.003
+text = "Найдено элементов: 0 / 11"
 font_size = 24
 outline_size = 6
 
@@ -101,7 +104,7 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=801157807]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016235352, 1.7998428, 0.09293461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026245117, 1.7970209, 0.01161325)
 shape = SubResource("BoxShape3D_4brtg")
 
 [node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553]
@@ -114,3 +117,6 @@ directory_path = "res://scenarios/00_night_fight/items/data/stickers/"
 hand = NodePath("../Stickers Node3D/Stickers Hand")
 sticker_scene = ExtResource("5_26vo7")
 metadata/_custom_type_script = "uid://cp1rw6ijyemtg"
+
+[node name="table" parent="." unique_id=754463627 instance=ExtResource("13_pu4re")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.086134255, 0, 0)

@@ -9,5 +9,5 @@ id = "00nf-sticker-knife-fingerprint"
 name = "Отпечатки"
 photo = ExtResource("1_0sn0c")
 connections = Array[String](["00nf-sticker-knife", "00nf-sticker-austin"])
-keyword_id = "00nf-knife"
+dna_id = "00nf-dna-knife2"
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"
