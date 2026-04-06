@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://ckfnwc78mwxmr"]
 
+[ext_resource type="Texture2D" uid="uid://cs3jqyo2iyspo" path="res://scenarios/00_night_fight/items/data/stickers/photos/cup-fingerprint.png" id="1_15xck"]
 [ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="1_xb2k3"]
 
 [resource]
 script = ExtResource("1_xb2k3")
 id = "00nf-sticker-cup-fingerprint"
 name = "Отпечатки"
+photo = ExtResource("1_15xck")
 connections = Array[String](["00nf-sticker-cup", "00nf-sticker-jim"])
 dna_id = "00nf-dna-cup"
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

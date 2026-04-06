@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://cdqlrqvkiunei"]
 
+[ext_resource type="Texture2D" uid="uid://m3lbv4pqtlqj" path="res://scenarios/00_night_fight/items/data/stickers/photos/cup.png" id="1_ownvl"]
 [ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_c1cor"]
 
 [resource]
 script = ExtResource("2_c1cor")
 id = "00nf-sticker-cup"
 name = "Стакан"
+photo = ExtResource("1_ownvl")
 connections = Array[String](["00nf-sticker-cup-fingerprint"])
 keyword_id = "00nf-cup"
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

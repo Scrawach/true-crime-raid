@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cv4dj4fhf2dfr"]
+
+[ext_resource type="Script" uid="uid://bu2sjd86yw7t0" path="res://addons/screenshots/screenshots.gd" id="1_7g44u"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7g44u"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Environment" id="Environment_7g44u"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
+
+[node name="Screenshots" type="Node" unique_id=1964962737]
+script = ExtResource("1_7g44u")
+metadata/_custom_type_script = "uid://bu2sjd86yw7t0"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1349177217]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=1874277217]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer" unique_id=719363734]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer/PanelContainer" unique_id=793864322]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer" unique_id=1285187088]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2107703807]
+layout_mode = 2
+
+[node name="Scene Header Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=653843743]
+layout_mode = 2
+text = "SCENE: "
+
+[node name="Scene Path Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=753958190]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Opene Scene Button" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=113865586]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OPEN SCENE"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=490341434]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1162327914]
+layout_mode = 2
+text = "DISTANCE: "
+
+[node name="Distance" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1281045063]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=819421766]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1014657642]
+layout_mode = 2
+text = "ROT:"
+
+[node name="RotX" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1620050332]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RotY" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1155804641]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RotZ" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=177623907]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=534675569]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1166451025]
+layout_mode = 2
+text = "OFFSET:"
+
+[node name="OffsetX" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1010597421]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OffsetY" type="LineEdit" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=453123518]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Update Button" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1669256225]
+unique_name_in_owner = true
+layout_mode = 2
+text = "UPDATE"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=207020008]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1901845517]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("ViewportTexture_7g44u")
+
+[node name="Make Button" type="Button" parent="CanvasLayer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1936937295]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MAKE SCREENSHOT"
+
+[node name="FileDialog" type="FileDialog" parent="CanvasLayer" unique_id=1729814871]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+file_mode = 0
+use_native_dialog = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1455418970]
+unique_name_in_owner = true
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=353633487]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1323555978]
+
+[node name="Point" type="Node3D" parent="SubViewport" unique_id=795590411]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport" unique_id=2048318004]
+environment = SubResource("Environment_7g44u")

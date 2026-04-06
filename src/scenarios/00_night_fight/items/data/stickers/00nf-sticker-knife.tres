@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://xvjpkcd68w6s"]
 
+[ext_resource type="Texture2D" uid="uid://bvbnfdj5lf0ft" path="res://scenarios/00_night_fight/items/data/stickers/photos/knife.png" id="1_bnemj"]
 [ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_1xwqv"]
 
 [resource]
 script = ExtResource("2_1xwqv")
 id = "00nf-sticker-knife"
 name = "Нож"
+photo = ExtResource("1_bnemj")
 connections = Array[String](["00nf-sticker-knife-blood", "00nf-sticker-knife-fingerprint"])
 keyword_id = "00nf-knife"
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

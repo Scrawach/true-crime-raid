@@ -16,8 +16,11 @@ func initialize() -> void:
 	hand.update_sticker_positions()
 
 static func load_all_stickers_data(directory: String) -> Array[TableStickerData]:
+	const RESOURCE_FORMAT := "tres"
 	var stickers: Array[TableStickerData]
 	for file_name in ResourceLoader.list_directory(directory):
+		if file_name.get_extension() != RESOURCE_FORMAT:
+			continue
 		var resource = load(directory.path_join(file_name))
 		if resource is TableStickerData:
 			stickers.append(resource)
