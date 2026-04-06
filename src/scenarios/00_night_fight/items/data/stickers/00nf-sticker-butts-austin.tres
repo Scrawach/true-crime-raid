@@ -10,4 +10,5 @@ name = "Слюна"
 photo = ExtResource("1_26ibo")
 connections = Array[String](["00nf-sticker-austin", "00nf-sticker-butts"])
 dna_id = "00nf-dna-butts"
+color = Color(0.44660002, 0.72688, 0.77, 1)
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

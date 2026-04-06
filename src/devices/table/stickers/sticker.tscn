@@ -46,7 +46,7 @@ anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 
-[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control" unique_id=1532332574]
+[node name="Sticker Background" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control" unique_id=1532332574]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.735357, 0.7735731, 0.6986019, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect" unique_id=1082076562]
+[node name="MarginContainer" type="MarginContainer" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background" unique_id=1082076562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,16 +67,16 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer" unique_id=1006568512]
+[node name="VBoxContainer" type="VBoxContainer" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer" unique_id=1006568512]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer/VBoxContainer" unique_id=576684762]
+[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=576684762]
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="Sticker Texture" type="TextureRect" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer/VBoxContainer/ColorRect" unique_id=189577978]
+[node name="Sticker Texture" type="TextureRect" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer/ColorRect" unique_id=189577978]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -87,7 +87,7 @@ grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Sticker Label" type="Label" parent="Sticker Mesh/SubViewport/Sticker Control/ColorRect/MarginContainer/VBoxContainer" unique_id=1684914882]
+[node name="Sticker Label" type="Label" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=1684914882]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

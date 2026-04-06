@@ -10,4 +10,5 @@ name = "Ian Bolton"
 photo = ExtResource("1_b2uj8")
 connections = Array[String](["00nf-sticker-jim", "00nf-sticker-paul", "00nf-sticker-austin", "00nf-sticker-knife-blood", "00nf-sticker-revenge"])
 keyword_id = "00nf-ian"
+color = Color(0.77, 0.44660002, 0.44660002, 1)
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"

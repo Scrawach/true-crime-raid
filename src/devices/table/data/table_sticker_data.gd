@@ -11,5 +11,7 @@ extends Resource
 @export var keyword_id: String
 @export var dna_id: String
 
+@export var color: Color
+
 func _to_string() -> String:
 	return "TSD: Id = %s (%s)" % [id, name]

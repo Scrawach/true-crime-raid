@@ -10,4 +10,5 @@ name = "Отпечатки"
 photo = ExtResource("1_0sn0c")
 connections = Array[String](["00nf-sticker-knife", "00nf-sticker-austin"])
 dna_id = "00nf-dna-knife2"
+color = Color(0.44705883, 0.7254902, 0.76862746, 1)
 metadata/_custom_type_script = "uid://cc1doh1puvrhv"
