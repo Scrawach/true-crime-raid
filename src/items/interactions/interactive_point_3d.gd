@@ -39,9 +39,11 @@ func _ready() -> void:
 
 func _on_screen_entered() -> void:
 	smooth_appear_sprite_3d.smooth_show()
+	clickable_area_3d.enable()
 
 func _on_screen_exited() -> void:
 	smooth_appear_sprite_3d.smooth_hide()
+	clickable_area_3d.disable()
 
 func is_active() -> bool:
 	return visible_point_on_camera.is_visible_on_screen
