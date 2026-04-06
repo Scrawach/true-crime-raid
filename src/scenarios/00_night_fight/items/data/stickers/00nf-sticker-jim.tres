@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://b658c4mraabxk"]
 
-[ext_resource type="Texture2D" uid="uid://i51evci1idyq" path="res://icon.svg" id="1_pmanw"]
+[ext_resource type="Texture2D" uid="uid://buxiqn0osqtc2" path="res://devices/computer/assets/img/icons/user.png" id="1_pmanw"]
 [ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_p55fb"]
 
 [resource]
