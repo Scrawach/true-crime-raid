@@ -23,6 +23,8 @@ var main_camera: Camera3D
 
 var hover_offset: Vector3
 
+var prev_hover_sticker: Sticker
+
 func _ready() -> void:
 	main_camera = get_viewport().get_camera_3d()
 
@@ -43,14 +45,38 @@ func make_cast(camera: Camera3D) -> Dictionary:
 	query.collide_with_bodies = collide_with_bodies
 	return space.intersect_ray(query)
 
+func get_sticker_on_mouse() -> Sticker:
+	var result := make_cast(main_camera)
+	if result.is_empty():
+		return null
+	var collider = result["collider"]
+	return collider as Sticker
+
 func get_mouse_position_in_world_3d() -> Vector3:
 	var mouse_position = get_viewport().get_mouse_position()
 	var depth =  hand.global_position.x - main_camera.global_position.x;
 	return main_camera.project_position(mouse_position, depth)
 
+func try_hover() -> void:
+	var sticker := get_sticker_on_mouse()
+	
+	if prev_hover_sticker == sticker:
+		return
+	
+	if prev_hover_sticker:
+		prev_hover_sticker.unhover()
+	
+	prev_hover_sticker = sticker
+	
+	if prev_hover_sticker:
+		prev_hover_sticker.hover()
+
 func _input(event: InputEvent) -> void:
 	if is_disabled:
 		return
+	
+	if event is InputEventMouseMotion and not is_dragging:
+		try_hover()
 	
 	if event is InputEventMouseMotion and is_dragging:
 		_drag()
@@ -76,7 +102,6 @@ func _start_drag() -> void:
 	var result := make_cast(main_camera)
 	if result.is_empty():
 		return
-	
 	var collider = result["collider"]
 	
 	if not collider is Sticker:

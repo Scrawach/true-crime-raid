@@ -7,6 +7,8 @@ extends Area3D
 @onready var sticker_label: Label = %"Sticker Label"
 @onready var sticker_texture: TextureRect = %"Sticker Texture"
 
+var hover_tween: Tween
+
 func initialize(new_data: TableStickerData) -> void:
 	data = new_data
 	sticker_label.text = new_data.name
@@ -14,6 +16,35 @@ func initialize(new_data: TableStickerData) -> void:
 
 func pin() -> void:
 	pin_node.show()
+	unhover()
 
 func unpin() -> void:
 	pin_node.hide()
+
+func is_pinned() -> bool:
+	return pin_node.visible
+
+func move_to(target: Vector3) -> void:
+	pass
+
+func hover() -> void:
+	_stop_tween_if_needed(hover_tween)
+	if is_pinned():
+		scale = Vector3.ONE
+		return
+	
+	hover_tween = create_tween()
+	hover_tween.tween_property(self, "scale", Vector3.ONE * 1.2, 0.15)
+
+func unhover() -> void:
+	_stop_tween_if_needed(hover_tween)
+	if is_pinned():
+		scale = Vector3.ONE
+		return
+	hover_tween = create_tween()
+	hover_tween.tween_property(self, "scale", Vector3.ONE, 0.15)
+
+func _stop_tween_if_needed(target: Tween) -> void:
+	if target:
+		target.custom_step(9999)
+		target.kill()
