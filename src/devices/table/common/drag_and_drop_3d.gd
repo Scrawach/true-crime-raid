@@ -27,12 +27,15 @@ var prev_hover_sticker: Sticker
 
 func _ready() -> void:
 	main_camera = get_viewport().get_camera_3d()
+	disable()
 
 func enable() -> void:
 	is_disabled = false
+	set_process_input(true)
 
 func disable() -> void:
 	is_disabled = true
+	set_process_input(false)
 
 func make_cast(camera: Camera3D) -> Dictionary:
 	var mouse_position := get_viewport().get_mouse_position()

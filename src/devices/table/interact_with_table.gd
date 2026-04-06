@@ -15,6 +15,7 @@ func start_interaction(target: PlayerBody3D) -> void:
 
 func stop_interaction() -> void:
 	table_sticker_dragging.disable()
+	sticker_hand.hide()
 	sticker_hand.smooth_hide()
 	label_3d.hide()
 	super.stop_interaction()
