@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_ukgx4")
+id = "00nf-dna-butts2"
 match_type = "Null"
 description = "Образец слюны. Обнаружен на окруке №2"
 metadata/_custom_type_script = "uid://bn7663kucbpmq"

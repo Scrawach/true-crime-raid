@@ -8,6 +8,7 @@ const RAY_LENGTH := 100
 @export var collide_with_bodies: bool
 
 @export var hand: StickerHand
+@export var holder: StickerHolder
 @export var table_raycast: RayCast3D
 
 @export var sticker_hover: TableHoverNode3D
@@ -90,8 +91,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_pressed() and event.button_index == MOUSE_BUTTON_RIGHT and is_dragging:
 		is_dragging = false
+		dragging_body.reparent(hand)
 		hand.update_sticker_positions()
 		sticker_hover.hide()
+		_update_hover_position()
+		holder.smooth_show()
 	
 	if event.button_index != MOUSE_BUTTON_LEFT:
 		return
@@ -123,6 +127,8 @@ func _start_drag() -> void:
 	
 	_update_hover_position()
 	sticker_hover.enable()
+	holder.smooth_hide()
+	dragging_body.reparent(self)
 
 func _drag() -> void:
 	_update_hover_position()
@@ -135,11 +141,13 @@ func _end_drag() -> void:
 		dragging_body.global_position = table_raycast.get_collision_point()
 		table_stickers.append(dragging_body)
 	else:
+		dragging_body.reparent(hand)
 		hand.update_sticker_positions()
 		
 	sticker_hover.disable()
 	dragging_body = null
 	hand.update_sticker_positions()
+	holder.smooth_show()
 
 func _update_hover_position() -> void:
 	table_raycast.global_position = dragging_body.global_position

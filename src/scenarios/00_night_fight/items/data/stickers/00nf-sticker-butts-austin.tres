@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_veb30")
 id = "00nf-sticker-butts-austin"
-name = "Слюна"
+name = "Окурок №3"
 photo = ExtResource("1_26ibo")
 connections = Array[String](["00nf-sticker-austin", "00nf-sticker-butts"])
 dna_id = "00nf-dna-butts"

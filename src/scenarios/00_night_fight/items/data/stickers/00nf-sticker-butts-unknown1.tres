@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TableStickerData" format=3 uid="uid://b4oaxdntn6vxc"]
+
+[ext_resource type="Texture2D" uid="uid://dlv46s6xxar5a" path="res://scenarios/00_night_fight/items/data/stickers/photos/ahpot-fingerprint.png" id="1_rxq04"]
+[ext_resource type="Script" uid="uid://cc1doh1puvrhv" path="res://devices/table/data/table_sticker_data.gd" id="2_moe7i"]
+
+[resource]
+script = ExtResource("2_moe7i")
+id = "00nf-sticker-butts-unknown1"
+name = "Окурок №1"
+photo = ExtResource("1_rxq04")
+connections = Array[String](["00nf-sticker-butts"])
+dna_id = "00nf-dna-butts1"
+color = Color(0.44660002, 0.72688, 0.77, 1)
+metadata/_custom_type_script = "uid://cc1doh1puvrhv"
