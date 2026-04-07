@@ -1,8 +1,8 @@
 class_name TableHoverNode3D
 extends Node3D
 
-@export var valid_material: StandardMaterial3D
-@export var invalid_material: StandardMaterial3D
+@export var valid_material: Material
+@export var invalid_material: Material
 
 @onready var hover_mesh: MeshInstance3D = %"Table Hover Mesh"
 @onready var hover_path: MeshInstance3D = %"Table Hover Path"

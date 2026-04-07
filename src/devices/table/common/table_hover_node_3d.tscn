@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cbp6cvnr6t8d8"]
 
 [ext_resource type="Script" uid="uid://uk5haho3gpw5" path="res://devices/table/common/table_hover_node_3d.gd" id="1_xqgvk"]
-[ext_resource type="Material" uid="uid://c15wp3qwtyeih" path="res://devices/table/materials/M_table_hover.tres" id="2_qq1k1"]
+[ext_resource type="Material" uid="uid://cfpe0ij444ue6" path="res://devices/table/materials/M_table_hover.tres" id="2_xqgvk"]
+[ext_resource type="Material" uid="uid://u1w1ss6emu5j" path="res://devices/table/materials/M_table_invalid_hover.tres" id="3_qq1k1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y55wg"]
 size = Vector3(0.2, 0.2, 0.02)
@@ -10,27 +11,31 @@ size = Vector3(0.2, 0.2, 0.02)
 top_radius = 0.02
 bottom_radius = 0.02
 height = 1.0
+cap_top = false
+cap_bottom = false
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xqgvk"]
 data = PackedVector3Array(-0.099999994, 0.099999994, 0.01, 0.099999994, 0.099999994, 0.01, -0.099999994, -0.099999994, 0.01, 0.099999994, 0.099999994, 0.01, 0.099999994, -0.099999994, 0.01, -0.099999994, -0.099999994, 0.01, 0.099999994, 0.099999994, -0.01, -0.099999994, 0.099999994, -0.01, 0.099999994, -0.099999994, -0.01, -0.099999994, 0.099999994, -0.01, -0.099999994, -0.099999994, -0.01, 0.099999994, -0.099999994, -0.01, 0.099999994, 0.099999994, 0.01, 0.099999994, 0.099999994, -0.01, 0.099999994, -0.099999994, 0.01, 0.099999994, 0.099999994, -0.01, 0.099999994, -0.099999994, -0.01, 0.099999994, -0.099999994, 0.01, -0.099999994, 0.099999994, -0.01, -0.099999994, 0.099999994, 0.01, -0.099999994, -0.099999994, -0.01, -0.099999994, 0.099999994, 0.01, -0.099999994, -0.099999994, 0.01, -0.099999994, -0.099999994, -0.01, 0.099999994, 0.099999994, 0.01, -0.099999994, 0.099999994, 0.01, 0.099999994, 0.099999994, -0.01, -0.099999994, 0.099999994, 0.01, -0.099999994, 0.099999994, -0.01, 0.099999994, 0.099999994, -0.01, -0.099999994, -0.099999994, 0.01, 0.099999994, -0.099999994, 0.01, -0.099999994, -0.099999994, -0.01, 0.099999994, -0.099999994, 0.01, 0.099999994, -0.099999994, -0.01, -0.099999994, -0.099999994, -0.01)
 
 [node name="TableHoverNode3D" type="Node3D" unique_id=703492729]
 script = ExtResource("1_xqgvk")
+valid_material = ExtResource("2_xqgvk")
+invalid_material = ExtResource("3_qq1k1")
 metadata/_custom_type_script = "uid://uk5haho3gpw5"
 
 [node name="Table Hover Mesh" type="MeshInstance3D" parent="." unique_id=412232189]
 unique_name_in_owner = true
 mesh = SubResource("BoxMesh_y55wg")
-surface_material_override/0 = ExtResource("2_qq1k1")
+surface_material_override/0 = ExtResource("2_xqgvk")
 
 [node name="Table Hover Origin" type="Node3D" parent="Table Hover Mesh" unique_id=1208249350]
 unique_name_in_owner = true
 
 [node name="Table Hover Path" type="MeshInstance3D" parent="Table Hover Mesh/Table Hover Origin" unique_id=533013697]
 unique_name_in_owner = true
-transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 1.1554839e-08, 0, 0.4910952)
+transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 0, 0, 0.511)
 mesh = SubResource("CylinderMesh_26vo7")
-surface_material_override/0 = ExtResource("2_qq1k1")
+surface_material_override/0 = ExtResource("2_xqgvk")
 
 [node name="Area3D" type="Area3D" parent="Table Hover Mesh" unique_id=2019688405]
 unique_name_in_owner = true

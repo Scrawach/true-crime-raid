@@ -1,6 +1,8 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://u1w1ss6emu5j"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://u1w1ss6emu5j"]
+
+[ext_resource type="Shader" uid="uid://cigo8afn6vbl3" path="res://devices/table/materials/sticker_hover.gdshader" id="1_pkg5u"]
 
 [resource]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 0, 0, 0.60200006)
+render_priority = 0
+shader = ExtResource("1_pkg5u")
+shader_parameter/color = Color(1, 0, 0, 0.6039216)
