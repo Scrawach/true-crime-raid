@@ -23,9 +23,12 @@ unique_name_in_owner = true
 mesh = SubResource("BoxMesh_y55wg")
 surface_material_override/0 = ExtResource("2_qq1k1")
 
-[node name="Table Hover Path" type="MeshInstance3D" parent="Table Hover Mesh" unique_id=533013697]
+[node name="Table Hover Origin" type="Node3D" parent="Table Hover Mesh" unique_id=1208249350]
 unique_name_in_owner = true
-transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 1.1554839e-08, 0, 0.2643435)
+
+[node name="Table Hover Path" type="MeshInstance3D" parent="Table Hover Mesh/Table Hover Origin" unique_id=533013697]
+unique_name_in_owner = true
+transform = Transform3D(1, 4.3711385e-08, -1.9106853e-15, 0, -4.371139e-08, -1, -4.3711385e-08, 1, -4.371139e-08, 1.1554839e-08, 0, 0.4910952)
 mesh = SubResource("CylinderMesh_26vo7")
 surface_material_override/0 = ExtResource("2_qq1k1")
 

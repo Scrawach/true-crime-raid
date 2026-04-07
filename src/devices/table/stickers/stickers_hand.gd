@@ -3,28 +3,28 @@ extends Node3D
 
 @export var sticker_width: float = 0.25
 
-var offset: float
+var scroll_offset: float
 
 func _ready() -> void:
 	update_sticker_positions()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_down"):
-		if offset > 0:
-			offset = 0
-		offset -= 1
+		if scroll_offset > 0:
+			scroll_offset = 0
+		scroll_offset -= 1
 	elif event.is_action_pressed("scroll_up"):
-		if offset < 0:
-			offset = 0
-		offset += 1
+		if scroll_offset < 0:
+			scroll_offset = 0
+		scroll_offset += 1
 
 func _physics_process(delta: float) -> void:
-	var step = delta * offset
+	var step = delta * scroll_offset
 	position.x += step
 	
 	var max_size := get_hand_size();
 	position.x = clamp(position.x, - max_size / 2, max_size /2)
-	offset = move_toward(offset, 0, delta * 10)
+	scroll_offset = move_toward(scroll_offset, 0, delta * 10)
 
 func update_sticker_positions() -> void:
 	for index in get_child_count():

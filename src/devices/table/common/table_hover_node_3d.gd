@@ -6,6 +6,7 @@ extends Node3D
 
 @onready var hover_mesh: MeshInstance3D = %"Table Hover Mesh"
 @onready var hover_path: MeshInstance3D = %"Table Hover Path"
+@onready var hover_origin: Node3D = %"Table Hover Origin"
 
 @onready var area_3d: Area3D = %Area3D
 @onready var collision_shape_3d: CollisionShape3D = %CollisionShape3D
@@ -40,7 +41,7 @@ func enable() -> void:
 
 func update(from: Vector3, to: Vector3) -> void:
 	var distance := from.distance_to(to)
-	hover_path.scale.y = distance
+	hover_origin.scale.z = distance
 	hover_mesh.global_position = to
 
 func disable() -> void:
