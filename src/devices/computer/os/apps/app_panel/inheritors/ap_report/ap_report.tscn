@@ -11,6 +11,7 @@
 [ext_resource type="LabelSettings" uid="uid://ctj88ltiqmitw" path="res://devices/computer/data/ls/ls_report.tres" id="9_g6rar"]
 [ext_resource type="Theme" uid="uid://csup5eroirybm" path="res://devices/computer/data/theme/new_report.tres" id="9_pt0c6"]
 [ext_resource type="Texture2D" uid="uid://bqjeb8m8b6dyn" path="res://devices/computer/assets/img/content/export1.png" id="11_mougs"]
+[ext_resource type="Texture2D" uid="uid://brjxfi8gcja3" path="res://devices/computer/assets/img/content/export2.png" id="11_rrxyk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ewm2"]
 font_size = 12
@@ -215,6 +216,21 @@ layout_mode = 2
 text = "ОТЧЁТ КРИМИНАЛИСТИЧЕСКОЙ ЭКСПЕРТИЗЫ"
 label_settings = ExtResource("9_g6rar")
 autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Content/VBoxContainer/Label" index="0" unique_id=1666253126]
+modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -123.0
+offset_top = -61.0
+offset_right = 66.0
+offset_bottom = 128.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("11_rrxyk")
+expand_mode = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="1" unique_id=860004417]
 layout_mode = 2

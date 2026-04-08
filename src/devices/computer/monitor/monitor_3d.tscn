@@ -12,7 +12,6 @@ viewport_path = NodePath("Monitor SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_678jo"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_color = Color(0.73, 0.73, 0.73, 1)
 albedo_texture = SubResource("ViewportTexture_d6q3r")
 texture_filter = 0
 
