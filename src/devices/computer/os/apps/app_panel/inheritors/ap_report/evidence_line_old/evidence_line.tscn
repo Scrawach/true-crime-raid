@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpgwverh8fyb4"]
+
+[ext_resource type="Script" uid="uid://c6wsljyjtcbmk" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/evidence_line_old/evidence_line.gd" id="1_nrkst"]
+
+[node name="evidence_line" type="HBoxContainer" unique_id=66284061]
+script = ExtResource("1_nrkst")
+
+[node name="Button" type="Button" parent="." unique_id=1915525756]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "X"
+
+[node name="Label" type="Label" parent="." unique_id=1217335980]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Evidence"

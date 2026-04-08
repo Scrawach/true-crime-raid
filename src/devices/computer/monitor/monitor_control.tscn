@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bdocifsem66dn" path="res://devices/computer/assets/font/monogram-extended.ttf" id="2_dalv8"]
 [ext_resource type="Texture2D" uid="uid://cb1urhpwrqxo0" path="res://devices/computer/assets/img/patterns/pattern0011.png" id="3_5od7m"]
 [ext_resource type="Texture2D" uid="uid://cfnecb8qbcghb" path="res://devices/computer/assets/img/content/dna_science.png" id="3_6wppi"]
+[ext_resource type="Texture2D" uid="uid://y20inkqgxkek" path="res://devices/computer/assets/img/content/export.png" id="3_sab36"]
 [ext_resource type="Texture2D" uid="uid://cmw5xr3hsf5ja" path="res://devices/computer/assets/img/icons/analysis.png" id="4_dalv8"]
 [ext_resource type="Texture2D" uid="uid://cv36psgm7in15" path="res://devices/computer/assets/img/icons/clipboard.png" id="5_ww1kh"]
 [ext_resource type="Texture2D" uid="uid://r8jiow65uxko" path="res://devices/computer/assets/img/icons/human-resources.png" id="6_sab36"]
@@ -145,7 +146,29 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6xg1g")
 
+[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper" unique_id=2121492354]
+modulate = Color(0.72156864, 0.7607843, 0.7254902, 1)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mc_os_workspace/pc_wallpaper/CenterContainer" unique_id=1825488941]
+layout_mode = 2
+theme_override_constants/separation = 500
+
+[node name="TextureRect" type="TextureRect" parent="mc_os_workspace/pc_wallpaper/CenterContainer/HBoxContainer" unique_id=101149797]
+visible = false
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("3_sab36")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="mc_os_workspace/pc_wallpaper/CenterContainer/HBoxContainer" unique_id=815589143]
+custom_minimum_size = Vector2(700, 600)
+layout_mode = 2
+texture = ExtResource("3_sab36")
+expand_mode = 1
+
 [node name="tr_logo" type="TextureRect" parent="mc_os_workspace/pc_wallpaper" unique_id=1778850693]
+visible = false
 modulate = Color(0.72156864, 0.7607843, 0.7254902, 1)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -153,6 +176,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_6wppi")
 
 [node name="c_apps" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=1503191333]
+visible = false
 layout_mode = 2
 
 [node name="btn_keywords" type="Button" parent="mc_os_workspace/pc_wallpaper/c_apps" unique_id=499371516]
@@ -249,6 +273,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="pa_keywords" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1906431389 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("8_7us4k")]
+visible = false
 layout_mode = 0
 offset_left = 54.0
 offset_top = 174.0
@@ -257,21 +282,7 @@ offset_bottom = 543.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_keywords")
 btn_ico = NodePath("../../c_apps/btn_keywords")
 
-[node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "report_check", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 734.0
-offset_top = 174.0
-offset_right = 1028.0
-offset_bottom = 447.0
-notification_success = NodePath("../../c_notifications/notify_report_success")
-notification_unsuccess = NodePath("../../c_notifications/notify_report_unsuccess")
-report_check = NodePath("../../c_notifications/CenterContainer/ReportCheck")
-btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_report")
-btn_ico = NodePath("../../c_apps/btn_report")
-
 [node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
-visible = false
 layout_mode = 0
 offset_left = 922.0
 offset_top = 351.0
@@ -281,6 +292,7 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_debug")
 
 [node name="pa_map" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1447563373 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_ww1kh")]
+visible = false
 layout_mode = 0
 offset_left = 296.0
 offset_top = 174.0
@@ -288,6 +300,24 @@ offset_right = 720.0
 offset_bottom = 595.0
 btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_map")
 btn_ico = NodePath("../../c_apps/btn_map")
+
+[node name="CenterContainer" type="CenterContainer" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1801182417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="pa_report" parent="mc_os_workspace/pc_wallpaper/c_windows/CenterContainer" unique_id=1705589426 node_paths=PackedStringArray("notification_success", "notification_unsuccess", "report_check", "btn_bottom", "btn_ico") instance=ExtResource("9_gth8j")]
+unique_name_in_owner = true
+layout_mode = 2
+notification_success = NodePath("../../../c_notifications/notify_report_success")
+notification_unsuccess = NodePath("../../../c_notifications/notify_report_unsuccess")
+report_check = NodePath("../../../c_notifications/CenterContainer/ReportCheck")
+btn_bottom = NodePath("../../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_bottom_panel_apps/btn_report")
+btn_ico = NodePath("../../../c_apps/btn_report")
 
 [node name="c_notifications" type="Control" parent="mc_os_workspace/pc_wallpaper" unique_id=512799671]
 layout_mode = 2
@@ -347,6 +377,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="vbc_bottom_panel" type="VBoxContainer" parent="mc_os_workspace/pc_wallpaper" unique_id=1931282625]
+visible = false
 texture_filter = 1
 layout_mode = 2
 mouse_filter = 2
@@ -378,6 +409,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="hbc_bottom_panel_apps" type="HBoxContainer" parent="mc_os_workspace/pc_wallpaper/vbc_bottom_panel/pc_bottom_panel/HBoxContainer" unique_id=308736402]
+visible = false
 layout_mode = 2
 mouse_filter = 2
 
@@ -422,6 +454,7 @@ script = ExtResource("14_c0d2k")
 metadata/_custom_type_script = "uid://b2po74o83srcy"
 
 [node name="tr_lcd" type="TextureRect" parent="mc_os_workspace/pc_wallpaper" unique_id=716415231]
+visible = false
 modulate = Color(1, 1, 1, 0.21176471)
 texture_filter = 1
 texture_repeat = 2
@@ -435,7 +468,7 @@ script = ExtResource("2_6xg1g")
 scenarios = Array[ExtResource("18_gsb3y")]([ExtResource("20_gsb3y")])
 ap_debug = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_debug")
 ap_keywords = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_keywords")
-ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_report")
+ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/CenterContainer/pa_report")
 ap_map = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_map")
 metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
@@ -449,3 +482,5 @@ metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" method="hide"]
 [connection signal="pressed" from="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success/Button" to="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" method="hide"]
+[connection signal="hidden" from="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_unsuccess" method="hide"]
+[connection signal="hidden" from="mc_os_workspace/pc_wallpaper/c_notifications/CenterContainer/ReportCheck" to="mc_os_workspace/pc_wallpaper/c_notifications/notify_report_success" method="hide"]

@@ -1,16 +1,18 @@
-[gd_scene format=3 uid="uid://bpgwverh8fyb4"]
+[gd_scene format=3 uid="uid://4fmmspipe25d"]
 
-[ext_resource type="Script" uid="uid://c6wsljyjtcbmk" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/evidence_line/evidence_line.gd" id="1_nrkst"]
+[ext_resource type="Script" uid="uid://eqkito3disg7" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/evidence_line/evidence_line.gd" id="1_nrkst"]
+[ext_resource type="LabelSettings" uid="uid://ctj88ltiqmitw" path="res://devices/computer/data/ls/ls_report.tres" id="2_w2oi4"]
 
-[node name="evidence_line" type="HBoxContainer" unique_id=66284061]
+[node name="HBoxContainer" type="HBoxContainer" unique_id=250108889]
 script = ExtResource("1_nrkst")
 
-[node name="Button" type="Button" parent="." unique_id=1915525756]
-custom_minimum_size = Vector2(20, 0)
+[node name="Label" type="Label" parent="." unique_id=1429807260]
 layout_mode = 2
-text = "X"
+text = "1."
+label_settings = ExtResource("2_w2oi4")
 
-[node name="Label" type="Label" parent="." unique_id=1217335980]
+[node name="MenuButton" type="MenuButton" parent="." unique_id=1551747962]
+modulate = Color(0.67058825, 0.6862745, 0.84313726, 1)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Evidence"
+text = "Не установлен"
+flat = false
