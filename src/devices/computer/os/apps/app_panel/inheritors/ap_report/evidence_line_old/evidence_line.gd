@@ -1,10 +1,9 @@
-class_name EvidenceLine
 extends HBoxContainer
 
-@onready var button: MenuButton = $MenuButton
+@onready var button: Button = $Button
 @onready var label: Label = $Label
 
-static var uid = "uid://4fmmspipe25d"
+static var uid = "uid://bpgwverh8fyb4"
 
 static func create() -> EvidenceLine:
 	var scene: PackedScene = ResourceLoader.load(uid)
