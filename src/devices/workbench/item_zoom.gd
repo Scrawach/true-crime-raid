@@ -44,11 +44,11 @@ func is_small_enough() -> bool:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
-		if zoom_relative > 0:
-			zoom_relative = 0
-		zoom_relative -= scroll_strength
-	
-	if event.is_action_pressed("scroll_down"):
 		if zoom_relative < 0:
 			zoom_relative = 0
 		zoom_relative += scroll_strength
+	
+	if event.is_action_pressed("scroll_down"):
+		if zoom_relative > 0:
+			zoom_relative = 0
+		zoom_relative -= scroll_strength
