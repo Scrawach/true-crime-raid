@@ -9,7 +9,9 @@ func put(item: BaseItem) -> void:
 	var aabb := item.get_aabb()
 	var height_ratio := aabb.size.y / aabb.size.x
 	if height_ratio > rotation_height_ratio:
-		item.rotation_degrees.x = 90
+		item.global_rotation_degrees = 90 * Vector3.RIGHT
+	else:
+		item.global_rotation = Vector3.ZERO
 	
 	var parent := get_free_position_for()
 	var new_parent := parent if parent != null else items_handler
