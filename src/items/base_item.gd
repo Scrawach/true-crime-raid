@@ -3,7 +3,7 @@ extends RigidBody3D
 
 @export var data: ItemData
 @export var points: InteractivePoints
-
+@export var mesh: MeshInstance3D
 @onready var interact_tooltip_3d: InteractTooltip3D = $InteractTooltip3D
 
 var total_dna_points: int
@@ -37,3 +37,8 @@ func get_dna_interactive_points() -> Array[DNAInteractivePoint3D]:
 
 func get_description() -> String:
 	return data.description
+
+func get_aabb() -> AABB:
+	if mesh == null:
+		return AABB()
+	return mesh.get_aabb()

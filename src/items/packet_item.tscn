@@ -7,8 +7,9 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h1uc7"]
 points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
 
-[node name="Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point") instance=ExtResource("1_pfyno")]
+[node name="Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point", "mesh") instance=ExtResource("1_pfyno")]
 open_point = NodePath("InteractivePoints/Open Interactive Point 3D")
+mesh = NodePath("simple_packet/Simple Packet")
 
 [node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
 disabled = true

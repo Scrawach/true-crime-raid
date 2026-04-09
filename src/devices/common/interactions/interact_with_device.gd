@@ -15,6 +15,8 @@ func exit_from_device():
 	get_viewport().set_input_as_handled()
 
 func start_interaction(target: PlayerBody3D) -> void:
+	_kill_camera_moving_if_needed()
+	
 	super.start_interaction(target)
 	main_camera_local_transform = target.main_camera.transform
 	smooth_camera_moving(target.main_camera, interaction_camera.global_transform, camera_move_stopped.emit)
@@ -23,6 +25,8 @@ func start_interaction(target: PlayerBody3D) -> void:
 	target.player_hud.hide_aim_pointer()
 
 func stop_interaction() -> void:
+	_kill_camera_moving_if_needed()
+	
 	reset_main_camera(player.main_camera)
 	interaction_area.enable()
 	

@@ -14,10 +14,10 @@ func start_interaction(target: PlayerBody3D) -> void:
 	super.start_interaction(target)
 	monitor_3d.power_on()
 	computer_canvas.show()
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	player.mouse.hide_cursor()
 
 func stop_interaction() -> void:
 	monitor_3d.power_off()
 	computer_canvas.hide()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	player.mouse.show_cursor()
 	super.stop_interaction()

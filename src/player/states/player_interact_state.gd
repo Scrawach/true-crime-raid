@@ -2,6 +2,7 @@ class_name PlayerInteractState
 extends PlayerState
 
 @export var interactor: PlayerInteractor
+@export var mouse_capture: MouseCapture
 
 var current_interaction: InteractState
 

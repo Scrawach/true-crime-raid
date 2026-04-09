@@ -92,9 +92,10 @@ metadata/_custom_type_script = "uid://blhol6udoquwp"
 script = ExtResource("3_rjoga")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
-[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "player")]
+[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "mouse_capture", "player")]
 script = ExtResource("11_ehfks")
 interactor = NodePath("../PlayerMovementState/PlayerInteractor")
+mouse_capture = NodePath("../PlayerMovementState/MouseCapture")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://8y2v8pv4j56x"
 

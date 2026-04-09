@@ -20,8 +20,15 @@ points = PackedVector3Array(0.026089145, -0.23624727, 0.013968218, 0.030054262, 
 [sub_resource type="QuadMesh" id="QuadMesh_2t5iu"]
 size = Vector2(0.03, 0.03)
 
-[node name="NN Kitchen Knife" unique_id=679873917 instance=ExtResource("1_knr53")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhr34"]
+size = Vector3(0.05, 0.20725098, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xpbyt"]
+size = Vector3(0.025, 0.096789554, 0.02)
+
+[node name="NN Kitchen Knife" unique_id=679873917 node_paths=PackedStringArray("mesh") instance=ExtResource("1_knr53")]
 data = ExtResource("2_kbe3i")
+mesh = NodePath("kitchen-knife/Kitchen Knife")
 
 [node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
 disabled = true
@@ -67,6 +74,14 @@ shape = SubResource("ConvexPolygonShape3D_hojxe")
 
 [node name="Handle CollisionShape3D" type="CollisionShape3D" parent="." index="7" unique_id=820237803]
 shape = SubResource("ConvexPolygonShape3D_kbe3i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="8" unique_id=860294492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007402342, 0.053625494, 0)
+shape = SubResource("BoxShape3D_xhr34")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="9" unique_id=354001307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0050976584, 0.21575242, 0)
+shape = SubResource("BoxShape3D_xpbyt")
 
 [editable path="kitchen-knife"]
 [editable path="kitchen-knife/kitchen-knife-blood"]

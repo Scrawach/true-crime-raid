@@ -22,8 +22,9 @@ size = Vector3(0.21490479, 0.026920319, 0.21850586)
 [sub_resource type="BoxShape3D" id="BoxShape3D_uf3j3"]
 size = Vector3(0.014678955, 0.041902542, 0.21850586)
 
-[node name="NN Ashpot" unique_id=679873917 instance=ExtResource("1_7ubpt")]
+[node name="NN Ashpot" unique_id=679873917 node_paths=PackedStringArray("mesh") instance=ExtResource("1_7ubpt")]
 data = ExtResource("2_uf3j3")
+mesh = NodePath("ashpot/Ashpot")
 
 [node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
 disabled = true
@@ -103,3 +104,5 @@ debug_color = Color(0.99591225, 0, 0.060205683, 1)
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.1006006, 0.016841523, -0.00061035156)
 shape = SubResource("BoxShape3D_uf3j3")
 debug_color = Color(0.99591225, 0, 0.060205683, 1)
+
+[editable path="ashpot"]

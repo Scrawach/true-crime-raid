@@ -9,7 +9,7 @@ signal sample_taked(data: DNAData)
 @export var item_handler: ItemHandler
 @export var tubes: InteractWithTubesStand
 @export var item_zoom: ItemZoom
-
+@export var placement_space: WorkbenchPlacementSpace
 @export var sample_timed_panel: TimedPanel
 
 var item: BaseItem
@@ -41,9 +41,11 @@ func grab(target: BaseItem) -> void:
 	target.rotation = Vector3.ZERO
 
 func ungrab(target: BaseItem) -> void:
-	item.reparent(player.hand.hand_point)
-	target.position = Vector3.ZERO
-	target.rotation = Vector3.ZERO
+	placement_space.put(target)
+	player.hand.item = null
+	#item.reparent(player.hand.hand_point)
+	#target.position = Vector3.ZERO
+	#target.rotation = Vector3.ZERO
 
 func subscribe_on_dna_points() -> void:
 	for point in item.get_dna_interactive_points():

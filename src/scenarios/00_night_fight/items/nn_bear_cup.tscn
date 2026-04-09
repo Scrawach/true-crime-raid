@@ -15,8 +15,9 @@ points = PackedVector3Array(-0.052787255, -0.12543818, 0, -0.0517745, -0.1254381
 material = ExtResource("4_ar4d3")
 size = Vector2(0.03, 0.03)
 
-[node name="NN Bear Cup" unique_id=679873917 instance=ExtResource("1_fdnml")]
+[node name="NN Bear Cup" unique_id=679873917 node_paths=PackedStringArray("mesh") instance=ExtResource("1_fdnml")]
 data = ExtResource("2_ar4d3")
+mesh = NodePath("beer-cup/BeerCup")
 
 [node name="CollisionShape3D" parent="InteractionArea3D" parent_id_path=PackedInt32Array(786297931) index="0" unique_id=2136988761]
 disabled = true
