@@ -16,7 +16,6 @@ func enter() -> void:
 	var is_success := interactor.try_interact()
 	
 	if is_success and interactor.interaction.has_interact_state():
-		#mouse_capture.hide_cursor()
 		var state := interactor.interaction.interact_state
 		current_interaction = state
 		current_interaction.start_interaction(player)

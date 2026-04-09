@@ -471,10 +471,13 @@ ap_report = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/CenterContainer/
 ap_map = NodePath("../mc_os_workspace/pc_wallpaper/c_windows/pa_map")
 metadata/_custom_type_script = "uid://dg4c1w04cm6ft"
 
-[node name="ComputerMouseCursor" type="TextureRect" parent="." unique_id=1683544476]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1565250706]
+layer = 1025
+
+[node name="ComputerMouseCursor" type="TextureRect" parent="CanvasLayer" unique_id=1683544476]
 modulate = Color(0, 0, 0, 1)
+top_level = true
 texture_filter = 1
-layout_mode = 0
 offset_left = -1021.0
 offset_top = -618.0
 offset_right = -1005.0

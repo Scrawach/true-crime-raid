@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://b2fkxumekod63"]
+
+[ext_resource type="Script" uid="uid://04pqwxixp134" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/case_result/case_result.gd" id="1_mi0oq"]
+[ext_resource type="Texture2D" uid="uid://ba8av6q654ers" path="res://devices/computer/assets/img/icons/check-mark.png" id="2_5aqc6"]
+[ext_resource type="Texture2D" uid="uid://c81vodhq87cci" path="res://devices/computer/assets/img/content/Лого_IIB.png" id="3_8loeb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mi0oq"]
+font_size = 28
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5aqc6"]
+color = Color(1, 1, 1, 1)
+thickness = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8loeb"]
+content_margin_left = 20.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of5fl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of5fl"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(1, 0.972549, 0.65882355, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_idud5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00lh6"]
+content_margin_left = 10.0
+
+[node name="CaseResult" type="VBoxContainer" unique_id=218028341]
+theme_override_constants/separation = 20
+script = ExtResource("1_mi0oq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1034872913]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=450522984]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer" unique_id=1588824027]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_bottom = -10
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=1114349863]
+layout_mode = 2
+text = "Дело \"Ночная драка\" - Результат"
+label_settings = SubResource("LabelSettings_mi0oq")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer" unique_id=1441321136]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_5aqc6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1102827523]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1660832430]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8loeb")
+text = "Цели:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=80861118]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=2029468803]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_of5fl")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1990055117]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_5aqc6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1978950124]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Просмотренны документы"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=943336842]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_of5fl")
+text = "50 EXP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=115700923]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1532681900]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_of5fl")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1296965617]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_5aqc6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1395049135]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Найдены все доказательства"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1472195755]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_of5fl")
+text = "100 EXP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1112564878]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1876734062]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_of5fl")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=313399328]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_5aqc6")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1319300779]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Преступник установлен"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=2016066236]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_of5fl")
+text = "100 EXP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1369690432]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2" unique_id=1378466018]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_8loeb")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2" unique_id=1158674652]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1240438402]
+layout_mode = 2
+text = "Полученный опыт:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=176794015]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_of5fl")
+text = "250 EXP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=979575326]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_5aqc6")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1794052987]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer2" unique_id=1512622102]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_idud5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=2105453142]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=57661980]
+layout_mode = 2
+text = "Ваш статус повышен: Аналитик"
+label_settings = SubResource("LabelSettings_mi0oq")
+
+[node name="Label2" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=1523371205]
+layout_mode = 2
+text = "РАЗБЛОКИРОВАНО"
+
+[node name="Label3" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=2021314640]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00lh6")
+text = "+ Доступ к сложным делам"
+
+[node name="Label4" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=123270861]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00lh6")
+text = "+ Инструмент: Анализ ДНК (расширенный)!"
+
+[node name="Label5" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=2080315680]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00lh6")
+text = "+ Новый уровень допуска"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=371099074]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="btn_replay" type="Button" parent="HBoxContainer3" unique_id=1177406037]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Переиграть"
+
+[node name="btn_continue" type="Button" parent="HBoxContainer3" unique_id=1926591823]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Продолжить"
