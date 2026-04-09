@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dhn5u2oeva2e7"]
+
+[ext_resource type="Texture2D" uid="uid://cg8pefkxhqoch" path="res://environment/laboratory/assets/floor/FloorTiles02_a.png" id="1_tcy4j"]
+[ext_resource type="Texture2D" uid="uid://djdiw7hhh6sr6" path="res://environment/laboratory/assets/floor/FloorTiles02_o.png" id="2_88527"]
+[ext_resource type="Texture2D" uid="uid://bs8hos8mnq8x1" path="res://environment/laboratory/assets/floor/FloorTiles02_m.png" id="3_0dwfh"]
+[ext_resource type="Texture2D" uid="uid://b5rl12f0qnotp" path="res://environment/laboratory/assets/floor/FloorTiles02_n.png" id="4_vbm8r"]
+
+[resource]
+albedo_color = Color(0.93, 0.98366666, 1, 1)
+albedo_texture = ExtResource("1_tcy4j")
+metallic = 1.0
+metallic_texture = ExtResource("3_0dwfh")
+metallic_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("4_vbm8r")
+ao_enabled = true
+ao_texture = ExtResource("2_88527")
+ao_texture_channel = 4
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://i0f203c1e4u2"]
+
+[ext_resource type="PackedScene" uid="uid://yn3bsbsmm6j" path="res://environment/laboratory/assets/architecture/cells/lamp/CeilingLamp01.fbx" id="1_b8p78"]
+
+[node name="CellLamp" type="Node3D" unique_id=499185299]
+
+[node name="CeilingLamp01" parent="." unique_id=1956417830 instance=ExtResource("1_b8p78")]

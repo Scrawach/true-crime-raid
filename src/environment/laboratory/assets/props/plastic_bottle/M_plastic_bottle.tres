@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dd4tnux0tsvcg"]
+
+[ext_resource type="Texture2D" uid="uid://dgnw8uyw2n0wn" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle_o.png" id="1_31j06"]
+[ext_resource type="Texture2D" uid="uid://j0dmgxs7cehj" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle_n.png" id="2_6bfxr"]
+
+[resource]
+normal_enabled = true
+normal_texture = ExtResource("2_6bfxr")
+ao_enabled = true
+ao_texture = ExtResource("1_31j06")

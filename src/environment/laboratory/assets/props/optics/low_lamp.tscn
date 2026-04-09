@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cj8t6ujatefa3"]
+
+[ext_resource type="PackedScene" uid="uid://dt88k21p6e0un" path="res://environment/laboratory/assets/props/optics/CeilingLamp02.fbx" id="1_g0dos"]
+[ext_resource type="PackedScene" uid="uid://c0vk6d4rxbq8u" path="res://environment/laboratory/assets/props/optics/Suspension01.fbx" id="2_t1b1a"]
+[ext_resource type="PackedScene" uid="uid://nn3qojnxy1tw" path="res://environment/laboratory/assets/props/optics/Suspension01Cable.fbx" id="3_as0hp"]
+
+[node name="Low Lamp" type="Node3D" unique_id=49286311]
+
+[node name="CeilingLamp02" parent="." unique_id=2061692863 instance=ExtResource("1_g0dos")]
+
+[node name="Suspension01" parent="CeilingLamp02" unique_id=1773257758 instance=ExtResource("2_t1b1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12140024, 0.18189633)
+
+[node name="Suspension01Cable" parent="CeilingLamp02/Suspension01" unique_id=755061107 instance=ExtResource("3_as0hp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.078614116, 0)
+
+[node name="Suspension02" parent="CeilingLamp02" unique_id=658611302 instance=ExtResource("2_t1b1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12140024, -0.16534564)
+
+[node name="Suspension01Cable" parent="CeilingLamp02/Suspension02" unique_id=169591062 instance=ExtResource("3_as0hp")]

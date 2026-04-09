@@ -1,0 +1,72 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cd0c24baxbm8g"
+path="res://.godot/imported/Door01Window.fbx-b93f1196e14f3508cd69ade58318f7e1.scn"
+
+[deps]
+
+source_file="res://environment/laboratory/assets/doors/Door01Window.fbx"
+dest_files=["res://.godot/imported/Door01Window.fbx-b93f1196e14f3508cd69ade58318f7e1.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.2
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material #1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_white.tres",
+"use_external/path": "uid://d1qwgea75aovx"
+},
+"Material #3": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
+"use_external/path": "uid://bcmlw0bxjmuts"
+},
+"Material #4": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
+"use_external/path": "uid://bcmlw0bxjmuts"
+},
+"Material #79": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
+"use_external/path": "uid://u660qxy5h03i"
+},
+"Material #93": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
+"use_external/path": "uid://u660qxy5h03i"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

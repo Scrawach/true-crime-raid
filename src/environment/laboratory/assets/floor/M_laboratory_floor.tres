@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dymweeygqule6"]
+
+[ext_resource type="Texture2D" uid="uid://dywlmsnnm6i3e" path="res://environment/laboratory/assets/floor/T_wgildfbv_1K_B.jpg" id="1_hql68"]
+[ext_resource type="Texture2D" uid="uid://bsg50sbyujxpk" path="res://environment/laboratory/assets/floor/T_wgildfbv_1K_ORM.jpg" id="2_1rufv"]
+[ext_resource type="Texture2D" uid="uid://ck27uer3htam8" path="res://environment/laboratory/assets/floor/T_wgildfbv_1K_N.jpg" id="3_i2p8n"]
+
+[resource]
+albedo_color = Color(0.93, 0.98366666, 1, 1)
+albedo_texture = ExtResource("1_hql68")
+metallic = 1.0
+metallic_texture = ExtResource("2_1rufv")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_1rufv")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_i2p8n")
+ao_enabled = true
+ao_texture = ExtResource("2_1rufv")
+uv1_scale = Vector3(5, 5, 5)

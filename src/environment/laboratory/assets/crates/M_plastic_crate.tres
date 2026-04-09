@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7wn4wnmv10g2"]
+
+[ext_resource type="Texture2D" uid="uid://b32fpw8h4ewi3" path="res://environment/laboratory/assets/crates/PlasticCrate01_a.png" id="1_xqvu4"]
+[ext_resource type="Texture2D" uid="uid://da6yvgghpsc1s" path="res://environment/laboratory/assets/crates/PlasticCrate01_o.png" id="2_h1py4"]
+[ext_resource type="Texture2D" uid="uid://3hfqbp67b7t8" path="res://environment/laboratory/assets/crates/PlasticCrate01_h.png" id="3_bjyx0"]
+[ext_resource type="Texture2D" uid="uid://cfbexkkykyjtc" path="res://environment/laboratory/assets/crates/PlasticCrate01_m.png" id="4_5vl71"]
+[ext_resource type="Texture2D" uid="uid://kgve2y4fyc2a" path="res://environment/laboratory/assets/crates/PlasticCrate01_n.png" id="5_uwu0y"]
+
+[resource]
+albedo_color = Color(0.3647059, 0.6117647, 0.85882354, 1)
+albedo_texture = ExtResource("1_xqvu4")
+metallic = 1.0
+metallic_texture = ExtResource("4_5vl71")
+metallic_texture_channel = 3
+normal_enabled = true
+normal_texture = ExtResource("5_uwu0y")
+ao_enabled = true
+ao_texture = ExtResource("2_h1py4")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_bjyx0")
