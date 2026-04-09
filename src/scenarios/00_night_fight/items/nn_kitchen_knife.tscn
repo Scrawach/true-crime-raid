@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bru7fheylcfso" path="res://scenarios/00_night_fight/items/assets/kitchen-knife-blood.glb" id="6_aaqqt"]
 [ext_resource type="Material" uid="uid://i8mcg8qfkqxe" path="res://scenarios/00_night_fight/items/materials/M_fingerprint.tres" id="7_mt0kw"]
 [ext_resource type="Material" uid="uid://c2baunhei548p" path="res://scenarios/00_night_fight/items/materials/M_uv_overlay.tres" id="7_xpbyt"]
+[ext_resource type="PackedScene" uid="uid://cs3qnw3i21pms" path="res://scenarios/00_night_fight/items/assets/knife/old_simple_knife.glb" id="8_xpbyt"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hojxe"]
 points = PackedVector3Array(-0.017517827, -0.053893805, -0.005853488, 0.0340089, -0.053893805, -0.005853488, -0.017517827, 0.27118218, -0.005853488, -0.015711768, -0.04684157, 0.0019031886, -0.015376499, 0.2628208, 0.0018712583, 0.06573333, -0.038015485, -0.005853488, 0.06573333, -0.022137165, 0.0020751944, 0.02608798, 0.20378682, -0.005853488, 0.01023799, 0.25135815, 0.0020751944, 0.053835653, 0.08092873, -0.005853488, 0.03375995, -0.04980701, 0.0019755163, 0.02608798, 0.20378682, 0.0020751944, 0.0062693805, 0.2592814, -0.005853488, 0.060593385, -0.037307385, 0.0019518818, 0.0062693805, 0.2592814, 0.0020751944, 0.06573333, -0.022137165, -0.005853488, 0.048996888, 0.08543993, 0.0014299246, -0.009588759, 0.27118218, -0.005853488, 0.04590658, -0.049916267, -0.005853488, 0.01023799, 0.25135815, -0.005853488, -0.008013935, 0.26358587, 0.0018899187, 0.030048441, 0.1879085, -0.005853488, 0.06176472, -0.041993022, -0.005853488, 0.06176472, 0.013533369, -0.005853488)
@@ -59,27 +60,34 @@ uv_required = true
 uv_material = ExtResource("7_xpbyt")
 uv_mesh = NodePath("../../kitchen-knife/kitchen-knife-blood/Kitchen Knife_Blood")
 
-[node name="kitchen-knife" parent="." index="5" unique_id=1375673245 instance=ExtResource("5_xpbyt")]
+[node name="Sketchfab_Scene" parent="." index="5" unique_id=1965119666 instance=ExtResource("8_xpbyt")]
+transform = Transform3D(-0.9398656, -0.33093557, -0.08446504, -0.34154448, 0.9106718, 0.23243205, -9.309156e-08, 0.2473034, -0.968938, 0.010661237, 0.016402036, 0)
+
+[node name="kitchen-knife" parent="." index="6" unique_id=1375673245 instance=ExtResource("5_xpbyt")]
+
+[node name="Kitchen Knife" parent="kitchen-knife" index="0" unique_id=504528559]
+visible = false
 
 [node name="kitchen-knife-blood" parent="kitchen-knife" index="1" unique_id=1359230406 instance=ExtResource("6_aaqqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0054089725, 0, 0.0014366098)
 
 [node name="FingerPrint" type="MeshInstance3D" parent="kitchen-knife" index="2" unique_id=1653475780]
 transform = Transform3D(-0.8565195, 0.51611483, 8.7422784e-08, 0.51611483, 0.8565195, 0, -7.48793e-08, 4.5120185e-08, -1, 0.0030265, -0.084734425, -0.01185686)
 mesh = SubResource("QuadMesh_2t5iu")
 surface_material_override/0 = ExtResource("7_mt0kw")
 
-[node name="Edge CollisionShape3D" type="CollisionShape3D" parent="." index="6" unique_id=1525762688]
+[node name="Edge CollisionShape3D" type="CollisionShape3D" parent="." index="7" unique_id=1525762688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002685234, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hojxe")
 
-[node name="Handle CollisionShape3D" type="CollisionShape3D" parent="." index="7" unique_id=820237803]
+[node name="Handle CollisionShape3D" type="CollisionShape3D" parent="." index="8" unique_id=820237803]
 shape = SubResource("ConvexPolygonShape3D_kbe3i")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="8" unique_id=860294492]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="9" unique_id=860294492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007402342, 0.053625494, 0)
 shape = SubResource("BoxShape3D_xhr34")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="9" unique_id=354001307]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="10" unique_id=354001307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0050976584, 0.21575242, 0)
 shape = SubResource("BoxShape3D_xpbyt")
 
