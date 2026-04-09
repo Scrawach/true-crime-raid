@@ -9,7 +9,7 @@
 [ext_resource type="Material" uid="uid://c2baunhei548p" path="res://scenarios/00_night_fight/items/materials/M_uv_overlay.tres" id="5_nygqo"]
 [ext_resource type="Resource" uid="uid://4t3momjkuhtj" path="res://scenarios/00_night_fight/items/data/dna/butts_unknown_2.tres" id="5_uf3j3"]
 [ext_resource type="Material" uid="uid://bpxv84sd7oi44" path="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_spit.tres" id="6_bujwb"]
-[ext_resource type="PackedScene" uid="uid://q31g452coidq" path="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_used.glb" id="10_bujwb"]
+[ext_resource type="PackedScene" uid="uid://cw50vs702xfpr" path="res://scenarios/00_night_fight/items/assets/ashtray/ashtray.glb" id="10_bujwb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nygqo"]
 size = Vector3(0.22357178, 0.07861328, 0.22802734)
@@ -35,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015563965, 0.008056641, -
 shape = SubResource("BoxShape3D_nygqo")
 
 [node name="DNA Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019578613, 0.013789013, -0.03963734)
+transform = Transform3D(1, 0, 0, 0, 0.9934647, -0.11413958, 0, 0.11413958, 0.9934647, 0.05254402, 0.017302437, 0.032886524)
 dna_data = ExtResource("3_34e28")
 only_once = true
 dna_mesh = NodePath("Spit")
@@ -50,7 +50,7 @@ mesh = SubResource("QuadMesh_uf3j3")
 surface_material_override/0 = ExtResource("6_bujwb")
 
 [node name="DNA Interactive Point 3D2" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="1" unique_id=1874189529 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
-transform = Transform3D(0.9561159, -0.14756766, 0.25311288, 0.010303481, 0.88030064, 0.4743044, -0.2928075, -0.4508821, 0.84319, -0.04893385, 0.018103577, 0.025694858)
+transform = Transform3D(0.9561159, -0.14756766, 0.25311288, 0.122780174, 0.9861883, 0.111165404, -0.26602146, -0.075209886, 0.96102875, -0.03839969, 0.012197679, 0.03564938)
 dna_data = ExtResource("4_152wy")
 only_once = true
 dna_mesh = NodePath("Spit2")
@@ -65,7 +65,7 @@ mesh = SubResource("QuadMesh_uf3j3")
 surface_material_override/0 = ExtResource("6_bujwb")
 
 [node name="DNA Interactive Point 3D3" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="2" unique_id=821512495 node_paths=PackedStringArray("dna_mesh", "uv_mesh") instance=ExtResource("2_fs17s")]
-transform = Transform3D(0.9977514, 0.06702272, 0, -0.066333316, 0.98748845, 0.14306077, 0.009588324, -0.14273912, 0.9897139, -0.042873222, 0.009188624, 0.056565203)
+transform = Transform3D(0.99775153, 0.067022726, 0, -0.0642227, 0.9560682, 0.2860229, 0.019170033, -0.28537977, 0.95822287, -0.06739029, 0.011056032, 0.022974037)
 dna_data = ExtResource("5_uf3j3")
 only_once = true
 dna_mesh = NodePath("Spit3")
@@ -107,7 +107,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.10
 shape = SubResource("BoxShape3D_uf3j3")
 debug_color = Color(0.99591225, 0, 0.060205683, 1)
 
-[node name="Sketchfab_Scene" parent="." index="11" unique_id=421981201 instance=ExtResource("10_bujwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.027995277, 0)
+[node name="ashtray" parent="." index="11" unique_id=652881571 instance=ExtResource("10_bujwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022174537, 0)
 
 [editable path="ashpot"]

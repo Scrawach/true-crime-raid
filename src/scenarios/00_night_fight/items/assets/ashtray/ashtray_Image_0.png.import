@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q1pucqaciili"
-path.s3tc="res://.godot/imported/ashtray_used_0.png-d5294f568d7cd7fa5e7069072cf598df.s3tc.ctex"
+uid="uid://bgxgbkolnbkcu"
+path.s3tc="res://.godot/imported/ashtray_Image_0.png-4a7dbbd2e74ea7a63414efb39e54b471.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f9a8cdcdac5cd20fa0b90c6deacc6c5a"
+"md5": "f49f249fc02cef51cd0ea5de3e14071e"
 }
 
 [deps]
 
-source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_used_0.png"
-dest_files=["res://.godot/imported/ashtray_used_0.png-d5294f568d7cd7fa5e7069072cf598df.s3tc.ctex"]
+source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_Image_0.png"
+dest_files=["res://.godot/imported/ashtray_Image_0.png-4a7dbbd2e74ea7a63414efb39e54b471.s3tc.ctex"]
 
 [params]
 

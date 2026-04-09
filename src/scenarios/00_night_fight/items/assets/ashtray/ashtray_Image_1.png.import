@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blh761ot1hfj1"
-path.s3tc="res://.godot/imported/ashtray_used_3.png-cc185ed0c5eb8950d3fe94858f44ab58.s3tc.ctex"
+uid="uid://b0xyq0knyfskl"
+path.s3tc="res://.godot/imported/ashtray_Image_1.png-98704f77646d7544e37e72d51e1b098c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2e83dd38e5542624d77d780099d5e9b7"
+"md5": "e4f3ee1cd5b6875199a490e1e93b082c"
 }
 
 [deps]
 
-source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_used_3.png"
-dest_files=["res://.godot/imported/ashtray_used_3.png-cc185ed0c5eb8950d3fe94858f44ab58.s3tc.ctex"]
+source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_Image_1.png"
+dest_files=["res://.godot/imported/ashtray_Image_1.png-98704f77646d7544e37e72d51e1b098c.s3tc.ctex"]
 
 [params]
 
@@ -29,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_Image_2.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

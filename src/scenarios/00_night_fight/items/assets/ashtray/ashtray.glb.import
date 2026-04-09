@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://q31g452coidq"
-path="res://.godot/imported/ashtray_used.glb-a3a499ff870c1848741327bd1c32ff32.scn"
+uid="uid://cw50vs702xfpr"
+path="res://.godot/imported/ashtray.glb-2fbc6b39f17ee98c9f880e82a48440e4.scn"
 
 [deps]
 
-source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray_used.glb"
-dest_files=["res://.godot/imported/ashtray_used.glb-a3a499ff870c1848741327bd1c32ff32.scn"]
+source_file="res://scenarios/00_night_fight/items/assets/ashtray/ashtray.glb"
+dest_files=["res://.godot/imported/ashtray.glb-2fbc6b39f17ee98c9f880e82a48440e4.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.1
+nodes/root_scale=2.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
