@@ -105,6 +105,7 @@ func on_btn_approve_pressed():
 	if result.approved:
 		notification_success.show()
 		report_compiled_ok.emit()
+		GameManager.case_complited.emit()
 	else:
 		notification_unsuccess.show()
 	report_check.update_status(result)

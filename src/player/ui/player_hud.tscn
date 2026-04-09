@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="1_qo0ji"]
 [ext_resource type="Script" uid="uid://juqqi502av0g" path="res://player/ui/player_hud.gd" id="1_r44wa"]
+[ext_resource type="PackedScene" uid="uid://b2fkxumekod63" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/case_result/case_result.tscn" id="3_kliqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0ji"]
 bg_color = Color(1, 1, 1, 1)
@@ -19,6 +20,9 @@ shadow_size = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r44wa"]
 bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp0yt"]
+bg_color = Color(0.11372549, 0.21176471, 0.29803923, 1)
 
 [node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
 script = ExtResource("1_r44wa")
@@ -44,7 +48,7 @@ theme_override_constants/margin_bottom = 10
 [node name="CurrentVersionLabel" type="Label" parent="Version Layer/Version Container/MarginContainer" unique_id=104954214]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
-text = "v0.0.38 [ffb360e] 2026-03-24 13:41:20"
+text = "v0.1.119 [bc6af6c] 2026-04-05 19:29:23"
 script = ExtResource("1_qo0ji")
 metadata/_custom_type_script = "uid://bxgh4maetkofo"
 
@@ -105,3 +109,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[img height=32]uid://c4du1csjis387[/img] ВЫКИНУТЬ"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=752901358]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vp0yt")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=1737888020]
+layout_mode = 2
+
+[node name="CaseResult" parent="PanelContainer/CenterContainer" unique_id=218028341 node_paths=PackedStringArray("holder") instance=ExtResource("3_kliqd")]
+layout_mode = 2
+holder = NodePath("../..")

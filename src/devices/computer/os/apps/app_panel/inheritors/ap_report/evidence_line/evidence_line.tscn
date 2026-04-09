@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://eqkito3disg7" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/evidence_line/evidence_line.gd" id="1_nrkst"]
 [ext_resource type="LabelSettings" uid="uid://ctj88ltiqmitw" path="res://devices/computer/data/ls/ls_report.tres" id="2_w2oi4"]
+[ext_resource type="Script" uid="uid://sx80krwwcv38" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/menu_button_custom.gd" id="3_0fgco"]
 
 [node name="HBoxContainer" type="HBoxContainer" unique_id=250108889]
 script = ExtResource("1_nrkst")
@@ -16,3 +17,4 @@ modulate = Color(0.67058825, 0.6862745, 0.84313726, 1)
 layout_mode = 2
 text = "Не установлен"
 flat = false
+script = ExtResource("3_0fgco")

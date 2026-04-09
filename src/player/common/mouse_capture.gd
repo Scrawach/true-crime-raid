@@ -20,6 +20,7 @@ func _on_timeout() -> void:
 		_operation.call()
 		_operation = Callable()
 
+
 func _physics_process(_delta: float) -> void:
 	if _is_captured and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		## WEB workaround (browser handle inputs)
@@ -32,6 +33,7 @@ func capture() -> void:
 	_operation = func():
 		_is_captured = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
 
 func hide_cursor():
 	_operation = func():

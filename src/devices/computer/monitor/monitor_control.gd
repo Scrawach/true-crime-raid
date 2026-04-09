@@ -5,6 +5,7 @@ signal exited
 signal report_completed(is_success: bool)
 
 
+
 @onready var btn_exit: Button = %btn_exit
 @onready var pa_report: APReport = %pa_report
 
