@@ -18,7 +18,7 @@ config/name="True Crime RAID"
 config/version="v0.1.119"
 run/main_scene="uid://b2q2xjr1xt7rj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bd335cexxyvna"
 
 [autoload]
 
