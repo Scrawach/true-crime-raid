@@ -3,6 +3,8 @@ extends PlayerState
 
 @export var interactor: PlayerInteractor
 
+@export var mouse_capture: MouseCapture
+
 var current_interaction: InteractState
 
 func state_handle_input(event: InputEvent) -> void:
@@ -14,6 +16,7 @@ func enter() -> void:
 	var is_success := interactor.try_interact()
 	
 	if is_success and interactor.interaction.has_interact_state():
+		#mouse_capture.hide_cursor()
 		var state := interactor.interaction.interact_state
 		current_interaction = state
 		current_interaction.start_interaction(player)

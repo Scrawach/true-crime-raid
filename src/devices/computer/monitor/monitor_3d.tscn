@@ -29,17 +29,10 @@ unique_name_in_owner = true
 disable_3d = true
 canvas_item_default_texture_filter = 0
 gui_embed_subwindows = true
-size = Vector2i(1150, 650)
+size = Vector2i(2080, 1274)
 
 [node name="Monitor Control" parent="Monitor SubViewport" unique_id=918670776 instance=ExtResource("2_yf60s")]
 unique_name_in_owner = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Monitor Area3D" type="Area3D" parent="." unique_id=1823387035]
 unique_name_in_owner = true

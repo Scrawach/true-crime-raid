@@ -12,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://csup5eroirybm" path="res://devices/computer/data/theme/new_report.tres" id="9_pt0c6"]
 [ext_resource type="Texture2D" uid="uid://bqjeb8m8b6dyn" path="res://devices/computer/assets/img/content/export1.png" id="11_mougs"]
 [ext_resource type="Texture2D" uid="uid://brjxfi8gcja3" path="res://devices/computer/assets/img/content/export2.png" id="11_rrxyk"]
+[ext_resource type="Script" uid="uid://sx80krwwcv38" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/menu_button_custom.gd" id="12_f8duk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4ewm2"]
 font_size = 12
@@ -265,6 +266,7 @@ popup/item_0/text = "Выбор 1"
 popup/item_0/id = 0
 popup/item_1/text = "Выбор 2"
 popup/item_1/id = 1
+script = ExtResource("12_f8duk")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer/VBoxContainer2" index="2" unique_id=281085389]
 layout_mode = 2
@@ -285,6 +287,7 @@ popup/item_0/text = "Выбор 1"
 popup/item_0/id = 0
 popup/item_1/text = "Выбор 2"
 popup/item_1/id = 1
+script = ExtResource("12_f8duk")
 
 [node name="Label4" type="Label" parent="VBoxContainer/Content/VBoxContainer" index="3" unique_id=1876739411]
 layout_mode = 2
@@ -319,6 +322,7 @@ offset_top = -123.0
 offset_right = 262.0
 offset_bottom = -6.0
 rotation = 0.64286417
+mouse_filter = 2
 texture = ExtResource("11_mougs")
 expand_mode = 1
 
