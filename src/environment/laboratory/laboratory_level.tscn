@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cd0c24baxbm8g" path="res://environment/laboratory/assets/doors/Door01Window.fbx" id="4_nc2p1"]
 [ext_resource type="PackedScene" uid="uid://emthmt4dt6kx" path="res://environment/laboratory/assets/bench/Bench02c.fbx" id="4_nc8s7"]
 [ext_resource type="PackedScene" uid="uid://bljayqd826fmd" path="res://environment/laboratory/assets/cabinet/Cabinet01b.fbx" id="4_pssk2"]
+[ext_resource type="PackedScene" uid="uid://caao52nxpdwcr" path="res://environment/laboratory/assets/desk/Desk01.fbx" id="5_6c8b1"]
 [ext_resource type="PackedScene" uid="uid://xo40y2r3he8q" path="res://environment/laboratory/assets/bench/Bench01d.fbx" id="5_m00mb"]
 [ext_resource type="PackedScene" uid="uid://cgc7jc4oy5y75" path="res://environment/laboratory/assets/chair/Stool01.fbx" id="5_obvj2"]
 [ext_resource type="PackedScene" uid="uid://224156mebd0h" path="res://environment/laboratory/assets/sink_bench/SinkBench01.fbx" id="6_7e1y0"]
@@ -38,7 +39,7 @@ size = Vector2(25, 25)
 
 [sub_resource type="Environment" id="Environment_5qvkq"]
 ambient_light_source = 2
-ambient_light_color = Color(0.61745477, 0.61745477, 0.6174547, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="Laboratory Level" type="Node3D" unique_id=1427256803]
 
@@ -52,19 +53,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1397588, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1291645, 0, 2.861023e-06)
 
 [node name="WhiteBoard01" parent="." unique_id=1771476640 instance=ExtResource("3_1dkm5")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9122138, 1.8282378, -0.16083264)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9122138, 2.053218, -0.40538543)
 
 [node name="Overbench02" parent="." unique_id=1318722777 instance=ExtResource("1_ukwx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4051584, 1.8282378, -4.0605097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4051584, 2.2816658, -4.0605097)
 
 [node name="Overbench02" parent="Overbench02" unique_id=1170901946 instance=ExtResource("2_gx0xj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1322749, 0, 0)
 
 [node name="Overbench03" parent="." unique_id=708344773 instance=ExtResource("1_ukwx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9091325, 1.8282378, -4.0605097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9091325, 2.2816658, -4.0605097)
 
 [node name="Door01Window" parent="." unique_id=1523399946 instance=ExtResource("4_nc2p1")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -5.3950996, 0, -1.2197614)
+
+[node name="Desk01" parent="." unique_id=1937803491 instance=ExtResource("5_6c8b1")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 3.2921813, 0, 1.5142114)
 
 [node name="Bench03" parent="." unique_id=1859351415 instance=ExtResource("3_b660v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.1082234, 0, 4.7669086)
@@ -94,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1279919, -0.07300186)
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.7487654, 0, -3.8366117)
 
 [node name="Bench01d3" parent="." unique_id=394727397 instance=ExtResource("5_m00mb")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -3.7566948, 0, -3.8366117)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -3.7738328, 0, -3.8366117)
 
 [node name="Bench04" parent="." unique_id=356694186 instance=ExtResource("3_b660v")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 1.1346184, 0, -3.836612)
@@ -109,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14255273, 0, -1.1690024)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73903954, 0, 0.5749703)
 
 [node name="SinkBench01" parent="." unique_id=3092742 instance=ExtResource("6_7e1y0")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -2.2478669, 0, -3.836612)
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -2.2650049, 0, -3.836612)
 
 [node name="SinkBenchPart03" parent="SinkBench01" unique_id=1546515124 instance=ExtResource("7_oisqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1248461, -0.35049224)
