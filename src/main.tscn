@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://b2q2xjr1xt7rj"]
 
-[ext_resource type="PackedScene" uid="uid://d25j0f0jg6nc6" path="res://prototyping/prototype_level.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://rieywa0q220p" path="res://environment/laboratory/laboratory_level.tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node" unique_id=1525077625]
 
-[node name="Prototype Level" parent="." unique_id=573298799 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001955986, -0.004543543, 0.009936869)
+[node name="Laboratory Level" parent="." unique_id=1427256803 instance=ExtResource("1_ig7tw")]

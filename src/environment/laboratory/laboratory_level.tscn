@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b07m6dk7egvcr" path="res://environment/laboratory/assets/props/files/files.glb" id="29_6c8b1"]
 [ext_resource type="PackedScene" uid="uid://bkom3ggnra23h" path="res://environment/laboratory/assets/props/files/file_boxes.glb" id="30_oa8vb"]
 [ext_resource type="PackedScene" uid="uid://dtthlhayjwcce" path="res://devices/trash/trash_holder.tscn" id="31_6c8b1"]
+[ext_resource type="PackedScene" uid="uid://bocxkplxo28ht" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.tscn" id="31_lvmif"]
 [ext_resource type="PackedScene" uid="uid://dcqy1i5tyjo6c" path="res://environment/laboratory/assets/architecture/laboratory.glb" id="31_oa8vb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w4k60"]
@@ -275,6 +276,13 @@ transform = Transform3D(0.040044554, 0, -0.9991981, 0, 1, 0, 0.9991981, 0, 0.040
 
 [node name="Trash Holder" parent="." unique_id=199561149 instance=ExtResource("31_6c8b1")]
 transform = Transform3D(-0.36706954, 0, 0.93019354, 0, 1, 0, -0.93019354, 0, -0.36706954, -3.9789033, 0.01849693, -3.5585291)
+
+[node name="TutorialRunner" parent="." unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "workbenches") instance=ExtResource("31_lvmif")]
+player = NodePath("../Player Body3D")
+computer = NodePath("../Computer")
+dna_analyzer = NodePath("../DNA Analyzer")
+startup_box = NodePath("../Box")
+workbenches = [NodePath("../laboratory/Workbench"), NodePath("../laboratory/Workbench2")]
 
 [editable path="laboratory/Cells/Low Lamp4"]
 [editable path="Player Body3D"]
