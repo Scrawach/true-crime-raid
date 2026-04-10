@@ -4,16 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="2_48rla"]
 [ext_resource type="Script" uid="uid://2t6nykh3ivmi" path="res://devices/table/interact_with_table.gd" id="3_48rla"]
 [ext_resource type="Script" uid="uid://dbepi38vebh87" path="res://devices/table/stickers/stickers_hand.gd" id="3_bbggy"]
-[ext_resource type="Material" uid="uid://c15wp3qwtyeih" path="res://devices/table/materials/M_table_hover.tres" id="4_b7tqs"]
 [ext_resource type="Script" uid="uid://whpdvt1kqlbg" path="res://devices/table/stickers_holder.gd" id="4_qjxiv"]
 [ext_resource type="Script" uid="uid://c243uqlnixv4o" path="res://devices/table/common/drag_and_drop_3d.gd" id="4_y55wg"]
 [ext_resource type="PackedScene" uid="uid://hm8yp8p4h68n" path="res://devices/table/stickers/sticker.tscn" id="5_26vo7"]
 [ext_resource type="PackedScene" uid="uid://cbp6cvnr6t8d8" path="res://devices/table/common/table_hover_node_3d.tscn" id="6_4brtg"]
 [ext_resource type="Script" uid="uid://dvs73hbvr0e2g" path="res://devices/table/table_stickers.gd" id="8_4brtg"]
-[ext_resource type="Material" uid="uid://u1w1ss6emu5j" path="res://devices/table/materials/M_table_invalid_hover.tres" id="8_k5arx"]
 [ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="9_xlcn7"]
 [ext_resource type="Script" uid="uid://cp1rw6ijyemtg" path="res://devices/table/table_initializer.gd" id="12_5boxa"]
 [ext_resource type="PackedScene" uid="uid://db30afugfjy5o" path="res://prototyping/assets/table.glb" id="13_pu4re"]
+[ext_resource type="PackedScene" uid="uid://6rh1tssiebfu" path="res://environment/laboratory/assets/board/WhiteBoard01.fbx" id="13_qjxiv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ia5wu"]
 size = Vector3(0.16772461, 1.510376, 3.111145)
@@ -99,8 +98,6 @@ visible = false
 [node name="TableHoverNode3D" parent="Stickers Node3D" unique_id=703492729 instance=ExtResource("6_4brtg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.967015e-08, -0.58996344, -1.1363208)
 visible = false
-valid_material = ExtResource("4_b7tqs")
-invalid_material = ExtResource("8_k5arx")
 
 [node name="DragAndDrop3D" type="Node3D" parent="." unique_id=1407678083 node_paths=PackedStringArray("hand", "holder", "table_raycast", "sticker_hover", "table_stickers")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.2544227, 1.8117316, 0)
@@ -142,6 +139,7 @@ metadata/_custom_type_script = "uid://cp1rw6ijyemtg"
 
 [node name="table" parent="." unique_id=754463627 instance=ExtResource("13_pu4re")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.086134255, 0, 0)
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2088901192]
 visible = false
@@ -179,3 +177,6 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 bbcode_enabled = true
 text = "[img height=32px]uid://blvvxcjuyqu33[/img] Выйти из режима осмотра"
+
+[node name="WhiteBoard01" parent="." unique_id=1298818700 instance=ExtResource("13_qjxiv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.05186653, 1.7999169, 0)

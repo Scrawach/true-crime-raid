@@ -4,11 +4,17 @@ extends Area3D
 @export var pin_node: Node3D
 @export var data: TableStickerData
 
-@onready var sticker_background: ColorRect = $"Sticker Mesh/SubViewport/Sticker Control/Sticker Background"
+@export var mesh_data: Array[ArrayMesh]
+
+@onready var sticker_background: ColorRect = %"Sticker Background"
 @onready var sticker_label: Label = %"Sticker Label"
 @onready var sticker_texture: TextureRect = %"Sticker Texture"
+@onready var note_sticker_mesh: MeshInstance3D = %"Note Sticker Mesh"
 
 var hover_tween: Tween
+
+func _ready() -> void:
+	note_sticker_mesh.mesh = mesh_data.pick_random()
 
 func initialize(new_data: TableStickerData) -> void:
 	data = new_data

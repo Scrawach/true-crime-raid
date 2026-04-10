@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://hm8yp8p4h68n"]
 
 [ext_resource type="Script" uid="uid://bjuijsgs5nexi" path="res://devices/table/stickers/sticker.gd" id="1_gp75q"]
+[ext_resource type="ArrayMesh" uid="uid://8yxmcsg05fhm" path="res://environment/laboratory/assets/props/stickers/note_00.tres" id="2_7i7mu"]
 [ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="2_juudu"]
+[ext_resource type="ArrayMesh" uid="uid://bt7whtdyvjftx" path="res://environment/laboratory/assets/props/stickers/note_01.tres" id="3_g5n2j"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_48rla"]
-size = Vector2(0.2, 0.2)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_gp75q"]
-viewport_path = NodePath("Sticker Mesh/SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_g5n2j"]
+viewport_path = NodePath("Note Sticker/Note Sticker Mesh/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y55wg"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_gp75q")
+cull_mode = 2
+albedo_texture = SubResource("ViewportTexture_g5n2j")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gp75q"]
 data = PackedVector3Array(0.099999994, -0.099999994, 0, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, 0, -0.099999994, -0.099999994, 0, -0.099999994, 0.099999994, 0, 0.099999994, 0.099999994, 0)
@@ -32,30 +32,37 @@ collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_gp75q")
 pin_node = NodePath("Piece")
+mesh_data = Array[ArrayMesh]([ExtResource("2_7i7mu"), ExtResource("3_g5n2j")])
 
-[node name="Sticker Mesh" type="MeshInstance3D" parent="." unique_id=1292297328]
-mesh = SubResource("QuadMesh_48rla")
+[node name="Note Sticker" type="Node3D" parent="." unique_id=2078646641]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.00074137375)
+
+[node name="Note Sticker Mesh" type="MeshInstance3D" parent="Note Sticker" unique_id=545239358]
+unique_name_in_owner = true
+transform = Transform3D(100, 0, 0, 0, -3.5762794e-05, 100.000015, 0, -100.000015, -3.5762794e-05, 0, 0, 0)
+mesh = ExtResource("2_7i7mu")
 surface_material_override/0 = SubResource("StandardMaterial3D_y55wg")
 
-[node name="SubViewport" type="SubViewport" parent="Sticker Mesh" unique_id=508987566]
+[node name="SubViewport" type="SubViewport" parent="Note Sticker/Note Sticker Mesh" unique_id=508987566]
 size = Vector2i(128, 128)
 
-[node name="Sticker Control" type="Control" parent="Sticker Mesh/SubViewport" unique_id=856052641]
+[node name="Sticker Control" type="Control" parent="Note Sticker/Note Sticker Mesh/SubViewport" unique_id=856052641]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 
-[node name="Sticker Background" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control" unique_id=1532332574]
+[node name="Sticker Background" type="ColorRect" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control" unique_id=1532332574]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.735357, 0.7735731, 0.6986019, 1)
+color = Color(0.7469684, 0.70288527, 0.572729, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background" unique_id=1082076562]
+[node name="MarginContainer" type="MarginContainer" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control/Sticker Background" unique_id=1082076562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,16 +74,16 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer" unique_id=1006568512]
+[node name="VBoxContainer" type="VBoxContainer" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer" unique_id=1006568512]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=576684762]
+[node name="ColorRect" type="ColorRect" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=576684762]
 custom_minimum_size = Vector2(0, 88)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="Sticker Texture" type="TextureRect" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer/ColorRect" unique_id=189577978]
+[node name="Sticker Texture" type="TextureRect" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer/ColorRect" unique_id=189577978]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -87,7 +94,7 @@ grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Sticker Label" type="Label" parent="Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=1684914882]
+[node name="Sticker Label" type="Label" parent="Note Sticker/Note Sticker Mesh/SubViewport/Sticker Control/Sticker Background/MarginContainer/VBoxContainer" unique_id=1684914882]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -110,4 +117,5 @@ shape = SubResource("BoxShape3D_juudu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=234219219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0038224682)
+visible = false
 mesh = SubResource("BoxMesh_gp75q")
