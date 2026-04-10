@@ -15,7 +15,7 @@ AutoExportVersion/version_config_file="res://addons/current_version/auto_export_
 [application]
 
 config/name="True Crime RAID"
-config/version="v0.1.119"
+config/version="v0.1.158"
 run/main_scene="uid://b2q2xjr1xt7rj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://bd335cexxyvna"
@@ -94,6 +94,5 @@ scroll_down={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 anti_aliasing/quality/msaa_3d=3
+anti_aliasing/screen_space_roughness_limiter/enabled=false

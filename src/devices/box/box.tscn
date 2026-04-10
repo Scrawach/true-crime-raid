@@ -27,5 +27,14 @@ interaction = NodePath("..")
 [node name="PlasticCrate01" parent="." unique_id=279809981 instance=ExtResource("5_1scv4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="PlasticCrate01" parent="PlasticCrate01" index="0" unique_id=2125870848]
+gi_mode = 2
+
 [node name="PlasticCrate02" parent="." unique_id=546040709 instance=ExtResource("5_1scv4")]
 transform = Transform3D(-7.172301e-08, -4.547098e-15, -0.95, 1.4344602e-07, -0.6, -3.6303006e-15, -0.95, -9.059749e-08, 7.172301e-08, 0, 0.3548314, 0)
+
+[node name="PlasticCrate01" parent="PlasticCrate02" index="0" unique_id=2125870848]
+gi_mode = 2
+
+[editable path="PlasticCrate01"]
+[editable path="PlasticCrate02"]

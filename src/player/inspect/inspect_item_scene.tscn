@@ -5,14 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bsqnjrirxoa0f" path="res://items/dna_item.tscn" id="2_hxa35"]
 [ext_resource type="PackedScene" uid="uid://bk3m0wd35n37r" path="res://player/inspect/inspect_background.tscn" id="3_0yr2y"]
 [ext_resource type="PackedScene" uid="uid://bbt4ebi7dnhdm" path="res://items/trash_item.tscn" id="3_et4ll"]
-[ext_resource type="Environment" uid="uid://dgikb6al8fmpk" path="res://prototyping/proto_environment.tres" id="7_hxa35"]
 [ext_resource type="Script" uid="uid://dxo7ifkrsuskk" path="res://player/camera/camera_distance_zoom.gd" id="8_0yr2y"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="9_dsp5a"]
 [ext_resource type="PackedScene" uid="uid://d3ymyewlmpt84" path="res://player/inspect/ui/inspector_control.tscn" id="9_x0nva"]
 [ext_resource type="Script" uid="uid://lcrxqd5av3io" path="res://player/inspect/inspect_scene_appear.gd" id="10_x0nva"]
-
-[sub_resource type="World3D" id="World3D_x0nva"]
-environment = ExtResource("7_hxa35")
 
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
 script = ExtResource("1_3lwxk")
@@ -50,7 +46,6 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=676341912]
 unique_name_in_owner = true
 own_world_3d = true
-world_3d = SubResource("World3D_x0nva")
 transparent_bg = true
 handle_input_locally = false
 msaa_3d = 3
