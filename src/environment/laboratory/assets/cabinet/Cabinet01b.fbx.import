@@ -39,22 +39,27 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Material #1": {
+"Material #1.002": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_white.tres",
 "use_external/path": "uid://d1qwgea75aovx"
 },
-"Material #3": {
+"Material #3.002": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
 "use_external/path": "uid://u660qxy5h03i"
 },
-"Material #4": {
+"Material #4.002": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
 "use_external/path": "uid://bcmlw0bxjmuts"
 },
-"Material #79": {
+"Material #79.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
+"use_external/path": "uid://bcmlw0bxjmuts"
+},
+"Top": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
 "use_external/path": "uid://bcmlw0bxjmuts"

@@ -39,9 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"@MATERIAL:0": {
+"Cable": {
 "use_external/enabled": true,
-"use_external/path": "uid://bxdwlklvsl4tj"
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
+"use_external/path": "uid://u660qxy5h03i"
 }
 }
 }
