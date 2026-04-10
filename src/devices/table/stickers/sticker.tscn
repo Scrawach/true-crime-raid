@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjuijsgs5nexi" path="res://devices/table/stickers/sticker.gd" id="1_gp75q"]
 [ext_resource type="ArrayMesh" uid="uid://8yxmcsg05fhm" path="res://environment/laboratory/assets/props/stickers/note_00.tres" id="2_7i7mu"]
-[ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="2_juudu"]
 [ext_resource type="ArrayMesh" uid="uid://bt7whtdyvjftx" path="res://environment/laboratory/assets/props/stickers/note_01.tres" id="3_g5n2j"]
+[ext_resource type="PackedScene" uid="uid://bulgge6dhvn1b" path="res://environment/laboratory/assets/props/pin/pin.glb" id="4_7i7mu"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g5n2j"]
 viewport_path = NodePath("Note Sticker/Note Sticker Mesh/SubViewport")
@@ -15,11 +15,6 @@ albedo_texture = SubResource("ViewportTexture_g5n2j")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gp75q"]
 data = PackedVector3Array(0.099999994, -0.099999994, 0, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, 0, -0.099999994, -0.099999994, 0, -0.099999994, 0.099999994, 0, 0.099999994, 0.099999994, 0)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_4brtg"]
-top_radius = 0.01
-bottom_radius = 0.01
-height = 0.02
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_juudu"]
 size = Vector3(0.20888138, 0.2204895, 0.012107849)
@@ -106,10 +101,11 @@ shape = SubResource("ConcavePolygonShape3D_gp75q")
 disabled = true
 
 [node name="Piece" type="MeshInstance3D" parent="." unique_id=247900771]
-transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 2.897398e-10, 0.08367419, 0.0066284537)
+transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 2.897398e-10, 0.08367419, 0.00622846)
 visible = false
-mesh = SubResource("CylinderMesh_4brtg")
-surface_material_override/0 = ExtResource("2_juudu")
+
+[node name="pin" parent="Piece" unique_id=982019493 instance=ExtResource("4_7i7mu")]
+transform = Transform3D(-4.3711385e-08, -1, 8.742278e-08, 1, -4.371137e-08, 1.4210855e-14, 0, 8.742278e-08, 1, -1.4695178e-10, 0.0033618603, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=347904782]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0003490448, 0.0012054443, -0.004611969)

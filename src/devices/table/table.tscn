@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://hm8yp8p4h68n" path="res://devices/table/stickers/sticker.tscn" id="5_26vo7"]
 [ext_resource type="PackedScene" uid="uid://cbp6cvnr6t8d8" path="res://devices/table/common/table_hover_node_3d.tscn" id="6_4brtg"]
 [ext_resource type="Script" uid="uid://dvs73hbvr0e2g" path="res://devices/table/table_stickers.gd" id="8_4brtg"]
-[ext_resource type="Material" uid="uid://bseibvgr10j2a" path="res://prototyping/materials/M_prototype_danger.tres" id="9_xlcn7"]
+[ext_resource type="Material" uid="uid://c4yat1tufiepv" path="res://environment/laboratory/assets/props/pin/M_pin.tres" id="9_pu4re"]
 [ext_resource type="Script" uid="uid://cp1rw6ijyemtg" path="res://devices/table/table_initializer.gd" id="12_5boxa"]
 [ext_resource type="PackedScene" uid="uid://db30afugfjy5o" path="res://prototyping/assets/table.glb" id="13_pu4re"]
 [ext_resource type="PackedScene" uid="uid://6rh1tssiebfu" path="res://environment/laboratory/assets/board/WhiteBoard01.fbx" id="13_qjxiv"]
@@ -128,7 +128,7 @@ shape = SubResource("BoxShape3D_4brtg")
 
 [node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553]
 script = ExtResource("8_4brtg")
-connection_material = ExtResource("9_xlcn7")
+connection_material = ExtResource("9_pu4re")
 
 [node name="TableInitializer" type="Node" parent="." unique_id=112741787 node_paths=PackedStringArray("hand")]
 script = ExtResource("12_5boxa")

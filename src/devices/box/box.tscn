@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://b40ypkl0nl4b2"]
 
 [ext_resource type="Script" uid="uid://b0wdblwr4pltl" path="res://devices/box/box.gd" id="1_oaahe"]
-[ext_resource type="PackedScene" uid="uid://8yssh1v2p0xk" path="res://prototyping/assets/box.glb" id="1_ttkxu"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_2h45o"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_oaahe"]
+[ext_resource type="PackedScene" uid="uid://boy6gf851kdtr" path="res://environment/laboratory/assets/crates/PlasticCrate01.fbx" id="5_1scv4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1scv4"]
 
 [node name="Box" type="Node3D" unique_id=1870866890]
 script = ExtResource("1_oaahe")
-
-[node name="box" parent="." unique_id=135794116 instance=ExtResource("1_ttkxu")]
 
 [node name="InteractionArea3D" type="Area3D" parent="." unique_id=45986498]
 unique_name_in_owner = true
@@ -25,3 +23,9 @@ shape = SubResource("SphereShape3D_1scv4")
 
 [node name="InteractTooltip3D" parent="InteractionArea3D" unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("3_oaahe")]
 interaction = NodePath("..")
+
+[node name="PlasticCrate01" parent="." unique_id=279809981 instance=ExtResource("5_1scv4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="PlasticCrate02" parent="." unique_id=546040709 instance=ExtResource("5_1scv4")]
+transform = Transform3D(-7.172301e-08, -4.547098e-15, -0.95, 1.4344602e-07, -0.6, -3.6303006e-15, -0.95, -9.059749e-08, 7.172301e-08, 0, 0.3548314, 0)

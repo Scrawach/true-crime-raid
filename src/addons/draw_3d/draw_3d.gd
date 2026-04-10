@@ -1,6 +1,6 @@
 class_name Draw3D
 
-static func line(from: Vector3, to: Vector3, parent: Node, material: ShaderMaterial, thickness := 0.05) -> MeshInstance3D:
+static func line(from: Vector3, to: Vector3, parent: Node, material: Material, thickness := 0.05) -> MeshInstance3D:
 	var instance := MeshInstance3D.new()
 	var mesh := CylinderMesh.new()
 
