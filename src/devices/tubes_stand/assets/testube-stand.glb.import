@@ -1,0 +1,50 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bvg73rprr2g3k"
+path="res://.godot/imported/testube-stand.glb-6de473fc68fd1c17b850e490569fba66.scn"
+
+[deps]
+
+source_file="res://devices/tubes_stand/assets/testube-stand.glb"
+dest_files=["res://.godot/imported/testube-stand.glb-6de473fc68fd1c17b850e490569fba66.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=5.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Testube.Stand": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
+"use_external/path": "uid://u660qxy5h03i"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

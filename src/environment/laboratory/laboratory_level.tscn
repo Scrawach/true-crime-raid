@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://bf1m8l5vqavy7" path="res://environment/laboratory/assets/props/documents/computer_folders.glb" id="11_edpyb"]
 [ext_resource type="PackedScene" uid="uid://cx7rsciexusnm" path="res://player/player_body_3d.tscn" id="17_enb8l"]
 [ext_resource type="PackedScene" uid="uid://cl701vbhrtifk" path="res://devices/workbench/workbench.tscn" id="18_uxwp0"]
+[ext_resource type="PackedScene" uid="uid://dqjwdk1q1xxnm" path="res://environment/laboratory/assets/props/files/file_boxes_02.glb" id="19_w4k60"]
+[ext_resource type="PackedScene" uid="uid://dus76k18lg2ht" path="res://environment/laboratory/assets/props/trash/trash_can.glb" id="20_6c8b1"]
 [ext_resource type="PackedScene" uid="uid://dnpxswreor2io" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle01.fbx" id="23_3tgf5"]
 [ext_resource type="PackedScene" uid="uid://btnady6llxq52" path="res://devices/computer/computer.tscn" id="23_nc2p1"]
 [ext_resource type="PackedScene" uid="uid://bci5noqy1q8dl" path="res://environment/laboratory/assets/props/computer/computer_lamp.glb" id="23_t3v7u"]
@@ -23,21 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://dqosh81q150fd" path="res://scenarios/00_night_fight/00_night_fight_evidences.tscn" id="25_enb8l"]
 [ext_resource type="PackedScene" uid="uid://dpg21fgbcxjg4" path="res://environment/laboratory/assets/architecture/cells/top_cell.tscn" id="25_t3v7u"]
 [ext_resource type="PackedScene" uid="uid://i0f203c1e4u2" path="res://environment/laboratory/assets/architecture/cells/lamp/cell_lamp.tscn" id="26_uxwp0"]
+[ext_resource type="PackedScene" uid="uid://c5yflwcg3h70p" path="res://devices/dna_analyzer/dna_analyzer.tscn" id="27_4ccwt"]
 [ext_resource type="PackedScene" uid="uid://cj8t6ujatefa3" path="res://environment/laboratory/assets/props/optics/low_lamp.tscn" id="27_enb8l"]
-[ext_resource type="PackedScene" uid="uid://bqncwi20oi31k" path="res://environment/laboratory/assets/wastebin/Wastebin01.fbx" id="29_ctynt"]
+[ext_resource type="PackedScene" uid="uid://b07m6dk7egvcr" path="res://environment/laboratory/assets/props/files/files.glb" id="29_6c8b1"]
+[ext_resource type="PackedScene" uid="uid://bkom3ggnra23h" path="res://environment/laboratory/assets/props/files/file_boxes.glb" id="30_oa8vb"]
+[ext_resource type="PackedScene" uid="uid://dtthlhayjwcce" path="res://devices/trash/trash_holder.tscn" id="31_6c8b1"]
 [ext_resource type="PackedScene" uid="uid://dcqy1i5tyjo6c" path="res://environment/laboratory/assets/architecture/laboratory.glb" id="31_oa8vb"]
 
-[sub_resource type="Environment" id="Environment_5qvkq"]
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-
 [node name="Laboratory Level" type="Node3D" unique_id=1427256803]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1230964524]
-environment = SubResource("Environment_5qvkq")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=688284743]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="laboratory" parent="." unique_id=84646954 instance=ExtResource("31_oa8vb")]
 
@@ -45,25 +40,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1694465)
 
 [node name="Lamps" type="Node3D" parent="laboratory/Cells" unique_id=1360868081]
-visible = false
 
 [node name="CellLamp" parent="laboratory/Cells/Lamps" unique_id=499185299 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641624, 3.9198093, 1.1208334)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1641624, 3.9198093, 1.372508)
 
-[node name="CellLamp2" parent="laboratory/Cells/Lamps" unique_id=1908835504 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1641624, 3.9198093, -3.3791666)
-
-[node name="CellLamp3" parent="laboratory/Cells/Lamps" unique_id=1915789170 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3358376, 3.9198093, 1.1208334)
-
-[node name="CellLamp4" parent="laboratory/Cells/Lamps" unique_id=398901418 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3358376, 3.9198093, -3.3791666)
-
-[node name="CellLamp5" parent="laboratory/Cells/Lamps" unique_id=9251248 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6641626, 3.9198093, 1.1208334)
-
-[node name="CellLamp6" parent="laboratory/Cells/Lamps" unique_id=1445907788 instance=ExtResource("26_uxwp0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6641626, 3.9198093, -3.3791666)
+[node name="CellLamp2" parent="laboratory/Cells/Lamps" unique_id=656231164 instance=ExtResource("26_uxwp0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.1641624, 3.9198093, -3.1288645)
 
 [node name="Elements" type="Node3D" parent="laboratory/Cells" unique_id=573070281]
 
@@ -148,9 +130,6 @@ visible = false
 [node name="Suspension01Cable" parent="laboratory/Cells/Low Lamp4/CeilingLamp02/Suspension02" index="1" unique_id=169591062]
 visible = false
 
-[node name="Wastebin01" parent="laboratory" unique_id=675710116 instance=ExtResource("29_ctynt")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9413114, 0, -3.9550016)
-
 [node name="Bench03" parent="laboratory" unique_id=1839400045 instance=ExtResource("3_b660v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1025821, 0, 6.2215)
 
@@ -215,7 +194,7 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -2.1
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -1.960401, 1.1208142, -0.43950748)
 
 [node name="PlasticBottle03" parent="laboratory/Bench04" unique_id=1095080741 instance=ExtResource("23_3tgf5")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -2.142211, 1.1208142, -0.26136875)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.795, 0, 1.7484555e-07, 0, 1, -2.0364923, 1.1208142, -0.29070592)
 
 [node name="Desk01" parent="laboratory" unique_id=1684953295 instance=ExtResource("5_6c8b1")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 3.8577268, 0, 1.3259016)
@@ -225,6 +204,18 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4.5
 
 [node name="Workbench" parent="laboratory" unique_id=1556907178 instance=ExtResource("18_uxwp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1811136, 1.1291184, -3.7499788)
+
+[node name="file_boxes_02" parent="laboratory" unique_id=1155399526 instance=ExtResource("19_w4k60")]
+transform = Transform3D(0.0061958353, 0, -0.9999808, 0, 1, 0, 0.9999808, 0, 0.0061958353, 0.23965308, 1.1249999, 6.526326)
+
+[node name="file_boxes_03" parent="laboratory" unique_id=1600630909 instance=ExtResource("19_w4k60")]
+transform = Transform3D(0.3493244, 0, -0.9370018, 0, 1, 0, 0.9370018, 0, 0.3493244, 0.23965308, 1.4084306, 6.5544343)
+
+[node name="Sketchfab_Scene" parent="laboratory" unique_id=981490513 instance=ExtResource("20_6c8b1")]
+transform = Transform3D(0.7631084, 0, -0.6462705, 0, 1, 0, 0.6462705, 0, 0.7631084, 1.6473151, 0.030197263, -3.925354)
+
+[node name="Sketchfab_Scene2" parent="laboratory" unique_id=544689682 instance=ExtResource("20_6c8b1")]
+transform = Transform3D(-0.9665375, 0, -0.25652558, 0, 1, 0, 0.25652558, 0, -0.9665375, -0.6792881, 0.030197263, 6.7334704)
 
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("17_enb8l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4007225, 0, -0.47458267)
@@ -256,6 +247,21 @@ transform = Transform3D(-0.24818271, 0, 0.9687132, 0, 1, 0, -0.9687132, 0, -0.24
 [node name="Box" parent="." unique_id=1870866890 instance=ExtResource("24_uxwp0")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.3184457, 1.1045649, -3.7666848)
 spawn_scene = ExtResource("25_enb8l")
+
+[node name="DNA Analyzer" parent="." unique_id=84210177 instance=ExtResource("27_4ccwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09365213, 1.1149272, -0.16640672)
+
+[node name="files" parent="." unique_id=864677392 instance=ExtResource("29_6c8b1")]
+transform = Transform3D(0.38745123, 0, 0.9218902, 0, 1, 0, -0.9218902, 0, 0.38745123, -2.005623, 1.125, 6.457481)
+
+[node name="file_boxes" parent="." unique_id=226747982 instance=ExtResource("30_oa8vb")]
+transform = Transform3D(0.9963973, 0, 0.084808275, 0, 1, 0, -0.084808275, 0, 0.9963973, -2.4182353, 1.107514, 6.451191)
+
+[node name="file_boxes2" parent="." unique_id=505146342 instance=ExtResource("30_oa8vb")]
+transform = Transform3D(0.040044554, 0, -0.9991981, 0, 1, 0, 0.9991981, 0, 0.040044554, -0.27433437, 1.107514, -4.024257)
+
+[node name="Trash Holder" parent="." unique_id=199561149 instance=ExtResource("31_6c8b1")]
+transform = Transform3D(0.9401871, 0, 0.34065855, 0, 1, 0, -0.34065855, 0, 0.9401871, -3.9789033, 0.01849693, -3.5585291)
 
 [editable path="laboratory/Cells/Low Lamp4"]
 [editable path="Player Body3D"]

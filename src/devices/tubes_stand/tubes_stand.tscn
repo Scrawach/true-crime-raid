@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ckpmqqlqc72kj"]
 
 [ext_resource type="PackedScene" uid="uid://dk1bydnennwf6" path="res://prototyping/assets/tubes_stand.glb" id="1_ps5at"]
+[ext_resource type="PackedScene" uid="uid://bvg73rprr2g3k" path="res://devices/tubes_stand/assets/testube-stand.glb" id="1_u2oup"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_0m5el"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_t8s4k"]
 [ext_resource type="Script" uid="uid://b83hw0cyge6d1" path="res://devices/tubes_stand/player_has_dna_or_can_take_dna.gd" id="4_tuhfg"]
@@ -12,7 +13,11 @@ size = Vector3(0.4729004, 0.26654053, 0.19384766)
 
 [node name="TubesStand" type="Node3D" unique_id=64065040]
 
+[node name="testube-stand" parent="." unique_id=884339654 instance=ExtResource("1_u2oup")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.05299373, 0.008107103, 0.008605242)
+
 [node name="tubes_stand" parent="." unique_id=1417007498 instance=ExtResource("1_ps5at")]
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1756845987]
 
@@ -21,36 +26,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, 0.13320923, 0
 shape = SubResource("BoxShape3D_t8s4k")
 
 [node name="Handle Points" type="Node3D" parent="." unique_id=1355608473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0025651008, 0)
 
 [node name="Marker3D" type="Marker3D" parent="Handle Points" unique_id=1170130278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15546516, 0.10561536, -0.03624685)
 
 [node name="Marker3D2" type="Marker3D" parent="Handle Points" unique_id=1972368384]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15546516, 0.10561536, 0.04074593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15546516, 0.10561536, 0.054970652)
 
-[node name="Marker3D3" type="Marker3D" parent="Handle Points" unique_id=1873769709]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076319955, 0.10561536, -0.03624685)
+[node name="Marker3D3" type="Marker3D" parent="Handle Points" unique_id=1523192336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054375045, 0.10561536, -0.03624685)
 
-[node name="Marker3D4" type="Marker3D" parent="Handle Points" unique_id=765833929]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.076319955, 0.10561536, 0.04074593)
+[node name="Marker3D4" type="Marker3D" parent="Handle Points" unique_id=652825290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054375045, 0.10561536, 0.054970652)
 
-[node name="Marker3D5" type="Marker3D" parent="Handle Points" unique_id=414303003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009922087, 0.10561536, -0.03624685)
+[node name="Marker3D5" type="Marker3D" parent="Handle Points" unique_id=2128884191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04933863, 0.10561536, -0.03624685)
 
-[node name="Marker3D6" type="Marker3D" parent="Handle Points" unique_id=679992524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0009922087, 0.10561536, 0.04074593)
+[node name="Marker3D6" type="Marker3D" parent="Handle Points" unique_id=1208125780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04933863, 0.10561536, 0.054970652)
 
-[node name="Marker3D7" type="Marker3D" parent="Handle Points" unique_id=649827920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07815299, 0.10561536, -0.03624685)
+[node name="Marker3D7" type="Marker3D" parent="Handle Points" unique_id=895026202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15339679, 0.10561536, -0.03624685)
 
-[node name="Marker3D8" type="Marker3D" parent="Handle Points" unique_id=490314250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07815299, 0.10561536, 0.04074593)
-
-[node name="Marker3D9" type="Marker3D" parent="Handle Points" unique_id=853475036]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1561749, 0.10561536, -0.03624685)
-
-[node name="Marker3D10" type="Marker3D" parent="Handle Points" unique_id=810741553]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1561749, 0.10561536, 0.04074593)
+[node name="Marker3D8" type="Marker3D" parent="Handle Points" unique_id=280211210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15339679, 0.10561536, 0.054970652)
 
 [node name="InteractionArea3D" type="Area3D" parent="." unique_id=769977601 node_paths=PackedStringArray("conditions")]
 collision_layer = 2
