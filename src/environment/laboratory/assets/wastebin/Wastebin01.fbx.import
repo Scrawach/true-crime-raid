@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://environment/laboratory/assets/wastebin/M_wastebin.tres",
 "use_external/path": "uid://bu8hmsl5oxckl"
 }
+},
+"nodes": {
+"PATH:Wastebin01": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0

@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://d3ymyewlmpt84" path="res://player/inspect/ui/inspector_control.tscn" id="9_x0nva"]
 [ext_resource type="Script" uid="uid://lcrxqd5av3io" path="res://player/inspect/inspect_scene_appear.gd" id="10_x0nva"]
 
+[sub_resource type="World3D" id="World3D_x0nva"]
+environment = ExtResource("7_hxa35")
+
 [node name="Inspect Item Scene" type="Node3D" unique_id=1090415660]
 script = ExtResource("1_3lwxk")
 dna_tube = ExtResource("2_hxa35")
@@ -47,6 +50,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=676341912]
 unique_name_in_owner = true
 own_world_3d = true
+world_3d = SubResource("World3D_x0nva")
 transparent_bg = true
 handle_input_locally = false
 msaa_3d = 3
@@ -67,9 +71,6 @@ camera_zoom = NodePath("../Item Camera3D/CameraZoom")
 
 [node name="Item Point" type="Marker3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer/Item Handler" unique_id=2025649021]
 unique_name_in_owner = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1316467038]
-environment = ExtResource("7_hxa35")
 
 [node name="Item Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport/Item Viewer" unique_id=1029310352]
 unique_name_in_owner = true

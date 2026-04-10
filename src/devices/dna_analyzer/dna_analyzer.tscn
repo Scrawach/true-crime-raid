@@ -1,18 +1,12 @@
 [gd_scene format=3 uid="uid://c5yflwcg3h70p"]
 
-[ext_resource type="PackedScene" uid="uid://cq56d74h10uge" path="res://prototyping/assets/dna_analyzer.glb" id="1_xl3si"]
+[ext_resource type="PackedScene" uid="uid://cq56d74h10uge" path="res://devices/dna_analyzer/assets/dna_analyzer.glb" id="1_xl3si"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_r1qmm"]
 [ext_resource type="Script" uid="uid://bxrkxf3emx87w" path="res://interaction/conditions/player_has_dna_item_in_hand_condition.gd" id="3_565ll"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="4_565ll"]
 [ext_resource type="Script" uid="uid://nqo6a43tmhmd" path="res://devices/dna_analyzer/interactions/interact_with_dna_analyzer.gd" id="5_r1qmm"]
 [ext_resource type="PackedScene" uid="uid://dey8j5vkki2h5" path="res://devices/dna_analyzer/monitor/dna_monitor_3d.tscn" id="6_rnx7a"]
 [ext_resource type="PackedScene" uid="uid://jkmx15xw0i53" path="res://devices/dna_analyzer/monitor/dna_monitor_control.tscn" id="7_565ll"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_565ll"]
-points = PackedVector3Array(0.58747256, 0.46134755, -0.30119264, 0.58747256, 0.023136217, -0.30119264, 0.5680356, 0.50001323, -0.3285364, 0.48333108, 0.71298474, -0.09564322, 0.49703926, 0.6883104, -0.052977562, 0.43269253, 0.051601343, -0.3770951, 0.56445503, 0.051601343, -0.3291257, 0.11341393, 0.023136217, 0.59054303, -0.24760316, 0.023136217, -0.60515594, 0.18308026, 0.051601343, -0.46796584, 0.536834, 0.51703715, -0.3188718, -0.21517403, 0.50001323, -0.6135241, -0.007095605, 0.72725177, 0.015735328, 0.03781414, 0.72725177, 0.04025042, 0.069936335, 0.72725177, 0.08008742, 0.08425838, 0.72725177, 0.12923539, 0.07883644, 0.72725177, 0.18003345, 0.054284453, 0.72725177, 0.22493845, 0.11341393, 0.5763108, 0.59054303, -0.29998082, 0.71298474, -0.38074875, -0.45762527, 0.023136217, 0.38263637, -0.24760316, 0.46134755, -0.60515594, -0.21210502, 0.051601343, -0.61175615, -0.33793414, 0.6883104, -0.35694087, -0.19747612, 0.51703715, -0.5860625, -0.057938784, 0.72725177, 0.010195911, 0.01448971, 0.72725177, 0.25699663, -0.034614354, 0.72725177, 0.27137566, -0.085457504, 0.72725177, 0.26595408, -0.45762527, 0.5763108, 0.38263637, -0.17681149, 0.72725177, 0.15245402, -0.17138958, 0.72725177, 0.10153812, -0.14683756, 0.72725177, 0.056750953, -0.10704282, 0.72725177, 0.024574935, -0.13036725, 0.72725177, 0.24132115, -0.16248947, 0.72725177, 0.20148414)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cjrne"]
-radius = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_565ll"]
 resource_local_to_scene = true
@@ -31,15 +25,20 @@ disable_fog = true
 disable_specular_occlusion = true
 albedo_texture = SubResource("ViewportTexture_gn2j6")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cjrne"]
+radius = 0.3
+
 [node name="DNA Analyzer" type="Node3D" unique_id=84210177]
 
-[node name="dna_analyzer" parent="." unique_id=250896132 instance=ExtResource("1_xl3si")]
+[node name="dna_analyzer" parent="." unique_id=207378750 instance=ExtResource("1_xl3si")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="dna_analyzer" unique_id=683062088]
-transform = Transform3D(0.45520613, 0, 0.16484837, 0, 0.48413593, 0, -0.16484837, 0, 0.45520613, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="dna_analyzer/StaticBody3D" unique_id=791365023]
-shape = SubResource("ConvexPolygonShape3D_565ll")
+[node name="DNA Monitor3D" parent="dna_analyzer" unique_id=792307719 instance=ExtResource("6_rnx7a")]
+transform = Transform3D(-1, 0, 1.509958e-07, 1.14116894e-07, 0.6548464, 0.75576204, -9.887905e-08, 0.75576204, -0.6548464, 0.0026935935, 0.28741235, -0.17838687)
+mesh = SubResource("QuadMesh_565ll")
+surface_material_override/0 = SubResource("StandardMaterial3D_5d0n7")
+resolution = Vector2i(380, 140)
+initial_control = ExtResource("7_565ll")
 
 [node name="InteractionArea3D" type="Area3D" parent="." unique_id=2041205921 node_paths=PackedStringArray("conditions", "interact_state")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163059, 0)
@@ -61,24 +60,15 @@ metadata/_custom_type_script = "uid://bxrkxf3emx87w"
 interaction = NodePath("../InteractionArea3D")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1991075165]
-transform = Transform3D(-1, 0, -8.7422784e-08, -6.181724e-08, 0.7071068, 0.7071068, 6.181724e-08, 0.7071068, -0.7071068, 0.0070673227, 0.42661524, -0.3398452)
+transform = Transform3D(-1, 0, -8.7422784e-08, -6.181724e-08, 0.7071068, 0.7071068, 6.181724e-08, 0.7071068, -0.7071068, 0.0071588755, 0.5169977, -0.38453352)
 
 [node name="InteractWithDNAAnalyzer" type="Node" parent="." unique_id=1041999696 node_paths=PackedStringArray("monitor", "tube_position", "interaction_camera", "interaction_area")]
 script = ExtResource("5_r1qmm")
-monitor = NodePath("../DNA Monitor3D")
+monitor = NodePath("../dna_analyzer/DNA Monitor3D")
 tube_position = NodePath("../Test Tube Position")
 interaction_camera = NodePath("../Camera3D")
 interaction_area = NodePath("../InteractionArea3D")
 metadata/_custom_type_script = "uid://nqo6a43tmhmd"
 
-[node name="DNA Monitor3D" parent="." unique_id=792307719 instance=ExtResource("6_rnx7a")]
-transform = Transform3D(-1, 0, 1.509958e-07, 1.14116894e-07, 0.6548464, 0.75576204, -9.887905e-08, 0.75576204, -0.6548464, 0.0026935935, 0.28741235, -0.17838687)
-mesh = SubResource("QuadMesh_565ll")
-surface_material_override/0 = SubResource("StandardMaterial3D_5d0n7")
-resolution = Vector2i(380, 140)
-initial_control = ExtResource("7_565ll")
-
 [node name="Test Tube Position" type="Marker3D" parent="." unique_id=1317996385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36345595, 0.06881434)
-
-[editable path="dna_analyzer"]

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://b0b6igi5nhhjf"]
 
-[ext_resource type="Texture2D" uid="uid://r1sbuu0n6trx" path="res://environment/laboratory/assets/plants/flower_pot-1.png" id="1_w5umm"]
+[ext_resource type="Texture2D" uid="uid://r1sbuu0n6trx" path="res://environment/laboratory/assets/plants/plant_01/flower_pot-1.png" id="1_w5umm"]
 
 [resource]
 transparency = 1

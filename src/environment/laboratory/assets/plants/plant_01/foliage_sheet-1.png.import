@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r1sbuu0n6trx"
-path.s3tc="res://.godot/imported/flower_pot-1.png-b489c78b288c89fb830b4acc3005c283.s3tc.ctex"
+uid="uid://bdueavthoybm8"
+path.s3tc="res://.godot/imported/foliage_sheet-1.png-16ae765e4022396e083ef34c6fab4181.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://environment/laboratory/assets/plants/flower_pot-1.png"
-dest_files=["res://.godot/imported/flower_pot-1.png-b489c78b288c89fb830b4acc3005c283.s3tc.ctex"]
+source_file="res://environment/laboratory/assets/plants/plant_01/foliage_sheet-1.png"
+dest_files=["res://.godot/imported/foliage_sheet-1.png-16ae765e4022396e083ef34c6fab4181.s3tc.ctex"]
 
 [params]
 

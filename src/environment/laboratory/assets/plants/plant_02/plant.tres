@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cebgipiwq0f20"]
+
+[ext_resource type="Texture2D" uid="uid://78acfnaxan3v" path="res://environment/laboratory/assets/plants/plant_02/stylized_basil_pot_plant_0.png" id="1_j30ti"]
+[ext_resource type="Texture2D" uid="uid://niiuuekrwoar" path="res://environment/laboratory/assets/plants/plant_02/stylized_basil_pot_plant_1.png" id="2_j1hin"]
+[ext_resource type="Texture2D" uid="uid://bu4fb5adrxjq0" path="res://environment/laboratory/assets/plants/plant_02/stylized_basil_pot_plant_2.png" id="3_86854"]
+
+[resource]
+resource_name = "plant"
+transparency = 2
+alpha_scissor_threshold = 0.522741
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_j30ti")
+metallic_texture = ExtResource("2_j1hin")
+metallic_texture_channel = 2
+roughness = 0.9432445
+roughness_texture = ExtResource("2_j1hin")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_86854")
+ao_enabled = true
+ao_texture = ExtResource("2_j1hin")
