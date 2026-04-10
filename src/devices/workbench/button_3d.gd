@@ -4,7 +4,7 @@ extends Node3D
 signal pressed()
 
 @onready var button_clickable_area_3d: ClickableArea3D = %"Button ClickableArea3D"
-@onready var button_animation_player: AnimationPlayer = $"Button Base Mesh/Button AnimationPlayer"
+@onready var button_animation_player: AnimationPlayer = %"Button AnimationPlayer"
 
 var is_pressed: bool
 

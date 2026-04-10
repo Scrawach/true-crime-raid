@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dy35cv6hhuwg5"]
+
+[ext_resource type="Texture2D" uid="uid://dgnw8uyw2n0wn" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle_o.png" id="1_yxyoo"]
+[ext_resource type="Texture2D" uid="uid://j0dmgxs7cehj" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle_n.png" id="2_stwpk"]
+
+[resource]
+albedo_color = Color(0.82606, 0.82606006, 0.82606, 1)
+normal_enabled = true
+normal_texture = ExtResource("2_stwpk")
+ao_enabled = true
+ao_texture = ExtResource("1_yxyoo")

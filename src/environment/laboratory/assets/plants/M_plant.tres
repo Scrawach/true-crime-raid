@@ -4,4 +4,5 @@
 
 [resource]
 transparency = 1
+albedo_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
 albedo_texture = ExtResource("1_p2lft")

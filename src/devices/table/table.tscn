@@ -63,6 +63,7 @@ metadata/_custom_type_script = "uid://2t6nykh3ivmi"
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0964776, 1.2634875, -0.8472669)
 visible = false
 pixel_size = 0.003
+no_depth_test = true
 text = "Найдено элементов: 0 / 11"
 font_size = 24
 outline_size = 6

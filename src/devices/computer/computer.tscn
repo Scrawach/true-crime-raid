@@ -31,16 +31,16 @@ bg_color = Color(0, 0, 0, 0.39215687)
 [node name="Computer" type="Node3D" unique_id=799874042]
 script = ExtResource("1_qsgli")
 
-[node name="computer2" parent="." unique_id=389551481 instance=ExtResource("7_p1maj")]
+[node name="computer2" parent="." unique_id=1987671477 instance=ExtResource("7_p1maj")]
 transform = Transform3D(0.97479236, 0, -0.22311401, 0, 1, 0, 0.22311401, 0, 0.97479236, 0, 0, -0.079975605)
 
-[node name="Keyboard" parent="computer2" index="0" unique_id=315590905]
+[node name="Keyboard" parent="computer2" index="0" unique_id=1701267780]
 transform = Transform3D(0.12420784, 0, -0.99225616, 0, 1, 0, 0.99225616, 0, 0.12420784, -0.15617032, -0.0006817281, 0.45407778)
 
-[node name="Computer_Mouse" parent="computer2" index="1" unique_id=470761345]
+[node name="Computer_Mouse" parent="computer2" index="1" unique_id=1534766920]
 transform = Transform3D(0.36238936, 0, -0.93202674, 0, 1, 0, 0.93202674, 0, 0.36238936, 0.35666704, -0.00068187714, 0.38117278)
 
-[node name="Monitor" parent="computer2" index="3" unique_id=1261224122]
+[node name="Monitor" parent="computer2" index="3" unique_id=2067053096]
 transform = Transform3D(0.07953797, 0, -0.9968317, 0, 1, 0, 0.9968317, 0, 0.07953797, 0.0012079775, 0.20965947, 0.03051981)
 
 [node name="Monitor 3D" type="MeshInstance3D" parent="computer2/Monitor" index="0" unique_id=2020143861]
@@ -74,7 +74,7 @@ shape = SubResource("ConcavePolygonShape3D_qsgli")
 [node name="Camera" type="Camera3D" parent="computer2/Monitor" index="1" unique_id=254273876]
 transform = Transform3D(1.7881393e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.7881393e-07, 0.4063688, 0.3359456, 0.0078443885)
 
-[node name="Monitor_001" parent="computer2" index="4" unique_id=558037422]
+[node name="Monitor_001" parent="computer2" index="4" unique_id=873585265]
 visible = false
 
 [node name="Interaction Area3D" type="Area3D" parent="." unique_id=1985108794 node_paths=PackedStringArray("interact_state")]

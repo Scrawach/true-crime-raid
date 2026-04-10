@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "Material #1": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://environment/laboratory/assets/props/plastic_bottle/M_plastic_bottle.tres",
-"use_external/path": "uid://dd4tnux0tsvcg"
+"use_external/fallback_path": "res://environment/laboratory/assets/props/plastic_bottle/M_white_plastic_bottle.tres",
+"use_external/path": "uid://dy35cv6hhuwg5"
 },
 "Material #3": {
 "use_external/enabled": true,
@@ -53,6 +53,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://environment/laboratory/assets/props/plastic_bottle/M_plastic_bottle.tres",
 "use_external/path": "uid://dd4tnux0tsvcg"
+}
+},
+"nodes": {
+"PATH:PlasticBottle01": {
+"generate/physics": true
 }
 }
 }

@@ -44,6 +44,27 @@ _subresources={
 "use_external/fallback_path": "res://devices/computer/assets/obj/M_Computer_2048.tres",
 "use_external/path": "uid://btlwfpucjtpbr"
 }
+},
+"nodes": {
+"PATH:Computer": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Computer_Mouse": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Keyboard": {
+"generate/physics": true,
+"physics/shape_type": 1
+},
+"PATH:Monitor": {
+"generate/physics": true
+},
+"PATH:Monitor_001": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
 }
 }
 gltf/naming_version=2

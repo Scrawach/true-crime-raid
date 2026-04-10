@@ -59,6 +59,11 @@ _subresources={
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_metal_01.tres",
 "use_external/path": "uid://bcmlw0bxjmuts"
 }
+},
+"nodes": {
+"PATH:Bench01d": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0

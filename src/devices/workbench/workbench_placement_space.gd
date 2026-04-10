@@ -16,7 +16,7 @@ func put(item: BaseItem) -> void:
 	var parent := get_free_position_for()
 	var new_parent := parent if parent != null else items_handler
 	item.reparent(new_parent)
-	item.position = Vector3.UP / 2
+	item.position = Vector3.UP / 4
 	item.ungrab()
 
 func get_free_position_for() -> Node3D:

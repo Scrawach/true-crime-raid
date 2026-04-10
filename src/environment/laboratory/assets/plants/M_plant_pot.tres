@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0b6igi5nhhjf"]
+
+[ext_resource type="Texture2D" uid="uid://r1sbuu0n6trx" path="res://environment/laboratory/assets/plants/flower_pot-1.png" id="1_w5umm"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+albedo_texture = ExtResource("1_w5umm")

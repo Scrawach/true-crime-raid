@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://j0dmgxs7cehj" path="res://environment/laboratory/assets/props/plastic_bottle/PlasticBottle_n.png" id="2_6bfxr"]
 
 [resource]
+albedo_color = Color(0, 0.37333342, 0.64, 1)
 normal_enabled = true
 normal_texture = ExtResource("2_6bfxr")
 ao_enabled = true

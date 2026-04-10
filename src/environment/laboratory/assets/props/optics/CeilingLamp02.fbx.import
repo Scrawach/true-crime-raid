@@ -59,6 +59,11 @@ _subresources={
 "use_external/fallback_path": "res://environment/laboratory/assets/architecture/cells/lamp/M_lamp_emission.tres",
 "use_external/path": "uid://ddgjdlpsqqvg1"
 }
+},
+"nodes": {
+"PATH:CeilingLamp02": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0

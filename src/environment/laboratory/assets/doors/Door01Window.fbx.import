@@ -64,6 +64,11 @@ _subresources={
 "use_external/fallback_path": "res://environment/laboratory/assets/common/materials/M_black.tres",
 "use_external/path": "uid://u660qxy5h03i"
 }
+},
+"nodes": {
+"PATH:Door01Window": {
+"generate/physics": true
+}
 }
 }
 fbx/importer=0
