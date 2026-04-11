@@ -3,9 +3,17 @@
 [ext_resource type="FontFile" uid="uid://ym4vq7exemf3" path="res://fonts/PTSansNarrow-Bold.ttf" id="1_470mv"]
 [ext_resource type="FontFile" uid="uid://c1bccihae8g8s" path="res://fonts/PTSansNarrow-Regular.ttf" id="2_a2l2q"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 1)
+
 [resource]
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("1_470mv")
+Button/styles/normal = SubResource("StyleBoxFlat_a2l2q")
 Label/fonts/font = ExtResource("1_470mv")
 RichTextLabel/font_sizes/normal_font_size = 20
 RichTextLabel/fonts/bold_font = ExtResource("1_470mv")

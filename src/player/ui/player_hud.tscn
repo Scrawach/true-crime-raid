@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="1_qo0ji"]
 [ext_resource type="Script" uid="uid://juqqi502av0g" path="res://player/ui/player_hud.gd" id="1_r44wa"]
 [ext_resource type="PackedScene" uid="uid://b2fkxumekod63" path="res://devices/computer/os/apps/app_panel/inheritors/ap_report/case_result/case_result.tscn" id="3_kliqd"]
+[ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="4_70ums"]
+[ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="5_rtbk0"]
+[ext_resource type="Script" uid="uid://d3v2b7oal1y06" path="res://player/ui/quit_button.gd" id="6_rtbk0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo0ji"]
 bg_color = Color(1, 1, 1, 1)
@@ -23,6 +26,19 @@ bg_color = Color(0, 0, 0, 0.39215687)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp0yt"]
 bg_color = Color(0.11372549, 0.21176471, 0.29803923, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kx37s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5k8r"]
+shader = ExtResource("5_rtbk0")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="Gradient" id="Gradient_70ums"]
+offsets = PackedFloat32Array(0, 0.3382046, 0.6868476, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0.9221789, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rtbk0"]
+gradient = SubResource("Gradient_70ums")
 
 [node name="Player HUD" type="CanvasLayer" unique_id=1872789362]
 script = ExtResource("1_r44wa")
@@ -48,7 +64,7 @@ theme_override_constants/margin_bottom = 10
 [node name="CurrentVersionLabel" type="Label" parent="Version Layer/Version Container/MarginContainer" unique_id=104954214]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
-text = "v0.1.119 [bc6af6c] 2026-04-05 19:29:23"
+text = "v0.1.158 [5767fdb] 2026-04-10 22:59:31"
 script = ExtResource("1_qo0ji")
 metadata/_custom_type_script = "uid://bxgh4maetkofo"
 
@@ -125,3 +141,70 @@ layout_mode = 2
 [node name="CaseResult" parent="PanelContainer/CenterContainer" unique_id=218028341 node_paths=PackedStringArray("holder") instance=ExtResource("3_kliqd")]
 layout_mode = 2
 holder = NodePath("../..")
+
+[node name="Menu Container" type="PanelContainer" parent="." unique_id=257116176]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_70ums")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kx37s")
+
+[node name="ColorRect" type="ColorRect" parent="Menu Container" unique_id=187215236]
+material = SubResource("ShaderMaterial_e5k8r")
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Menu Container" unique_id=1513890499]
+layout_mode = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Menu Container" type="CenterContainer" parent="Menu Container" unique_id=947906938]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menu Container/Menu Container" unique_id=194175030]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu Container/Menu Container/MarginContainer2" unique_id=1283940483]
+self_modulate = Color(1, 1, 1, 0.47058824)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_rtbk0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu Container/Menu Container/MarginContainer2" unique_id=1198242278]
+layout_mode = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer" unique_id=936288719]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1099051042]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1345232993]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "menu"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer/VBoxContainer/VBoxContainer" unique_id=498499685]
+layout_mode = 2
+
+[node name="Continue Button" type="Button" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1596563958]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ПРОДОЛЖИТЬ"
+
+[node name="Quit Button" type="Button" parent="Menu Container/Menu Container/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1201297067]
+unique_name_in_owner = true
+layout_mode = 2
+text = "ВЫЙТИ ИЗ ИГРЫ"
+script = ExtResource("6_rtbk0")

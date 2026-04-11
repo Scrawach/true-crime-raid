@@ -4,6 +4,7 @@ extends PlayerState
 @export var inspect_state: PlayerInspectState
 @export var interact_state: PlayerInteractState
 
+@export var hud: PlayerHUD
 @export var mouse_capture: MouseCapture
 @export var interactor: PlayerInteractor
 @export var hand: PlayerHand
@@ -15,10 +16,15 @@ func state_handle_input(event: InputEvent) -> void:
 	
 	player.move(get_movement_input())
 	
-	if event is InputEventMouseButton and event.is_pressed() and not mouse_capture.is_captured():
+	if event is InputEventMouseButton and event.is_pressed() and not mouse_capture.is_captured() and not hud.menu_container.visible:
 		mouse_capture.capture()
-	elif event.is_action_pressed("escape") and mouse_capture.is_captured():
-		mouse_capture.uncapture()
+	elif event.is_action_pressed("escape"):
+		if mouse_capture.is_captured():
+			hud.menu_container.show()
+			mouse_capture.uncapture()
+		else:
+			hud.menu_container.hide()
+			mouse_capture.capture()
 	
 	if event.is_action_pressed("inspect") and hand.has_item():
 		state_machine.switch_to(inspect_state)
