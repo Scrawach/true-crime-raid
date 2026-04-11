@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ddp3i4by1m7o2"]
+
+[ext_resource type="Script" uid="uid://djn3m31bhndl" path="res://devices/workbench/timed_panel.gd" id="1_s61ke"]
+[ext_resource type="Script" uid="uid://dr4ki2dh5t4sj" path="res://devices/workbench/ui/workbench_add_panel.gd" id="1_troek"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4105w"]
+
+[sub_resource type="Gradient" id="Gradient_5dcig"]
+offsets = PackedFloat32Array(0, 0.62051284)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hyp7w"]
+gradient = SubResource("Gradient_5dcig")
+
+[node name="WorkbenchAddPanel" type="PanelContainer" unique_id=1692660059]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4105w")
+script = ExtResource("1_troek")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1660306930]
+self_modulate = Color(1, 1, 1, 0.47058824)
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_hyp7w")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2125603641]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1980496548]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Получен ДНК-образец х1"
+horizontal_alignment = 2
+
+[node name="TimedPanel" type="Node" parent="." unique_id=2106867306 node_paths=PackedStringArray("panel")]
+script = ExtResource("1_s61ke")
+panel = NodePath("..")
+time = 5.0
+metadata/_custom_type_script = "uid://djn3m31bhndl"

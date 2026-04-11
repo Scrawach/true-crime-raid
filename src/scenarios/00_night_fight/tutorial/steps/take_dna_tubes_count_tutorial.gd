@@ -12,14 +12,11 @@ func start() -> void:
 	for workspace in workspaces:
 		workspace.sample_taked.connect(_on_sample_taked)
 		workspace.interaction_started.connect(_on_interaction_started)
-		workspace.interaction_stopped.connect(_on_interaction_stopped)
 
 func _on_interaction_started() -> void:
-	marker.clear()
-
-func _on_interaction_stopped() -> void:
-	marker.follow(workspaces[0], "Рабочее место")
-
+	if is_active:
+		marker.clear()
+		
 func _on_sample_taked(_data: DNAData) -> void:
 	reached_count += 1
 	
@@ -29,7 +26,9 @@ func _on_sample_taked(_data: DNAData) -> void:
 
 func activate() -> void:
 	super.activate()
-	marker.follow(workspaces[0], "Рабочее место")
+	
+	if reached_count == 0:
+		marker.follow(workspaces[0], "Рабочее место")
 
 func finish() -> void:
 	marker.hide()
@@ -39,7 +38,6 @@ func stop() -> void:
 	for workspace in workspaces:
 		workspace.sample_taked.disconnect(_on_sample_taked)
 		workspace.interaction_started.disconnect(_on_interaction_started)
-		workspace.interaction_stopped.disconnect(_on_interaction_stopped)
 
 func get_result_string() -> String:
 	return "%s / %s" % [ reached_count, target_count]

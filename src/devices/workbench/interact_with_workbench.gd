@@ -10,7 +10,10 @@ signal sample_taked(data: DNAData)
 @export var tubes: InteractWithTubesStand
 @export var item_zoom: ItemZoom
 @export var placement_space: WorkbenchPlacementSpace
-@export var sample_timed_panel: TimedPanel
+
+@export var container: Control
+
+@onready var add_panel_placeholder: InstancePlaceholder = $"../CanvasLayer/UI Container/WorkbenchAddPanel"
 
 var item: BaseItem
 
@@ -56,7 +59,9 @@ func unsubscribe_from_dna_points() -> void:
 		point.clicked.disconnect(_on_dna_clicked)
 
 func _on_dna_clicked(point: DNAInteractivePoint3D) -> void:
-	sample_timed_panel.timed_show()
+	var panel := add_panel_placeholder.create_instance() as WorkbenchAddPanel
+	panel.smooth_show()
+	
 	var dna_tube := dna_tube_scene.instantiate() as DNAItem
 	add_child(dna_tube)
 	dna_tube.dna_data = point.dna_data

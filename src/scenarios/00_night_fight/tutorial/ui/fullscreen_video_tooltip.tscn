@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://c52r48qf8v0m2"]
 
 [ext_resource type="Script" uid="uid://cvnar4w1p3csl" path="res://scenarios/00_night_fight/tutorial/ui/fullscreen_video_tooltip.gd" id="1_fouia"]
+[ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_qvabj"]
+[ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="3_b6heb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7odh"]
-bg_color = Color(0, 0, 0, 0.47058824)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6heb"]
+shader = ExtResource("2_qvabj")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt1pw"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_dat5g"]
 file = "res://scenarios/00_night_fight/tutorial/videos/workspace-tutorial.ogg"
@@ -20,68 +21,61 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fouia")
 
+[node name="Blurred Background" type="ColorRect" parent="." unique_id=1057842028]
+material = SubResource("ShaderMaterial_b6heb")
+layout_mode = 2
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=834031782]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1941333956]
+[node name="Tooltip" type="PanelContainer" parent="CenterContainer" unique_id=1824893448]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_n7odh")
+theme = ExtResource("3_b6heb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kt1pw")
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=294824262]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Tooltip" unique_id=22757622]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Tooltip" unique_id=602604233]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=1398652240]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Tooltip/MarginContainer" unique_id=1925684063]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1096580737]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=1804681551]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1212057765]
+[node name="Label" type="Label" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer/VBoxContainer" unique_id=32542622]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Header Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1697544066]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "УФ-ЛАМПА"
+theme_override_font_sizes/font_size = 24
+text = "Рабочее место"
 horizontal_alignment = 1
+uppercase = true
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=677354524]
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1589955389]
 layout_mode = 2
 
-[node name="Description Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1642233138]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "Каждое рабочее место оснащено ультра-фиолетовой лампой. Свет лампы помогает собирать ДНК-образцы с улик."
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="VSeparator" type="VSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1765017279]
-layout_mode = 2
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1022606802]
-custom_minimum_size = Vector2(260, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-ratio = 1.67
-stretch_mode = 1
-alignment_horizontal = 0
-alignment_vertical = 0
-
-[node name="VideoPlayer" type="VideoStreamPlayer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/AspectRatioContainer" unique_id=172251756]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=172251756]
 unique_name_in_owner = true
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_dat5g")
-expand = true
 loop = true
 
-[node name="Accept Button" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=144169271]
+[node name="Description Label" type="Label" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=798589941]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Каждое рабочее место оснащено ультра-фиолетовой лампой. Свет лампы помогает собирать ДНК-образцы с улик."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Accept Button" type="Button" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=144169271]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Продолжить"

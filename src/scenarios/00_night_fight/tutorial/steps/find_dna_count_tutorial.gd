@@ -13,7 +13,9 @@ func start() -> void:
 
 func activate() -> void:
 	super.activate()
-	marker.follow(dna_analyzer, "ДНК-анализатор")
+	
+	if invesitaged_dna.is_empty():
+		marker.follow(dna_analyzer, "ДНК-анализатор")
 
 func finish() -> void:
 	marker.hide()

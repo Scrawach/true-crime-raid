@@ -2,22 +2,31 @@
 
 [ext_resource type="PackedScene" uid="uid://cm33vd8h57jkn" path="res://addons/quests/ui/quest_substage_panel.tscn" id="1_4c8w1"]
 [ext_resource type="Script" uid="uid://crxx064ql727n" path="res://addons/quests/ui/quest_container.gd" id="1_5a483"]
+[ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="1_5y8gp"]
 [ext_resource type="Texture2D" uid="uid://bnghm74dmu2nc" path="res://addons/quests/assets/quest_popup.svg" id="3_21iwm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp0yt"]
-bg_color = Color(0, 0, 0, 0.39215687)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_21iwm"]
+
+[sub_resource type="Gradient" id="Gradient_5y8gp"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qb5am"]
+gradient = SubResource("Gradient_5y8gp")
 
 [node name="Quest Container" type="PanelContainer" unique_id=1705636581]
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vp0yt")
+theme = ExtResource("1_5y8gp")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_21iwm")
 script = ExtResource("1_5a483")
 substage_panel = ExtResource("1_4c8w1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1314092696]
+self_modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_qb5am")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=974374177]
 layout_mode = 2
@@ -53,7 +62,9 @@ expand_mode = 2
 [node name="Quest Header" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=2054829776]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "fdsfs"
+uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=127883321]
 layout_mode = 2

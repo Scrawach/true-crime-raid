@@ -18,13 +18,11 @@ extends Node
 var tutorial: QuestData
 
 func _ready() -> void:
-	tutorial = QuestData.create("Дело \"Ночная драка\"")
+	tutorial = QuestData.create("Дело «Ночная драка»")
 	quest_container.initialize(tutorial)
 	start_tutorial(tutorial)
 
 func start_tutorial(quest: QuestData) -> void:
-	player.inspect_item.inspect_started.connect(_on_inspect_started)
-	
 	for bench in workbenches:
 		bench.interaction_started.connect(_on_workbench_interacted)
 	

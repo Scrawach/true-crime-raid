@@ -6,7 +6,7 @@ var marker: TutorialMarker
 
 func start() -> void:
 	box.opened.connect(_on_box_opened)
-	marker.follow(box, "Первое дело")
+	marker.follow(box, "Дело «Ночная драка»")
 
 func _on_box_opened(_box: Box, _spawned_object: Node3D) -> void:
 	finish()

@@ -1,24 +1,22 @@
 [gd_scene format=3 uid="uid://dn88gakl5muo8"]
 
 [ext_resource type="Script" uid="uid://cw60ihsvesmx5" path="res://scenarios/00_night_fight/tutorial/markers/tutorial_marker.gd" id="1_o2f2y"]
+[ext_resource type="FontFile" uid="uid://ym4vq7exemf3" path="res://fonts/PTSansNarrow-Bold.ttf" id="2_fxgnt"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hi4po"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5m7n"]
-bg_color = Color(0, 0, 0, 0.5882353)
-border_width_left = 1
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2f2y"]
+
+[sub_resource type="Gradient" id="Gradient_fxgnt"]
+offsets = PackedFloat32Array(0, 0.38826185, 0.5711061, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kwi4p"]
+gradient = SubResource("Gradient_fxgnt")
 
 [node name="TutorialMarker" type="Sprite3D" unique_id=887935103]
-pixel_size = 0.002
+pixel_size = 0.0015
 billboard = 1
 no_depth_test = true
 fixed_size = true
@@ -35,13 +33,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -67.5
+offset_left = -70.0
 offset_top = -20.0
-offset_right = 67.5
+offset_right = 70.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s5m7n")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o2f2y")
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=1748739803]
+layout_mode = 2
+theme_override_constants/margin_left = -15
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = -15
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/PanelContainer/MarginContainer2" unique_id=1874939406]
+self_modulate = Color(1, 1, 1, 0.7058824)
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_kwi4p")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=306429592]
 layout_mode = 2
@@ -53,4 +65,8 @@ theme_override_constants/margin_bottom = 5
 [node name="Label" type="Label" parent="SubViewport/PanelContainer/MarginContainer" unique_id=1536884757]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fxgnt")
 text = "Первое дело"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

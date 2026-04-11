@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://daigvv5hp3v0r"]
 
 [ext_resource type="Script" uid="uid://bg4ak5ci1lk7" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.gd" id="1_yhbyv"]
+[ext_resource type="Shader" uid="uid://da8lkbvrqhhjp" path="res://prototyping/materials/blur.gdshader" id="2_htjn4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpgju"]
+shader = ExtResource("2_htjn4")
+shader_parameter/blur_amount = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjaiq"]
 bg_color = Color(0, 0, 0, 0.47058824)
@@ -16,6 +21,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yhbyv")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1770146437]
+material = SubResource("ShaderMaterial_bpgju")
+layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=946944718]
 layout_mode = 2

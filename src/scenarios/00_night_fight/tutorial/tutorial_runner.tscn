@@ -64,7 +64,7 @@ _data = {
 &"blinking": SubResource("Animation_a8dk5")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dat5g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u0b3i"]
 viewport_path = NodePath("SubViewport")
 
 [node name="TutorialRunner" type="Node" unique_id=664550998 node_paths=PackedStringArray("marker", "tooltip", "video_tooltip", "quest_container")]
@@ -83,8 +83,9 @@ layer = 5
 
 [node name="Quest Container" parent="CanvasLayer" unique_id=1705636581 instance=ExtResource("10_0uhfq")]
 visible = false
-offset_left = 50.0
-offset_top = 50.0
+offset_top = 84.0
+offset_right = 256.0
+offset_bottom = 145.0
 
 [node name="Blink Rect" type="ColorRect" parent="CanvasLayer" unique_id=1828336104]
 visible = false
@@ -108,4 +109,4 @@ visible = false
 
 [node name="TutorialMarker" parent="." unique_id=887935103 instance=ExtResource("13_2r38l")]
 visible = false
-texture = SubResource("ViewportTexture_dat5g")
+texture = SubResource("ViewportTexture_u0b3i")

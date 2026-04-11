@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://dj0mk8oydf3bm"]
+
+[ext_resource type="FontFile" uid="uid://ym4vq7exemf3" path="res://fonts/PTSansNarrow-Bold.ttf" id="1_470mv"]
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_470mv")
+Label/fonts/font = ExtResource("1_470mv")
