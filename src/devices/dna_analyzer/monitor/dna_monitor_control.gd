@@ -49,7 +49,7 @@ func _kill_tween_if_needed() -> void:
 
 func show_result_label() -> void:
 	name_label.text = data.database_name
-	result_label.text = "%.2f" % data.overlap_percentage
+	result_label.text = "%.2f%%" % data.overlap_percentage
 	type_label.text = data.match_type
 	
 	if data.database_name.is_empty():

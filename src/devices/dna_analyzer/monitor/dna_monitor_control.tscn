@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="1_alyb8"]
 [ext_resource type="Script" uid="uid://cnxm3yc2ebiwg" path="res://devices/dna_analyzer/monitor/dna_monitor_control.gd" id="1_r7qmn"]
 [ext_resource type="Texture2D" uid="uid://buxiqn0osqtc2" path="res://devices/computer/assets/img/icons/user.png" id="2_r7qmn"]
+[ext_resource type="Texture2D" uid="uid://y20inkqgxkek" path="res://devices/computer/assets/img/content/export.png" id="4_xee4o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alyb8"]
 draw_center = false
@@ -103,137 +104,145 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="Match Result" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1367796061]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=879749112]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=246694768]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Match Result" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1367796061]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result" unique_id=1471610972]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result" unique_id=1471610972]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Обнаружено совпадение!"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/Label" unique_id=875740547]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/Label" unique_id=875740547]
 libraries/ = SubResource("AnimationLibrary_wum7s")
 autoplay = &"blink"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result" unique_id=1454822340]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result" unique_id=1454822340]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="PersonContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer" unique_id=1313231499]
+[node name="PersonContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer" unique_id=1313231499]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xee4o")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer" unique_id=1642408239]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer" unique_id=1642408239]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer/MarginContainer" unique_id=2007001757]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer/MarginContainer" unique_id=2007001757]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer/MarginContainer" unique_id=1402087510]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/PersonContainer/MarginContainer" unique_id=1402087510]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 texture = ExtResource("2_r7qmn")
 stretch_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer" unique_id=1252548621]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer" unique_id=1252548621]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=1322050792]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=1322050792]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=377014782]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=377014782]
 layout_mode = 2
 text = "Имя:"
 
-[node name="Name Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2140915770]
+[node name="Name Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=2140915770]
 unique_name_in_owner = true
 layout_mode = 2
 text = "ВИКТОР"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=1832380906]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=1832380906]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=968501251]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=968501251]
 layout_mode = 2
 text = "Совпадение:"
 
-[node name="Result Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=610156282]
+[node name="Result Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=610156282]
 unique_name_in_owner = true
 layout_mode = 2
 text = "100%"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=2104857166]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer" unique_id=2104857166]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1779529131]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1779529131]
 layout_mode = 2
 text = "Тип:"
 
-[node name="Type Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1595506851]
+[node name="Type Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Match Result/HBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1595506851]
 unique_name_in_owner = true
 layout_mode = 2
 text = "ПРЯМОЕ"
 
-[node name="NoMatch Result" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1561568081]
+[node name="NoMatch Result" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1561568081]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/NoMatch Result" unique_id=767730796]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/NoMatch Result" unique_id=767730796]
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 20
 text = "СОВПАДЕНИЙ НЕ ОБНАРУЖЕНО!"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/PanelContainer/MarginContainer/NoMatch Result/Label" unique_id=1811955778]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/NoMatch Result/Label" unique_id=1811955778]
 libraries/ = SubResource("AnimationLibrary_wum7s")
 autoplay = &"blink"
 
-[node name="Progress Container" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1072950863]
+[node name="Progress Container" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1072950863]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_r7qmn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/Progress Container" unique_id=1344428897]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Progress Container" unique_id=1344428897]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/Progress Container/VBoxContainer" unique_id=1245823821]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Progress Container/VBoxContainer" unique_id=1245823821]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "ПОИСК СОВПАДЕНИЙ"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/Progress Container/VBoxContainer" unique_id=1719353832]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Progress Container/VBoxContainer" unique_id=1719353832]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_y8v8n")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/Progress Container/VBoxContainer/PanelContainer" unique_id=280997524]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Progress Container/VBoxContainer/PanelContainer" unique_id=280997524]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/Progress Container/VBoxContainer/PanelContainer/MarginContainer" unique_id=829358741]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Progress Container/VBoxContainer/PanelContainer/MarginContainer" unique_id=829358741]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -241,3 +250,8 @@ theme_override_styles/background = SubResource("StyleBoxFlat_wum7s")
 theme_override_styles/fill = SubResource("StyleBoxFlat_y0dec")
 max_value = 1.0
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=823030646]
+layout_mode = 2
+texture = ExtResource("4_xee4o")
+expand_mode = 3
