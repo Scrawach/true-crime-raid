@@ -1,15 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://btlwfpucjtpbr"]
 
-[ext_resource type="Texture2D" uid="uid://c3meh3n3lk8w4" path="res://devices/computer/assets/obj/computer_M_Computer_2048_Colour.jpg" id="1_al5b3"]
 [ext_resource type="Texture2D" uid="uid://dlkabmirbcqgy" path="res://devices/computer/assets/obj/computer_M_Computer_2048_ARMO_JPEG.jpg" id="2_h20xu"]
 [ext_resource type="Texture2D" uid="uid://b05tqpvjdbqx1" path="res://devices/computer/assets/obj/computer_M_Computer_2048_Normal_OGL_JPEG.jpg" id="3_5oxfr"]
 
 [resource]
 resource_name = "M_Computer_2048"
 cull_mode = 2
-albedo_texture = ExtResource("1_al5b3")
-metallic = 1.0
-metallic_texture = ExtResource("2_h20xu")
+albedo_color = Color(0.95, 0.95, 0.95, 1)
 metallic_texture_channel = 2
 roughness_texture = ExtResource("2_h20xu")
 roughness_texture_channel = 1

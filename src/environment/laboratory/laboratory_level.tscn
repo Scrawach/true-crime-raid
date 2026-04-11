@@ -82,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18676, 2.743892, 2.530802)
 light_bake_mode = 1
 omni_range = 10.0
 
-[node name="laboratory" parent="." unique_id=878195117 instance=ExtResource("31_oa8vb")]
+[node name="laboratory" parent="." unique_id=898118622 instance=ExtResource("31_oa8vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008701682, 0.0038807392, 0.004935682)
 
 [node name="Cells" type="Node3D" parent="laboratory" unique_id=2136470478]
@@ -269,7 +269,7 @@ transform = Transform3D(-0.6408602, 0, 0.7676576, 0, 1, 0, -0.7676576, 0, -0.640
 [node name="Player Body3D" parent="." unique_id=283082645 instance=ExtResource("17_enb8l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.9289777, 0, -0.47458267)
 
-[node name="Head" parent="Player Body3D" index="2" unique_id=866222162]
+[node name="Head" parent="Player Body3D" index="3" unique_id=866222162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03171, 0)
 
 [node name="Camera RayCast3D" parent="Player Body3D/Head" index="0" unique_id=1691169396]
