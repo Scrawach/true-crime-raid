@@ -24,9 +24,9 @@ albedo_texture = SubResource("ViewportTexture_qsgli")
 shader = ExtResource("5_anr2d")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.10000000475
-shader_parameter/scanlines_width = 0.06400000304
-shader_parameter/grille_opacity = 0.3490000165775
-shader_parameter/resolution = Vector2(1280, 960)
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.2000000095
+shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 2.0
@@ -50,7 +50,7 @@ data = PackedVector3Array(0.25, -0.19999999, 0, -0.25, -0.19999999, 0, 0.25, 0.1
 [sub_resource type="BoxShape3D" id="BoxShape3D_74c7k"]
 size = Vector3(1, 0.65411377, 0.65234375)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwkpl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anr2d"]
 bg_color = Color(0, 0, 0, 0.39215687)
 
 [node name="Computer" type="Node3D" unique_id=799874042]
@@ -135,7 +135,8 @@ metadata/_custom_type_script = "uid://dqb5iahmx3rfl"
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816382861]
 visible = false
 
-[node name="Item Handle Tooltip" type="PanelContainer" parent="CanvasLayer" unique_id=561950282]
+[node name="Item Handle Tooltip" type="PanelContainer" parent="CanvasLayer" unique_id=1815334670]
+unique_name_in_owner = true
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -144,29 +145,29 @@ offset_top = -42.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wwkpl")
+theme_override_styles/panel = SubResource("StyleBoxFlat_anr2d")
 
-[node name="Label" type="Label" parent="CanvasLayer/Item Handle Tooltip" unique_id=845006258]
+[node name="Label" type="Label" parent="CanvasLayer/Item Handle Tooltip" unique_id=2004393379]
 visible = false
 layout_mode = 2
 text = "[E] - DROP"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Item Handle Tooltip" unique_id=611486277]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Item Handle Tooltip" unique_id=1187494513]
 layout_mode = 2
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Item Handle Tooltip/MarginContainer" unique_id=1760799608]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Item Handle Tooltip/MarginContainer" unique_id=1175865697]
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Item Handle Tooltip/MarginContainer/HBoxContainer" unique_id=1796165927]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Item Handle Tooltip/MarginContainer/HBoxContainer" unique_id=1913714250]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[img height=32]uid://cefddtiqckw4m[/img] ВЫЙТИ"
+text = "[img height=32]uid://cefddtiqckw4m[/img] / [img height=32]uid://blvvxcjuyqu33[/img] ВЫЙТИ"
 horizontal_alignment = 1
 
 [node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("6_wwkpl")]
