@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dey8j5vkki2h5"]
 
 [ext_resource type="Script" uid="uid://8ao32cehk8st" path="res://devices/dna_analyzer/monitor/dna_monitor_3d.gd" id="1_22qrn"]
-[ext_resource type="Shader" uid="uid://col86nc6eon5p" path="res://devices/dna_analyzer/assets/crt.gdshader" id="2_qqe7k"]
+[ext_resource type="Shader" uid="uid://yqc3thdvndb3" path="res://devices/dna_analyzer/assets/M_crt.tres" id="2_qqe7k"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_565ll"]
 resource_local_to_scene = true
