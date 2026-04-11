@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dtthlhayjwcce" path="res://devices/trash/trash_holder.tscn" id="31_6c8b1"]
 [ext_resource type="PackedScene" uid="uid://bocxkplxo28ht" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.tscn" id="31_lvmif"]
 [ext_resource type="PackedScene" uid="uid://dcqy1i5tyjo6c" path="res://environment/laboratory/assets/architecture/laboratory.glb" id="31_oa8vb"]
+[ext_resource type="Shader" uid="uid://dicjof6eqfb43" path="res://prototyping/materials/vignette.gdshader" id="33_lvmif"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w4k60"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,14 +44,26 @@ sky_material = SubResource("ProceduralSkyMaterial_w4k60")
 [sub_resource type="Environment" id="Environment_oa8vb"]
 sky = SubResource("Sky_6c8b1")
 ambient_light_source = 1
+ssr_depth_tolerance = 94.61
 ssao_enabled = true
 ssao_radius = 0.5
+ssil_sharpness = 1.0
 glow_enabled = true
 glow_intensity = 0.4
 glow_strength = 1.2
 glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 1.05
+adjustment_saturation = 0.95
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_oa8vb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tya4b"]
+shader = ExtResource("33_lvmif")
+shader_parameter/alpha = 0.6
+shader_parameter/inner_radius = 0.4
+shader_parameter/outer_radius = 1.8
 
 [node name="Laboratory Level" type="Node3D" unique_id=1427256803]
 
@@ -323,6 +336,18 @@ computer = NodePath("../Computer")
 dna_analyzer = NodePath("../DNA Analyzer")
 startup_box = NodePath("../Box")
 workbenches = [NodePath("../laboratory/Workbench"), NodePath("../laboratory/Workbench2")]
+
+[node name="PostProcessing" type="CanvasLayer" parent="." unique_id=1688946816]
+layer = -1
+
+[node name="Vignette" type="ColorRect" parent="PostProcessing" unique_id=1264831487]
+material = SubResource("ShaderMaterial_tya4b")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [editable path="laboratory/Cells/Low Lamp4"]
 [editable path="Player Body3D"]
