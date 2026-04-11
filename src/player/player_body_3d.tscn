@@ -16,7 +16,7 @@
 radius = 0.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ax4t0"]
-radius = 0.2
+radius = 0.1
 
 [node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item", "state_machine")]
 collision_layer = 4
