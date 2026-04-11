@@ -20,6 +20,7 @@ extends MeshInstance3D
 @export var initial_control: PackedScene
 
 @onready var monitor_sub_viewport: SubViewport = %"Monitor SubViewport"
+@onready var background: ColorRect = %Background
 
 var content: Control
 
@@ -37,7 +38,7 @@ func _update_mesh_size() -> void:
 func power_on() -> void:
 	if not content:
 		content = initial_control.instantiate() as Control
-		monitor_sub_viewport.add_child(content)
+		background.add_child(content)
 
 func power_off() -> void:
 	pass
