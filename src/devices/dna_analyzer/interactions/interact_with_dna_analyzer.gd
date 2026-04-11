@@ -37,8 +37,8 @@ func move_tube_to_position(tube: Node3D) -> void:
 func move_tube_to_player_hand(tube: Node3D, hand: PlayerHand) -> void:
 	_kill_moving_if_needed()
 	tube_moving = create_tween()
-	tube_moving.tween_property(tube, "global_position", hand.hand_point.global_position, 0.2)
-	tube_moving.parallel().tween_property(tube, "global_rotation", hand.hand_point.global_rotation, 0.25)
+	tube_moving.tween_property(tube, "position", Vector3.ZERO, 0.2)
+	tube_moving.parallel().tween_property(tube, "rotation", Vector3.ZERO, 0.25)
 
 func _kill_moving_if_needed() -> void:
 	if tube_moving:

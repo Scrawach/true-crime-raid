@@ -6,6 +6,11 @@ var marker: TutorialMarker
 
 func start() -> void:
 	computer.report_completed.connect(_on_report_completed)
+	computer.interact_started.connect(_on_computer_interact_started)
+
+func _on_computer_interact_started() -> void:
+	if is_active:
+		marker.hide()
 
 func activate() -> void:
 	super.activate()

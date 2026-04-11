@@ -8,9 +8,14 @@ extends VBoxContainer
 
 
 func _ready() -> void:
-	GameManager.case_complited.connect(holder.show)
+	GameManager.case_complited.connect(show_holder)
 	btn_replay.pressed.connect(request_case_replay)
 	btn_continue.pressed.connect(request_next_case)
+
+
+func show_holder() -> void:
+	holder.show()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func request_next_case():

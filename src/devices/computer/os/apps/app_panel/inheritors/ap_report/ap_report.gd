@@ -123,12 +123,12 @@ func check_report() -> ReportCheckData:
 	var rcd = ReportCheckData.new()
 	#
 	rcd.felon = current_felon
-	if expected_felon != current_felon:
+	if current_felon and expected_felon.id != current_felon.id:
 		rcd.felon_ok = false
 		rcd.approved = false
 	#
 	rcd.motive = current_motive
-	if expected_motive != current_motive:
+	if current_motive and expected_motive.id != current_motive.id:
 		rcd.motive_ok = false
 		rcd.approved = false
 	# 

@@ -287,6 +287,7 @@ btn_bottom = NodePath("../../vbc_bottom_panel/pc_bottom_panel/HBoxContainer/hbc_
 btn_ico = NodePath("../../c_apps/btn_keywords")
 
 [node name="pa_debug" parent="mc_os_workspace/pc_wallpaper/c_windows" unique_id=1479633360 node_paths=PackedStringArray("btn_bottom", "btn_ico") instance=ExtResource("10_dalv8")]
+visible = false
 layout_mode = 0
 offset_left = 1142.5
 offset_top = 314.5
