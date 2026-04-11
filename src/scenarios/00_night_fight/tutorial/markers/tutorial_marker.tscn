@@ -49,7 +49,7 @@ theme_override_constants/margin_right = -15
 theme_override_constants/margin_bottom = 0
 
 [node name="TextureRect" type="TextureRect" parent="SubViewport/PanelContainer/MarginContainer2" unique_id=1874939406]
-self_modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.78431374)
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 texture = SubResource("GradientTexture1D_kwi4p")
