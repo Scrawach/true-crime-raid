@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://ysxab3xkb0kq" path="res://keywords/scene/keyword_description.gd" id="1_e7kcq"]
 [ext_resource type="Script" uid="uid://chqlg7ov33048" path="res://keywords/scene/keyword_text_label.gd" id="1_lv4e0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsp5a"]
-bg_color = Color(0, 0, 0, 0.47058824)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7kcq"]
+
+[sub_resource type="Gradient" id="Gradient_vjeu4"]
+offsets = PackedFloat32Array(0, 0.2751196, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.569378, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ioia1"]
+gradient = SubResource("Gradient_vjeu4")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_dsp5a"]
 color = Color(0.5729883, 0.5729883, 0.5729883, 1)
@@ -17,20 +19,25 @@ grow_end = -25.0
 
 [node name="Keyword Description" type="PanelContainer" unique_id=1598517834]
 custom_minimum_size = Vector2(300, 200)
-offset_right = 300.0
-offset_bottom = 200.0
+offset_right = 714.0
+offset_bottom = 842.0
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dsp5a")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_e7kcq")
 script = ExtResource("1_e7kcq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=484268108]
+self_modulate = Color(1, 1, 1, 0.6666667)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_ioia1")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=556854604]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2010649486]
 layout_mode = 2
@@ -39,7 +46,7 @@ mouse_filter = 2
 [node name="Header Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=34839269]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 32
 text = "ОПИСАНИЕ"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,6 +74,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[url=k00][keyword id=k00 type=date]Text[/keyword][/url] dasd 
 asdad [url=k00][keyword id=k00 type=date]Text[/keyword][/url] 

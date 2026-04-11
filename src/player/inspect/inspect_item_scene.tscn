@@ -50,7 +50,7 @@ transparent_bg = true
 handle_input_locally = false
 msaa_3d = 3
 physics_object_picking = true
-size = Vector2i(1152, 648)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 0
 
 [node name="Item Viewer" type="Node3D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1135401504]

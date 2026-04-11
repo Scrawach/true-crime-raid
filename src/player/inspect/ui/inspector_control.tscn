@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d3ymyewlmpt84"]
 
 [ext_resource type="Script" uid="uid://mfbno2aqnsag" path="res://player/inspect/ui/inspector_control.gd" id="1_0vv2q"]
+[ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="1_pmbn7"]
 [ext_resource type="Script" uid="uid://c5fm1xvpawqqy" path="res://player/inspect/ui/inspect_tooltip_panel.gd" id="2_81wp7"]
+[ext_resource type="FontFile" uid="uid://ym4vq7exemf3" path="res://fonts/PTSansNarrow-Bold.ttf" id="3_1birc"]
 [ext_resource type="PackedScene" uid="uid://cjtwkbu7pdtt5" path="res://keywords/scene/keyword_description.tscn" id="3_cc2i4"]
 [ext_resource type="PackedScene" uid="uid://befpxu1lw234h" path="res://player/inspect/ui/keywords_panel.tscn" id="3_pmbn7"]
 
@@ -9,12 +11,13 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a2mbw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et4ll"]
-bg_color = Color(0, 0, 0, 0.47058824)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bboih"]
+
+[sub_resource type="Gradient" id="Gradient_1qlgs"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xs3s8"]
+gradient = SubResource("Gradient_1qlgs")
 
 [node name="Inspector Control" type="Control" unique_id=544111972]
 layout_mode = 3
@@ -24,6 +27,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_pmbn7")
 script = ExtResource("1_0vv2q")
 
 [node name="Keyboard Tooltips" type="PanelContainer" parent="." unique_id=433395939]
@@ -32,7 +36,7 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -60.0
+offset_top = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -41,7 +45,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_et4ll")
 [node name="MarginContainer" type="MarginContainer" parent="Keyboard Tooltips" unique_id=1831057268]
 layout_mode = 2
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_bottom = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Keyboard Tooltips/MarginContainer" unique_id=1802280836]
 layout_mode = 2
@@ -51,6 +54,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_1birc")
 bbcode_enabled = true
 text = "[img height=32]uid://skb1eu8dskay[/img] ВРАЩАТЬ"
 horizontal_alignment = 2
@@ -59,6 +63,7 @@ horizontal_alignment = 2
 custom_minimum_size = Vector2(260, 32)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("3_1birc")
 bbcode_enabled = true
 text = "[img height=32]uid://b062i0t3hmft0[/img] ПРИБЛИЗИТЬ / ОТДАЛИТЬ"
 fit_content = true
@@ -68,6 +73,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("3_1birc")
 bbcode_enabled = true
 text = "[img height=32]uid://blvvxcjuyqu33[/img] ВЫЙТИ"
 
@@ -81,70 +87,76 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1349284878]
+[node name="Inspect Tooltip Panel" type="PanelContainer" parent="." unique_id=155026098]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=750432764]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Inspect Tooltip Panel" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=155026098]
-layout_mode = 2
+offset_bottom = -120.0
+grow_vertical = 0
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxEmpty_a2mbw")
 script = ExtResource("2_81wp7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel" unique_id=331650751]
+[node name="VBoxContainer" type="VBoxContainer" parent="Inspect Tooltip Panel" unique_id=331650751]
 layout_mode = 2
+theme_override_constants/separation = 16
 
-[node name="DNA Count" type="PanelContainer" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer" unique_id=1318397264]
+[node name="DNA Count" type="PanelContainer" parent="Inspect Tooltip Panel/VBoxContainer" unique_id=1318397264]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_et4ll")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bboih")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer/DNA Count" unique_id=1814450615]
+[node name="TextureRect" type="TextureRect" parent="Inspect Tooltip Panel/VBoxContainer/DNA Count" unique_id=2080464457]
+self_modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+texture = SubResource("GradientTexture1D_xs3s8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Inspect Tooltip Panel/VBoxContainer/DNA Count" unique_id=1814450615]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer" unique_id=1325042251]
+[node name="HBoxContainer" type="HBoxContainer" parent="Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer" unique_id=1325042251]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer/HBoxContainer" unique_id=1885743872]
+[node name="Label" type="Label" parent="Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer/HBoxContainer" unique_id=1885743872]
 layout_mode = 2
-text = "ОБРАЗЦЫ:"
+theme_override_font_sizes/font_size = 24
+text = "ОБРАЗЦОВ СОБРАНО:"
 
-[node name="DNA Count Label" type="Label" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer/HBoxContainer" unique_id=1513415697]
+[node name="DNA Count Label" type="Label" parent="Inspect Tooltip Panel/VBoxContainer/DNA Count/MarginContainer/HBoxContainer" unique_id=1513415697]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
 text = "0 / 3"
 
-[node name="Keywords Panel" parent="MarginContainer/HBoxContainer/Inspect Tooltip Panel/VBoxContainer" unique_id=1520725564 instance=ExtResource("3_pmbn7")]
+[node name="Keywords Panel" parent="Inspect Tooltip Panel/VBoxContainer" unique_id=1520725564 instance=ExtResource("3_pmbn7")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1693349907]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="Keyword Description" parent="MarginContainer/HBoxContainer" unique_id=1598517834 instance=ExtResource("3_cc2i4")]
+[node name="Keyword Description" parent="." unique_id=1598517834 instance=ExtResource("3_cc2i4")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -700.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+
+[node name="MarginContainer" parent="Keyword Description" index="1" unique_id=556854604]
+theme_override_constants/margin_top = 100
+
+[editable path="Keyword Description"]

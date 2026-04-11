@@ -3,24 +3,13 @@
 [ext_resource type="Script" uid="uid://c33i7bxthq4q7" path="res://player/inspect/ui/components/keyword_item_panel.gd" id="1_2ss8l"]
 [ext_resource type="Texture2D" uid="uid://i51evci1idyq" path="res://icon.svg" id="1_k68bs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ss8l"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 7
-corner_radius_top_right = 7
-corner_radius_bottom_right = 7
-corner_radius_bottom_left = 7
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ss8l"]
 
 [node name="Keyword Item Panel" type="PanelContainer" unique_id=789766912]
 self_modulate = Color(0.153, 0.51, 0.44454998, 1)
 offset_right = 157.0
 offset_bottom = 35.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2ss8l")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2ss8l")
 script = ExtResource("1_2ss8l")
 type_colors = Dictionary[String, Color]({
 "event": Color(0.22879998, 0.33557338, 0.52, 1),
