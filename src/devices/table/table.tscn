@@ -195,7 +195,7 @@ custom_minimum_size = Vector2(100, 32)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("4_auvi0")
 bbcode_enabled = true
-text = "[img height=32px]uid://skb1eu8dskay[/img]  [color=#1a1a1a][ЗАЖАТЬ][/color] Перемещать заметку"
+text = "[img height=32px]uid://skb1eu8dskay[/img]  [color=#3773c1ff][ЗАЖАТЬ][/color] Перемещать заметку"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/PanelContainer/MarginContainer/Keyboard Tooltip" unique_id=247115297]
 custom_minimum_size = Vector2(100, 32)

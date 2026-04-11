@@ -50,6 +50,7 @@ theme_override_font_sizes/font_size = 32
 text = "ОПИСАНИЕ"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=2013421463]
 layout_mode = 2
