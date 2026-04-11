@@ -15,6 +15,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ax4t0"]
+radius = 0.2
+
 [node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item", "state_machine")]
 collision_layer = 4
 script = ExtResource("1_ied1u")
@@ -32,6 +35,10 @@ state_machine = NodePath("StateMachine")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_f64p4")
 
+[node name="Hand CollisionShape3D" type="CollisionShape3D" parent="." unique_id=46518450]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.3375758, 1.4754174, -0.44146243)
+shape = SubResource("SphereShape3D_ax4t0")
+
 [node name="Head" type="Node3D" parent="." unique_id=866222162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
@@ -43,7 +50,7 @@ collide_with_bodies = false
 
 [node name="Hand Point" type="Marker3D" parent="Head" unique_id=2028372810]
 unique_name_in_owner = true
-transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.8660253, 0.499, -0.42199993, -0.557)
+transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.8660253, 0.3375758, -0.22458267, -0.44146243)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
 current = true
@@ -92,10 +99,9 @@ metadata/_custom_type_script = "uid://blhol6udoquwp"
 script = ExtResource("3_rjoga")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
-[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "mouse_capture", "player")]
+[node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "player")]
 script = ExtResource("11_ehfks")
 interactor = NodePath("../PlayerMovementState/PlayerInteractor")
-mouse_capture = NodePath("../PlayerMovementState/MouseCapture")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://8y2v8pv4j56x"
 

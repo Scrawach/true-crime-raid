@@ -102,6 +102,7 @@ disabled = true
 
 [node name="Piece" type="MeshInstance3D" parent="." unique_id=247900771]
 transform = Transform3D(1, 4.371139e-08, -4.371139e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, 1, -4.3711385e-08, 2.897398e-10, 0.08367419, 0.024192011)
+visible = false
 
 [node name="pin" parent="Piece" unique_id=982019493 instance=ExtResource("4_7i7mu")]
 transform = Transform3D(-4.3711385e-08, -1, 8.742278e-08, 1, -4.3711363e-08, 2.1316282e-14, 0, 8.742278e-08, 1, 4.059899e-10, -0.009287981, 0)

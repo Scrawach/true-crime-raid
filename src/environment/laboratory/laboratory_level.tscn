@@ -50,6 +50,8 @@ glow_intensity = 0.4
 glow_strength = 1.2
 glow_bloom = 0.1
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_oa8vb"]
+
 [node name="Laboratory Level" type="Node3D" unique_id=1427256803]
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1196691839]
@@ -309,6 +311,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5740347, 0.040821463, -0.9
 
 [node name="Trash Holder" parent="." unique_id=1500479391 instance=ExtResource("31_6c8b1")]
 transform = Transform3D(-0.36706954, 0, 0.93019354, 0, 1, 0, -0.93019354, 0, -0.36706954, -3.9789033, 0.01849693, -3.5585291)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1211124075]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1469933097]
+shape = SubResource("WorldBoundaryShape3D_oa8vb")
 
 [node name="TutorialRunner" parent="." unique_id=664550998 node_paths=PackedStringArray("player", "computer", "dna_analyzer", "startup_box", "workbenches") instance=ExtResource("31_lvmif")]
 player = NodePath("../Player Body3D")
