@@ -65,7 +65,7 @@ transform = Transform3D(-0.9398656, -0.33093557, -0.08446504, -0.34154448, 0.910
 
 [node name="kitchen-knife" parent="." index="6" unique_id=1375673245 instance=ExtResource("5_xpbyt")]
 
-[node name="Kitchen Knife" parent="kitchen-knife" index="0" unique_id=504528559]
+[node name="Kitchen Knife" parent="kitchen-knife" index="0" unique_id=222869565]
 visible = false
 
 [node name="kitchen-knife-blood" parent="kitchen-knife" index="1" unique_id=1359230406 instance=ExtResource("6_aaqqt")]

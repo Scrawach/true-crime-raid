@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b5rl12f0qnotp" path="res://environment/laboratory/assets/floor/FloorTiles02_n.png" id="4_vbm8r"]
 
 [resource]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
 albedo_texture = ExtResource("1_tcy4j")
 metallic = 1.0
 metallic_texture = ExtResource("3_0dwfh")

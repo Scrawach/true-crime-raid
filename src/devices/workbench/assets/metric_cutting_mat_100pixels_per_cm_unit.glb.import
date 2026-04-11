@@ -38,6 +38,13 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"imagePlaneSG2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://devices/workbench/assets/imagePlaneSG2.tres",
+"use_external/path": "uid://c4tb53jy0oai"
+}
+},
 "nodes": {
 "PATH:Sketchfab_model/251f6fda22c44b4e93a5408d7f6ce512_obj_cleaner_materialmerger_gles/Object_2": {
 "generate/physics": true

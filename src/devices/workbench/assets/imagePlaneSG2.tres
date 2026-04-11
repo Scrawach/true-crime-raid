@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4tb53jy0oai"]
+
+[ext_resource type="Texture2D" uid="uid://lx47x24php1t" path="res://devices/workbench/assets/metric_cutting_mat_100pixels_per_cm_unit_0.jpg" id="1_pey1c"]
+
+[resource]
+resource_name = "imagePlaneSG2"
+cull_mode = 2
+albedo_color = Color(0.74520004, 0.76356, 0.81, 1)
+albedo_texture = ExtResource("1_pey1c")
+roughness = 0.6
