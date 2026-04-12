@@ -264,7 +264,7 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.795, 0, 1.7484555e-07, 0, 1, 
 [node name="Workbench" parent="laboratory" unique_id=1556907178 instance=ExtResource("18_uxwp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1811136, 1.1291184, -3.7499788)
 
-[node name="Workbench2" parent="laboratory" unique_id=756505943 instance=ExtResource("18_uxwp0")]
+[node name="Workbench2" parent="laboratory" unique_id=749566845 instance=ExtResource("18_uxwp0")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.88681453, 1.1291184, -0.107753694)
 
 [node name="Sketchfab_Scene" parent="laboratory" unique_id=201514616 instance=ExtResource("20_6c8b1")]
