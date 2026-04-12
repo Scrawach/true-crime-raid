@@ -11,7 +11,7 @@ shader_parameter/blur_amount = 2.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt1pw"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_dat5g"]
-file = "res://scenarios/00_night_fight/tutorial/videos/workspace-tutorial.ogg"
+file = "res://scenarios/00_night_fight/tutorial/videos/workspace-tutorial.ogv"
 
 [node name="Fullscreen Video Tooltip" type="PanelContainer" unique_id=1324370766]
 anchors_preset = 15
@@ -64,6 +64,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_dat5g")
+autoplay = true
 loop = true
 
 [node name="Description Label" type="Label" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=798589941]
