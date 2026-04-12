@@ -1,11 +1,14 @@
 class_name PlayerHand
 extends Node
 
-@export var body: Node3D
+@export var body: PlayerBody3D
 @export var hud: PlayerHUD
 @export var hand_point: Node3D
 @export var head: Node3D
 @export var pickup_duration: float = 0.2
+
+@export var throw_strength: float = 1.5
+@export var velocity_strength: float = 0.1
 
 var item: BaseItem
 var tween: Tween
@@ -51,8 +54,9 @@ func _kill_if_needed() -> void:
 		tween.kill()
 
 func get_drop_force() -> Vector3:
-	const THROW_STRENGTH_MIN := 100
-	const THROW_STRENGTH_MAX := 150
+	const THROW_STRENGTH_MIN := 125
+	const THROW_STRENGTH_MAX := 140
 	var offset := randf_range(-.25, .15)
 	var direction := head.global_basis * Vector3(offset, 0, -1.5) + Vector3.UP
-	return direction * randf_range(THROW_STRENGTH_MIN, THROW_STRENGTH_MAX)
+	var velocity := body.velocity.length() * velocity_strength
+	return direction * (throw_strength + velocity) * randf_range(THROW_STRENGTH_MIN, THROW_STRENGTH_MAX)
