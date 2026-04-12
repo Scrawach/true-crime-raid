@@ -64,7 +64,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 stream = SubResource("VideoStreamTheora_dat5g")
-autoplay = true
 loop = true
 
 [node name="Description Label" type="Label" parent="CenterContainer/Tooltip/MarginContainer/VBoxContainer" unique_id=798589941]

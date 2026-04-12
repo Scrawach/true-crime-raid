@@ -70,7 +70,6 @@ shader_parameter/outer_radius = 1.8
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1196691839]
 bounces = 6
 bounce_indirect_energy = 1.5
-directional = true
 interior = true
 texel_scale = 10.0
 light_data = ExtResource("1_oa8vb")
@@ -264,7 +263,7 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 0.795, 0, 1.7484555e-07, 0, 1, 
 [node name="Workbench" parent="laboratory" unique_id=1556907178 instance=ExtResource("18_uxwp0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1811136, 1.1291184, -3.7499788)
 
-[node name="Workbench2" parent="laboratory" unique_id=749566845 instance=ExtResource("18_uxwp0")]
+[node name="Workbench2" parent="laboratory" unique_id=2145989055 instance=ExtResource("18_uxwp0")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.88681453, 1.1291184, -0.107753694)
 
 [node name="Sketchfab_Scene" parent="laboratory" unique_id=201514616 instance=ExtResource("20_6c8b1")]
@@ -323,7 +322,7 @@ transform = Transform3D(0.040044554, 0, -0.9991981, 0, 1, 0, 0.9991981, 0, 0.040
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5740347, 0.040821463, -0.93397087)
 
 [node name="Trash Holder" parent="." unique_id=1500479391 instance=ExtResource("31_6c8b1")]
-transform = Transform3D(-0.36706954, 0, 0.93019354, 0, 1, 0, -0.93019354, 0, -0.36706954, -3.9789033, 0.01849693, -3.5585291)
+transform = Transform3D(-0.2617176, 0, 0.9651446, 0, 1, 0, -0.9651446, 0, -0.2617176, -4.017265, 0.01849693, -3.7069697)
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1211124075]
 
