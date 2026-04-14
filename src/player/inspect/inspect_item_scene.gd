@@ -17,6 +17,8 @@ signal inspect_started(target: BaseItem)
 @onready var camera_zoom: CameraZoom = %CameraZoom
 @onready var inspector_control: InspectorControl = %"Inspector Control"
 
+@onready var woosh_audio_player: AudioStreamPlayer = %"Woosh AudioPlayer"
+
 var item: BaseItem
 var is_interruptable: bool = true
 
@@ -30,6 +32,7 @@ func smooth_show(callback: Callable = Callable()) -> void:
 	inspector_control.initialize(item)
 	player.hand.item.reparent(item_point)
 	smooth_move_item_to_zero(player.hand.item, 0.2)
+	woosh_audio_player.play()
 
 func smooth_hide(callback: Callable = Callable()) -> void:
 	inspect_scene_appear.smooth_hide(func():
@@ -44,6 +47,7 @@ func smooth_hide(callback: Callable = Callable()) -> void:
 	item_handler.stop_rotation()
 	player.hand.item.reparent(player.hand.hand_point)
 	smooth_move_item_to_zero(player.hand.item, 0.15)
+	woosh_audio_player.play()
 
 func smooth_move_item_to_zero(target: BaseItem, duration: float) -> Tween:
 	var tween := create_tween()

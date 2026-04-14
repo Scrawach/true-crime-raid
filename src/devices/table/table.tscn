@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cbp6cvnr6t8d8" path="res://devices/table/common/table_hover_node_3d.tscn" id="6_4brtg"]
 [ext_resource type="Script" uid="uid://dvs73hbvr0e2g" path="res://devices/table/table_stickers.gd" id="8_4brtg"]
 [ext_resource type="Material" uid="uid://c4yat1tufiepv" path="res://environment/laboratory/assets/props/pin/M_pin.tres" id="9_pu4re"]
+[ext_resource type="AudioStream" uid="uid://bb88jss7oou0s" path="res://devices/table/assets/note_post.ogg" id="11_3g78g"]
 [ext_resource type="Script" uid="uid://cp1rw6ijyemtg" path="res://devices/table/table_initializer.gd" id="12_5boxa"]
 [ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="13_auvi0"]
 [ext_resource type="PackedScene" uid="uid://db30afugfjy5o" path="res://prototyping/assets/table.glb" id="13_pu4re"]
@@ -28,6 +29,12 @@ albedo_color = Color(0, 0, 0, 0.54901963)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4brtg"]
 size = Vector3(0.14050293, 1.0685978, 2.6515534)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e4672"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("11_3g78g")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3g78g"]
 
@@ -139,9 +146,14 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026245117, 1.7970209, 0.01161325)
 shape = SubResource("BoxShape3D_4brtg")
 
-[node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553]
+[node name="Table Stickers" type="Node3D" parent="." unique_id=1897545553 node_paths=PackedStringArray("add_player")]
 script = ExtResource("8_4brtg")
 connection_material = ExtResource("9_pu4re")
+add_player = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Table Stickers" unique_id=250649410]
+stream = SubResource("AudioStreamRandomizer_e4672")
+volume_db = -20.0
 
 [node name="TableInitializer" type="Node" parent="." unique_id=112741787 node_paths=PackedStringArray("hand")]
 script = ExtResource("12_5boxa")

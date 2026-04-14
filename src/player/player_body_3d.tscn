@@ -49,7 +49,7 @@ stream_1/stream = ExtResource("13_0snr6")
 collision_layer = 4
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
-main_camera = NodePath("Head/Camera3D")
+main_camera = NodePath("Head/Head Bobbing/Camera3D")
 hand = NodePath("PlayerHand")
 player_hud = NodePath("Player HUD")
 mouse = NodePath("StateMachine/PlayerMovementState/MouseCapture")
@@ -68,10 +68,8 @@ shape = SubResource("CapsuleShape3D_f64p4")
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.3375758, 1.4754174, -0.44146243)
 shape = SubResource("SphereShape3D_ax4t0")
 
-[node name="Head" type="Node3D" parent="." unique_id=866222162 node_paths=PackedStringArray("player")]
+[node name="Head" type="Node3D" parent="." unique_id=866222162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-script = ExtResource("3_414np")
-player = NodePath("..")
 
 [node name="Camera RayCast3D" type="RayCast3D" parent="Head" unique_id=1691169396]
 target_position = Vector3(0, 0, -2)
@@ -83,17 +81,21 @@ collide_with_bodies = false
 unique_name_in_owner = true
 transform = Transform3D(0.8660253, 0, -0.49999997, 0, 1, 0, 0.49999997, 0, 0.8660253, 0.3375758, -0.22458267, -0.44146243)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=174937394]
+[node name="Head Bobbing" type="Node3D" parent="Head" unique_id=1451706 node_paths=PackedStringArray("player")]
+script = ExtResource("3_414np")
+player = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Head/Head Bobbing" unique_id=174937394]
 current = true
 
-[node name="MouseRaycast3D" type="Node3D" parent="Head/Camera3D" unique_id=1367191301]
+[node name="MouseRaycast3D" type="Node3D" parent="Head/Head Bobbing/Camera3D" unique_id=1367191301]
 script = ExtResource("3_ax4t0")
 target_layer = 16
 small_target_layer = 32
 collide_with_areas = true
 metadata/_custom_type_script = "uid://by08m6irb8rp6"
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D" unique_id=361945969]
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Head Bobbing/Camera3D" unique_id=361945969]
 current = true
 
 [node name="Inspect Item Scene" parent="Head" unique_id=1090415660 node_paths=PackedStringArray("player", "player_hand") instance=ExtResource("3_iveab")]
@@ -174,3 +176,4 @@ metadata/_custom_type_script = "uid://uts4nsi4nsmb"
 [node name="Woosh StreamPlayer" type="AudioStreamPlayer" parent="." unique_id=487771338]
 stream = ExtResource("19_shrnk")
 volume_db = -6.0
+pitch_scale = 0.9

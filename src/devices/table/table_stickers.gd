@@ -4,6 +4,8 @@ extends Node3D
 @export var connection_material: Material
 @export var connection_thickness: float = 0.004
 
+@export var add_player: AudioStreamPlayer
+
 var stickers: Dictionary[String, Sticker]
 var connections: Array[Connection]
 
@@ -18,6 +20,7 @@ func append(sticker: Sticker) -> void:
 	
 	sticker.pin()
 	create_connections(sticker)
+	add_player.play()
 
 func remove(sticker: Sticker) -> void:
 	sticker.unpin()
@@ -29,6 +32,7 @@ func remove(sticker: Sticker) -> void:
 	for connection in sticker_connections:
 		connection.mesh.queue_free()
 		connections.erase(connection)
+	add_player.play()
 
 func has(sticker: Sticker) -> bool:
 	return sticker in get_appended_stickers()

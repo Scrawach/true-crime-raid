@@ -7,15 +7,16 @@
 [ext_resource type="Script" uid="uid://nqo6a43tmhmd" path="res://devices/dna_analyzer/interactions/interact_with_dna_analyzer.gd" id="5_r1qmm"]
 [ext_resource type="PackedScene" uid="uid://dey8j5vkki2h5" path="res://devices/dna_analyzer/monitor/dna_monitor_3d.tscn" id="6_rnx7a"]
 [ext_resource type="PackedScene" uid="uid://jkmx15xw0i53" path="res://devices/dna_analyzer/monitor/dna_monitor_control.tscn" id="7_565ll"]
+[ext_resource type="AudioStream" uid="uid://mknhkhyjmxyy" path="res://devices/computer/assets/crt_ambient.mp3" id="8_gn2j6"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_565ll"]
+[sub_resource type="QuadMesh" id="QuadMesh_5d0n7"]
 resource_local_to_scene = true
 size = Vector2(0.38, 0.133)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gn2j6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_3b6nt"]
 viewport_path = NodePath("Monitor SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d0n7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05jmu"]
 resource_local_to_scene = true
 shading_mode = 0
 diffuse_mode = 3
@@ -23,7 +24,7 @@ specular_mode = 2
 disable_ambient_light = true
 disable_fog = true
 disable_specular_occlusion = true
-albedo_texture = SubResource("ViewportTexture_gn2j6")
+albedo_texture = SubResource("ViewportTexture_3b6nt")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cjrne"]
 radius = 0.3
@@ -35,8 +36,8 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="DNA Monitor3D" parent="dna_analyzer" unique_id=792307719 instance=ExtResource("6_rnx7a")]
 transform = Transform3D(-1, 0, 1.509958e-07, 1.14116894e-07, 0.6548464, 0.75576204, -9.887905e-08, 0.75576204, -0.6548464, 0.0026935935, 0.28741235, -0.17838687)
-mesh = SubResource("QuadMesh_565ll")
-surface_material_override/0 = SubResource("StandardMaterial3D_5d0n7")
+mesh = SubResource("QuadMesh_5d0n7")
+surface_material_override/0 = SubResource("StandardMaterial3D_05jmu")
 resolution = Vector2i(380, 133)
 sub_viewport_scaling = 1.2
 initial_control = ExtResource("7_565ll")
@@ -73,3 +74,11 @@ metadata/_custom_type_script = "uid://nqo6a43tmhmd"
 
 [node name="Test Tube Position" type="Marker3D" parent="." unique_id=1317996385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36345595, 0.06881434)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1072860689]
+stream = ExtResource("8_gn2j6")
+volume_db = -5.0
+unit_size = 0.1
+max_db = 0.0
+autoplay = true
+max_distance = 5.0
