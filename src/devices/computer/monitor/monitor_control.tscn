@@ -23,6 +23,9 @@
 [ext_resource type="Script" uid="uid://b2po74o83srcy" path="res://devices/computer/monitor/computer_mouse_cursor.gd" id="14_c0d2k"]
 [ext_resource type="Script" uid="uid://dtlybdfupvk30" path="res://devices/computer/os/os_gameplay/scenario/scenario.gd" id="18_gsb3y"]
 [ext_resource type="Resource" uid="uid://jt0l5j3fb0px" path="res://devices/computer/os/os_gameplay/scenario/scenario1.tres" id="20_gsb3y"]
+[ext_resource type="AudioStream" uid="uid://blpme10njyr8i" path="res://devices/computer/assets/click.ogg" id="24_x8pnj"]
+[ext_resource type="AudioStream" uid="uid://bx0msdccm02ae" path="res://devices/computer/assets/click01.ogg" id="25_7hpiq"]
+[ext_resource type="Script" uid="uid://eakmyow8nekd" path="res://devices/computer/common/mouse_click_audio.gd" id="26_64sn2"]
 
 [sub_resource type="Theme" id="Theme_ww1kh"]
 Button/font_sizes/font_size = 24
@@ -111,6 +114,13 @@ PanelContainer/styles/panel = SubResource("StyleBoxTexture_numv4")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5od7m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hhjf"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qiysj"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 2
+stream_0/stream = ExtResource("24_x8pnj")
+stream_1/stream = ExtResource("25_7hpiq")
 
 [node name="Monitor Control" type="Control" unique_id=803566879]
 custom_minimum_size = Vector2(512, 512)
@@ -491,6 +501,12 @@ texture = ExtResource("13_2t07n")
 expand_mode = 5
 script = ExtResource("14_c0d2k")
 metadata/_custom_type_script = "uid://b2po74o83srcy"
+
+[node name="MouseClickAudio" type="AudioStreamPlayer" parent="." unique_id=116350846]
+stream = SubResource("AudioStreamRandomizer_qiysj")
+volume_db = -15.0
+script = ExtResource("26_64sn2")
+metadata/_custom_type_script = "uid://eakmyow8nekd"
 
 [connection signal="mouse_entered" from="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords" to="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords/Label" method="show"]
 [connection signal="mouse_exited" from="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords" to="mc_os_workspace/pc_wallpaper/c_apps/btn_keywords/Label" method="hide"]

@@ -6,15 +6,27 @@
 [ext_resource type="Script" uid="uid://bk7ahkuijm3d4" path="res://items/interactions/pick_up_interaction.gd" id="3_c43hp"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="5_jc8hu"]
 [ext_resource type="Script" uid="uid://tjsmymhm5aj6" path="res://items/interactions/interactive_points.gd" id="6_celoj"]
+[ext_resource type="AudioStream" uid="uid://c4gp2b21wujkj" path="res://items/assets/paper_imapct_00.ogg" id="7_1unff"]
+[ext_resource type="AudioStream" uid="uid://nfdp36lh2xgr" path="res://items/assets/paper_impact_01.ogg" id="8_y61xs"]
+[ext_resource type="Script" uid="uid://bwi67byl67s6w" path="res://items/common/collide_audio_stream_player_3d.gd" id="9_05uhd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c43hp"]
 radius = 0.26145676
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wxlmp"]
+random_pitch = 1.0594631
+random_volume_offset_db = 1.0
+streams_count = 2
+stream_0/stream = ExtResource("7_1unff")
+stream_1/stream = ExtResource("8_y61xs")
 
 [node name="Base Item" type="RigidBody3D" unique_id=679873917 node_paths=PackedStringArray("points")]
 collision_layer = 8
 collision_mask = 9
 can_sleep = false
 continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_2fo1j")
 points = NodePath("InteractivePoints")
 
@@ -46,3 +58,12 @@ script = ExtResource("6_celoj")
 metadata/_custom_type_script = "uid://tjsmymhm5aj6"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=943194512]
+
+[node name="CollideAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1556590326 node_paths=PackedStringArray("body")]
+stream = SubResource("AudioStreamRandomizer_wxlmp")
+unit_size = 0.1
+max_db = 0.0
+script = ExtResource("9_05uhd")
+body = NodePath("..")
+velocity_volume_factor = 2.0
+metadata/_custom_type_script = "uid://bwi67byl67s6w"

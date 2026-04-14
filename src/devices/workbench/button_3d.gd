@@ -18,3 +18,5 @@ func _on_clicked() -> void:
 		button_animation_player.play("press")
 	else:
 		button_animation_player.play_backwards("press")
+	
+	pressed.emit()

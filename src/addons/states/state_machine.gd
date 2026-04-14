@@ -30,6 +30,10 @@ func _physics_process(delta: float) -> void:
 	
 	current_state.state_process(delta)
 
+func switch_by_type(type: GDScript) -> void:
+	if states.has(type):
+		switch_to(states[type])
+
 func switch_to(next_state: State) -> void:
 	if current_state:
 		previous_state = current_state

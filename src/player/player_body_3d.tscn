@@ -1,16 +1,24 @@
 [gd_scene format=3 uid="uid://cx7rsciexusnm"]
 
 [ext_resource type="Script" uid="uid://b0nsgses1dw7q" path="res://player/player_body_3d.gd" id="1_ied1u"]
+[ext_resource type="Script" uid="uid://dss12y1ti6q8c" path="res://player/common/player_head.gd" id="3_414np"]
 [ext_resource type="Script" uid="uid://by08m6irb8rp6" path="res://common/mouse_raycast_3d.gd" id="3_ax4t0"]
 [ext_resource type="PackedScene" uid="uid://ci4quctybs3ev" path="res://player/inspect/inspect_item_scene.tscn" id="3_iveab"]
 [ext_resource type="Script" uid="uid://cc1eqfabvs5pq" path="res://player/common/mouse_capture.gd" id="3_rjoga"]
 [ext_resource type="PackedScene" uid="uid://yer5qkd6lp65" path="res://player/ui/player_hud.tscn" id="4_cnqhg"]
 [ext_resource type="Script" uid="uid://blhol6udoquwp" path="res://player/player_interactor.gd" id="5_qh2r7"]
 [ext_resource type="Script" uid="uid://b1nf2orlq6dqd" path="res://player/player_hand.gd" id="6_pyi6a"]
+[ext_resource type="AudioStream" uid="uid://bbn2sphmigb1k" path="res://player/assets/throw.ogg" id="7_0snr6"]
+[ext_resource type="AudioStream" uid="uid://dirhjqwicl0gd" path="res://player/assets/pick_up.ogg" id="8_moqn6"]
 [ext_resource type="Script" uid="uid://c7g5vauyit182" path="res://addons/states/state_machine.gd" id="9_nhl75"]
+[ext_resource type="Script" uid="uid://riyvofo2v1wy" path="res://player/common/footsteps_node.gd" id="10_14877"]
 [ext_resource type="Script" uid="uid://uvruv47ddr2a" path="res://player/states/player_movement_state.gd" id="10_mngrd"]
 [ext_resource type="Script" uid="uid://8y2v8pv4j56x" path="res://player/states/player_interact_state.gd" id="11_ehfks"]
+[ext_resource type="AudioStream" uid="uid://bened4w5cmnyb" path="res://player/assets/footsteps/footstep-0.ogg" id="11_tw6yp"]
 [ext_resource type="Script" uid="uid://b2p5svqerliud" path="res://player/states/player_inspect_state.gd" id="12_14877"]
+[ext_resource type="Script" uid="uid://uts4nsi4nsmb" path="res://player/states/player_blocked_state.gd" id="12_ehfks"]
+[ext_resource type="AudioStream" uid="uid://djcapuuyiqwat" path="res://player/assets/footsteps/footstep-2.ogg" id="13_0snr6"]
+[ext_resource type="AudioStream" uid="uid://coq032w3o47ug" path="res://player/assets/woosh.mp3" id="19_shrnk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f64p4"]
 radius = 0.3
@@ -18,7 +26,26 @@ radius = 0.3
 [sub_resource type="SphereShape3D" id="SphereShape3D_ax4t0"]
 radius = 0.1
 
-[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item", "state_machine")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_shrnk"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("7_0snr6")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1u1vn"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("8_moqn6")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_moqn6"]
+random_pitch = 1.0594631
+random_volume_offset_db = 5.0
+streams_count = 2
+stream_0/stream = ExtResource("11_tw6yp")
+stream_1/stream = ExtResource("13_0snr6")
+
+[node name="Player Body3D" type="CharacterBody3D" unique_id=283082645 node_paths=PackedStringArray("head", "main_camera", "hand", "player_hud", "mouse", "inspect_item", "state_machine", "woosh_player")]
 collision_layer = 4
 script = ExtResource("1_ied1u")
 head = NodePath("Head")
@@ -28,6 +55,7 @@ player_hud = NodePath("Player HUD")
 mouse = NodePath("StateMachine/PlayerMovementState/MouseCapture")
 inspect_item = NodePath("Head/Inspect Item Scene")
 state_machine = NodePath("StateMachine")
+woosh_player = NodePath("Woosh StreamPlayer")
 
 [node name="Player HUD" parent="." unique_id=1872789362 node_paths=PackedStringArray("player") instance=ExtResource("4_cnqhg")]
 player = NodePath("..")
@@ -40,8 +68,10 @@ shape = SubResource("CapsuleShape3D_f64p4")
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0.3375758, 1.4754174, -0.44146243)
 shape = SubResource("SphereShape3D_ax4t0")
 
-[node name="Head" type="Node3D" parent="." unique_id=866222162]
+[node name="Head" type="Node3D" parent="." unique_id=866222162 node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+script = ExtResource("3_414np")
+player = NodePath("..")
 
 [node name="Camera RayCast3D" type="RayCast3D" parent="Head" unique_id=1691169396]
 target_position = Vector3(0, 0, -2)
@@ -63,17 +93,31 @@ small_target_layer = 32
 collide_with_areas = true
 metadata/_custom_type_script = "uid://by08m6irb8rp6"
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D" unique_id=361945969]
+current = true
+
 [node name="Inspect Item Scene" parent="Head" unique_id=1090415660 node_paths=PackedStringArray("player", "player_hand") instance=ExtResource("3_iveab")]
 player = NodePath("../..")
 player_hand = NodePath("../../PlayerHand")
 
-[node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point", "head")]
+[node name="PlayerHand" type="Node" parent="." unique_id=1620962346 node_paths=PackedStringArray("body", "hud", "hand_point", "head", "throw_player", "pickup_player")]
 script = ExtResource("6_pyi6a")
 body = NodePath("..")
 hud = NodePath("../Player HUD")
 hand_point = NodePath("../Head/Hand Point")
 head = NodePath("../Head")
+throw_player = NodePath("Throw StreamPlayer")
+pickup_player = NodePath("Pikcup StreamPlayer")
 metadata/_custom_type_script = "uid://b1nf2orlq6dqd"
+
+[node name="Throw StreamPlayer" type="AudioStreamPlayer" parent="PlayerHand" unique_id=728794932]
+stream = SubResource("AudioStreamRandomizer_shrnk")
+volume_db = -15.0
+
+[node name="Pikcup StreamPlayer" type="AudioStreamPlayer" parent="PlayerHand" unique_id=1398691804]
+stream = SubResource("AudioStreamRandomizer_1u1vn")
+volume_db = -20.0
+pitch_scale = 1.3
 
 [node name="StateMachine" type="Node" parent="." unique_id=1878188691 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("9_nhl75")
@@ -101,6 +145,13 @@ metadata/_custom_type_script = "uid://blhol6udoquwp"
 script = ExtResource("3_rjoga")
 metadata/_custom_type_script = "uid://cc1eqfabvs5pq"
 
+[node name="FootstepsNode" type="Node" parent="StateMachine/PlayerMovementState" unique_id=1475968326 node_paths=PackedStringArray("movement_state")]
+script = ExtResource("10_14877")
+movement_state = NodePath("..")
+stream = SubResource("AudioStreamRandomizer_moqn6")
+volume_db = -16.0
+metadata/_custom_type_script = "uid://riyvofo2v1wy"
+
 [node name="PlayerInteractState" type="Node" parent="StateMachine" unique_id=1147655068 node_paths=PackedStringArray("interactor", "player")]
 script = ExtResource("11_ehfks")
 interactor = NodePath("../PlayerMovementState/PlayerInteractor")
@@ -115,3 +166,11 @@ inspect_scene = NodePath("../../Head/Inspect Item Scene")
 mouse_capture = NodePath("../PlayerMovementState/MouseCapture")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://b2p5svqerliud"
+
+[node name="PlayerBlockedState" type="Node" parent="StateMachine" unique_id=1923764610]
+script = ExtResource("12_ehfks")
+metadata/_custom_type_script = "uid://uts4nsi4nsmb"
+
+[node name="Woosh StreamPlayer" type="AudioStreamPlayer" parent="." unique_id=487771338]
+stream = ExtResource("19_shrnk")
+volume_db = -6.0

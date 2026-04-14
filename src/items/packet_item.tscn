@@ -2,10 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://bnx5gsb7lhbew" path="res://items/base_packet_item.tscn" id="1_pfyno"]
 [ext_resource type="PackedScene" uid="uid://clqulkru0e7s2" path="res://items/interactions/open_interactive_point_3d.tscn" id="2_hlbrs"]
+[ext_resource type="AudioStream" uid="uid://dkagy62b7h5et" path="res://items/assets/unpack.ogg" id="3_h1uc7"]
 [ext_resource type="PackedScene" uid="uid://dnhkt7fnjsjh0" path="res://prototyping/assets/simple_packet.glb" id="3_y8ll5"]
+[ext_resource type="Script" uid="uid://ce1wgaboqo0rt" path="res://items/interactive_point_audio_player.gd" id="4_0ce85"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h1uc7"]
 points = PackedVector3Array(0.0117436275, 0.2873516, 0.17909846, -0.011766836, 0.2873516, 0.17909846, 0.11855026, -0.10293019, 0.17906341, 0.11855026, 0.11555274, 0.17906341, 0.0117436275, 0.2873516, -0.17909846, -0.011766836, 0.2873516, -0.17909846, -0.11855028, 0.11555274, 0.17906341, -0.11855028, -0.10293019, 0.17906341, 0.11855026, -0.10293019, -0.17909846, 0.11855026, 0.11555274, -0.17909846, -0.11855028, 0.11555274, -0.17909846, -0.11855028, -0.10293019, -0.17909846)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gft0o"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_h1uc7")
 
 [node name="Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point", "mesh") instance=ExtResource("1_pfyno")]
 open_point = NodePath("InteractivePoints/Open Interactive Point 3D")
@@ -20,6 +28,13 @@ shape = SubResource("ConvexPolygonShape3D_h1uc7")
 
 [node name="Open Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 instance=ExtResource("2_hlbrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1973165, 0)
+
+[node name="InteractivePointAudioPlayer" type="AudioStreamPlayer" parent="InteractivePoints/Open Interactive Point 3D" index="3" unique_id=767868413 node_paths=PackedStringArray("point")]
+stream = SubResource("AudioStreamRandomizer_gft0o")
+volume_db = -6.0
+script = ExtResource("4_0ce85")
+point = NodePath("..")
+metadata/_custom_type_script = "uid://ce1wgaboqo0rt"
 
 [node name="simple_packet" parent="." index="5" unique_id=19308295 instance=ExtResource("3_y8ll5")]
 

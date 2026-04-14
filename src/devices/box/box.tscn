@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b40ypkl0nl4b2"]
 
 [ext_resource type="Script" uid="uid://b0wdblwr4pltl" path="res://devices/box/box.gd" id="1_oaahe"]
+[ext_resource type="AudioStream" uid="uid://dirhjqwicl0gd" path="res://player/assets/pick_up.ogg" id="2_1scv4"]
 [ext_resource type="Script" uid="uid://dlm1uspq25qm7" path="res://interaction/interaction_area_3d.gd" id="2_2h45o"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="3_oaahe"]
 [ext_resource type="PackedScene" uid="uid://boy6gf851kdtr" path="res://environment/laboratory/assets/crates/PlasticCrate01.fbx" id="5_1scv4"]
@@ -9,6 +10,8 @@
 
 [node name="Box" type="Node3D" unique_id=1870866890]
 script = ExtResource("1_oaahe")
+spawn_sound = ExtResource("2_1scv4")
+volume_db = -10.0
 
 [node name="InteractionArea3D" type="Area3D" parent="." unique_id=45986498]
 unique_name_in_owner = true
@@ -27,13 +30,13 @@ interaction = NodePath("..")
 [node name="PlasticCrate01" parent="." unique_id=279809981 instance=ExtResource("5_1scv4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="PlasticCrate01" parent="PlasticCrate01" index="0" unique_id=2125870848]
+[node name="PlasticCrate01" parent="PlasticCrate01" index="0" unique_id=110044955]
 gi_mode = 2
 
 [node name="PlasticCrate02" parent="." unique_id=546040709 instance=ExtResource("5_1scv4")]
 transform = Transform3D(-7.172301e-08, -4.547098e-15, -0.95, 1.4344602e-07, -0.6, -3.6303006e-15, -0.95, -9.059749e-08, 7.172301e-08, 0, 0.3548314, 0)
 
-[node name="PlasticCrate01" parent="PlasticCrate02" index="0" unique_id=2125870848]
+[node name="PlasticCrate01" parent="PlasticCrate02" index="0" unique_id=110044955]
 gi_mode = 2
 
 [editable path="PlasticCrate01"]

@@ -15,12 +15,18 @@ extends Node
 @export var target_document_data: Array[ItemData]
 @export var target_items_data: Array[ItemData]
 
+@onready var complete_player: AudioStreamPlayer = %"Complete Player"
+
 var tutorial: QuestData
 
 func _ready() -> void:
 	tutorial = QuestData.create("Дело «Ночная драка»")
 	quest_container.initialize(tutorial)
 	start_tutorial(tutorial)
+	tutorial.stage_finished.connect(_on_stage_finished)
+
+func _on_stage_finished(_stage: QuestSubstageData) -> void:
+	complete_player.play()
 
 func start_tutorial(quest: QuestData) -> void:
 	for bench in workbenches:

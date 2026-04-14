@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://daigvv5hp3v0r" path="res://scenarios/00_night_fight/tutorial/ui/main_tooltip.tscn" id="12_3j466"]
 [ext_resource type="PackedScene" uid="uid://dn88gakl5muo8" path="res://scenarios/00_night_fight/tutorial/markers/tutorial_marker.tscn" id="13_2r38l"]
 [ext_resource type="PackedScene" uid="uid://c52r48qf8v0m2" path="res://scenarios/00_night_fight/tutorial/ui/fullscreen_video_tooltip.tscn" id="13_dat5g"]
+[ext_resource type="AudioStream" uid="uid://cs6oq7naixfl1" path="res://scenarios/00_night_fight/tutorial/assets/quest_complete.ogg" id="22_0uhfq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swkav"]
 shader = ExtResource("11_ybkmc")
@@ -64,8 +65,14 @@ _data = {
 &"blinking": SubResource("Animation_a8dk5")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u0b3i"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ybkmc"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3j466"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("22_0uhfq")
 
 [node name="TutorialRunner" type="Node" unique_id=664550998 node_paths=PackedStringArray("marker", "tooltip", "video_tooltip", "quest_container")]
 script = ExtResource("1_n7odh")
@@ -109,4 +116,9 @@ visible = false
 
 [node name="TutorialMarker" parent="." unique_id=887935103 instance=ExtResource("13_2r38l")]
 visible = false
-texture = SubResource("ViewportTexture_u0b3i")
+texture = SubResource("ViewportTexture_ybkmc")
+
+[node name="Complete Player" type="AudioStreamPlayer" parent="." unique_id=2146920115]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_3j466")
+volume_db = -35.0

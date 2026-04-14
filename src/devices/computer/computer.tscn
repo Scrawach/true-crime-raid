@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://col86nc6eon5p" path="res://devices/dna_analyzer/assets/crt.gdshader" id="5_anr2d"]
 [ext_resource type="PackedScene" uid="uid://bt1yx4ek5sc2a" path="res://interaction/interact_tooltip_3d.tscn" id="6_wwkpl"]
 [ext_resource type="PackedScene" uid="uid://dotwpsrs8nmwu" path="res://devices/computer/assets/obj/computer.glb" id="7_p1maj"]
+[ext_resource type="AudioStream" uid="uid://mknhkhyjmxyy" path="res://devices/computer/assets/crt_ambient.mp3" id="9_74c7k"]
 [ext_resource type="PackedScene" uid="uid://dvlpgtj5jf6de" path="res://devices/computer/monitor/monitor_control.tscn" id="9_nwalb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_anr2d"]
@@ -59,13 +60,13 @@ script = ExtResource("1_qsgli")
 [node name="computer2" parent="." unique_id=1987671477 instance=ExtResource("7_p1maj")]
 transform = Transform3D(0.97479236, 0, -0.22311401, 0, 1, 0, 0.22311401, 0, 0.97479236, 0, 0, -0.079975605)
 
-[node name="Keyboard" parent="computer2" index="0" unique_id=1701267780]
+[node name="Keyboard" parent="computer2" index="0" unique_id=1107870721]
 transform = Transform3D(0.12420784, 0, -0.99225616, 0, 1, 0, 0.99225616, 0, 0.12420784, -0.15617032, -0.0006817281, 0.45407778)
 
-[node name="Computer_Mouse" parent="computer2" index="1" unique_id=1534766920]
+[node name="Computer_Mouse" parent="computer2" index="1" unique_id=1961686496]
 transform = Transform3D(0.36238936, 0, -0.93202674, 0, 1, 0, 0.93202674, 0, 0.36238936, 0.35666704, -0.00068187714, 0.38117278)
 
-[node name="Monitor" parent="computer2" index="3" unique_id=2067053096]
+[node name="Monitor" parent="computer2" index="3" unique_id=64961944]
 transform = Transform3D(0.07953797, 0, -0.9968317, 0, 1, 0, 0.9968317, 0, 0.07953797, 0.0012079775, 0.20965947, 0.03051981)
 
 [node name="Monitor 3D" type="MeshInstance3D" parent="computer2/Monitor" index="0" unique_id=2020143861]
@@ -108,7 +109,7 @@ shape = SubResource("ConcavePolygonShape3D_qsgli")
 [node name="Camera" type="Camera3D" parent="computer2/Monitor" index="1" unique_id=254273876]
 transform = Transform3D(1.7881393e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.7881393e-07, 0.4063688, 0.3359456, 0.0078443885)
 
-[node name="Monitor_001" parent="computer2" index="4" unique_id=873585265]
+[node name="Monitor_001" parent="computer2" index="4" unique_id=2105747248]
 visible = false
 
 [node name="Interaction Area3D" type="Area3D" parent="." unique_id=1985108794 node_paths=PackedStringArray("interact_state")]
@@ -172,5 +173,13 @@ horizontal_alignment = 1
 
 [node name="InteractTooltip3D" parent="." unique_id=603151964 node_paths=PackedStringArray("interaction") instance=ExtResource("6_wwkpl")]
 interaction = NodePath("../Interaction Area3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=345051012]
+stream = ExtResource("9_74c7k")
+volume_db = -5.0
+unit_size = 0.1
+max_db = 0.0
+autoplay = true
+max_distance = 5.0
 
 [editable path="computer2"]

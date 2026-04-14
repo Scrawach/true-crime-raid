@@ -33,6 +33,13 @@
 [ext_resource type="PackedScene" uid="uid://bocxkplxo28ht" path="res://scenarios/00_night_fight/tutorial/tutorial_runner.tscn" id="31_lvmif"]
 [ext_resource type="PackedScene" uid="uid://dcqy1i5tyjo6c" path="res://environment/laboratory/assets/architecture/laboratory.glb" id="31_oa8vb"]
 [ext_resource type="Shader" uid="uid://dicjof6eqfb43" path="res://prototyping/materials/vignette.gdshader" id="33_lvmif"]
+[ext_resource type="Script" uid="uid://58r68x4bo0rf" path="res://scenarios/main.gd" id="34_tya4b"]
+[ext_resource type="Theme" uid="uid://dj0mk8oydf3bm" path="res://main_theme.tres" id="35_h6517"]
+[ext_resource type="Script" uid="uid://bxgh4maetkofo" path="res://addons/current_version/current_version_label.gd" id="36_lube7"]
+[ext_resource type="AudioStream" uid="uid://c6tldwqxn34gt" path="res://scenarios/sounds/848071__sumixiv__door_open_close.ogg" id="36_yvyt0"]
+[ext_resource type="AudioStream" uid="uid://jcjlwqcvl770" path="res://scenarios/sounds/484082__spacejoe__switch-7.wav" id="37_yvyt0"]
+[ext_resource type="AudioStream" uid="uid://d38alhfryyneh" path="res://scenarios/sounds/neon_lamps.ogg" id="38_rbctt"]
+[ext_resource type="AudioStream" uid="uid://bqsp3hf3t70qe" path="res://scenarios/sounds/samuelfjohanns-aeolian-futuristics-a-minor-scale-pattern-02-119813.mp3" id="39_yvyt0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w4k60"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -64,6 +71,239 @@ shader = ExtResource("33_lvmif")
 shader_parameter/alpha = 0.6
 shader_parameter/inner_radius = 0.4
 shader_parameter/outer_radius = 1.8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukoo6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tya4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6517"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs66v"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_h6517"]
+color = Color(1, 1, 1, 0.39215687)
+grow_begin = -200.0
+grow_end = -200.0
+thickness = 2
+
+[sub_resource type="Animation" id="Animation_h6517"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rbctt"]
+resource_name = "blink"
+length = 0.40000334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.23529412), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvyt0"]
+_data = {
+&"RESET": SubResource("Animation_h6517"),
+&"blink": SubResource("Animation_rbctt")
+}
+
+[sub_resource type="Animation" id="Animation_ukoo6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenario Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Startup Page:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Open Door Player:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Switch Player:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lamps Player:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background Music:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bs66v"]
+resource_name = "open"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scenario Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.4, 2.5333333, 5.5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.799999, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Startup Page:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Open Door Player:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.19999999, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Switch Player:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.6666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lamps Player:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.366667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background Music:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.1666665),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rbctt"]
+_data = {
+&"RESET": SubResource("Animation_ukoo6"),
+&"open": SubResource("Animation_bs66v")
+}
 
 [node name="Laboratory Level" type="Node3D" unique_id=1427256803]
 
@@ -347,6 +587,141 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Main" type="Node" parent="." unique_id=1549763522 node_paths=PackedStringArray("player")]
+script = ExtResource("34_tya4b")
+player = NodePath("../Player Body3D")
+metadata/_custom_type_script = "uid://58r68x4bo0rf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main" unique_id=1157976484]
+layer = 100
+
+[node name="Startup" type="PanelContainer" parent="Main/CanvasLayer" unique_id=1981049800]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ukoo6")
+
+[node name="Background" type="PanelContainer" parent="Main/CanvasLayer/Startup" unique_id=1758393461]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tya4b")
+
+[node name="ColorRect" type="ColorRect" parent="Main/CanvasLayer/Startup/Background" unique_id=1872434476]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Scenario Label" type="PanelContainer" parent="Main/CanvasLayer/Startup" unique_id=1828431732]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h6517")
+
+[node name="Label" type="Label" parent="Main/CanvasLayer/Startup/Scenario Label" unique_id=1840903394]
+layout_mode = 2
+theme = ExtResource("35_h6517")
+theme_override_font_sizes/font_size = 128
+text = "Дело «Ночная драка»"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Startup Page" type="PanelContainer" parent="Main/CanvasLayer/Startup" unique_id=902084169]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("35_h6517")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bs66v")
+
+[node name="CenterContainer" type="CenterContainer" parent="Main/CanvasLayer/Startup/Startup Page" unique_id=51833548]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer" unique_id=1483259792]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2" unique_id=1620245038]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="Version Label" type="Label" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=1405049348]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.21568628, 0.4509804, 0.75686276, 1)
+theme_override_font_sizes/font_size = 24
+text = "v0.2.181 [794c033]"
+horizontal_alignment = 2
+vertical_alignment = 2
+script = ExtResource("36_lube7")
+show_datetime = false
+
+[node name="Label" type="Label" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2/VBoxContainer" unique_id=196683834]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 56
+text = "Cold Cases: DNA Investigator"
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2" unique_id=882283052]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_h6517")
+
+[node name="Label" type="Label" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2" unique_id=1668976668]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Это детективная игра, в которой вы расследуете нераскрытые дела, используя анализ ДНК и логическую дедукцию. Вам предстоит раскрыть детали запутанного дела и вынести свой вердикт."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2" unique_id=402956822]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label2" type="Label" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2" unique_id=925364456]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.47058824)
+theme_override_font_sizes/font_size = 32
+text = "[НАЖМИТЕ ЛЮБУЮ КЛАВИШУ, ЧТОБЫ ПРОДОЛЖИТЬ]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/CanvasLayer/Startup/Startup Page/CenterContainer/VBoxContainer2/Label2" unique_id=802140132]
+libraries/ = SubResource("AnimationLibrary_yvyt0")
+autoplay = &"blink"
+speed_scale = 0.1
+
+[node name="Startup AnimationPlayer" type="AnimationPlayer" parent="Main/CanvasLayer/Startup" unique_id=1690309241]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_rbctt")
+
+[node name="Open Door Player" type="AudioStreamPlayer" parent="Main/CanvasLayer/Startup" unique_id=1089763651]
+stream = ExtResource("36_yvyt0")
+volume_db = -10.0
+
+[node name="Switch Player" type="AudioStreamPlayer" parent="Main/CanvasLayer/Startup" unique_id=1433177937]
+stream = ExtResource("37_yvyt0")
+volume_db = -25.0
+
+[node name="Lamps Player" type="AudioStreamPlayer" parent="Main/CanvasLayer/Startup" unique_id=935688174]
+stream = ExtResource("38_rbctt")
+volume_db = -20.0
+
+[node name="Background Music" type="AudioStreamPlayer" parent="Main/CanvasLayer/Startup" unique_id=1280547016]
+stream = ExtResource("39_yvyt0")
+volume_db = -25.0
+parameters/looping = true
 
 [editable path="laboratory/Cells/Low Lamp4"]
 [editable path="Player Body3D"]

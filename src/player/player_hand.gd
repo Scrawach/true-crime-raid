@@ -10,6 +10,9 @@ extends Node
 @export var throw_strength: float = 1.5
 @export var velocity_strength: float = 0.1
 
+@export var throw_player: AudioStreamPlayer
+@export var pickup_player: AudioStreamPlayer
+
 var item: BaseItem
 var tween: Tween
 
@@ -27,6 +30,7 @@ func pickup(object: BaseItem) -> void:
 	object.reparent(hand_point)
 	
 	tween = create_tween()
+	pickup_player.play()
 	tween.tween_method(_move_to_hand, 0.0, 1.0, pickup_duration)
 	tween.tween_callback(func():
 		hud.show_item_handle_tooltip()
@@ -41,6 +45,7 @@ func drop() -> void:
 	item.apply_force(get_drop_force())
 	item.apply_torque(item.basis * Vector3.LEFT)
 	item = null
+	throw_player.play()
 
 func _move_to_hand(progress: float) -> void:
 	if not item:

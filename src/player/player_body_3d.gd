@@ -12,6 +12,8 @@ extends CharacterBody3D
 @export var inspect_item: InspectItem
 @export var state_machine: StateMachine
 
+@export var woosh_player: AudioStreamPlayer
+
 var _moving_direction: Vector2
 var _gaze_direction: Vector2
 
@@ -20,6 +22,9 @@ func move(direction: Vector2) -> void:
 
 func head_rotate(direction: Vector2) -> void:
 	_gaze_direction = direction
+
+func play_woosh() -> void:
+	woosh_player.play()
 
 func _physics_process(delta: float) -> void:
 	_movement_process(delta)

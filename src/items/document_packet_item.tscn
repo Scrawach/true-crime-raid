@@ -3,9 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bnx5gsb7lhbew" path="res://items/base_packet_item.tscn" id="1_j1ir3"]
 [ext_resource type="PackedScene" uid="uid://clqulkru0e7s2" path="res://items/interactions/open_interactive_point_3d.tscn" id="2_5jhar"]
 [ext_resource type="PackedScene" uid="uid://4ud1ahmo46fh" path="res://prototyping/assets/document_packet.glb" id="2_ajt3n"]
+[ext_resource type="AudioStream" uid="uid://dkagy62b7h5et" path="res://items/assets/unpack.ogg" id="3_w2x8h"]
+[ext_resource type="Script" uid="uid://ce1wgaboqo0rt" path="res://items/interactive_point_audio_player.gd" id="4_wqvn0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ajt3n"]
 size = Vector3(0.28588867, 0.41355896, 0.036239624)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x58rm"]
+random_pitch = 1.0594631
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("3_w2x8h")
 
 [node name="Document Packet Item" unique_id=679873917 node_paths=PackedStringArray("open_point") instance=ExtResource("1_j1ir3")]
 open_point = NodePath("InteractivePoints/Open Interactive Point 3D")
@@ -20,6 +28,13 @@ debug_color = Color(0.99, 0, 0.34649992, 1)
 
 [node name="Open Interactive Point 3D" parent="InteractivePoints" parent_id_path=PackedInt32Array(1068783842) index="0" unique_id=1261566614 instance=ExtResource("2_5jhar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09560156, 0.02689385)
+
+[node name="InteractivePointAudioPlayer" type="AudioStreamPlayer" parent="InteractivePoints/Open Interactive Point 3D" index="3" unique_id=1426679984 node_paths=PackedStringArray("point")]
+stream = SubResource("AudioStreamRandomizer_x58rm")
+volume_db = -6.0
+script = ExtResource("4_wqvn0")
+point = NodePath("..")
+metadata/_custom_type_script = "uid://ce1wgaboqo0rt"
 
 [node name="document_packet" parent="." index="5" unique_id=931203797 instance=ExtResource("2_ajt3n")]
 

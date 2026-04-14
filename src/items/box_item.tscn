@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3274lr6yan17" path="res://items/base_item.tscn" id="1_70yj4"]
 [ext_resource type="Script" uid="uid://d2y8emyuyj6is" path="res://items/data/item_data.gd" id="2_7nfn4"]
+[ext_resource type="Script" uid="uid://ia3n8itvb8ly" path="res://keywords/data/keyword_data.gd" id="2_lpgne"]
 [ext_resource type="PackedScene" uid="uid://b7ydi1s8x2uv3" path="res://items/interactions/dna_interactive_point_3d.tscn" id="3_5qmqt"]
 [ext_resource type="Script" uid="uid://bn7663kucbpmq" path="res://items/data/dna_data.gd" id="4_xjk1l"]
 [ext_resource type="Material" uid="uid://cs251n56i5iuo" path="res://prototyping/materials/M_prototype_items.tres" id="5_xjk1l"]
