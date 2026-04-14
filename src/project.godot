@@ -24,6 +24,11 @@ config/icon="uid://bd335cexxyvna"
 
 GameManager="*uid://c1c1ux05g0axv"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AutoExportVersion/plugin.cfg")
